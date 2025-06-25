@@ -1,4 +1,4 @@
-FROM node:20-slim AS builder
+FROM node:22-slim AS builder
 #nodeのイメージをベースにする
 
 ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/

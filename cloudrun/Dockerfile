@@ -13,7 +13,7 @@ RUN yarn install --frozen-lockfile
 
 RUN yarn build
 
-FROM node:20-slim AS production
+FROM node:22-slim AS production
 
 ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
 

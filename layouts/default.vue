@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.page-root {
+.layout-root {
   padding-top: 4rem;
 }
 </style>
@@ -65,7 +65,6 @@ p {
   position: relative;
   background-image:
     linear-gradient(to bottom,#E94A22 3%,#E9443C 12%,#EF6140 30%,#F97D47 50% ,#F69869 75% ,#F49085 91%);
-  background-size: cover;
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -83,7 +82,6 @@ p {
   content: "";
   position: absolute;
   background-image: url('@/assets/images/background-texture.webp');
-  background-size: cover;
   width: 100%;
   height: 100%;
   background-repeat: repeat;
@@ -93,6 +91,6 @@ p {
   right: 0;
   z-index: -99;
   mix-blend-mode: multiply;
-  opacity: .15;
+  opacity: .17;
 }
 </style>

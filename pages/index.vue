@@ -3,3 +3,6 @@
 </template>
 <script setup lang="ts">
 </script>
+<style>
+h1{margin: 1000px}
+</style>

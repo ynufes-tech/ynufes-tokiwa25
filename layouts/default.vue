@@ -3,7 +3,7 @@
 
 <template>
   <div class="layout-root">
-  <!-- <HeaderComponent />-->
+   <HeaderComponent />
   <slot />
   <div class="background-container">
     <div class="background-img" />

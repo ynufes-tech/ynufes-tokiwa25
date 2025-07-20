@@ -5,9 +5,6 @@
   <div class="layout-root">
   <!-- <HeaderComponent />-->
   <slot />
-  <!-- <div class="background-container">
-    <div class="background-img" />
-  </div> -->
   </div>
 </template>
 
@@ -49,17 +46,6 @@ p {
     font-size: 17px;
   }
 }
-// .background-container {
-//   width: 100%;
-//   height: 100vh;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   z-index: -100;
-//   overflow: hidden;
-// }
 .layout-root {
   inset: 0;
   position: relative;
@@ -68,10 +54,6 @@ p {
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   z-index: -100;
 //   @include sm {
 //     background-image: url(@/assets/images/mobile-background-img.png);
@@ -85,10 +67,6 @@ p {
   width: 100%;
   height: 100%;
   background-repeat: repeat;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   z-index: -99;
   mix-blend-mode: multiply;
   opacity: .17;

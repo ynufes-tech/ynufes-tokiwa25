@@ -1,34 +1,39 @@
-FROM node:22-slim AS builder
+FROM node:22-slim AS base
 #nodeのイメージをベースにする
 
-ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
+ENV PNPM_HOME="/pnpm"
+#pnpmのホームディレクトリを設定
+ENV PATH="$PNPM_HOME:$PATH"
+#pnpmの環境変数を設定
+
+RUN corepack enable
+#corepackを有効化
 
 WORKDIR /app
 #作業ディレクトリの指定
 
-COPY ./ ./
+COPY ./app
 #ynu-fes...の下を/appの下にコピー
 
-RUN yarn install --frozen-lockfile
 
-RUN yarn build
+FROM base AS prod-deps
+#依存関係のインストール用のステージ
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+#pnpmを使って依存関係をインストール
 
-FROM node:20-slim AS production
+FROM base AS build
+#ビルド用のステージ
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+#依存関係をインストール
+RUN pnpm run build
+#ビルドコマンドを実行
 
-ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
-
-WORKDIR /app
-
-COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/.nuxt ./.nuxt
-#最小限のファイルをコピー
-
-ENV HOST=0.0.0.0
-
-ENV PORT=8082
-#環境変数の設定
-
-CMD ["node" ,"./.output/server/index.mjs"]
-#--containerを作成するときに実行されるコマンド
-
-EXPOSE 8082
+FROM base
+#実行環境のステージ
+COPY --from=prod-deps /app/node_modules ./node_modules
+#依存関係をコピー
+COPY --from=build /app/dist /app/dist
+#ビルドされたファイルをコピー
+EXPOSE 8000
+CMD [ "pnpm", "start" ]
+#--コンテナを起動するときに実行されるコマンド

@@ -19,14 +19,6 @@
       >
         <img alt="instagram" src="~/assets/images/Ins_logo.svg" />
       </a>
-      <a
-        id="sns-f"
-        href="https://www.facebook.com/ynufes"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <img alt="facebook" src="~/assets/images/FB_logo.webp" />
-      </a>
     </div>
   </div>
 </template>

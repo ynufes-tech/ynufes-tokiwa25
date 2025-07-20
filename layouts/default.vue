@@ -3,8 +3,8 @@
 
 <template>
   <div class="layout-root">
-  <!-- <HeaderComponent />
-  <slot /> -->
+  <!-- <HeaderComponent />-->
+  <slot />
   <div class="background-container">
     <div class="background-img" />
   </div>

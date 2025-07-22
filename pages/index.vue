@@ -14,19 +14,23 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <img src="~/assets/images/top-title.svg" alt="title" class="title"/>
-      <img src="~/assets/images/top-garland.svg" alt="garl" class="top-garland" />
+      <img src="~/assets/images/top-title.svg" alt="title" class="title" />
+      <img
+        src="~/assets/images/top-garland.svg"
+        alt="garl"
+        class="top-garland"
+      />
       <div class="date">
-        <img src="~/assets/images/day1-frame.svg" alt="day1" class="date-img"/>
-        <img src="~/assets/images/day2-frame.svg" alt="day2" class="date-img"/>
-        <img src="~/assets/images/day3-frame.svg" alt="day3" class="date-img"/>
-      </div> 
+        <img src="~/assets/images/day1-frame.svg" alt="day1" class="date-img" />
+        <img src="~/assets/images/day2-frame.svg" alt="day2" class="date-img" />
+        <img src="~/assets/images/day3-frame.svg" alt="day3" class="date-img" />
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-@use '@/assets/scss/_breakpoint.scss' as *;
+@use "@/assets/scss/_breakpoint.scss" as *;
 
 .page-root {
   display: flex;
@@ -59,7 +63,7 @@ useHead({
 .date-img {
   height: auto;
   width: 300px;
-  max-width:25vw;
+  max-width: 25vw;
   @include sm {
     width: 200px;
     max-width: none;

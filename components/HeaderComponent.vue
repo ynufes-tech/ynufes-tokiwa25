@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const showHeader = ref(true)
-const setBg = ref(false)
+const showHeader = ref(true);
+const setBg = ref(false);
 onMounted(
   // 参考:
   // https://qiita.com/koji0705/items/bc260ae010abc8fb93f0
@@ -9,47 +9,47 @@ onMounted(
   // Transitionタグの活用
   // https://ja.vuejs.org/guide/built-ins/transition
   () => {
-    let lastScrollPos = window.scrollY
-    let changePos = window.scrollY
-    const minThreshold = 30
-    const maxThreshold = 30
-    let running = false
+    let lastScrollPos = window.scrollY;
+    let changePos = window.scrollY;
+    const minThreshold = 30;
+    const maxThreshold = 30;
+    let running = false;
 
     function updateOnScroll(scrollPos, lastScrollPos) {
-      setBg.value = scrollPos > 200
+      setBg.value = scrollPos > 200;
       if (scrollPos > 100) {
         if (scrollPos < lastScrollPos) {
           // scroll up
           // 一定以上スクロールしたらヘッダーを表示
           if (changePos - minThreshold > scrollPos) {
-            showHeader.value = true
-            changePos = scrollPos
+            showHeader.value = true;
+            changePos = scrollPos;
           }
         } else {
           // scroll down
           // 一定以上スクロールしたらヘッダーを非表示
           if (changePos + maxThreshold < scrollPos) {
-            showHeader.value = false
-            changePos = scrollPos
+            showHeader.value = false;
+            changePos = scrollPos;
           }
         }
       } else {
-        showHeader.value = true
+        showHeader.value = true;
       }
     }
 
-    window.addEventListener('scroll', function () {
+    window.addEventListener("scroll", function () {
       if (!running) {
         window.requestAnimationFrame(function () {
-          updateOnScroll(window.scrollY, lastScrollPos)
-          lastScrollPos = window.scrollY
-          running = false
-        })
-        running = true
+          updateOnScroll(window.scrollY, lastScrollPos);
+          lastScrollPos = window.scrollY;
+          running = false;
+        });
+        running = true;
       }
-    })
+    });
   }
-)
+);
 </script>
 <template>
   <div class="header-component">
@@ -70,7 +70,7 @@ onMounted(
             </NuxtLink>
           </div>
           <div class="right">
-            <SNS/>
+            <SNS />
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@ onMounted(
   </div>
 </template>
 <style lang="scss" scoped>
-@use '@/assets/scss/_breakpoint.scss' as *;
+@use "@/assets/scss/_breakpoint.scss" as *;
 
 .h-leave-to,
 .h-enter-from {
@@ -90,13 +90,13 @@ onMounted(
   position: fixed;
   width: 100%;
   top: 0;
-  left:0;
+  left: 0;
   z-index: 10000;
 }
 
 .header-frame {
   width: 100%;
-  max-width:1920px;
+  max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 2vw;
@@ -105,7 +105,7 @@ onMounted(
   align-items: center;
 
   .header-content {
-    width:100%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     z-index: 1;
@@ -117,7 +117,7 @@ onMounted(
   // backgroundでtransitionを効かせるために::afterを使用
   // https://qiita.com/hibikikudo/items/6dbc560ea58cf10617fa
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 70%;
@@ -125,7 +125,12 @@ onMounted(
     left: 0;
     background-color: rgba(255, 255, 255, 0.3);
     .gradation {
-      background-image: linear-gradient(90deg, #fce8e8, #fdeeee 30%, #ea2020 80%);
+      background-image: linear-gradient(
+        90deg,
+        #fce8e8,
+        #fdeeee 30%,
+        #ea2020 80%
+      );
     }
     opacity: 0;
     transition: all 0.3s ease-in-out;
@@ -141,7 +146,7 @@ onMounted(
   .header-icon {
     display: flex;
     text-decoration: none;
-      width: 13rem;
+    width: 13rem;
     @include md {
       width: 8rem;
     }

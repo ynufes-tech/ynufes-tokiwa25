@@ -90,23 +90,26 @@ onMounted(
   position: fixed;
   width: 100%;
   top: 0;
+  left:0;
   z-index: 10000;
 }
 
 .header-frame {
   width: 100%;
-  display: flex;
   box-sizing: border-box;
-  padding: 30px 50px;
+  padding: 0 2vw;
+  padding-top: 30px;
   transition: all 0.3s ease-in-out;
   align-items: center;
 
   .header-content {
+    width:100%;
     margin: 0 auto;
     display: flex;
     z-index: 1;
-    width: min(100%, 60rem);
+    //width: min(100%, 60rem);
     justify-content: space-between;
+    align-items: center;
   }
 
   // backgroundでtransitionを効かせるために::afterを使用
@@ -133,11 +136,9 @@ onMounted(
   .right {
     justify-self: end;
   }
-
   .header-icon {
     display: flex;
     text-decoration: none;
-
     > img {
       margin-right: 20px;
     }

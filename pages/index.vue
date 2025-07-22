@@ -14,7 +14,7 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <img src="~/assets/images/top-title.svg" alt="title" class="title" />
+      <img src="~/assets/images/top-title.svg" alt="title" class="title"/>
       <img src="~/assets/images/top-garland.svg" alt="garl" class="top-garland" />
       <div class="date">
         <img src="~/assets/images/day1-frame.svg" alt="day1" class="date-img"/>
@@ -42,7 +42,6 @@ useHead({
   max-width: 100%;
   width: 1000px;
   height: auto;
-  margin-left: 4vw;
   margin-bottom: -16vh;
 }
 
@@ -58,24 +57,23 @@ useHead({
 }
 
 .date-img {
-  width: 100%;
   height: auto;
   width: 300px;
-  margin: 0 3vw;
-
-  @include md {
+  max-width:25vw;
+  @include sm {
     width: 200px;
+    max-width: none;
   }
 }
 
 .date {
   display: flex;
   justify-content: center;
-
+  gap: 0 30px;
   @include md {
     margin: 10vh auto;
   }
-  @media screen and (max-width: 583px) {
+  @include sm {
     flex-direction: column;
     align-items: center;
     margin: 10vh auto;

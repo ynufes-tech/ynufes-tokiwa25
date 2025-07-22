@@ -96,6 +96,8 @@ onMounted(
 
 .header-frame {
   width: 100%;
+  max-width:1920px;
+  margin: 0 auto;
   box-sizing: border-box;
   padding: 0 2vw;
   padding-top: 30px;
@@ -139,19 +141,16 @@ onMounted(
   .header-icon {
     display: flex;
     text-decoration: none;
+      width: 13rem;
+    @include md {
+      width: 8rem;
+    }
+    @include sm {
+      width: 7rem;
+    }
     > img {
       margin-right: 20px;
     }
-  }
-}
-
-.header-img {
-  width: 13rem;
-  @include md {
-    width: 8rem;
-  }
-  @include sm {
-    width: 7rem;
   }
 }
 </style>

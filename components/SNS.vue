@@ -27,7 +27,7 @@
 @use '@/assets/scss/_breakpoint.scss' as *;
 
 .sns-area {
-  width: 320px;
+  //width: 320px;
   margin: 0 auto;
   border-radius: 50%;
   display: flex;
@@ -57,18 +57,18 @@
     }
     #sns-x {
       img {
-        width: 48px;
+        width: 40px;
         @include md {
-          width: 30px;
+          width: 25px;
         }
       }
     }
 
     #sns-ins {
       img {
-        width: 48px;
+        width: 40px;
         @include md {
-          width: 30px;
+          width: 25px;
         }
       }
     }

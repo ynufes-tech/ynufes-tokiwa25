@@ -12,7 +12,7 @@ RUN corepack enable
 WORKDIR /app
 #作業ディレクトリの指定
 
-COPY ./app
+COPY . /app
 #ynu-fes...の下を/appの下にコピー
 
 

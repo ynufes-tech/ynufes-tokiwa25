@@ -28,7 +28,7 @@
 
 .sns-area {
   width: 320px;
-  margin: 5rem auto;
+  margin: 0 auto;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -47,43 +47,32 @@
     align-items: center;
     margin: 5px auto;
     gap: 30px;
-    margin-bottom: 30px;
     img {
       transition: all 0.2s ease-in-out;
       aspect-ratio: 1;
-    }
-    #sns-f img {
-      width: 55px;
+      margin:0 20px;
       @include md {
-        width: 40px;
-      }
+          margin:2px;
+        }
     }
     #sns-x {
-      width: 60px;
-      height: 65px;
-      margin: 2.5px;
-      @include md {
-        width: 50px;
-        height: 55px;
-      }
       img {
-        width: 45px;
-        padding: 10px;
+        width: 48px;
         @include md {
-          width: 35px;
+          width: 30px;
         }
       }
     }
+
     #sns-ins {
-      width: 60px;
       img {
-        width: 50px;
-        padding: 5px;
+        width: 48px;
         @include md {
-          width: 35px;
+          width: 30px;
         }
       }
     }
+
   }
 }
 </style>

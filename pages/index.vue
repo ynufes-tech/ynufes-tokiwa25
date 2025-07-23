@@ -13,20 +13,25 @@ useHead({
 
 <template>
   <div class="page-root">
-    <!-- <SNS /> -->
     <div class="page-container">
       <img src="~/assets/images/top-title.svg" alt="title" class="title" />
-      <img src="~/assets/images/top-garland.svg" alt="garl" class="top-garland" />
+      <img
+        src="~/assets/images/top-garland.svg"
+        alt="garl"
+        class="top-garland"
+      />
       <div class="date">
-        <img src="~/assets/images/day1-frame.svg" alt="day1" class="date-img"/>
-        <img src="~/assets/images/day2-frame.svg" alt="day2" class="date-img"/>
-        <img src="~/assets/images/day3-frame.svg" alt="day3" class="date-img"/>
-      </div> 
+        <img src="~/assets/images/day1-frame.svg" alt="day1" class="date-img" />
+        <img src="~/assets/images/day2-frame.svg" alt="day2" class="date-img" />
+        <img src="~/assets/images/day3-frame.svg" alt="day3" class="date-img" />
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/_breakpoint.scss" as *;
+
 .page-root {
   display: flex;
   flex-direction: column;
@@ -41,8 +46,7 @@ useHead({
   max-width: 100%;
   width: 1000px;
   height: auto;
-  margin-right: 5vw;
-  margin-bottom: -20vh;
+  margin-bottom: -16vh;
 }
 
 .top-garland {
@@ -50,17 +54,33 @@ useHead({
   height: auto;
   max-width: 1900px;
   margin-bottom: -10vh;
+
+  @include md {
+    margin-top: 20vh;
+  }
 }
 
 .date-img {
-  width: 100%;
   height: auto;
   width: 300px;
-  margin: 0 3vw;
+  max-width: 25vw;
+  @include sm {
+    width: 200px;
+    max-width: none;
+  }
 }
 
 .date {
   display: flex;
   justify-content: center;
+  gap: 0 30px;
+  @include md {
+    margin: 10vh auto;
+  }
+  @include sm {
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh auto;
+  }
 }
 </style>

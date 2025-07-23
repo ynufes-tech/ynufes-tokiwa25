@@ -25,6 +25,9 @@ useHead({
         <img src="~/assets/images/day2-frame.svg" alt="day2" class="date-img" />
         <img src="~/assets/images/day3-frame.svg" alt="day3" class="date-img" />
       </div>
+      <div class="preparing">
+        <p>準備中</p>
+      </div>
     </div>
   </div>
 </template>
@@ -36,6 +39,7 @@ useHead({
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20vh;
 }
 
 .page-container {
@@ -83,4 +87,11 @@ useHead({
     margin: 10vh auto;
   }
 }
+
+.preparing {
+  font-size: 40px;
+  color: #333;
+  margin-top: 20vh;
+}
+
 </style>

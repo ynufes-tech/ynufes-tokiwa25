@@ -99,11 +99,14 @@ onMounted(
   max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 2vw;
+  padding: 0 75px;
   padding-top: 30px;
   transition: all 0.3s ease-in-out;
   align-items: center;
-
+  @include md{
+    padding:0 30px;
+    padding-top: 30px;
+  }
   .header-content {
     width: 100%;
     margin: 0 auto;
@@ -123,6 +126,7 @@ onMounted(
     height: 70%;
     top: 0;
     left: 0;
+    pointer-events: none;
     background-color: rgba(255, 255, 255, 0.3);
     .gradation {
       background-image: linear-gradient(
@@ -143,7 +147,7 @@ onMounted(
   .right {
     justify-self: end;
   }
-  .header-icon {
+  .header-img {
     display: flex;
     text-decoration: none;
     width: 13rem;

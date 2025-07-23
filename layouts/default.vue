@@ -27,6 +27,7 @@ body {
   color: #000000;
   position: relative;
   font-size: 24px;
+  padding-bottom: 8rem;
   @include lg {
     font-size: 22px;
   }

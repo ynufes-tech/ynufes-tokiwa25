@@ -22,7 +22,7 @@ body {
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
 .layout-root {
-  font-family: "Kaisei Decol", sans-serif;
+  font-family: 'Kaisei Decol', sans-serif;
   color: #000000;
   position: relative;
   font-size: 24px;

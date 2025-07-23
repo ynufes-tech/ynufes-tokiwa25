@@ -4,5 +4,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
     '@/assets/css/reset.css'
-  ]
+  ],
+  modules: [
+    '@nuxtjs/google-fonts'
+  ],
+  googleFonts: {
+    families: {
+      'Kaisei Decol': true    
+    },
+    preconnect: true,
+    display: 'swap'
+  }
 })

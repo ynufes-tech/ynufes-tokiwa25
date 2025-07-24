@@ -1,39 +1,47 @@
 FROM node:22-slim AS base
-#nodeのイメージをベースにする
+# ベースイメージに Node.js 22-slim を使用
 
 ENV PNPM_HOME="/pnpm"
-#pnpmのホームディレクトリを設定
 ENV PATH="$PNPM_HOME:$PATH"
-#pnpmの環境変数を設定
+# pnpm のパスを設定
 
 RUN corepack enable
-#corepackを有効化
+# corepack を有効化して pnpm を利用可能に
 
 WORKDIR /app
-#作業ディレクトリの指定
-
-COPY . /app
-#ynu-fes...の下を/appの下にコピー
-
+# 作業ディレクトリを /app に設定
 
 FROM base AS prod-deps
-#依存関係のインストール用のステージ
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
-#pnpmを使って依存関係をインストール
+# 本番環境用依存パッケージをインストール
+
+COPY package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --prod --frozen-lockfile
+# キャッシュを活用して本番依存だけを高速インストール
 
 FROM base AS build
-#ビルド用のステージ
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-#依存関係をインストール
-RUN pnpm run build
-#ビルドコマンドを実行
+# ビルド用ステージ
 
-FROM base
-#実行環境のステージ
+COPY package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile
+# キャッシュを活用して全依存をインストール
+
+COPY . .
+RUN pnpm run build
+# ソースコードをビルド
+
+FROM node:22-slim AS runner
+# 実行環境ステージ
+
 COPY --from=prod-deps /app/node_modules ./node_modules
-#依存関係をコピー
-COPY --from=build /app/dist /app/dist
-#ビルドされたファイルをコピー
+# 本番依存をコピー
+
+COPY --from=build /app/.output /app/
+# ビルド成果物をコピー
+
 EXPOSE 8000
-CMD [ "pnpm", "start" ]
-#--コンテナを起動するときに実行されるコマンド
+# アプリケーションのリスニングポート
+
+CMD ["node", "/app/server/index.mjs"]
+# サーバーを起動

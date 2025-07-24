@@ -27,6 +27,9 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
     pnpm install --frozen-lockfile
 # キャッシュを活用して全依存をインストール
 
+ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
+# 環境変数を設定
+
 COPY . .
 RUN pnpm run build
 # ソースコードをビルド
@@ -45,6 +48,3 @@ EXPOSE 8000
 
 CMD ["node", "/app/server/index.mjs"]
 # サーバーを起動
-
-ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
-# 環境変数を設定

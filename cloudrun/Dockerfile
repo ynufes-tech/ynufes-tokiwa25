@@ -45,3 +45,6 @@ EXPOSE 8000
 
 CMD ["node", "/app/server/index.mjs"]
 # サーバーを起動
+
+ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
+# 環境変数を設定

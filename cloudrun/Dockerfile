@@ -1,34 +1,47 @@
-FROM node:22-slim AS builder
-#nodeのイメージをベースにする
+FROM node:22-slim AS base
+# ベースイメージに Node.js 22-slim を使用
 
-ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+# pnpm のパスを設定
 
-WORKDIR /app
-#作業ディレクトリの指定
-
-COPY ./ ./
-#ynu-fes...の下を/appの下にコピー
-
-RUN yarn install --frozen-lockfile
-
-RUN yarn build
-
-FROM node:20-slim AS production
-
-ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
+RUN corepack enable
+# corepack を有効化して pnpm を利用可能に
 
 WORKDIR /app
+# 作業ディレクトリを /app に設定
 
-COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/.nuxt ./.nuxt
-#最小限のファイルをコピー
+FROM base AS prod-deps
+# 本番環境用依存パッケージをインストール
 
-ENV HOST=0.0.0.0
+COPY package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --prod --frozen-lockfile
+# キャッシュを活用して本番依存だけを高速インストール
 
-ENV PORT=8082
-#環境変数の設定
+FROM base AS build
+# ビルド用ステージ
 
-CMD ["node" ,"./.output/server/index.mjs"]
-#--containerを作成するときに実行されるコマンド
+COPY package.json pnpm-lock.yaml ./
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile
+# キャッシュを活用して全依存をインストール
 
-EXPOSE 8082
+COPY . .
+RUN pnpm run build
+# ソースコードをビルド
+
+FROM node:22-slim AS runner
+# 実行環境ステージ
+
+COPY --from=prod-deps /app/node_modules ./node_modules
+# 本番依存をコピー
+
+COPY --from=build /app/.output /app/
+# ビルド成果物をコピー
+
+EXPOSE 8000
+# アプリケーションのリスニングポート
+
+CMD ["node", "/app/server/index.mjs"]
+# サーバーを起動

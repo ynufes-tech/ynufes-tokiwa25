@@ -44,7 +44,9 @@ jobs:
           tags: asia-northeast1-docker.pkg.dev/ynufes-hp-cloudrun/release/tokiwa25:latest
           context: .
           file: ./cloudrun/Dockerfile
-
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          
       - name: Download Cloud Run Service YAML
         run: |
           gcloud run services describe hp-main --format yaml --region asia-northeast1 > ./cloudrun/service-hp-main.yaml

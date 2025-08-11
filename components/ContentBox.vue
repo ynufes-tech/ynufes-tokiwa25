@@ -8,16 +8,18 @@
 
 <style lang="scss" scoped>
   .component-root{
+    font-family: "Zen Old Mincho", sans-serif;
+    z-index: -1;
     position: relative;
     margin:0 auto;
     width: 63.8%;
-    min-height: 600px;
     background-color: #fbefde80;
     border-radius: 50px;
     border:1px solid #762626;
   }
 
   .component-root:before{
+    z-index: -1;
     content:"";
     position: absolute;
     inset: 0;
@@ -29,6 +31,7 @@
     border-radius: 50px;
   }
   .component-root:after{
+    z-index: -1;
     content:"";
     position: absolute;
     inset: 0;

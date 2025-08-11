@@ -31,6 +31,7 @@ const props = defineProps({
     h1{
     font-size:64px;
     font-family:'Kaisei Decol',serif;
+    color:white;
     @include sm{
       font-size:35px;
     }

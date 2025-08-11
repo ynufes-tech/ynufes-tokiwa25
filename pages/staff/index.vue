@@ -28,6 +28,7 @@ import ContentBox from "~/components/ContentBox.vue";
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/_breakpoint.scss" as *;
   .explanation{
     margin:120px 8%;
     text-align: center;
@@ -35,12 +36,18 @@ import ContentBox from "~/components/ContentBox.vue";
     p{
       margin:70px 0;
     }
+    @include md{
+      margin:100px 4%;
+    }
   }
 
   .content,.message{
     margin:50px 8%;
     p{
       line-height: 2rem;
+    }
+    @include md{
+      margin:50px 4%;
     }
   }
 

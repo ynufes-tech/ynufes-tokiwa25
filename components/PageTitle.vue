@@ -20,14 +20,19 @@ const props = defineProps({
 
   .component-root{
     margin:0;
+    margin-top:100px;
+    margin-bottom:30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include sm{
+      margin-top:75px;
+    }
     h1{
     font-size:64px;
     font-family:'Kaisei Decol',serif;
     @include sm{
-      font-size:35px;//スマホ時サイズ適当です
+      font-size:35px;
     }
     }
     #rightside{

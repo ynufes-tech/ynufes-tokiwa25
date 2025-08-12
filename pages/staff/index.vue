@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
+useHead({
+  title: "Staff | 25常盤祭公式HP~紅陽~",
+  meta: [{ name: "description", content: "お問い合わせはこちら" }],
+});
 </script>
 
 <template>
@@ -29,29 +33,30 @@ import ContentBox from "~/components/ContentBox.vue";
 
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
-  .explanation{
-    margin:120px 8%;
-    text-align: center;
-    font-size:1.1em;
-    p{
-      margin:70px 0;
-    }
-    @include md{
-      margin:100px 4%;
-    }
+.explanation {
+  margin: 120px 8%;
+  text-align: center;
+  font-size: 1.1em;
+  p {
+    margin: 70px 0;
   }
+  @include md {
+    margin: 100px 4%;
+  }
+}
 
-  .content,.message{
-    margin:50px 8%;
-    p{
-      line-height: 2rem;
-    }
-    @include md{
-      margin:50px 4%;
-    }
+.content,
+.message {
+  margin: 50px 8%;
+  p {
+    line-height: 2rem;
   }
+  @include md {
+    margin: 50px 4%;
+  }
+}
 
-  .message{
-    margin-bottom:70px;
-  }
+.message {
+  margin-bottom: 70px;
+}
 </style>

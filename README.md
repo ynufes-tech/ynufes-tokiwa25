@@ -1,5 +1,15 @@
-# ↓現在のmainのプレビュー
+# ↓ 現在の main のプレビュー
+
 [dev](https://dev.ynu-fes.yokohama/)
+
+# breakpoint 早見表
+
+|     |          |
+| --- | -------- |
+| sm  | ~480px   |
+| md  | ~768px   |
+| lg  | ~1,000px |
+| xl  | ~1,200px |
 
 # Nuxt Minimal Starter
 

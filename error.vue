@@ -10,8 +10,9 @@ import LinkButton from "~/components/LinkButtonComponent.vue";
       <h1>404</h1>
       <p>お探しのページは見つかりませんでした。</p>
       <LinkButton text="トップページへ" link="/" id="top-link" />
-      <p class="error">ERROR<img src="~/assets/images/404.svg" class="NF" alt="" /></p>
-      
+      <p class="error">
+        ERROR<img src="~/assets/images/404.svg" class="NF" alt="" />
+      </p>
     </div>
     <div class="background-container">
       <div class="background-img" />
@@ -26,9 +27,8 @@ import LinkButton from "~/components/LinkButtonComponent.vue";
 
 .page-root {
   margin-top: 125px;
-  
+
   h1 {
-    font-family: "Kaisei Decol", sans-serif;
     margin-left: 110px;
     color: white;
     font-size: 140px;
@@ -53,22 +53,24 @@ import LinkButton from "~/components/LinkButtonComponent.vue";
     font-size: 8vw;
     position: relative;
   }
-  .NF{
+  .NF {
     position: absolute;
-    inset:0;
+    inset: 0;
     display: block;
-    top:-200px;
-    width:20vw;
+    top: -200px;
+    width: 20vw;
   }
 
-  @include md{
-    h1,p,#top-link{
-      margin-left:5vw;
+  @include md {
+    h1,
+    p,
+    #top-link {
+      margin-left: 5vw;
     }
-    h1{
+    h1 {
       font-size: 100px;
     }
-    .NF{
+    .NF {
       display: none;
     }
   }
@@ -88,18 +90,6 @@ body {
   position: relative;
   font-size: 24px;
   padding-bottom: 8rem;
-  @include lg {
-    font-size: 22px;
-  }
-  @include md {
-    font-size: 20px;
-  }
-  @include sm {
-    font-size: 17px;
-  }
-}
-p {
-  font-size: 24px;
   @include lg {
     font-size: 22px;
   }

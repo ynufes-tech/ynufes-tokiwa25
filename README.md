@@ -1,3 +1,6 @@
+# ↓現在のmainのプレビュー
+[dev](https://dev.ynu-fes.yokohama/)
+
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

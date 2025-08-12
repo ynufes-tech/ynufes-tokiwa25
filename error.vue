@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import HeaderComponent from "~/components/HeaderComponent.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
+useHead({
+  title: "ERROR | 25常盤祭公式HP~紅陽~",
+  meta: [
+    {
+      name: "description",
+      content:
+        "お探しのページは見つかりませんでした。",
+    },
+  ],
+});
 </script>
 
 <template>

@@ -18,7 +18,7 @@ useHead({
       <div class="content">
         <p>
           メールでのお問い合わせ<br />
-          メールアドレス：*********<br />
+          メールアドレス：25tokiwa.soumu@gmail.com<br />
         </p>
       </div>
       <div class="message">

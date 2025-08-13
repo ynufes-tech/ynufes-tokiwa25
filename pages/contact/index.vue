@@ -2,7 +2,7 @@
 import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 useHead({
-  title: "Staff | 25常盤祭公式HP~紅陽~",
+  title: "Contact | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "お問い合わせはこちら" }],
 });
 </script>

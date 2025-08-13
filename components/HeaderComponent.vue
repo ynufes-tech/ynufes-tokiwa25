@@ -103,8 +103,8 @@ onMounted(
   padding-top: 30px;
   transition: all 0.3s ease-in-out;
   align-items: center;
-  @include md{
-    padding:0 30px;
+  @include md {
+    padding: 0 30px;
     padding-top: 30px;
   }
   .header-content {

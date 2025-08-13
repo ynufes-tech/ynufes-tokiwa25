@@ -2,45 +2,51 @@
 
 <template>
   <div class="component-root">
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <style lang="scss" scoped>
-  .component-root{
-    font-family: "Zen Old Mincho", sans-serif;
-    z-index: 0;
-    position: relative;
-    margin:0 auto;
-    width: 71.2%;
-    background-color: #fbefde80;
-    border-radius: 50px;
-    border:1px solid #762626;
-  }
+@use "@/assets/scss/_breakpoint.scss" as *;
+.component-root {
+  font-family: "Zen Old Mincho", sans-serif;
+  z-index: 0;
+  position: relative;
+  margin: 0 auto;
+  width: 71.2%;
+  background-color: #fbefde80;
+  border-radius: 50px;
+  border: 1px solid #762626;
+}
 
-  .component-root:before{
-    z-index: -1;
-    content:"";
-    position: absolute;
-    inset: 0;
-    left:-.1%;
-    top:-.1%;
-    width:100.2%;
-    height: 100.2%;
-    border:1px solid #762626;
-    border-radius: 50px;
+@include sm {
+  .component-root {
+    width: 80%;
   }
-  .component-root:after{
-    z-index: -1;
-    content:"";
-    position: absolute;
-    inset: 0;
-    left:-.4%;
-    top:-.8%;
-    width:100.8%;
-    height: 100.8%;
-    border:1px solid #762626;
-    border-radius: 50px;
-  }
-  
+}
+
+.component-root:before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -0.1%;
+  top: -0.1%;
+  width: 100.2%;
+  height: 100.2%;
+  border: 1px solid #762626;
+  border-radius: 50px;
+}
+.component-root:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -0.4%;
+  top: -0.8%;
+  width: 100.8%;
+  height: 100.8%;
+  border: 1px solid #762626;
+  border-radius: 50px;
+}
 </style>

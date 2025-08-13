@@ -9,6 +9,7 @@ useHead({
     },
   ],
 });
+import PageTitle from '~/components/PageTitle.vue';
 </script>
 
 <template>

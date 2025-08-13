@@ -9,7 +9,7 @@
 <style lang="scss" scoped>
   .component-root{
     font-family: "Zen Old Mincho", sans-serif;
-    z-index: -1;
+    z-index: 0;
     position: relative;
     margin:0 auto;
     width: 71.2%;

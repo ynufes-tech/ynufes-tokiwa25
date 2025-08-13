@@ -12,7 +12,7 @@
     z-index: -1;
     position: relative;
     margin:0 auto;
-    width: 63.8%;
+    width: 71.2%;
     background-color: #fbefde80;
     border-radius: 50px;
     border:1px solid #762626;

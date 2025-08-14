@@ -25,7 +25,16 @@ useHead({
         referrerpolicy="no-referrer-when-downgrade"
         class="google-map"
       ></iframe>
-      <p>横浜市営地下鉄ブルーライン 「三ッ沢上町駅」より<br />徒歩約16分</p>
+      <p>
+        横浜市営地下鉄ブルーライン 「三ッ沢上町駅」より<br />徒歩約16分<br />↓クリックで別タブで開きます。
+      </p>
+      <a
+        href="_nuxt/assets/images/maps/seimon.svg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="~/assets/images/maps/seimon.svg" alt="正門までの地図" />
+      </a>
       <LinkButton
         class="LinkButton"
         text="詳しくはこちら"
@@ -69,7 +78,11 @@ useHead({
   }
   .LinkButton {
     max-width: 90%;
-    margin-bottom:30px;
+    margin: 30px 0;
+  }
+  img {
+    width: 1000px;
+    max-width: 100%;
   }
 }
 </style>

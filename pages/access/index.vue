@@ -33,7 +33,11 @@ useHead({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="~/assets/images/maps/seimon.svg" alt="正門までの地図" />
+        <img
+          src="~/assets/images/maps/seimon.svg"
+          alt="正門までの地図"
+          class="seimon"
+        />
       </a>
       <LinkButton
         class="LinkButton"
@@ -46,7 +50,21 @@ useHead({
         text="詳しくはこちら"
         link="https://www.ynu.ac.jp/access/train_south.html"
       />
-      <p>相鉄新横浜線 「羽沢横浜国大駅」より<br />徒歩約15分</p>
+      <p>
+        相鉄新横浜線 「羽沢横浜国大駅」より<br />徒歩約15分
+        <br />↓クリックで別タブで開きます。
+      </p>
+      <a
+        href="_nuxt/assets/images/maps/kitamon.svg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="~/assets/images/maps/kitamon.svg"
+          alt="北門・西門までの地図"
+          class="kitamon"
+        />
+      </a>
       <LinkButton
         class="LinkButton"
         text="詳しくはこちら"
@@ -82,6 +100,10 @@ useHead({
   }
   img {
     width: 1000px;
+    max-width: 100%;
+  }
+  .kitamon {
+    width: 800px;
     max-width: 100%;
   }
 }

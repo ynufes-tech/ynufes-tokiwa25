@@ -36,6 +36,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/_breakpoint.scss" as *;
 .component-root {
   margin: 0;
   height: 50px;
@@ -66,6 +67,9 @@ const props = defineProps({
     p {
       margin-left: 20px;
       font-size: 23px;
+      @include md{
+        font-size: 15px;
+      }
       color: #f97d47;
       font-family: "Zen Old Mincho", sans-serif;
       transition: 0.3s;

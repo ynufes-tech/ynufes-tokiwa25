@@ -44,7 +44,20 @@ useHead({
         text="詳しくはこちら"
         link="https://www.ynu.ac.jp/access/train_front.html"
       />
-      <p>相鉄本線 「和田町駅」より<br />徒歩約20分</p>
+      <p>
+        相鉄本線 「和田町駅」より<br />徒歩約20分<br />↓クリックで別タブで開きます。
+      </p>
+      <a
+        href="_nuxt/assets/images/maps/minamimon.svg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="~/assets/images/maps/minamimon.svg"
+          alt="南通用門までの地図"
+          class="kitamon"
+        />
+      </a>
       <LinkButton
         class="LinkButton"
         text="詳しくはこちら"
@@ -77,6 +90,7 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/_breakpoint.scss" as *;
 #contentbox {
   display: flex;
   flex-direction: column;
@@ -88,6 +102,10 @@ useHead({
     margin: 50px 0;
     margin-top: 150px;
     line-height: 1.3em;
+    font-size: 1.6rem;
+    @include md {
+      font-size: 1rem;
+    }
   }
   .google-map {
     margin: 0;

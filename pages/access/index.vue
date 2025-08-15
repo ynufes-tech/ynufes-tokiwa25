@@ -29,12 +29,12 @@ useHead({
         横浜市営地下鉄ブルーライン 「三ッ沢上町駅」より<br />徒歩約16分<br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="_nuxt/assets/images/maps/seimon.svg"
+        href="_nuxt/public/images/maps/seimon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
         <img
-          src="~/assets/images/maps/seimon.svg"
+          src="~/public/images/maps/seimon.svg"
           alt="正門までの地図"
           class="seimon"
         />
@@ -48,12 +48,12 @@ useHead({
         相鉄本線 「和田町駅」より<br />徒歩約20分<br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="_nuxt/assets/images/maps/minamimon.svg"
+        href="_nuxt/public/images/maps/minamimon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
         <img
-          src="~/assets/images/maps/minamimon.svg"
+          src="~/public/images/maps/minamimon.svg"
           alt="南通用門までの地図"
           class="kitamon"
         />
@@ -68,12 +68,12 @@ useHead({
         <br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="_nuxt/assets/images/maps/kitamon.svg"
+        href="_nuxt/public/images/maps/kitamon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
         <img
-          src="~/assets/images/maps/kitamon.svg"
+          src="~/public/images/maps/kitamon.svg"
           alt="北門・西門までの地図"
           class="kitamon"
         />

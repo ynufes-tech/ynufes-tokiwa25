@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
+import LinkButtonComponent from "~/components/LinkButtonComponent.vue";
 useHead({
   title: "About | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "常盤祭について" }],
@@ -67,11 +68,16 @@ useHead({
     <div>
       <ContentBox>
         <div class="place">
-          <div>
+          <div class="campus">
            <p class="university">横浜国立大学</p>
            <p class="university">常盤台キャンパス</p>
           </div>
-          <a href="https://maps.app.goo.gl/MB3xehHJCK8JBx3fA">Googleマップへ</a>
+          <div class="button">
+          <LinkButtonComponent
+          text="マップ"
+          link="https://maps.app.goo.gl/MB3xehHJCK8JBx3fA"
+          />
+          </div>
         </div>
       </ContentBox>
     </div>
@@ -100,8 +106,8 @@ a{
 }
 .image{
   text-align: center;
-  @include md{
-    text-align: center;
+  img{
+    max-width: 100%;
   }
 }
 
@@ -129,6 +135,9 @@ table {
   position: relative;
   left: 10%;
   text-align: center;
+  @include lg{
+    left: 5%;
+  }
   @include md {
     margin: 30px 4%;
     left: 1%;
@@ -159,7 +168,7 @@ td {
 .place{
   margin: 1.5em 5%;
   display: flex;
-  div{
+  .campus{
     display: flex;
     @include md{
       display: block;
@@ -176,6 +185,7 @@ td {
 .university{
   position: relative;
   left: 15%;
+  top: 20%;
   margin:0 0.8em;
   @include lg{
     left: 0.5em;
@@ -183,18 +193,28 @@ td {
   }
   @include md{
     left:0.5em ;
-    margin: 0 0.3em;
+    margin: 0;
     display: block;
   }
 }
-a{
+.button{
   position: relative;
-  left: 15%;
+  display: flex;
+  top: -5px;
+  left: 10vw;
+  width: 17vw;
+  height: auto;
   @include lg{
+    width: 20vw;
+    height: auto;
     left: 10%;
+    top: -5px;
   }
   @include md{
-    margin-top: 0.5em;
+    width: 26vw;
+    height: auto;
+    left: 15px;
+    top: -5px;
   }
 }
 </style>

@@ -6,8 +6,7 @@ useHead({
   meta: [
     {
       name: "description",
-      content:
-        "お探しのページは見つかりませんでした。",
+      content: "お探しのページは見つかりませんでした。",
     },
   ],
 });
@@ -67,7 +66,11 @@ useHead({
     inset: 0;
     display: block;
     top: -400px;
-    width: 20vw;
+    width: 280px;
+    @include lg {
+      top: -250px;
+      width: 160px;
+    }
   }
 
   @include md {

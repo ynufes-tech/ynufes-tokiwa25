@@ -12,26 +12,19 @@ const props = defineProps({
 </script>
 
 <template>
-
   <div class="component-root">
-    <div class="LinkButtonComponent">
-      <a :href="link" class="link">
-        <p class="text">{{ text }}</p>
-          <img
-            src="@/assets/images/linkbutton_arrow.svg"
-          />
-      </a>
-    </div>
-
     <div class="LinkButtonComponent-hover">
       <a :href="link" class="link">
         <p class="text">{{ text }}</p>
-          <img
-            src="@/assets/images/linkbutton_arrow_hover.svg"
-          />
+        <img src="@/assets/images/linkbutton_arrow_hover.svg" />
       </a>
     </div>
-
+    <div class="LinkButtonComponent">
+      <a :href="link" class="link">
+        <p class="text">{{ text }}</p>
+        <img src="@/assets/images/linkbutton_arrow.svg" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -56,7 +49,7 @@ const props = defineProps({
     linear-gradient(to right, #fff050, #ffd633) border-box;
   background-clip: padding-box, border-box;
   filter: drop-shadow(0px 2px 3px rgba(255, 255, 255, 0.5));
-  transition: .25s;
+  transition: 0.25s;
   .link {
     display: flex;
     text-decoration: none;
@@ -67,37 +60,37 @@ const props = defineProps({
     p {
       margin-left: 20px;
       font-size: 23px;
-      @include md{
+      @include md {
         font-size: 15px;
       }
       color: #f97d47;
       font-family: "Zen Old Mincho", sans-serif;
       transition: 0.3s;
     }
-      img {
-        width: 20px;
+    img {
+      width: 20px;
       margin-right: 10px;
       filter: drop-shadow(4px 4px 4px #f97d47);
       position: relative;
       transition: 0.3s;
-        transition: 0.3s;
-      }
+      transition: 0.3s;
+    }
   }
 }
 
 .LinkButtonComponent-hover {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   inset: 0;
   height: 100%;
   width: 100%;
   border: 4px solid transparent;
   border-radius: 999999px;
-  background: linear-gradient(to right,#FF7621,#E87C08,#E96759) padding-box,
+  background: linear-gradient(to right, #ff7621, #e87c08, #e96759) padding-box,
     //枠つけるため
     linear-gradient(to right, #fff050, #ffd633) border-box;
   background-clip: padding-box, border-box;
-  transition: .25s;
+  transition: 0.25s;
   .link {
     display: flex;
     text-decoration: none;
@@ -108,17 +101,17 @@ const props = defineProps({
     p {
       margin-left: 20px;
       font-size: 23px;
-      @include md{
+      @include md {
         font-size: 15px;
       }
       color: white;
       font-family: "Zen Old Mincho", sans-serif;
     }
-      img {
-        filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
-        width: 20px;
-        margin-right: 10px;
-      }
+    img {
+      filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+      width: 20px;
+      margin-right: 10px;
+    }
   }
 }
 

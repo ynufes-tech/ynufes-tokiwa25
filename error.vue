@@ -16,7 +16,7 @@ useHead({
   <div class="layout-root">
     <HeaderComponent />
     <div class="page-root">
-      <h1>404</h1>
+      <h1>404横浜</h1>
       <p>お探しのページは見つかりませんでした。</p>
       <LinkButton text="トップページへ" link="/" id="top-link" />
       <p class="error">
@@ -31,8 +31,6 @@ useHead({
 
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
-@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap");
 
 .page-root {
   margin-top: 125px;

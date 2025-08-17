@@ -26,7 +26,8 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      'Kaisei Decol': true    
+      'Kaisei Decol': true,
+      'Zen Old Mincho': true
     },
     preconnect: true,
     display: 'swap'

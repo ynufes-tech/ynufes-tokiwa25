@@ -56,7 +56,6 @@ useHead({
   }
   .error {
     margin-top: 20px;
-    margin-bottom: 300px;
     margin-left: 65vw;
     font-family: "Zen Old Mincho", sans-serif;
     color: white;
@@ -67,7 +66,7 @@ useHead({
     position: absolute;
     inset: 0;
     display: block;
-    top: -200px;
+    top: -400px;
     width: 20vw;
   }
 

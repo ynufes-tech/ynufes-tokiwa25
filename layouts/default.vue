@@ -39,18 +39,6 @@ body {
     font-size: 17px;
   }
 }
-p {
-  font-size: 24px;
-  @include lg {
-    font-size: 22px;
-  }
-  @include md {
-    font-size: 20px;
-  }
-  @include sm {
-    font-size: 17px;
-  }
-}
 .background-img {
   inset: 0;
   position: absolute;
@@ -67,9 +55,6 @@ p {
   height: 100%;
   min-height: 100vh;
   z-index: -100;
-  //   @include sm {
-  //     background-image: url(@/assets/images/mobile-background-img.png);
-  //   }
 }
 .background-img::before {
   inset: 0;

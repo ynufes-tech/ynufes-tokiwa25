@@ -21,6 +21,8 @@ body {
 </style>
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap');
 .layout-root {
   font-family: 'Kaisei Decol', sans-serif;
   color: #000000;

@@ -108,6 +108,9 @@ const props = defineProps({
     p {
       margin-left: 20px;
       font-size: 23px;
+      @include md{
+        font-size: 15px;
+      }
       color: white;
       font-family: "Zen Old Mincho", sans-serif;
     }

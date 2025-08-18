@@ -58,8 +58,8 @@ onMounted(() => {
       ctx.translate(this.x, this.y)
       ctx.rotate((this.rotation * Math.PI) / 180)
 
-      const blur = (1 - this.z) * 4
-      ctx.filter = `blur(${blur.toFixed(2)}px)`
+      //  const blur = (1 - this.z) * 4
+      //  ctx.filter = `blur(${blur.toFixed(2)}px)`
 
       const size = this.size
       ctx.drawImage(leafImage, -size / 2, -size / 2, size, size)
@@ -169,8 +169,6 @@ body {
   z-index: -1;
   height: 100%;
   width: 100%;
-  @include md{
-    filter: blur(2px);
-  }
+  filter: blur(2px);
 }
 </style>

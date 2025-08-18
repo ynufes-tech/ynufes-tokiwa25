@@ -84,7 +84,7 @@ useHead({
         link="https://www.ynu.ac.jp/access/train_hazawa.html"
       />
       <p>横浜駅より<br />バス約20分</p>
-      <LinkButton class="LinkButton" text="詳しくはこちら" link="" />
+      <LinkButton class="LinkButton" text="詳しくはこちら" link="https://www.ynu.ac.jp/access/bus.html" />
     </ContentBox>
   </div>
 </template>

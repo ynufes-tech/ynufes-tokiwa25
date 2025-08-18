@@ -9,6 +9,7 @@ useHead({
     },
   ],
 });
+import CountdownTimer from '~/components/CountdownTimer.vue';
 import PageTitle from '~/components/PageTitle.vue';
 </script>
 
@@ -26,13 +27,21 @@ import PageTitle from '~/components/PageTitle.vue';
         <img src="~/assets/images/day2-frame.svg" alt="day2" class="date-img" />
         <img src="~/assets/images/day3-frame.svg" alt="day3" class="date-img" />
       </div>
-      <div class="preparing">
-        <p>準備中</p>
+      <div class="timer">
+        <img src="~/assets/images/timer-frame-lt.svg " class="timer-frame-lt" alt="countdownframe" />
+        <CountdownTimer
+        title="常盤祭開幕まであと…"
+        targetDate="2025-10-31T13:00:00"
+        />
+        <img src="~/assets/images/timer-frame-rt.svg " class="timer-frame-rt" alt="countdownframe" />
       </div>
+      <!-- <div class="preparing">
+        <p>準備中</p>
+      </div> -->
     </div>
   </div>
 </template>
-
+  
 <style scoped lang="scss">
 @use "@/assets/scss/_breakpoint.scss" as *;
 
@@ -89,10 +98,54 @@ import PageTitle from '~/components/PageTitle.vue';
   }
 }
 
-.preparing {
-  font-size: 40px;
-  color: #333;
-  margin-top: 20vh;
+.timer {
+  position: relative;
+  width: 100%;
+  margin-top: 10vh;
 }
+
+.timer-frame-lt {
+ position: absolute;
+ left: 0;
+ top: 35%;
+ transform: translateY(-50%);
+ width: 30%;
+ height: auto;
+
+ @include md {
+   top: 30%;
+   width: 40%;
+ }
+
+ @include sm {
+   top: 20%;
+   width: 50%;
+ }
+}
+
+.timer-frame-rt {
+ position: absolute;
+ top: 65%;
+ right: 0;
+ transform: translateY(-50%);
+ width: 30%;
+ height: auto;
+
+ @include md {
+   top: 70%;
+   width: 40%;
+ }
+
+ @include sm {
+   top: 80%;
+   width: 50%;
+ }
+}
+
+// .preparing {
+//   font-size: 40px;
+//   color: #333;
+//   margin-top: 20vh;
+// }
 
 </style>

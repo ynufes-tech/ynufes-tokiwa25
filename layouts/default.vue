@@ -32,7 +32,7 @@ onMounted(() => {
 
     reset() {
       this.x = Math.random() * canvas.width
-      this.y = Math.random() * canvas.height /3
+      this.y = Math.random() * canvas.height
       this.z = Math.random()
       this.size = 40 + this.z * 30
       this.speedY = 0.5 + this.z * 1.0
@@ -183,5 +183,8 @@ p {
   z-index: -1;
   height: 100%;
   width: 100%;
+  @include md{
+    filter: blur(2px);
+  }
 }
 </style>

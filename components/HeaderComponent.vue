@@ -70,7 +70,14 @@ onMounted(
             </NuxtLink>
           </div>
           <div class="right">
-            <SNS />
+            <NuxtLink class="header-icon" to="/">
+              <img
+                  src="~/assets/images/top-right.svg"
+                  class="header-img"
+                  alt="ロゴ"
+                  style="width: 500px" height="auto;"
+              />
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -116,6 +123,8 @@ onMounted(
     justify-content: space-between;
     align-items: center;
   }
+
+
 
   // backgroundでtransitionを効かせるために::afterを使用
   // https://qiita.com/hibikikudo/items/6dbc560ea58cf10617fa

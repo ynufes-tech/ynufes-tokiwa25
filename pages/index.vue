@@ -79,7 +79,7 @@ import PageTitle from '~/components/PageTitle.vue';
   width: 300px;
   max-width: 25vw;
   @include sm {
-    width: 200px;
+    width: 100px;
     max-width: none;
   }
 }
@@ -87,14 +87,16 @@ import PageTitle from '~/components/PageTitle.vue';
 .date {
   display: flex;
   justify-content: center;
-  gap: 0 30px;
+  gap: 0 45px;
+  margin-top: 4vh;
+  margin-left: 3vw;
   @include md {
-    margin: 10vh auto;
+    margin: 6vh auto;
+    gap: 0 20px;
   }
   @include sm {
-    flex-direction: column;
-    align-items: center;
-    margin: 10vh auto;
+    margin: 8vh auto;
+    gap: 0;
   }
 }
 

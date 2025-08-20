@@ -1,5 +1,11 @@
 <script lang="ts" setup>
-const showHeader = ref(true);
+import { ref } from 'vue'
+
+const isDropdownOpen = ref(false)
+
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value
+}
 </script>
 
 <template>
@@ -17,9 +23,15 @@ const showHeader = ref(true);
         </div>
         <div class="right">
           <span class="divider"></span>
-          <div class="dropdown">
+          <div
+            class="dropdown"
+            @click="toggleDropdown"
+          >
             <span class="nav-label">ご案内</span>
-            <div class="dropdown-menu">
+            <div
+              class="dropdown-menu"
+              :class="{ open: isDropdownOpen }"
+            >
               <NuxtLink to="/access" class="dropdown-item">大学までのアクセス</NuxtLink>
               <NuxtLink to="/contact" class="dropdown-item">お問い合わせ</NuxtLink>
             </div>
@@ -54,14 +66,6 @@ const showHeader = ref(true);
   box-sizing: border-box;
   padding: 10px 55px 1px;
   background-color: rgba(255, 255, 255, 0.2);
-  .gradation {
-    background-image: linear-gradient(
-    90deg,
-    #fce8e8,
-    #fdeeee 30%,
-    #ea2020 80%
-   );
-  }
   box-shadow: 0 2px 8px rgba(1, 1, 1, 0.1);
   backdrop-filter: blur(8px);
 
@@ -76,14 +80,11 @@ const showHeader = ref(true);
   .header-content {
     width: 100%;
     display: flex;
-    z-index: 1;
     justify-content: space-between;
     align-items: center;
   }
 
   .header-img {
-    display: flex;
-    text-decoration: none;
     width: 10rem;
 
     @include md {
@@ -91,9 +92,6 @@ const showHeader = ref(true);
     }
     @include sm {
       width: 5rem;
-    }
-    > img {
-      margin-right: 20px;
     }
   }
 
@@ -110,6 +108,7 @@ const showHeader = ref(true);
 
     @include sm {
       font-size: 0.8rem;
+      gap: 4px;
     }
 
     .nav-link {
@@ -117,6 +116,7 @@ const showHeader = ref(true);
       color: inherit;
       transition: color 0.2s ease;
     }
+
     .divider {
       width: 1.8px;
       height: 2.5em;
@@ -128,48 +128,66 @@ const showHeader = ref(true);
         margin: 0 4px;
       }
     }
+
     .dropdown {
       position: relative;
 
+      .nav-label {
+        cursor: pointer;
+      }
+
       .dropdown-menu {
         position: absolute;
-        top: calc(100% + 35px);
-        left: -2vw;
-        background: rgba(255, 255, 255, 0.65);
-        min-width: 250px;
+        top: calc(100% + 12px);
+        left: -1vw;
+        background: rgba(255, 236, 184, 0.7);
+        min-width: 220px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         border-radius: 6px;
         padding: 8px 0;
         display: none;
+        opacity: 0;
         transition: opacity 0.2s ease;
         z-index: 10001;
 
-        @include md {
-          min-width: 200px;
-          left: -1vw;
+        .dropdown-item {
+          display: block;
+          padding: 12px 16px;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: normal;
+
+          &:hover {
+            background: linear-gradient(
+              90deg,
+              rgba(255, 118, 33, 0.5) 0%,
+              rgba(232, 124, 8, 0.5) 47%,
+              rgba(233, 103, 89, 0.5) 90%
+            );
+          }
+
+          @include md {
+            font-size: 1rem;
+          }
         }
       }
 
+      /* PC hoverで開く */
       &:hover .dropdown-menu {
         display: block;
         opacity: 1;
+
+        @include sm {
+          display: none;
+        }
       }
 
-      .dropdown-item {
+      /* SPでクリックした時 */
+      .dropdown-menu.open {
         display: block;
-        padding: 15px 12px;
-        color: #333;
-        text-decoration: none;
-        font-size: 1.5rem;
-        font-weight: normal;
-
-        &:hover {
-          background: linear-gradient(90deg,rgba(255, 118, 33, 0.5) 0%, rgba(232, 124, 8, 0.5) 47%, rgba(233, 103, 89, 0.5) 90%);
-        }
-
-        @include md {
-          font-size: 1.0rem;
-        }
+        opacity: 1;
+        padding: 0;
       }
     }
   }

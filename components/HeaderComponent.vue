@@ -187,14 +187,14 @@ onMounted(() => {
       }
 
       /* PC hoverで開く */
-      &:hover .dropdown-menu {
-        display: block;
-        opacity: 1;
+      // &:hover .dropdown-menu {
+      //   display: block;
+      //   opacity: 1;
 
-        @include sm {
-          display: none;
-        }
-      }
+      //   @include sm {
+      //     display: none;
+      //   }
+      // }
 
       /* SPでクリックした時 */
       .dropdown-menu.open {

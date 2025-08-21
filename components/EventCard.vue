@@ -1,5 +1,5 @@
-<script lang="ts" setup>
-const props = defineProps<{
+<script setup lang="ts">
+defineProps<{
   eventData: {
     id: number;
     e_name: string;
@@ -16,9 +16,9 @@ const props = defineProps<{
   <div class="event-card">
     <img src="~/assets/images/test-icon.webp" alt="" class="icon-img" />
     <div class="details">
-      <p class="event-title">タイトルタイトル</p>
-      <p class="circle-name">サークルネームサークルネーム</p>
-      <p class="genre">ジャンルジャンルジャンル</p>
+      <p class="event-title">{{ eventData.e_name }}</p>
+      <p class="circle-name">{{ eventData.o_name }}</p>
+      <p class="genre">{{ eventData.genre }}</p>
       <div class="bottom">
         <div class="place">
           <img
@@ -26,7 +26,7 @@ const props = defineProps<{
             alt=""
             class="place-icon"
           />
-          <p class="place-text">場所場所場所場所</p>
+          <p class="place-text">{{ eventData.place }}</p>
         </div>
         <div class="favorite">
           <img src="~/assets/images/favorite.svg" alt="" />
@@ -37,10 +37,13 @@ const props = defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/_breakpoint.scss" as *;
 .event-card {
   margin: 0;
-  width: 325px;
+  width: 350px;
+  max-width:100%;
   font-family: "Zen Old Mincho";
+  color: black;
   background-color: #fbefdea8;
   border-radius: 0 0 30px 30px;
   .icon-img {
@@ -51,17 +54,27 @@ const props = defineProps<{
     margin: 0;
     width: 100%;
     height: 180px;
-    padding: 0 23px;
+    padding: 0 18px;
+    @include md{
+      padding: 0 9px;
+    }
   }
   .event-title {
     margin-top: 11px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 30px;
+    @include md{
+      font-size: 18px;
+      line-height: 18px;
+    }
   }
   .circle-name {
     margin-top: 5px;
     font-size: 16px;
     line-height: 30px;
+        @include md{
+      font-size: 14px;
+    }
   }
   .genre {
     margin-top: 12px;
@@ -72,15 +85,16 @@ const props = defineProps<{
     border: 1px solid black;
     border-radius: 99999999px;
   }
-  .bottom{
+  .bottom {
     margin-top: 15px;
-    width:279px;//325 - 23*2
+    width: 279px; //325 - 23*2
+    max-width:calc(100% - 18px);
     display: flex;
     justify-content: space-between;
   }
-  .place{
+  .place {
     display: flex;
-    font-size:16px;
+    font-size: 16px;
     align-items: center;
     gap: 8px;
   }

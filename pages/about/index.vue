@@ -102,15 +102,16 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
+.page-root {
+  font-family: 'Kaisei Decol', sans-serif;
+}
+
 .subtitle{
   margin: 40px 17% 20px 17%;
   color: #fff;
   font-size: 2rem;
 }
-p,
-a{
-  font-family: 'Kaisei Decol', sans-serif
-}
+
 .about {
   margin: 80px 10%;
   font-size: 1em;
@@ -196,7 +197,6 @@ table {
 }
 tr{
   font-size: clamp(16px,5vw,20px);
-  font-family: 'Kaisei Decol', sans-serif
 }
 td {
   padding: 5px 2em;
@@ -243,8 +243,6 @@ td {
     margin: 0;
   }
   @include md{
-    left:0.5em ;
-    margin: 0;
     display: block;
   }
 }
@@ -257,15 +255,11 @@ td {
   height: auto;
   @include lg{
     width: 20vw;
-    height: auto;
     left: 10%;
-    top: -5px;
   }
   @include md{
     width: 26vw;
-    height: auto;
     left: 15px;
-    top: -5px;
   }
 }
 </style>

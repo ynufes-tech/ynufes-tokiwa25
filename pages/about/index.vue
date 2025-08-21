@@ -86,20 +86,21 @@ onMounted(() => {
       <ContentBox>
         <div class="place">
           <div class="campus">
-           <p class="university">横浜国立大学</p>
-           <p class="university">常盤台キャンパス</p>
+            <p class="university">横浜国立大学</p>
+            <p class="university">常盤台キャンパス</p>
           </div>
           <div class="button">
-          <LinkButtonComponent
-          text="マップ"
-          link="https://maps.app.goo.gl/MB3xehHJCK8JBx3fA"
-          />
+            <LinkButtonComponent
+              text="マップ"
+              link="https://maps.app.goo.gl/MB3xehHJCK8JBx3fA"
+            />
           </div>
         </div>
       </ContentBox>
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
 .page-root {
@@ -134,9 +135,9 @@ onMounted(() => {
   text-align: left;
   color: #fff;
   p{
-  font-size: 1.2em;
-  line-height: 2.5em;
-   @include md {
+    font-size: 1.2em;
+    line-height: 2.5em;
+    @include md {
       font-size: 1.1em;
       line-height: 2em;
     }
@@ -162,13 +163,11 @@ onMounted(() => {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* 表示されたとき */
 .fade-in p.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 1行ずつディレイ */
 @for $i from 1 through 4 {
   .fade-in p:nth-child(#{$i}) {
     transition-delay: ($i - 1) * 0.2s;
@@ -216,50 +215,39 @@ td {
   height: 26px;
   border-radius: 50%;
 }
-.place{
+
+.place {
   margin: 1.5em 5%;
   display: flex;
-  .campus{
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .campus {
     display: flex;
-    @include md{
+    @include md {
       display: block;
     }
   }
-  @include lg{
-    padding: 5px 1.4em;
-  }
-  @include md{
-    padding:5px 0.5em;
-    font-size:0.75em;
+
+  .button {
+    margin-left: auto;
+    min-width: 120px;
+    @include md {
+      margin: 10px auto 0;
+    }
   }
 }
-.university{
-  position: relative;
-  left: 15%;
-  top: 20%;
-  margin:0 0.8em;
-  @include lg{
-    left: 0.5em;
-    margin: 0;
+
+.university {
+  margin: 0 0.8em;
+  @include lg {
+    font-size: 0.9em;
   }
-  @include md{
+  @include md {
     display: block;
-  }
-}
-.button{
-  position: relative;
-  display: flex;
-  top: -5px;
-  left: 10vw;
-  width: 17vw;
-  height: auto;
-  @include lg{
-    width: 20vw;
-    left: 10%;
-  }
-  @include md{
-    width: 26vw;
-    left: 15px;
+    margin: 0.2em 0 0 0.7em;
+    font-size: 0.8em;
   }
 }
 </style>

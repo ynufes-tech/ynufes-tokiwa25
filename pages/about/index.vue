@@ -6,6 +6,23 @@ useHead({
   title: "About | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "常盤祭について" }],
 });
+
+import { onMounted } from "vue";
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 } // 20%見えたら発火
+  );
+
+  document.querySelectorAll(".fade-in p").forEach((el) => observer.observe(el));
+});
 </script>
 
 <template>
@@ -17,7 +34,7 @@ useHead({
     <div>
       <ContentBox>
         <div class="about">
-          <p>常盤祭とは、横浜国立大学で毎年開催される大学祭です。</p>
+          <p>常盤祭とは、横浜国立大学で毎年秋に開催される大学祭です。</p>
           <p>多数のサークルによる模擬店やステージ企画、ゲスト企画などがあります。</p>
         </div>
       </ContentBox>
@@ -26,7 +43,7 @@ useHead({
       <img src="~/assets/images/theme-logo.svg">
     </div>
     <div class="fade-in">
-      <p>雨天での大学祭の実施が続いているため、</p>
+      <p class="no-wrap">雨天での大学祭の実施が続いているため、</p>
       <p>今度こそは晴れてほしい。</p>
       <p>そんな願いが込められた</p>
       <p> 秋らしさを感じるテーマです。</p>
@@ -112,17 +129,51 @@ a{
 }
 
 .fade-in {
-  margin: 10px 32%;
+  margin: 10px 16%;
   text-align: left;
   color: #fff;
   p{
   font-size: 1.2em;
   line-height: 2.5em;
+   @include md {
+      font-size: 1.1em;
+      line-height: 2em;
+    }
+    @include sm {
+      font-size: 1em;
+    }
   }
   @include md {
-    margin: 50px 4%;
+    margin: 50px 13%;
+  }
+  @include sm {
+    margin: 30px 6%;
   }
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.fade-in p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 表示されたとき */
+.fade-in p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1行ずつディレイ */
+@for $i from 1 through 4 {
+  .fade-in p:nth-child(#{$i}) {
+    transition-delay: ($i - 1) * 0.2s;
+  }
+}
+
 .container {
   margin: 1.5em 5%;
   @include md{

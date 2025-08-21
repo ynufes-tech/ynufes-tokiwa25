@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{
+const { eventData } = defineProps<{
   eventData: {
     id: number;
     e_name: string;
@@ -16,7 +16,15 @@ defineProps<{
   <div class="event-card">
     <img src="~/assets/images/test-icon.webp" alt="" class="icon-img" />
     <div class="details">
-      <p class="event-title">{{ eventData.e_name }}</p>
+      <p
+        class="event-title"
+        :class="{ 
+          'long-title': eventData.e_name.length > 13,
+          'very-long': eventData.e_name.length > 18
+           }"
+      >
+        {{ eventData.e_name }}
+      </p>
       <p class="circle-name">{{ eventData.o_name }}</p>
       <p class="genre">{{ eventData.genre }}</p>
       <div class="bottom">
@@ -41,7 +49,7 @@ defineProps<{
 .event-card {
   margin: 0;
   width: 350px;
-  max-width:100%;
+  max-width: 100%;
   font-family: "Zen Old Mincho";
   color: black;
   background-color: #fbefdea8;
@@ -52,10 +60,10 @@ defineProps<{
   }
   .details {
     margin: 0;
-    width: 100%;
+    width: calc(100% - 36px);
     height: 180px;
     padding: 0 18px;
-    @include md{
+    @include md {
       padding: 0 9px;
     }
   }
@@ -63,7 +71,7 @@ defineProps<{
     margin-top: 11px;
     font-size: 22px;
     line-height: 30px;
-    @include md{
+    @include md {
       font-size: 18px;
       line-height: 18px;
     }
@@ -72,7 +80,7 @@ defineProps<{
     margin-top: 5px;
     font-size: 16px;
     line-height: 30px;
-        @include md{
+    @include md {
       font-size: 14px;
     }
   }
@@ -87,8 +95,7 @@ defineProps<{
   }
   .bottom {
     margin-top: 15px;
-    width: 279px; //325 - 23*2
-    max-width:calc(100% - 18px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -97,6 +104,18 @@ defineProps<{
     font-size: 16px;
     align-items: center;
     gap: 8px;
+  }
+  .long-title {
+    font-size: 19px;
+    @include md {
+      font-size: 15px;
+    }
+  }
+  .very-long {
+    font-size: 17px;
+    @include md {
+      font-size: 13px;
+    }
   }
 }
 </style>

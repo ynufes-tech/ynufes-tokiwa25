@@ -38,6 +38,7 @@ onMounted(() => {
           <div
             class="dropdown"
             @click="toggleDropdown"
+            id="dropdownMenu"
           >
             <span class="nav-label">ご案内</span>
             <div

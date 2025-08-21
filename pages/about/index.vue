@@ -142,7 +142,7 @@ onMounted(() => {
       line-height: 2em;
     }
     @include sm {
-      font-size: 1em;
+      font-size: 0.9em;
     }
   }
   @include md {

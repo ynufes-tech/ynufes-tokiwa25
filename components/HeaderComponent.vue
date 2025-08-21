@@ -6,6 +6,18 @@ const isDropdownOpen = ref(false)
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value
 }
+onMounted(() => {
+
+  const dropdownMenu = document.getElementById("dropdownMenu");
+
+  document.addEventListener("click", (event) => {
+    if (!dropdownMenu.contains(event.target)) {
+      isDropdownOpen.value = false;//dropdownMenu以外がクリックされたら閉じる
+    }
+  });
+
+})
+
 </script>
 
 <template>

@@ -3,13 +3,16 @@ import events from "public/test-events.json";
 import EventCard from "~/components/EventCard.vue";
 import PageTitle from "~/components/PageTitle.vue";
 import FilterButton from "~/components/EventFilterButton.vue";
+import { reactive } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "企画一覧" }],
 });
 const open = ref(false);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
-const filter = ref({
+//FilterButtonの状態管理
+//アコーディングメニューの状態管理
+const filter = reactive({
   //日付
   day1: true,
   day2: true,
@@ -63,6 +66,127 @@ const accordion = ref({
   performance: false, //パンフォーマンス
   official: false, //本部企画
 });
+//すべてボタンと他のボタンを連動させる
+const toggleIndoorAll = () => {
+  if (filter.indoorALL) {
+    const keys = ["library", "urban", "bizEco", "edu", "science"];
+    keys.forEach((key) => (filter[key] = true));
+  }
+};
+watch(
+  () => [
+    filter.library,
+    filter.urban,
+    filter.bizEco,
+    filter.edu,
+    filter.science,
+  ],
+  (newValues) => {
+    filter.indoorALL = newValues.every((v) => v);
+  }
+);
+
+const toggleOutdoorAll = () => {
+  if (filter.outdoorALL) {
+    const keys = [
+      "Ablock",
+      "Bblock",
+      "Cblock",
+      "Dblock",
+      "Eblock",
+      "Fblock",
+      "Yblock",
+    ];
+    keys.forEach((key) => (filter[key] = true));
+  }
+};
+watch(
+  () => [
+    filter.Ablock,
+    filter.Bblock,
+    filter.Cblock,
+    filter.Dblock,
+    filter.Eblock,
+    filter.Fblock,
+    filter.Yblock,
+  ],
+  (newValues) => {
+    filter.outdoorALL = newValues.every((v) => v);
+  }
+);
+
+const toggleTBKAll = () => {
+  if (filter.TBKALL) {
+    const keys = [
+      "hall",
+      "eduMid",
+      "wooddeck",
+      "ground",
+      "mediahall",
+    ];
+    keys.forEach((key) => (filter[key] = true));
+  }
+};
+watch(
+  () => [
+    filter.hall,
+    filter.eduMid,
+    filter.wooddeck,
+    filter.ground,
+    filter.mediahall,
+  ],
+  (newValues) => {
+    filter.TBKALL = newValues.every((v) => v);
+  }
+);
+
+const togglefoodsAll = () => {
+  if (filter.foodsALL) {
+    const keys = [
+      "snack",
+      "noodle",
+      "rice",
+      "sweets",
+      "drink",
+    ];
+    keys.forEach((key) => (filter[key] = true));
+  }
+};
+watch(
+  () => [
+    filter.snack,
+    filter.noodle,
+    filter.rice,
+    filter.sweets,
+    filter.drink,
+  ],
+  (newValues) => {
+    filter.foodsALL = newValues.every((v) => v);
+  }
+);
+
+const togglePerformanceAll = () => {
+  if (filter.performanceALL) {
+    const keys = [
+      "dance",
+      "music",
+      "show",
+    ];
+    keys.forEach((key) => (filter[key] = true));
+  }
+};
+watch(
+  () => [
+    filter.dance,
+    filter.music,
+    filter.show,
+  ],
+  (newValues) => {
+    filter.performanceALL = newValues.every((v) => v);
+  }
+);
+
+
 </script>
 
 <template>
@@ -122,7 +246,11 @@ const accordion = ref({
                     :key="accordion.indoor"
                     v-if="accordion.indoor"
                   >
-                    <FilterButton text="すべて" v-model="filter.indoorALL" />
+                    <FilterButton
+                      text="すべて"
+                      v-model="filter.indoorALL"
+                      @click="toggleIndoorAll"
+                    />
                     <FilterButton text="図書館" v-model="filter.library" />
                     <FilterButton text="都市科学部棟" v-model="filter.urban" />
                     <FilterButton
@@ -156,7 +284,11 @@ const accordion = ref({
                     :key="accordion.outdoor"
                     v-if="accordion.outdoor"
                   >
-                    <FilterButton text="すべて" v-model="filter.outdoorALL" />
+                    <FilterButton
+                      text="すべて"
+                      v-model="filter.outdoorALL"
+                      @click="toggleOutdoorAll"
+                    />
                     <FilterButton text="Aブロック" v-model="filter.Ablock" />
                     <FilterButton text="Bブロック" v-model="filter.Bblock" />
                     <FilterButton text="Cブロック" v-model="filter.Cblock" />
@@ -215,7 +347,7 @@ const accordion = ref({
                     :key="accordion.TBK"
                     v-if="accordion.TBK"
                   >
-                    <FilterButton text="すべて" v-model="filter.TBKALL" />
+                    <FilterButton text="すべて" v-model="filter.TBKALL" @click="toggleTBKAll"/>
                     <FilterButton
                       text="大学会館4Fホール"
                       v-model="filter.hall"
@@ -282,7 +414,7 @@ const accordion = ref({
                     :key="accordion.foods"
                     v-if="accordion.foods"
                   >
-                    <FilterButton text="すべて" v-model="filter.foodsALL" />
+                    <FilterButton text="すべて" v-model="filter.foodsALL" @click="togglefoodsAll"/>
                     <FilterButton text="軽食" v-model="filter.snack" />
                     <FilterButton text="鉄板・麺類" v-model="filter.noodle" />
                     <FilterButton text="ご飯もの" v-model="filter.rice" />
@@ -339,7 +471,11 @@ const accordion = ref({
                     :key="accordion.performance"
                     v-if="accordion.performance"
                   >
-                    <FilterButton text="すべて" v-model="filter.performanceALL" />
+                    <FilterButton
+                      text="すべて"
+                      v-model="filter.performanceALL"
+                      @click="togglePerformanceAll"
+                    />
                     <FilterButton text="ダンス" v-model="filter.dance" />
                     <FilterButton text="音楽" v-model="filter.music" />
                     <FilterButton text="ショー" v-model="filter.show" />
@@ -369,7 +505,10 @@ const accordion = ref({
                     v-if="accordion.official"
                   >
                     <FilterButton text="イベント" v-model="filter.events" />
-                    <FilterButton text="図書館企画" v-model="filter.libraryEvents" />
+                    <FilterButton
+                      text="図書館企画"
+                      v-model="filter.libraryEvents"
+                    />
                   </div>
                 </transition>
               </div>

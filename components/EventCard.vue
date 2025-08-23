@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import cookies from "vue-cookies";
+const favoriteEvents = ref(cookies.get("favoriteEvents") || []);
 const { eventData } = defineProps<{
   eventData: {
     id: number;
@@ -9,6 +11,7 @@ const { eventData } = defineProps<{
     block: string;
   };
 }>();
+
 //const iconURL = `https://storage.googleapis.com/seiryo25-assets/icons/${props.eventData.id}.webp`
 </script>
 
@@ -18,10 +21,10 @@ const { eventData } = defineProps<{
     <div class="details">
       <p
         class="event-title"
-        :class="{ 
+        :class="{
           'long-title': eventData.e_name.length > 13,
-          'very-long': eventData.e_name.length > 18
-           }"
+          'very-long': eventData.e_name.length > 18,
+        }"
       >
         {{ eventData.e_name }}
       </p>

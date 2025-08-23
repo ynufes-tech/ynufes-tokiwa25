@@ -218,6 +218,7 @@ const filteredEvents = computed(() => {
     const categoryMatch = filter[event.genre];
     return placeMatch && categoryMatch;
   });
+
 });
 </script>
 
@@ -572,6 +573,7 @@ const filteredEvents = computed(() => {
 
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
+
 .page-root {
   padding: 100px 100px;
   @include md {

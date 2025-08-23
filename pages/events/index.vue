@@ -116,6 +116,23 @@ const accordion = ref({
                     :class="{ accordionOpen: accordion.indoor }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.indoor"
+                    v-if="accordion.indoor"
+                  >
+                    <FilterButton text="すべて" v-model="filter.indoorALL" />
+                    <FilterButton text="図書館" v-model="filter.library" />
+                    <FilterButton text="都市科学部棟" v-model="filter.urban" />
+                    <FilterButton
+                      text="経済・経営学部1号館"
+                      v-model="filter.bizEco"
+                    />
+                    <FilterButton text="教育学部6号館" v-model="filter.edu" />
+                    <FilterButton text="理工学部A棟" v-model="filter.science" />
+                  </div>
+                </transition>
               </div>
               <div
                 class="accordion outdoor-accordion"
@@ -133,6 +150,22 @@ const accordion = ref({
                     :class="{ accordionOpen: accordion.outdoor }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.outdoor"
+                    v-if="accordion.outdoor"
+                  >
+                    <FilterButton text="すべて" v-model="filter.outdoorALL" />
+                    <FilterButton text="Aブロック" v-model="filter.Ablock" />
+                    <FilterButton text="Bブロック" v-model="filter.Bblock" />
+                    <FilterButton text="Cブロック" v-model="filter.Cblock" />
+                    <FilterButton text="Dブロック" v-model="filter.Dblock" />
+                    <FilterButton text="Eブロック" v-model="filter.Eblock" />
+                    <FilterButton text="Fブロック" v-model="filter.Fblock" />
+                    <FilterButton text="Yブロック" v-model="filter.Yblock" />
+                  </div>
+                </transition>
               </div>
               <div
                 class="accordion stage-accordion"
@@ -150,6 +183,15 @@ const accordion = ref({
                     :class="{ accordionOpen: accordion.stage }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.stage"
+                    v-if="accordion.stage"
+                  >
+                    <FilterButton text="野外音楽堂" v-model="filter.yaon" />
+                  </div>
+                </transition>
               </div>
               <div
                 class="accordion TBK-accordion"
@@ -160,13 +202,42 @@ const accordion = ref({
                   class="accordion-title accordion-child"
                   @click="accordion.TBK = !accordion.TBK"
                 >
-                  <p>屋内</p>
+                  <p>特別な場所</p>
                   <img
                     src="~/assets/images/accordion-arrow.svg"
                     alt=""
                     :class="{ accordionOpen: accordion.TBK }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.TBK"
+                    v-if="accordion.TBK"
+                  >
+                    <FilterButton text="すべて" v-model="filter.TBKALL" />
+                    <FilterButton
+                      text="大学会館4Fホール"
+                      v-model="filter.hall"
+                    />
+                    <FilterButton
+                      text="教育学部6・7号館の間"
+                      v-model="filter.eduMid"
+                    />
+                    <FilterButton
+                      text="学生センター前ウッドデッキ"
+                      v-model="filter.wooddeck"
+                    />
+                    <FilterButton
+                      text="多目的グラウンド"
+                      v-model="filter.ground"
+                    />
+                    <FilterButton
+                      text="図書館1Fメディアホール"
+                      v-model="filter.mediahall"
+                    />
+                  </div>
+                </transition>
               </div>
             </div>
           </transition>
@@ -205,6 +276,20 @@ const accordion = ref({
                     :class="{ accordionOpen: accordion.foods }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.foods"
+                    v-if="accordion.foods"
+                  >
+                    <FilterButton text="すべて" v-model="filter.foodsALL" />
+                    <FilterButton text="軽食" v-model="filter.snack" />
+                    <FilterButton text="鉄板・麺類" v-model="filter.noodle" />
+                    <FilterButton text="ご飯もの" v-model="filter.rice" />
+                    <FilterButton text="スイーツ" v-model="filter.sweets" />
+                    <FilterButton text="ドリンク" v-model="filter.drink" />
+                  </div>
+                </transition>
               </div>
               <div
                 class="accordion display-accordion"
@@ -222,6 +307,15 @@ const accordion = ref({
                     :class="{ accordionOpen: accordion.display }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.display"
+                    v-if="accordion.display"
+                  >
+                    <FilterButton text="すべて" v-model="filter.displayALL" />
+                  </div>
+                </transition>
               </div>
               <div
                 class="accordion performance-accordion"
@@ -232,13 +326,25 @@ const accordion = ref({
                   class="accordion-title accordion-child"
                   @click="accordion.performance = !accordion.performance"
                 >
-                  <p>ステージ</p>
+                  <p>パンフォーマンス</p>
                   <img
                     src="~/assets/images/accordion-arrow.svg"
                     alt=""
                     :class="{ accordionOpen: accordion.performance }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.performance"
+                    v-if="accordion.performance"
+                  >
+                    <FilterButton text="すべて" v-model="filter.performanceALL" />
+                    <FilterButton text="ダンス" v-model="filter.dance" />
+                    <FilterButton text="音楽" v-model="filter.music" />
+                    <FilterButton text="ショー" v-model="filter.show" />
+                  </div>
+                </transition>
               </div>
               <div
                 class="accordion official-accordion"
@@ -249,13 +355,23 @@ const accordion = ref({
                   class="accordion-title accordion-child"
                   @click="accordion.official = !accordion.official"
                 >
-                  <p>屋内</p>
+                  <p>本部企画</p>
                   <img
                     src="~/assets/images/accordion-arrow.svg"
                     alt=""
                     :class="{ accordionOpen: accordion.official }"
                   />
                 </div>
+                <transition name="openAccordion">
+                  <div
+                    class="accordion-elements"
+                    :key="accordion.official"
+                    v-if="accordion.official"
+                  >
+                    <FilterButton text="イベント" v-model="filter.events" />
+                    <FilterButton text="図書館企画" v-model="filter.libraryEvents" />
+                  </div>
+                </transition>
               </div>
             </div>
           </transition>
@@ -363,6 +479,17 @@ const accordion = ref({
   .accordion {
     margin-top: 40px;
     user-select: none;
+    .accordion-elements {
+      margin-top: 10px;
+      margin-left: 4%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: calc(100% - 70px);
+      @include sm {
+        width: calc(100% - 50px);
+      }
+    }
   }
   .accordion-title {
     font-size: 19px;
@@ -404,15 +531,15 @@ const accordion = ref({
 
 .eventSerch-enter-active,
 .eventSerch-leave-active {
-  transition: 0.15s ease;
+  transition: 0.2s ease;
 }
 .eventSerch-enter-from {
   opacity: 0;
-  transform: translateX(-10px);
+  transform: translateY(-15px);
 }
 .eventSerch-leave-to {
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateY(15px);
 }
 
 .openAccordion-enter-active,

@@ -8,6 +8,9 @@ useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "企画一覧" }],
 });
+definePageMeta({
+  hideHeader: true
+})
 const open = ref(false);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
 //FilterButtonの状態管理

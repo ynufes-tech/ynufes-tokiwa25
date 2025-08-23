@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import leafImageSrc from '../assets/images/leaf.png'  // ← 一個上のassets/imagesからインポート
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+const route = useRoute()
+// リーフONOFF
+const showLeaf = computed(() => route.meta.hideHeader !== true)
 
 onMounted(() => {
   const canvas = document.getElementById('canvas') as HTMLCanvasElement
@@ -100,7 +105,7 @@ onMounted(() => {
     <slot />
     <div class="background-container">
       <div class="background-img" />
-      <canvas id="canvas"></canvas>
+      <canvas id="canvas" v-if="showLeaf"></canvas>
     </div>
   </div>
 </template>

@@ -6,6 +6,23 @@ useHead({
   title: "About | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "常盤祭について" }],
 });
+
+import { onMounted } from "vue";
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 } // 20%見えたら発火
+  );
+
+  document.querySelectorAll(".fade-in p").forEach((el) => observer.observe(el));
+});
 </script>
 
 <template>
@@ -17,7 +34,7 @@ useHead({
     <div>
       <ContentBox>
         <div class="about">
-          <p>常盤祭とは、横浜国立大学で毎年開催される大学祭です。</p>
+          <p>常盤祭とは、横浜国立大学で毎年秋に開催される大学祭です。</p>
           <p>多数のサークルによる模擬店やステージ企画、ゲスト企画などがあります。</p>
         </div>
       </ContentBox>
@@ -26,7 +43,7 @@ useHead({
       <img src="~/assets/images/theme-logo.svg">
     </div>
     <div class="fade-in">
-      <p>雨天での大学祭の実施が続いているため、</p>
+      <p class="no-wrap">雨天での大学祭の実施が続いているため、</p>
       <p>今度こそは晴れてほしい。</p>
       <p>そんな願いが込められた</p>
       <p> 秋らしさを感じるテーマです。</p>
@@ -69,31 +86,33 @@ useHead({
       <ContentBox>
         <div class="place">
           <div class="campus">
-           <p class="university">横浜国立大学</p>
-           <p class="university">常盤台キャンパス</p>
+            <p class="university">横浜国立大学</p>
+            <p class="university">常盤台キャンパス</p>
           </div>
           <div class="button">
-          <LinkButtonComponent
-          text="マップ"
-          link="https://maps.app.goo.gl/MB3xehHJCK8JBx3fA"
-          />
+            <LinkButtonComponent
+              text="マップ"
+              link="https://maps.app.goo.gl/MB3xehHJCK8JBx3fA"
+            />
           </div>
         </div>
       </ContentBox>
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
+.page-root {
+  font-family: 'Kaisei Decol', sans-serif;
+}
+
 .subtitle{
   margin: 40px 17% 20px 17%;
   color: #fff;
   font-size: 2rem;
 }
-p,
-a{
-  font-family: 'Kaisei Decol', sans-serif
-}
+
 .about {
   margin: 80px 10%;
   font-size: 1em;
@@ -112,17 +131,49 @@ a{
 }
 
 .fade-in {
-  margin: 10px 32%;
+  margin: 10px 16%;
   text-align: left;
   color: #fff;
   p{
-  font-size: 1.2em;
-  line-height: 2.5em;
+    font-size: 1.2em;
+    line-height: 2.5em;
+    @include md {
+      font-size: 1.1em;
+      line-height: 2em;
+    }
+    @include sm {
+      font-size: 0.9em;
+    }
   }
   @include md {
-    margin: 50px 4%;
+    margin: 50px 13%;
+  }
+  @include sm {
+    margin: 30px 6%;
   }
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.fade-in p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@for $i from 1 through 4 {
+  .fade-in p:nth-child(#{$i}) {
+    transition-delay: ($i - 1) * 0.2s;
+  }
+}
+
 .container {
   margin: 1.5em 5%;
   @include md{
@@ -145,7 +196,6 @@ table {
 }
 tr{
   font-size: clamp(16px,5vw,20px);
-  font-family: 'Kaisei Decol', sans-serif
 }
 td {
   padding: 5px 2em;
@@ -165,56 +215,39 @@ td {
   height: 26px;
   border-radius: 50%;
 }
-.place{
+
+.place {
   margin: 1.5em 5%;
   display: flex;
-  .campus{
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .campus {
     display: flex;
-    @include md{
+    @include md {
       display: block;
     }
   }
-  @include lg{
-    padding: 5px 1.4em;
-  }
-  @include md{
-    padding:5px 0.5em;
-    font-size:0.75em;
+
+  .button {
+    margin-left: auto;
+    min-width: 120px;
+    @include md {
+      margin: 10px auto 0;
+    }
   }
 }
-.university{
-  position: relative;
-  left: 15%;
-  top: 20%;
-  margin:0 0.8em;
-  @include lg{
-    left: 0.5em;
-    margin: 0;
+
+.university {
+  margin: 0 0.8em;
+  @include lg {
+    font-size: 0.9em;
   }
-  @include md{
-    left:0.5em ;
-    margin: 0;
+  @include md {
     display: block;
-  }
-}
-.button{
-  position: relative;
-  display: flex;
-  top: -5px;
-  left: 10vw;
-  width: 17vw;
-  height: auto;
-  @include lg{
-    width: 20vw;
-    height: auto;
-    left: 10%;
-    top: -5px;
-  }
-  @include md{
-    width: 26vw;
-    height: auto;
-    left: 15px;
-    top: -5px;
+    margin: 0.2em 0 0 0.7em;
+    font-size: 0.8em;
   }
 }
 </style>

@@ -35,6 +35,9 @@ import PageTitle from '~/components/PageTitle.vue';
         />
         <img src="~/assets/images/timer-frame-rt.svg " class="timer-frame-rt" alt="countdownframe" />
       </div>
+      <div class="sns">
+        <SNS />
+      </div>
       <!-- <div class="preparing">
         <p>準備中</p>
       </div> -->
@@ -49,7 +52,7 @@ import PageTitle from '~/components/PageTitle.vue';
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20vh;
+  padding-bottom: 15vh;
 }
 
 .page-container {
@@ -140,6 +143,12 @@ import PageTitle from '~/components/PageTitle.vue';
    top: 80%;
    width: 50%;
  }
+}
+
+.sns {
+  position: absolute;
+  bottom: 5vh;
+  width: 100%;
 }
 
 // .preparing {

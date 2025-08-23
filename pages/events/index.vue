@@ -67,127 +67,153 @@ const accordion = ref({
   official: false, //本部企画
 });
 //すべてボタンと他のボタンを連動させる
-const toggleIndoorAll = () => {
-  if (filter.indoorALL) {
-    const keys = ["library", "urban", "bizEco", "edu", "science"];
-    keys.forEach((key) => (filter[key] = true));
-  }
-};
-watch(
-  () => [
-    filter.library,
-    filter.urban,
-    filter.bizEco,
-    filter.edu,
-    filter.science,
-  ],
-  (newValues) => {
-    filter.indoorALL = newValues.every((v) => v);
-  }
-);
+// const toggleIndoorAll = () => {
+//   if (filter.indoorALL) {
+//     const keys = ["library", "urban", "bizEco", "edu", "science"];
+//     keys.forEach((key) => (filter[key] = true));
+//   }
+// };
+// watch(
+//   () => [
+//     filter.library,
+//     filter.urban,
+//     filter.bizEco,
+//     filter.edu,
+//     filter.science,
+//   ],
+//   (newValues) => {
+//     filter.indoorALL = newValues.every((v) => v);
+//   }
+// );
 
-const toggleOutdoorAll = () => {
-  if (filter.outdoorALL) {
-    const keys = [
-      "Ablock",
-      "Bblock",
-      "Cblock",
-      "Dblock",
-      "Eblock",
-      "Fblock",
-      "Yblock",
-    ];
-    keys.forEach((key) => (filter[key] = true));
-  }
-};
-watch(
-  () => [
-    filter.Ablock,
-    filter.Bblock,
-    filter.Cblock,
-    filter.Dblock,
-    filter.Eblock,
-    filter.Fblock,
-    filter.Yblock,
-  ],
-  (newValues) => {
-    filter.outdoorALL = newValues.every((v) => v);
-  }
-);
+// const toggleOutdoorAll = () => {
+//   if (filter.outdoorALL) {
+//     const keys = [
+//       "Ablock",
+//       "Bblock",
+//       "Cblock",
+//       "Dblock",
+//       "Eblock",
+//       "Fblock",
+//       "Yblock",
+//     ];
+//     keys.forEach((key) => (filter[key] = true));
+//   }
+// };
+// watch(
+//   () => [
+//     filter.Ablock,
+//     filter.Bblock,
+//     filter.Cblock,
+//     filter.Dblock,
+//     filter.Eblock,
+//     filter.Fblock,
+//     filter.Yblock,
+//   ],
+//   (newValues) => {
+//     filter.outdoorALL = newValues.every((v) => v);
+//   }
+// );
 
-const toggleTBKAll = () => {
-  if (filter.TBKALL) {
-    const keys = [
-      "hall",
-      "eduMid",
-      "wooddeck",
-      "ground",
-      "mediahall",
-    ];
-    keys.forEach((key) => (filter[key] = true));
-  }
-};
-watch(
-  () => [
-    filter.hall,
-    filter.eduMid,
-    filter.wooddeck,
-    filter.ground,
-    filter.mediahall,
-  ],
-  (newValues) => {
-    filter.TBKALL = newValues.every((v) => v);
-  }
-);
+// const toggleTBKAll = () => {
+//   if (filter.TBKALL) {
+//     const keys = [
+//       "hall",
+//       "eduMid",
+//       "wooddeck",
+//       "ground",
+//       "mediahall",
+//     ];
+//     keys.forEach((key) => (filter[key] = true));
+//   }
+// };
+// watch(
+//   () => [
+//     filter.hall,
+//     filter.eduMid,
+//     filter.wooddeck,
+//     filter.ground,
+//     filter.mediahall,
+//   ],
+//   (newValues) => {
+//     filter.TBKALL = newValues.every((v) => v);
+//   }
+// );
 
-const togglefoodsAll = () => {
-  if (filter.foodsALL) {
-    const keys = [
-      "snack",
-      "noodle",
-      "rice",
-      "sweets",
-      "drink",
-    ];
-    keys.forEach((key) => (filter[key] = true));
-  }
-};
-watch(
-  () => [
-    filter.snack,
-    filter.noodle,
-    filter.rice,
-    filter.sweets,
-    filter.drink,
-  ],
-  (newValues) => {
-    filter.foodsALL = newValues.every((v) => v);
-  }
-);
+// const togglefoodsAll = () => {
+//   if (filter.foodsALL) {
+//     const keys = [
+//       "snack",
+//       "noodle",
+//       "rice",
+//       "sweets",
+//       "drink",
+//     ];
+//     keys.forEach((key) => (filter[key] = true));
+//   }
+// };
+// watch(
+//   () => [
+//     filter.snack,
+//     filter.noodle,
+//     filter.rice,
+//     filter.sweets,
+//     filter.drink,
+//   ],
+//   (newValues) => {
+//     filter.foodsALL = newValues.every((v) => v);
+//   }
+// );
 
-const togglePerformanceAll = () => {
-  if (filter.performanceALL) {
-    const keys = [
-      "dance",
-      "music",
-      "show",
-    ];
-    keys.forEach((key) => (filter[key] = true));
-  }
+// const togglePerformanceAll = () => {
+//   if (filter.performanceALL) {
+//     const keys = [
+//       "dance",
+//       "music",
+//       "show",
+//     ];
+//     keys.forEach((key) => (filter[key] = true));
+//   }
+// };
+// watch(
+//   () => [
+//     filter.dance,
+//     filter.music,
+//     filter.show,
+//   ],
+//   (newValues) => {
+//     filter.performanceALL = newValues.every((v) => v);
+//   }
+// );
+
+const toggleAll = (keys: string[], value: boolean) => {
+  keys.forEach((key) => {
+    filter[key] = value;
+  });
 };
-watch(
-  () => [
-    filter.dance,
-    filter.music,
-    filter.show,
-  ],
-  (newValues) => {
-    filter.performanceALL = newValues.every((v) => v);
-  }
-);
+
+const indoorKeys = ["library", "urban", "bizEco", "edu", "science"];
+const outdoorKeys = [
+  "Ablock",
+  "Bblock",
+  "Cblock",
+  "Dblock",
+  "Eblock",
+  "Fblock",
+  "Yblock",
+];
+const TBKKeys = ["hall", "eduMid", "wooddeck", "ground", "mediahall"];
+const foodsKeys = ["snack", "noodle", "rice", "sweets", "drink"];
+const performanceKeys = ["dance", "music", "show"];
+
+const indoorAll = computed(() => indoorKeys.every((k) => filter[k]));
+const outdoorAll = computed(() => outdoorKeys.every((k) => filter[k]));
+const TBKAll = computed(() => TBKKeys.every((k) => filter[k]));
+const foodsAll = computed(() => foodsKeys.every((k) => filter[k]));
+const performanceAll = computed(() => performanceKeys.every((k) => filter[k]));
 
 const filteredEvents = computed(() => {
-  return events.filter(event => {
+  return events.filter((event) => {
     const placeMatch = filter[event.place];
     const categoryMatch = filter[event.genre];
     return placeMatch && categoryMatch;
@@ -254,8 +280,8 @@ const filteredEvents = computed(() => {
                   >
                     <FilterButton
                       text="すべて"
-                      v-model="filter.indoorALL"
-                      @click="toggleIndoorAll"
+                      :model-value="indoorAll"
+                      @click="toggleAll(indoorKeys, !indoorAll)"
                     />
                     <FilterButton text="図書館" v-model="filter.library" />
                     <FilterButton text="都市科学部棟" v-model="filter.urban" />
@@ -292,8 +318,8 @@ const filteredEvents = computed(() => {
                   >
                     <FilterButton
                       text="すべて"
-                      v-model="filter.outdoorALL"
-                      @click="toggleOutdoorAll"
+                      :model-value="outdoorAll"
+                      @click="toggleAll(outdoorKeys, !outdoorAll)"
                     />
                     <FilterButton text="Aブロック" v-model="filter.Ablock" />
                     <FilterButton text="Bブロック" v-model="filter.Bblock" />
@@ -353,7 +379,11 @@ const filteredEvents = computed(() => {
                     :key="accordion.TBK"
                     v-if="accordion.TBK"
                   >
-                    <FilterButton text="すべて" v-model="filter.TBKALL" @click="toggleTBKAll"/>
+                    <FilterButton
+                      text="すべて"
+                      :model-value="TBKAll"
+                      @click="toggleAll(TBKKeys, !TBKAll)"
+                    />
                     <FilterButton
                       text="大学会館4Fホール"
                       v-model="filter.hall"
@@ -420,7 +450,11 @@ const filteredEvents = computed(() => {
                     :key="accordion.foods"
                     v-if="accordion.foods"
                   >
-                    <FilterButton text="すべて" v-model="filter.foodsALL" @click="togglefoodsAll"/>
+                    <FilterButton
+                      text="すべて"
+                      :model-value="foodsAll"
+                      @click="toggleAll(foodsKeys, !foodsAll)"
+                    />
                     <FilterButton text="軽食" v-model="filter.snack" />
                     <FilterButton text="鉄板・麺類" v-model="filter.noodle" />
                     <FilterButton text="ご飯もの" v-model="filter.rice" />
@@ -479,8 +513,8 @@ const filteredEvents = computed(() => {
                   >
                     <FilterButton
                       text="すべて"
-                      v-model="filter.performanceALL"
-                      @click="togglePerformanceAll"
+                      :model-value="performanceAll"
+                      @click="toggleAll(performanceKeys, !performanceAll)"
                     />
                     <FilterButton text="ダンス" v-model="filter.dance" />
                     <FilterButton text="音楽" v-model="filter.music" />

@@ -186,7 +186,13 @@ watch(
   }
 );
 
-
+const filteredEvents = computed(() => {
+  return events.filter(event => {
+    const placeMatch = filter[event.place];
+    const categoryMatch = filter[event.genre];
+    return placeMatch && categoryMatch;
+  });
+});
 </script>
 
 <template>
@@ -519,7 +525,7 @@ watch(
     </div>
     <div class="cards-holder">
       <NuxtLink
-        v-for="event in events"
+        v-for="event in filteredEvents"
         :key="event.id"
         :to="`/events/${event.id}`"
         class="events-elements"

@@ -26,7 +26,7 @@ const { eventData } = defineProps<{
         {{ eventData.e_name }}
       </p>
       <p class="circle-name">{{ eventData.o_name }}</p>
-      <p class="genre">{{ eventData.genre }}</p>
+      <p class="genre">{{ eventData.displayGenre }}</p>
       <div class="bottom">
         <div class="place">
           <img
@@ -34,7 +34,7 @@ const { eventData } = defineProps<{
             alt=""
             class="place-icon"
           />
-          <p class="place-text">{{ eventData.place }}</p>
+          <p class="place-text">{{ eventData.displayPlace }}</p>
         </div>
         <div class="favorite">
           <img src="~/assets/images/favorite.svg" alt="" />

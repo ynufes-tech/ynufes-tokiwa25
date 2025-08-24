@@ -12,7 +12,11 @@ definePageMeta({
   hideHeader: true,
 });
 const open = ref(false);
+const onlyFavo = ref(false);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
+const filterFavo = computed(() =>
+  onlyFavo.value ? "　全て表示　" : "お気に入り♡"
+);
 const favoriteEvents = ref<string[]>([]);
 
 onMounted(() => {
@@ -241,7 +245,12 @@ const filteredEvents = computed(() => {
   return events.filter((event) => {
     const placeMatch = filter[event.place];
     const categoryMatch = filter[event.genre];
-    return placeMatch && categoryMatch;
+    if(onlyFavo.value){
+      const favoMatch = favoriteEvents.value.includes(event.id);
+      return placeMatch && categoryMatch && favoMatch;
+    }else{
+      return placeMatch && categoryMatch;
+    }
   });
 });
 </script>
@@ -255,7 +264,11 @@ const filteredEvents = computed(() => {
           <p :key="eventSerch" @click="open = !open">{{ eventSerch }}</p>
         </transition>
         <span class="separate-line"></span>
-        <p>お気に入り♡</p>
+        <transition name="eventSerch" mode="out-in">
+          <p :key="filterFavo" @click="onlyFavo = !onlyFavo">
+            {{ filterFavo }}
+          </p>
+        </transition>
       </div>
       <div class="menu-body" :class="{ show: open }">
         <div class="days">

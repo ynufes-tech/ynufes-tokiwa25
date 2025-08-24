@@ -19,6 +19,9 @@ const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索")
 const filterFavo = computed(() =>
   onlyFavo.value ? "　全て表示　" : "お気に入り♡"
 );
+const modePageTitle = computed(() =>
+  onlyFavo.value ? "お気に入り" : "企画一覧"
+);
 const favoriteEvents = ref<string[]>([]); //お気に入り配列用意
 
 onMounted(() => {
@@ -266,7 +269,9 @@ const filteredEvents = computed(() => {
 
 <template>
   <div class="page-root">
-    <PageTitle title="企画一覧" />
+    <transition name="eventSerch" mode="out-in">
+      <PageTitle :title="modePageTitle" :key="filterFavo"/>
+    </transition>
     <div class="filter-menu">
       <div class="menu-tab" :class="{ bodyShow: open }">
         <transition name="eventSerch" mode="out-in">

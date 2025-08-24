@@ -3,6 +3,7 @@ import events from "public/test-events.json";
 import EventCard from "~/components/EventCard.vue";
 import PageTitle from "~/components/PageTitle.vue";
 import FilterButton from "~/components/EventFilterButton.vue";
+import LinkButton from "~/components/LinkButtonComponent.vue";
 import { reactive } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
@@ -13,14 +14,15 @@ definePageMeta({
 });
 const open = ref(false);
 const onlyFavo = ref(false);
+const popUpClear = ref(false);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
 const filterFavo = computed(() =>
   onlyFavo.value ? "　全て表示　" : "お気に入り♡"
 );
-const favoriteEvents = ref<string[]>([]);
+const favoriteEvents = ref<string[]>([]); //お気に入り配列用意
 
 onMounted(() => {
-  const stored = localStorage.getItem("favoriteEvents");
+  const stored = localStorage.getItem("favoriteEvents"); //Favo読み取り
   if (stored) {
     const parsed = JSON.parse(stored);
     favoriteEvents.value = Array.isArray(parsed)
@@ -30,6 +32,7 @@ onMounted(() => {
 });
 
 function handleToggleFavorite(id: string | number) {
+  //Favo更新
   const strId = String(id);
   if (favoriteEvents.value.includes(strId)) {
     favoriteEvents.value = favoriteEvents.value.filter((f) => f !== strId);
@@ -39,6 +42,12 @@ function handleToggleFavorite(id: string | number) {
   localStorage.setItem("favoriteEvents", JSON.stringify(favoriteEvents.value));
 }
 
+function clearAllFavo() {
+  favoriteEvents.value = [];
+  localStorage.setItem("favoriteEvents", JSON.stringify(favoriteEvents.value));
+  popUpClear.value = false;
+  onlyFavo.value = false;
+}
 //FilterButtonの状態管理
 //アコーディングメニューの状態管理
 const filter = reactive({
@@ -245,10 +254,10 @@ const filteredEvents = computed(() => {
   return events.filter((event) => {
     const placeMatch = filter[event.place];
     const categoryMatch = filter[event.genre];
-    if(onlyFavo.value){
+    if (onlyFavo.value) {
       const favoMatch = favoriteEvents.value.includes(event.id);
       return placeMatch && categoryMatch && favoMatch;
-    }else{
+    } else {
       return placeMatch && categoryMatch;
     }
   });
@@ -605,6 +614,28 @@ const filteredEvents = computed(() => {
         @toggle-favorite="handleToggleFavorite"
       />
     </div>
+    <div class="clear-button">
+      <LinkButton
+        text="お気に入りを削除する"
+        v-if="favoriteEvents.length > 0"
+        @click="popUpClear = true"
+      />
+    </div>
+    <transition name="popUpClearAnime">
+      <div class="favo-clear" v-show="popUpClear" @click="popUpClear = false">
+        <!--Favo全削除用のポップアップ-->
+        <div class="clear-window">
+          <div class="clear-text">
+            <img src="~/assets/images/leaf.svg" alt="" />
+            <p>お気に入りをすべて削除しますか？</p>
+          </div>
+          <div class="clear-buttons">
+            <div id="cancel" @click="popUpClear = false">キャンセル</div>
+            <div id="clear" @click="clearAllFavo">削除する</div>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -745,7 +776,106 @@ const filteredEvents = computed(() => {
     transform: translateX(-100%);
   }
 }
+.clear-button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
 
+.favo-clear {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #444444aa;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  .clear-window {
+    width: 650px;
+    height: 230px;
+    background-color: #fbefde;
+    border-radius: 40px;
+    font-family: "Zen Old Mincho", sans-serif;
+    .clear-text {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      margin-left: 40px;
+      font-size: 26px;
+      img {
+        width: 100px;
+        transform: rotateY(180deg);
+        margin-right: 30px;
+      }
+    }
+    .clear-buttons {
+      display: flex;
+      margin-top: 50px;
+      margin-left: 300px;
+      gap: 20px;
+      #cancel,
+      #clear {
+        border-radius: 999999px;
+        padding: 6px 15px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      #cancel {
+        background-color: white;
+        border: solid 1px black;
+        text-align: center;
+      }
+      #clear {
+        background-color: #ff5050;
+        color: white;
+        text-align: center;
+      }
+      #cancel:hover {
+        background-color: rgb(240, 240, 240);
+        transition: 0.2s;
+      }
+      #clear:hover {
+        background-color: #e04545;
+        transition: 0.2s;
+      }
+    }
+    @include md {
+      width: 90%;
+      max-width: 650px;
+      height: 230px;
+      padding: 20px 5px;
+      .clear-text {
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        font-size: min(5vw, 26px);
+        img {
+          width: 50px;
+          margin: 0;
+          margin-bottom: 30px;
+          transform: rotateY(180deg);
+          margin-right: 5vw;
+        }
+      }
+      .clear-buttons {
+        margin: 0;
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        #cancel,
+        #clear {
+          border-radius: 999999px;
+          padding: 8px 18px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
 //-----transitionタグのアニメーション↓↓
 
 .eventSerch-enter-active,
@@ -774,5 +904,18 @@ const filteredEvents = computed(() => {
   opacity: 0;
   overflow: hidden;
   transform: translateX(-10px);
+}
+
+.popUpClearAnime-enter-active,
+.popUpClearAnime-leave-active {
+  transition: 0.3s ease;
+}
+.popUpClearAnime-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.popUpClearAnime-enter-from {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>

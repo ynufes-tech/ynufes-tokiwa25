@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import cookies from "vue-cookies";
-const favoriteEvents = ref(cookies.get("favoriteEvents") || []);
-const { eventData } = defineProps<{
+import { computed } from "vue";
+const props = defineProps<{
   eventData: {
     id: number;
     e_name: string;
@@ -10,14 +9,20 @@ const { eventData } = defineProps<{
     genre: string;
     block: string;
   };
+  favoriteEvents: string[];
 }>();
 
+const { eventData } = toRefs(props);
+
+const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
 //const iconURL = `https://storage.googleapis.com/seiryo25-assets/icons/${props.eventData.id}.webp`
 </script>
 
 <template>
   <div class="event-card">
-    <img src="~/assets/images/test-icon.webp" alt="" class="icon-img" />
+    <NuxtLink :to="`/events/${eventData.id}`">
+      <img src="~/assets/images/test-icon.webp" alt="" class="icon-img" />
+    </NuxtLink>
     <div class="details">
       <p
         class="event-title"
@@ -39,8 +44,20 @@ const { eventData } = defineProps<{
           />
           <p class="place-text">{{ eventData.displayPlace }}</p>
         </div>
-        <div class="favorite">
-          <img src="~/assets/images/favorite.svg" alt="" />
+        <div
+          class="favorite"
+          @click="$emit('toggle-favorite', eventData.id)"
+          :class="{ favorited: props.favoriteEvents.includes(eventData.id) }"
+        >
+          <transition name="favoAnime">
+            <img
+              src="~/assets/images/favorite.svg"
+              alt=""
+              v-if="props.favoriteEvents.includes(eventData.id)"
+              class="favorite"
+            />
+          </transition>
+          <img src="~/assets/images/unfavorite.svg" class="unfavorite" alt="" />
         </div>
       </div>
     </div>
@@ -108,6 +125,15 @@ const { eventData } = defineProps<{
     align-items: center;
     gap: 8px;
   }
+  .favorite {
+    z-index: 2;
+    width: auto;
+    cursor: pointer;
+    position: relative;
+    .favorite {
+      position: absolute;
+    }
+  }
   .long-title {
     font-size: 19px;
     @include md {
@@ -119,6 +145,36 @@ const { eventData } = defineProps<{
     @include md {
       font-size: 13px;
     }
+  }
+}
+
+.favoAnime-enter-active {
+  animation: popIn 0.3s forwards;
+}
+.favoAnime-leave-active {
+  animation: popOut 0.2s forwards;
+}
+
+/* keyframes */
+@keyframes popIn {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
   }
 }
 </style>

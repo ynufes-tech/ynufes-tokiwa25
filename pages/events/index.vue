@@ -9,10 +9,32 @@ useHead({
   meta: [{ name: "description", content: "企画一覧" }],
 });
 definePageMeta({
-  hideHeader: true
-})
+  hideHeader: true,
+});
 const open = ref(false);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
+const favoriteEvents = ref<string[]>([]);
+
+onMounted(() => {
+  const stored = localStorage.getItem("favoriteEvents");
+  if (stored) {
+    const parsed = JSON.parse(stored);
+    favoriteEvents.value = Array.isArray(parsed)
+      ? parsed.map(String)
+      : Object.values(parsed).map(String);
+  }
+});
+
+function handleToggleFavorite(id: string | number) {
+  const strId = String(id);
+  if (favoriteEvents.value.includes(strId)) {
+    favoriteEvents.value = favoriteEvents.value.filter((f) => f !== strId);
+  } else {
+    favoriteEvents.value.push(strId);
+  }
+  localStorage.setItem("favoriteEvents", JSON.stringify(favoriteEvents.value));
+}
+
 //FilterButtonの状態管理
 //アコーディングメニューの状態管理
 const filter = reactive({
@@ -221,7 +243,6 @@ const filteredEvents = computed(() => {
     const categoryMatch = filter[event.genre];
     return placeMatch && categoryMatch;
   });
-
 });
 </script>
 
@@ -562,14 +583,14 @@ const filteredEvents = computed(() => {
       </div>
     </div>
     <div class="cards-holder">
-      <NuxtLink
+      <EventCard
         v-for="event in filteredEvents"
         :key="event.id"
-        :to="`/events/${event.id}`"
         class="events-elements"
-      >
-        <EventCard :event-data="event" />
-      </NuxtLink>
+        :eventData="event"
+        :favoriteEvents="favoriteEvents"
+        @toggle-favorite="handleToggleFavorite"
+      />
     </div>
   </div>
 </template>
@@ -606,7 +627,7 @@ const filteredEvents = computed(() => {
   align-items: center;
   gap: 30px;
   border-radius: 20px 0 0 20px;
-  z-index: 2;
+  z-index: 5;
   p {
     font-size: 24px;
     font-family: "Zen Old Mincho", sans-serif;
@@ -651,6 +672,7 @@ const filteredEvents = computed(() => {
   transition: 0.4s;
   opacity: 0.1;
   border-radius: 10px 0 0 10px;
+  z-index: 4;
   @include sm {
     min-height: 301px;
     padding: 30px 10px;
@@ -704,7 +726,7 @@ const filteredEvents = computed(() => {
   transform: translateX(-412px);
   transition: 0.4s;
   opacity: 1;
-  z-index: 1;
+  z-index: 4;
   @include sm {
     top: 15vh;
     transform: translateX(-100%);

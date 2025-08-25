@@ -270,7 +270,7 @@ const filteredEvents = computed(() => {
 <template>
   <div class="page-root">
     <transition name="eventSerch" mode="out-in">
-      <PageTitle :title="modePageTitle" :key="filterFavo"/>
+      <PageTitle :title="modePageTitle" :key="filterFavo" />
     </transition>
     <div class="filter-menu">
       <div class="menu-tab" :class="{ bodyShow: open }">
@@ -610,6 +610,9 @@ const filteredEvents = computed(() => {
       </div>
     </div>
     <div class="cards-holder">
+      <p v-if="filteredEvents.length === 0" class="nothing-events">
+        該当する企画が存在しません。
+      </p>
       <EventCard
         v-for="event in filteredEvents"
         :key="event.id"
@@ -649,6 +652,7 @@ const filteredEvents = computed(() => {
 
 .page-root {
   padding: 100px 100px;
+  font-family: "Zen Old Mincho";
   @include md {
     padding: 50px 5%;
   }
@@ -658,6 +662,11 @@ const filteredEvents = computed(() => {
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
+  .nothing-events {
+    margin-top: 50px;
+    font-size: 1em;
+    color: white;
+  }
 }
 .events-elements {
   text-decoration: none;
@@ -804,6 +813,7 @@ const filteredEvents = computed(() => {
     background-color: #fbefde;
     border-radius: 40px;
     font-family: "Zen Old Mincho", sans-serif;
+    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.3));
     .clear-text {
       display: flex;
       align-items: center;

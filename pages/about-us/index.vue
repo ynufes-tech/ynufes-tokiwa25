@@ -3,8 +3,8 @@ import ContentBox from "~/components/ContentBox.vue";
 
 useHead({
   title: "About-us | 25常盤祭公式HP~紅陽~",
-  meta:[
-    { name: "description", content: "大学祭実行委員についての情報を掲載しています" },
+  meta: [
+    {name: "description", content: "大学祭実行委員についての情報を掲載しています"},
   ],
 });
 </script>
@@ -12,14 +12,12 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <PageTitle :title="'大学祭実行委員会について'" :sub-title="'大学祭実行委員会について'" />
-      <div class="box1">
-        <div class="explain">
-          <p>年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br/>
-            私たち大学祭実行委員会は、その一日を最高の思い出にするために、日々活動を重ねています。<br/>
-            そして、会場・企画・技術・経理・総務・物品・編集の7つの部局がそれぞれの専門性を発揮し、ひとつの祭を形作っています。
-          </p>
-        </div>
+      <PageTitle :title="'大学祭実行委員会について'" :sub-title="'大学祭実行委員会について'"/>
+      <div class="explain">
+        <p>年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br/>
+          私たち大学祭実行委員会は、その一日を最高の思い出にするために、日々活動を重ねています。<br/>
+          そして、会場・企画・技術・経理・総務・物品・編集の7つの部局がそれぞれの専門性を発揮し、ひとつの祭を形作っています。
+        </p>
       </div>
       <div class="box2">
         <div class="chairman" id="chairman">
@@ -69,18 +67,15 @@ useHead({
             </div>
             <div class="picture">
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="rt-img"
-                  class="member-img"
+                  class="member-img middle-img rt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
             </div>
@@ -90,18 +85,15 @@ useHead({
           <div class="about-re">
             <div class="picture">
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="rt-img"
-                  class="member-img"
+                  class="member-img middle-img rt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
             </div>
@@ -151,38 +143,33 @@ useHead({
             </div>
             <div class="picture">
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="rt-img"
-                  class="member-img"
+                  class="member-img middle-img rt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
+            </div>
           </div>
         </div>
         <div class="department" :id="'accounting'">
           <div class="about-re">
             <div class="picture">
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="rt-img"
-                  class="member-img"
+                  class="member-img middle-img rt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
             </div>
@@ -232,18 +219,15 @@ useHead({
             </div>
             <div class="picture">
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="rt-img"
-                  class="member-img"
+                  class="member-img middle-img rt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
             </div>
@@ -253,18 +237,15 @@ useHead({
           <div class="about-re">
             <div class="picture">
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="rt-img"
-                  class="member-img"
+                  class="member-img middle-img rt-img"
                   src="/assets/images/tmp-img.svg"
               >
               <img
-                  id="lt-img"
-                  class="member-img"
+                  class="member-img lt-img"
                   src="/assets/images/tmp-img.svg"
               >
             </div>
@@ -275,7 +256,7 @@ useHead({
                   <img
                       src="~/assets/images/momiji.svg"
                       alt="momiji"
-                   >
+                  >
                   <p>物品部</p>
                 </div>
               </div>
@@ -289,51 +270,47 @@ useHead({
               </ContentBox>
             </div>
           </div>
-        </div>
-        <div class="department" :id="'editional'">
-          <div class="about-nm">
-            <div class="set">
-              <div class="name_wrapper">
+          <div class="department" :id="'editional'">
+            <div class="about-nm">
+              <div class="set">
+                <div class="name_wrapper">
 
-                <div class="name">
-                  <img
-                      src="~/assets/images/momiji.svg"
-                      alt="momiji"
-                  >
-                  <p>編集部</p>
+                  <div class="name">
+                    <img
+                        src="~/assets/images/momiji.svg"
+                        alt="momiji"
+                    >
+                    <p>編集部</p>
+                  </div>
                 </div>
+                <ContentBox id="contentbox">
+                  <p>
+                    ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
+                    ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
+                    ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
+                    ここにテキストを
+                  </p>
+                </ContentBox>
               </div>
-              <ContentBox id="contentbox">
-                <p>
-                  ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-                  ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-                  ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-                  ここにテキストを
-                </p>
-              </ContentBox>
-            </div>
-            <div class="picture">
-              <img
-                  id="lt-img"
-                  class="member-img"
-                  src="/assets/images/tmp-img.svg"
-              >
-              <img
-                  id="rt-img"
-                  class="member-img"
-                  src="/assets/images/tmp-img.svg"
-              >
-              <img
-                  id="lt-img"
-                  class="member-img"
-                  src="/assets/images/tmp-img.svg"
-              >
+              <div class="picture">
+                <img
+                    class="member-img lt-img"
+                    src="/assets/images/tmp-img.svg"
+                >
+                <img
+                    class="member-img middle-img rt-img"
+                    src="/assets/images/tmp-img.svg"
+                >
+                <img
+                    class="member-img lt-img"
+                    src="/assets/images/tmp-img.svg"
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -346,7 +323,7 @@ useHead({
   align-items: center;
   text-align: center;
   padding: 50px;
-  color :#000000;
+  color: #000000;
 }
 
 .page-container {
@@ -378,6 +355,7 @@ useHead({
     font-size: 13px;
   }
 }
+
 .chairman {
   margin-bottom: 23vh;
 }
@@ -393,6 +371,7 @@ useHead({
 .name {
   display: flex;
   align-items: center;
+
   p {
     font-size: 40px;
     @include md {
@@ -400,7 +379,6 @@ useHead({
     }
   }
 }
-
 
 
 .box2 {
@@ -429,21 +407,18 @@ useHead({
   }
 }
 
+.set {
+  flex: 1;
+}
+
+
 .picture {
+  flex: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 2rem;
   margin-top: 10vh;
-}
-
-.chairman-img {
-  width: 200px;
-  height: auto;
-  margin-left: 5rem;
-  @include md {
-    margin: 0;
-  }
 }
 
 .member-img {
@@ -453,4 +428,23 @@ useHead({
     width: 200px;
   }
 }
+
+.name p {
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  @include md {
+    font-size: 28px;
+  }
+}
+
+.middle-img {
+  margin-left: 400px; // about-nm の場合
+}
+
+.about-re .middle-img {
+  margin-left: 0;
+  margin-right: 400px; // about-re の場合
+}
+
 </style>

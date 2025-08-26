@@ -5,6 +5,8 @@ useHead({
   title: "About-us | 25常盤祭公式HP~紅陽~",
   meta: [
     {name: "description", content: "大学祭実行委員についての情報を掲載しています"},
+  meta: [
+    {name: "description", content: "大学祭実行委員についての情報を掲載しています"},
   ],
 });
 </script>
@@ -12,6 +14,12 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
+      <PageTitle :title="'大学祭実行委員会について'" :sub-title="'大学祭実行委員会について'"/>
+      <div class="explain">
+        <p>年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br/>
+          私たち大学祭実行委員会は、その一日を最高の思い出にするために、日々活動を重ねています。<br/>
+          そして、会場・企画・技術・経理・総務・物品・編集の7つの部局がそれぞれの専門性を発揮し、ひとつの祭を形作っています。
+        </p>
       <PageTitle :title="'大学祭実行委員会について'" :sub-title="'大学祭実行委員会について'"/>
       <div class="explain">
         <p>年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br/>
@@ -417,7 +425,13 @@ useHead({
   }
 }
 
+.set {
+  flex: 1;
+}
+
+
 .picture {
+  flex: 1;
   display: flex;
   align-items: center;
   flex-direction: column;

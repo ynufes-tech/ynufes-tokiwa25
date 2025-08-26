@@ -362,10 +362,16 @@ useHead({
 
 .chairman {
   margin-bottom: 23vh;
+  @include sm {
+    margin-bottom: 10vh;
+  }
 }
 
 .department {
   margin: 10vh 0;
+  @include sm {
+    margin: 5vh 0;
+  }
 }
 
 .name_wrapper {
@@ -377,9 +383,9 @@ useHead({
   align-items: center;
 
   p {
-    font-size: 40px;
+    font-size: 38px;
     @include md {
-      font-size: 28px;
+      font-size: 25px;
     }
   }
 }
@@ -438,7 +444,6 @@ useHead({
 
 .middle-img {
   margin-left: 200px; // about-nm の場合
-
   @include sm {
     margin: 0;
   }
@@ -447,7 +452,6 @@ useHead({
 .about-re .middle-img {
   margin-left: 0;
   margin-right: 200px; // about-re の場合
-
   @include sm {
     margin: 0;
   }

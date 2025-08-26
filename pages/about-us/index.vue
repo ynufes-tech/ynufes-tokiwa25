@@ -324,6 +324,10 @@ useHead({
   text-align: center;
   padding: 50px;
   color: #000000;
+
+  @include sm {
+    padding: 25px;
+  }
 }
 
 .page-container {
@@ -407,13 +411,7 @@ useHead({
   }
 }
 
-.set {
-  flex: 1;
-}
-
-
 .picture {
-  flex: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -422,7 +420,7 @@ useHead({
 }
 
 .member-img {
-  width: 220px;
+  width: 170px;
   height: auto;
   @include md {
     width: 200px;
@@ -439,12 +437,20 @@ useHead({
 }
 
 .middle-img {
-  margin-left: 400px; // about-nm の場合
+  margin-left: 200px; // about-nm の場合
+
+  @include sm {
+    margin: 0;
+  }
 }
 
 .about-re .middle-img {
   margin-left: 0;
-  margin-right: 400px; // about-re の場合
+  margin-right: 200px; // about-re の場合
+
+  @include sm {
+    margin: 0;
+  }
 }
 
 </style>

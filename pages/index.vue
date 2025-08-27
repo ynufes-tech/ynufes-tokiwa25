@@ -82,7 +82,7 @@ import PageTitle from '~/components/PageTitle.vue';
   width: 300px;
   max-width: 25vw;
   @include sm {
-    width: 100px;
+    width: 110px;
     max-width: none;
   }
 }

@@ -367,10 +367,13 @@ useHead({
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 50px;
+  padding: 40px;
   color: #000000;
 
-  @include sm {
+  p {
+    line-height: 1.2;
+  }
+  @include md {
     padding: 25px;
   }
 }
@@ -475,7 +478,7 @@ useHead({
 }
 
 .member-img {
-  width: 170px;
+  width: 200px;
   height: auto;
   @include md {
     width: 200px;

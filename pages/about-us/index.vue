@@ -258,7 +258,7 @@ useHead({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 10vw 10vh;
+  padding: 0 4vw 10vh;
 }
 
 .box1 {

@@ -22,8 +22,13 @@ export default defineNuxtConfig({
     '@/assets/css/reset.css'
   ],
   modules: [
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    'nuxt-particles'
   ],
+  particles: {
+    mode: 'full', // 'full' | 'slim' | 'basic' | 'custom'
+    lazy: true
+  },
   googleFonts: {
     families: {
       'Kaisei Decol': true    

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import PageTitle from "~/components/PageTitle.vue";
 import ScheduleEventsCard from "~/components/ScheduleEventsCard.vue";
+import SelectorButton from "~/components/SelectorButton.vue";
 import { ref, computed } from "vue";
 
 // 日付タブ
@@ -20,7 +21,10 @@ const venues = [
   "野外音楽堂",
 ];
 
-// 仮のイベントデータ（例）
+// 選択中の会場（md以下で使用）
+const selectedVenue = ref(0);
+
+// 仮のイベントデータ
 const allEvents = [
   {
     date: "1031",
@@ -88,7 +92,7 @@ const endMin = computed(() => toMin(dateTimeRanges[selectedDate.value].end));
 const totalMin = computed(() => endMin.value - startMin.value);
 const pxPerMin = computed(() => HOUR_PX / 60);
 
-// 時間ラベル（毎時）
+// 時間ラベル
 const hoursList = computed(() => {
   const list: string[] = [];
   for (let t = startMin.value; t <= endMin.value; t += 60) {
@@ -100,7 +104,7 @@ const hoursList = computed(() => {
   return list;
 });
 
-// 当日イベント
+// イベント
 const dayEvents = computed(() =>
   allEvents.filter((e) => e.date === selectedDate.value)
 );
@@ -129,12 +133,12 @@ const columnEvents = (idx: number) =>
         :class="{ active: selectedDate === d.value }"
         @click="selectedDate = d.value"
       >
-        <a href="javascript:void(0)" class="link-hover"
-          ><p class="text">{{ d.label }}</p></a
-        >
-        <a href="javascript:void(0)" class="link"
-          ><p class="text">{{ d.label }}</p></a
-        >
+        <a href="javascript:void(0)" class="link-hover">
+          <p class="text">{{ d.label }}</p>
+        </a>
+        <a href="javascript:void(0)" class="link">
+          <p class="text">{{ d.label }}</p>
+        </a>
       </div>
     </div>
 
@@ -146,7 +150,7 @@ const columnEvents = (idx: number) =>
         '--venue-count': venues.length
       } as any"
     >
-      <!-- ヘッダー（会場名）：時間レールの外、上に固定 -->
+      <!-- PC: ヘッダー -->
       <div class="header-row">
         <div class="time-rail-header"></div>
         <div class="venue-row">
@@ -158,6 +162,9 @@ const columnEvents = (idx: number) =>
           />
         </div>
       </div>
+
+      <!-- md以下: 会場セレクター -->
+      <SelectorButton :options="venues" v-model="selectedVenue" />
 
       <!-- 本体（時間＋イベント） -->
       <div class="body-row">
@@ -173,7 +180,7 @@ const columnEvents = (idx: number) =>
           </div>
         </div>
 
-        <!-- 背景ライン（実線＋中間破線） -->
+        <!-- 背景ライン -->
         <div class="line-layer">
           <template v-for="(h, i) in hoursList" :key="`line-${h}`">
             <div class="hour-line solid" :style="{ top: `${i * HOUR_PX}px` }" />
@@ -185,9 +192,14 @@ const columnEvents = (idx: number) =>
           </template>
         </div>
 
-        <!-- 右：会場ごとの列（イベントを列内に絶対配置） -->
+        <!-- 右：会場ごとの列 -->
         <div class="cols">
-          <div v-for="(v, idx) in venues" :key="idx" class="col">
+          <div
+            v-for="(v, idx) in venues"
+            :key="idx"
+            class="col"
+            :class="{ hiddenOnMobile: selectedVenue !== idx }"
+          >
             <ScheduleEventsCard
               v-for="(ev, j) in columnEvents(idx)"
               :key="j"
@@ -207,12 +219,17 @@ const columnEvents = (idx: number) =>
   padding: 0 40px;
 }
 
-/* 日付ボタン（既存デザイン踏襲＋activeで色固定） */
+/* 日付ボタン */
 .date-tabs {
   display: flex;
   justify-content: center;
   gap: 14px;
   margin-bottom: 18px;
+
+  @include sm {
+    gap: 5px;
+    margin-bottom: 30px;
+  }
 
   .date-btn {
     position: relative;
@@ -226,7 +243,7 @@ const columnEvents = (idx: number) =>
     .link-hover {
       text-decoration: none;
       padding: 8px 8px;
-      border: 4px solid transparent;
+      border: 3px solid transparent;
       border-radius: 999999px;
       display: flex;
       align-items: center;
@@ -237,6 +254,10 @@ const columnEvents = (idx: number) =>
         margin: 1px 5vw;
         font-size: 18px;
         font-family: "Zen Old Mincho", sans-serif;
+        @include md {
+          font-size: 15px;
+          margin: 1px 3vw;
+        }
       }
     }
     .link {
@@ -244,7 +265,7 @@ const columnEvents = (idx: number) =>
         linear-gradient(to right, #fff050, #ffd633) border-box;
       background-clip: padding-box, border-box;
       p {
-        color: #f97d47;
+        color: #000;
       }
     }
     .link-hover {
@@ -272,19 +293,22 @@ const columnEvents = (idx: number) =>
   min-height: var(--board-h);
 }
 
-/* 上部ヘッダー行： [時間の空き 60px] + [会場n列] */
+/* PC: ヘッダー */
 .header-row {
   display: grid;
   grid-template-columns: 60px 1fr;
   margin-bottom: 10px;
+  @include md {
+    display: none;
+  } /* md以下は非表示 */
 }
+
 .time-rail-header {
   width: 60px;
 }
 
-/* 会場は右側全幅に、列数は venues.length と同期 */
 .venue-row {
-  grid-column: 2 / -1; /* ← ここが肝：右側全幅で受ける */
+  grid-column: 2 / -1; /* ← 右側全幅で受ける */
   display: grid;
   grid-template-columns: repeat(var(--venue-count), 1fr);
   gap: 15px;
@@ -313,9 +337,12 @@ const columnEvents = (idx: number) =>
   display: grid;
   grid-template-columns: 60px 1fr;
   position: relative;
+  @include md {
+    font-size: 14px;
+    right: 6px;
+  }
 }
 
-/* 左：時間レール */
 .time-rail {
   position: relative;
   width: 60px;
@@ -352,7 +379,6 @@ const columnEvents = (idx: number) =>
   }
 }
 
-/* 右：会場ごとの列 */
 .cols {
   grid-column: 2 / -1;
   display: grid;
@@ -362,7 +388,10 @@ const columnEvents = (idx: number) =>
   z-index: 2;
 
   @include md {
-    grid-template-columns: repeat(var(--venue-count), minmax(120px, 1fr));
+    grid-template-columns: 1fr; /* md以下は1列だけ */
+    .col.hiddenOnMobile {
+      display: none;
+    }
   }
 
   .col {

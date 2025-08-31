@@ -67,10 +67,7 @@ if (props.title.length < 5) {
       font-size: 32px;
     }
     @include md {
-      font-size: 4.5vw;
-    }
-    @include sm {
-      font-size: 4.5vw;
+      font-size: 5.8vw;//大学祭実行委員会について　+1文字ギリギリ
     }
   }
   #rightside {

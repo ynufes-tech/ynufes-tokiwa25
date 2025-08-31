@@ -1,0 +1,80 @@
+{
+  "中間発表 10/31(金)": [
+    {
+      "sectionTitle": "販売・展示・体験部門",
+      "rankings": [
+        { "rank": 2, "title": "企画A", "votes": 0, "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "企画B", "votes": 0, "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "企画C", "votes": 0, "imageUrl": "/images/c.png" }
+      ]
+    },
+    {
+      "sectionTitle": "食べ物部門",
+      "rankings": [
+        { "rank": 2, "title": "企画A", "votes": 0, "imageUrl": "/images/takoyaki.png" },
+        { "rank": 1, "title": "企画B", "votes": 0, "imageUrl": "/images/curry.png" },
+        { "rank": 3, "title": "企画C", "votes": 0, "imageUrl": "/images/frank.png" }
+      ]
+    },
+    {
+      "sectionTitle": "パフォーマンス部門",
+      "rankings": [
+        { "rank": 2, "title": "企画A", "votes": 0, "imageUrl": "/images/takoyaki.png" },
+        { "rank": 1, "title": "企画B", "votes": 0, "imageUrl": "/images/curry.png" },
+        { "rank": 3, "title": "企画C", "votes": 0, "imageUrl": "/images/frank.png" }
+      ]
+    }
+  ],
+  "中間発表 11/1(土)": [
+    { 
+      "sectionTitle": "販売・展示・体験部門",
+      "rankings": [
+        { "rank": 2, "title": "企画A", "votes": 0 },
+        { "rank": 1, "title": "企画B", "votes": 0 },
+        { "rank": 3, "title": "企画C", "votes": 0 }
+      ]
+    },
+    {
+      "sectionTitle": "食べ物部門",
+      "rankings": [
+        { "rank": 2, "title": "企画A", "votes": 0, "imageUrl": "/images/takoyaki.png" },
+        { "rank": 1, "title": "企画B", "votes": 0, "imageUrl": "/images/curry.png" },
+        { "rank": 3, "title": "企画C", "votes": 0, "imageUrl": "/images/frank.png" }
+      ]
+    },
+    {
+      "sectionTitle": "パフォーマンス部門",
+      "rankings": [
+        { "rank": 1, "title": "企画A", "votes": 0, "imageUrl": "/images/curry.png" },
+        { "rank": 2, "title": "企画B", "votes": 0, "imageUrl": "/images/takoyaki.png" },
+        { "rank": 3, "title": "企画C", "votes": 0, "imageUrl": "/images/frank.png" }
+      ]
+    }
+  ],
+  "最終発表 11/2(日)": [
+    {
+      "sectionTitle": "販売・展示・体験部門",
+      "rankings": [
+        { "rank": 2, "title": "企画A", "votes": 0, "imageUrl": "/images/takoyaki.png" },
+        { "rank": 1, "title": "企画B", "votes": 0, "imageUrl": "/images/curry.png" },
+        { "rank": 3, "title": "企画C", "votes": 0, "imageUrl": "/images/frank.png" }
+      ]
+    },
+    {
+      "sectionTitle": "食べ物部門",
+      "rankings": [
+      { "rank": 2, "title": "企画A", "votes": 0, "imageUrl": "/images/takoyaki.png" },
+        { "rank": 1, "title": "企画B", "votes": 0, "imageUrl": "/images/curry.png" },
+        { "rank": 3, "title": "企画C", "votes": 0, "imageUrl": "/images/frank.png" }
+      ]
+    },
+    {
+      "sectionTitle": "パフォーマンス部門",
+      "rankings": [
+        { "rank": 2, "title": "企画A", "votes": 0 },
+        { "rank": 1, "title": "企画B", "votes": 0 },
+        { "rank": 3, "title": "企画C", "votes": 0 }
+      ]
+    }
+  ]
+}

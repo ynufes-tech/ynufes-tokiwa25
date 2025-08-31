@@ -20,6 +20,8 @@ const props = defineProps<{
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/_breakpoint.scss" as *;
+
 .event-card {
   position: absolute;
   left: 8px;
@@ -28,11 +30,21 @@ const props = defineProps<{
   background: rgba(255, 255, 255, 0.4);
   text-align: center;
   padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
   .title {
     font-weight: bold;
+    @include md {
+      font-size: 20px;
+    }
   }
   .subtitle {
     font-size: 14px;
+    @include md {
+      font-size: 19px;
+    }
   }
 }
 </style>

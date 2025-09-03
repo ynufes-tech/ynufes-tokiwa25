@@ -14,7 +14,7 @@ useHead({
     <div class="page-container">
       <PageTitle :title="'おしらせ'" :sub-title="'おしらせ'"/>
       <div class="Latest-News">
-        <div class="box1">
+        <div class="box">
         <p>最新情報</p>
         </div>
       <ContentBox id="contentbox">
@@ -81,7 +81,7 @@ useHead({
   }
 }
 
-.box1{
+.box{
   p{
     font-size: 50px;
     margin-left: 115px;

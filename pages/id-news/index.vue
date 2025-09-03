@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ContentBox from "~/components/ContentBox.vue";
+import LinkButton from "~/components/LinkButtonComponent.vue";
 
 useHead({
   title: "About-us | 25常盤祭公式HP~紅陽~",
@@ -26,6 +27,11 @@ useHead({
             <p>25常盤祭を開催します。</p>
           </div>
           </div>
+      <LinkButton
+          class="LinkButton"
+          text="ニュース一覧へ"
+          link="/news"
+      />
     </div>
   </div>
 </template>
@@ -96,6 +102,20 @@ useHead({
   padding: 70px 60px;
   @include sm{
     padding: 30px 50px;
+  }
+}
+
+.LinkButton {
+  max-width: 20%;
+  margin: 30px 0 0 18rem;
+  justify-content: flex-start;
+  @include md{
+    margin: 30px 0 0 5rem;
+  }
+  @include sm{
+    margin: 30px 0 0 1rem;
+    font-size: 5px;
+    width: 100%;
   }
 }
 

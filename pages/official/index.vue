@@ -13,7 +13,8 @@ useHead({
       <p class="message">
         このページでは、本部である大学祭実行委員会が主催する企画だけをpick upして紹介します！
       </p>
-    <div class="card" v-for="i in 8" :key="i">
+    <div class="card card-grid">
+      <div class="card" v-for="i in 8" :key="i">
       <h3 class="card-title">ゲスト企画 {{ i }}</h3>
       <div class="card-content">
         <div class="card-image"></div>
@@ -21,6 +22,7 @@ useHead({
           企画の内容がここに入ります。企画の説明文を追加できます。
         </p>
       </div>
+    </div>
     </div>
     </div>
   </div>
@@ -41,7 +43,7 @@ useHead({
   border-radius: 15px;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: column
 }
 .card-title {
   font-size: 1.2rem;
@@ -65,6 +67,15 @@ useHead({
   flex: 1;
   font-size: 0.9rem;
   line-height: 1.4;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: none;
 }
 </style>
 

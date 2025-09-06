@@ -13,15 +13,15 @@ useHead({
       <p class="message">
         このページでは、本部である大学祭実行委員会が主催する企画だけをpick upして紹介します！
       </p>
-    </div>
-    <div class="card-grid">
-      <div class="card" v-for="i in 8" :key="i">
+    <div class="card" v-for="i in 8" :key="i">
+      <h3 class="card-title">ゲスト企画 {{ i }}</h3>
+      <div class="card-content">
         <div class="card-image"></div>
-        <h3 class="card-title">ゲスト企画 {{ i }}</h3>
         <p class="card-text">
           企画の内容がここに入ります。企画の説明文を追加できます。
         </p>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -36,42 +36,35 @@ useHead({
   text-align: center ;
   margin-bottom: 2rem;
 }
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2列 */
-  gap: 2rem; /* カード同士の間隔 */
-  max-width: 800px;
-  margin: 0 auto; /* 中央寄せ */
-}
-
-/* 各カード */
 .card {
-  background: rgba(255, 192, 203, 0.7); /* 半透明のピンク */
+  background: rgba(255, 192, 203, 0.7);
   border-radius: 15px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
-/* 画像枠 */
-.card-image {
-  width: 100px;
-  height: 100px;
-  background: #ddd; /* 仮のグレー背景 */
-  border-radius: 8px;
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
   margin-bottom: 1rem;
 }
-
-/* タイトル */
-.card-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.card-content {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
-
-/* 説明文 */
+.card-image {
+  width: 120px;
+  height: 120px;
+  background: #ddd;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
 .card-text {
+  flex: 1;
   font-size: 0.9rem;
+  line-height: 1.4;
 }
 </style>
 

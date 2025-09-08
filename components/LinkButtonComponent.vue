@@ -40,9 +40,8 @@ const props = defineProps({
   border: 4px solid transparent;
   border-radius: 999999px;
   transition: 0.25s;
-  display: flex;
+  display: inline-flex;
   text-decoration: none;
-  width: 100%;
   align-items: center;
   justify-content: space-around;
   filter: drop-shadow(0px 2px 3px rgba(255, 255, 255, 0.5));
@@ -55,8 +54,9 @@ const props = defineProps({
     font-family: "Zen Old Mincho", sans-serif;
   }
   img {
-    width: 20px;
+    width: 15px;
     margin-right: 10px;
+    margin-left: 15px;
   }
 }
 

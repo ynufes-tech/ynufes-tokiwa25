@@ -5,7 +5,10 @@ import ContentBox from "~/components/ContentBox.vue";
 useHead({
   title: "About-us | 25常盤祭公式HP~紅陽~",
   meta: [
-    { name: "description", content: "大学祭実行委員についての情報を掲載しています" },
+    {
+      name: "description",
+      content: "大学祭実行委員についての情報を掲載しています",
+    },
   ],
 });
 </script>
@@ -13,7 +16,10 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <PageTitle :title="'大学祭実行委員会について'" :sub-title="'大学祭実行委員会について'" />
+      <PageTitle
+        :title="'大学祭実行委員会について'"
+        :sub-title="'大学祭実行委員会について'"
+      />
       <div class="explain">
         <p>
           年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br />
@@ -27,7 +33,11 @@ useHead({
         <div class="chairman" id="chairman">
           <div class="name_wrapper">
             <div class="name">
-              <img src="~/assets/images/momiji.svg" alt="momiji" />
+              <img
+                src="~/assets/images/momiji.svg"
+                alt="momiji"
+                class="bullet-leaf"
+              />
               <p>実行委員長挨拶</p>
             </div>
           </div>
@@ -50,7 +60,11 @@ useHead({
             <div class="set">
               <div class="name_wrapper">
                 <div class="name">
-                  <img src="~/assets/images/momiji.svg" alt="momiji" />
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="bullet-leaf"
+                  />
                   <p>会場部</p>
                 </div>
               </div>
@@ -64,9 +78,21 @@ useHead({
               </ContentBox>
             </div>
             <div class="picture">
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img middle-img rt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -75,14 +101,30 @@ useHead({
         <div class="department" id="planning">
           <div class="about-re">
             <div class="picture">
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img middle-img rt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
             <div class="set">
               <div class="name_wrapper">
                 <div class="name">
-                  <img src="~/assets/images/momiji.svg" alt="momiji" />
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="bullet-leaf"
+                  />
                   <p>企画部</p>
                 </div>
               </div>
@@ -104,7 +146,11 @@ useHead({
             <div class="set">
               <div class="name_wrapper">
                 <div class="name">
-                  <img src="~/assets/images/momiji.svg" alt="momiji" />
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="bullet-leaf"
+                  />
                   <p>技術部</p>
                 </div>
               </div>
@@ -118,9 +164,21 @@ useHead({
               </ContentBox>
             </div>
             <div class="picture">
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img middle-img rt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -129,14 +187,30 @@ useHead({
         <div class="department" id="accounting">
           <div class="about-re">
             <div class="picture">
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img middle-img rt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
             <div class="set">
               <div class="name_wrapper">
                 <div class="name">
-                  <img src="~/assets/images/momiji.svg" alt="momiji" />
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="bullet-leaf"
+                  />
                   <p>経理部</p>
                 </div>
               </div>
@@ -158,7 +232,11 @@ useHead({
             <div class="set">
               <div class="name_wrapper">
                 <div class="name">
-                  <img src="~/assets/images/momiji.svg" alt="momiji" />
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="bullet-leaf"
+                  />
                   <p>総務部</p>
                 </div>
               </div>
@@ -172,9 +250,21 @@ useHead({
               </ContentBox>
             </div>
             <div class="picture">
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img middle-img rt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -183,14 +273,30 @@ useHead({
         <div class="department" id="equipment">
           <div class="about-re">
             <div class="picture">
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img middle-img rt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
             <div class="set">
               <div class="name_wrapper">
                 <div class="name">
-                  <img src="~/assets/images/momiji.svg" alt="momiji" />
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="bullet-leaf"
+                  />
                   <p>物品部</p>
                 </div>
               </div>
@@ -212,7 +318,11 @@ useHead({
             <div class="set">
               <div class="name_wrapper">
                 <div class="name">
-                  <img src="~/assets/images/momiji.svg" alt="momiji" />
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="bullet-leaf"
+                  />
                   <p>編集部</p>
                 </div>
               </div>
@@ -226,9 +336,21 @@ useHead({
               </ContentBox>
             </div>
             <div class="picture">
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img middle-img rt-img" src="/assets/images/tmp-img.svg" alt="" />
-              <img class="member-img lt-img" src="/assets/images/tmp-img.svg" alt="" />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -245,10 +367,13 @@ useHead({
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 50px;
+  padding: 40px;
   color: #000000;
 
-  @include sm {
+  p {
+    line-height: 1.2;
+  }
+  @include md {
     padding: 25px;
   }
 }
@@ -258,7 +383,7 @@ useHead({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 10vw 10vh;
+  padding: 0 4vw 10vh;
 }
 
 .box1 {
@@ -353,7 +478,7 @@ useHead({
 }
 
 .member-img {
-  width: 170px;
+  width: 200px;
   height: auto;
   @include md {
     width: 200px;
@@ -381,6 +506,15 @@ useHead({
   margin-right: 200px; // about-re の場合
   @include sm {
     margin: 0;
+  }
+}
+
+.bullet-leaf {
+  @include md {
+    width: 80px;
+  }
+  @include sm {
+    width: 60px;
   }
 }
 </style>

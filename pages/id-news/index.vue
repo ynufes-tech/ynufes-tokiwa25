@@ -3,7 +3,7 @@ import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
 
 useHead({
-  title: "About-us | 25常盤祭公式HP~紅陽~",
+  title: "Latest-news | 25常盤祭公式HP~紅陽~",
   meta: [
     {name: "description", content: "おしらせの詳細を掲載しています。"},
   ],
@@ -79,7 +79,6 @@ useHead({
   }
 
   .headline {
-    font-size: 45px;
     text-align: center;
     @include md{
       font-size: 30px;
@@ -91,22 +90,24 @@ useHead({
 }
 
 .news-card.first {
+  font-size: 35px;
   border: 3px solid #42C478;
-  padding: 50px 130px;
+  padding: 30px 110px;
   @include sm{
     padding: 30px 50px;
   }
 }
 .news-card.second {
+  font-size: 25px;
   border: 3px solid #42C478;
-  padding: 70px 60px;
+  padding: 40px 40px;
   @include sm{
     padding: 30px 50px;
   }
 }
 
 .LinkButton {
-  max-width: 20%;
+  max-width: 250px;
   margin: 30px 0 0 18rem;
   justify-content: flex-start;
   @include md{

@@ -12,6 +12,30 @@ const showNoImage = (e: Event) => {
   target.src = "/images/NO_IMAGE.svg";
   target.onerror = null; // 無限ループ防止
 };
+
+//いいね関係
+const favoriteEvents = ref<string[]>([]);
+onMounted(() => {
+  const stored = localStorage.getItem("favoriteEvents"); //Favo読み取り
+  if (stored) {
+    const parsed = JSON.parse(stored);
+    favoriteEvents.value = Array.isArray(parsed)
+      ? parsed.map(String)
+      : Object.values(parsed).map(String);
+  }
+});
+const isFavorite = computed(() => favoriteEvents.value.includes(id.toString()));
+const toggleFavo = () => {
+  if (isFavorite) {
+    favoriteEvents.value = favoriteEvents.value.filter(
+      (f) => f !== id.toString()
+    );
+    console.log(isFavorite)
+  } else {
+    favoriteEvents.value.push(id.toString());
+  }
+  localStorage.setItem("favoriteEvents", JSON.stringify(favoriteEvents.value));
+};
 </script>
 
 <template>
@@ -19,6 +43,19 @@ const showNoImage = (e: Event) => {
     <ContentBox class="title-box">
       <p class="event-title">{{ event.e_name }}</p>
       <p class="org-name">{{ event.o_name }}</p>
+      <div class="favo-wrap">
+        <div class="favo" @click="toggleFavo">
+          <transition name="favoAnime">
+            <img
+              src="~/assets/images/favorite.svg"
+              alt=""
+              v-if="isFavorite"
+              class="favorite"
+            />
+          </transition>
+          <img src="~/assets/images/unfavorite.svg" class="unfavorite" alt="" />
+        </div>
+      </div>
     </ContentBox>
     <div class="content">
       <div class="genre-tag">{{ event.displayGenre }}</div>
@@ -73,6 +110,16 @@ const showNoImage = (e: Event) => {
   .org-name {
     font-size: min(2.5vw, 2rem);
     padding: 15px 0;
+  }
+  .favo {
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+  }
+  .favorite {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
   }
   @include md {
     padding: 0 10px;
@@ -170,6 +217,7 @@ const showNoImage = (e: Event) => {
     margin-top: 130px;
   }
   .org-description > p {
+    font-size: 36px;
     margin-left: 15%;
     @include sm {
       margin-left: 10%;
@@ -180,6 +228,7 @@ const showNoImage = (e: Event) => {
     color: #000;
     text-align: center;
     padding: 20px 40px;
+    margin-top: 10px;
     line-height: 1.3rem;
     @include md {
       padding: 20px 15px;
@@ -188,6 +237,36 @@ const showNoImage = (e: Event) => {
   .to-list {
     margin-top: 150px;
     text-align: center;
+  }
+}
+
+.favoAnime-enter-active {
+  animation: popIn 0.3s forwards;
+}
+.favoAnime-leave-active {
+  animation: popOut 0.2s forwards;
+}
+
+/* keyframes */
+@keyframes popIn {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
   }
 }
 </style>

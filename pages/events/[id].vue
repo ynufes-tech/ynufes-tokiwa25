@@ -3,19 +3,20 @@ const route = useRoute();
 import events from "public/test-events.json";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
+import { ref } from "vue";
 
 const id = parseInt(route.params.id);
 const event = events.find((e) => parseInt(e.id) === id);
 const showNoImage = (e: Event) => {
   //画像が見つからなかった時の処理
   const target = e.target as HTMLImageElement;
-  target.src = "/images/NO_IMAGE.svg";
+  target.src = "/images/NO_IMA.svg";
   target.onerror = null; // 無限ループ防止
 };
 
 //いいね関係
 const favoriteEvents = ref<string[]>([]);
-onMounted(() => {
+function getFavo() {
   const stored = localStorage.getItem("favoriteEvents"); //Favo読み取り
   if (stored) {
     const parsed = JSON.parse(stored);
@@ -23,37 +24,45 @@ onMounted(() => {
       ? parsed.map(String)
       : Object.values(parsed).map(String);
   }
+}
+onMounted(() => {
+  getFavo();
 });
 const isFavorite = computed(() => favoriteEvents.value.includes(id.toString()));
-const toggleFavo = () => {
-  if (isFavorite) {
+function toggleFavo() {
+  if (isFavorite.value) {
     favoriteEvents.value = favoriteEvents.value.filter(
       (f) => f !== id.toString()
     );
-    console.log(isFavorite)
   } else {
     favoriteEvents.value.push(id.toString());
   }
   localStorage.setItem("favoriteEvents", JSON.stringify(favoriteEvents.value));
-};
+}
 </script>
 
 <template>
   <div class="page-root">
     <ContentBox class="title-box">
       <p class="event-title">{{ event.e_name }}</p>
-      <p class="org-name">{{ event.o_name }}</p>
-      <div class="favo-wrap">
-        <div class="favo" @click="toggleFavo">
-          <transition name="favoAnime">
+      <div class="bottom">
+        <p class="org-name">{{ event.o_name }}</p>
+        <div class="favo-wrap">
+          <div class="favo" @click="toggleFavo">
+            <transition name="favoAnime">
+              <img
+                src="~/assets/images/favorite.svg"
+                alt=""
+                v-if="isFavorite"
+                class="favorite"
+              />
+            </transition>
             <img
-              src="~/assets/images/favorite.svg"
+              src="~/assets/images/unfavorite.svg"
+              class="unfavorite"
               alt=""
-              v-if="isFavorite"
-              class="favorite"
             />
-          </transition>
-          <img src="~/assets/images/unfavorite.svg" class="unfavorite" alt="" />
+          </div>
         </div>
       </div>
     </ContentBox>
@@ -102,24 +111,43 @@ const toggleFavo = () => {
 .title-box {
   text-align: center;
   padding: 0 20px;
+  position: relative;
   .event-title {
     font-size: min(3.5vw, 3rem);
     padding: 20px 0;
     border-bottom: 2px solid white;
   }
-  .org-name {
-    font-size: min(2.5vw, 2rem);
-    padding: 15px 0;
-  }
-  .favo {
-    position: relative;
-    width: fit-content;
-    cursor: pointer;
-  }
-  .favorite {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
+  .bottom {
+    display: flex;
+    align-items: center;
+    .org-name {
+      margin: 0 auto;
+      font-size: min(2.5vw, 2rem);
+      padding: 15px 0;
+    }
+    .favo {
+      position: relative;
+      width: fit-content;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      @include md {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .favorite {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+    }
+    .unfavorite {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+    }
   }
   @include md {
     padding: 0 10px;
@@ -206,7 +234,7 @@ const toggleFavo = () => {
     margin-top: 80px;
     text-align: center;
     padding: 20px 40px;
-    line-height: 1.3rem;
+    line-height: 1.8rem;
     @include md {
       padding: 20px 15px;
     }
@@ -229,7 +257,7 @@ const toggleFavo = () => {
     text-align: center;
     padding: 20px 40px;
     margin-top: 10px;
-    line-height: 1.3rem;
+    line-height: 1.8rem;
     @include md {
       padding: 20px 15px;
     }

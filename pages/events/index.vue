@@ -4,7 +4,7 @@ import EventCard from "~/components/EventCard.vue";
 import PageTitle from "~/components/PageTitle.vue";
 import FilterButton from "~/components/EventFilterButton.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
-import { reactive } from "vue";
+import { reactive,ref } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "企画一覧" }],

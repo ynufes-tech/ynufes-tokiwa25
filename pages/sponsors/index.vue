@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import PageTitle from "~/components/PageTitle.vue";
-import ContentBox from "~/components/ContentBox.vue";
-import LinkButtonComponent from "~/components/LinkButtonComponent.vue";
 useHead({
   title: "Sponsors | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "ご協賛企業一覧はこちら" }],
@@ -25,73 +23,73 @@ useHead({
         <p class="subtitle">広告協賛</p>
       </div>
       <div class="company">
-        <div class="company-left">
+        <ul class="company-left">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
-        <div class="company-right">
+        </ul>
+        <ul class="company-right">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
+        </ul>
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
         <p class="subtitle">物品協賛</p>
       </div>
       <div class="company">
-        <div class="company-left">
+        <ul class="company-left">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
-        <div class="company-right">
+        </ul>
+        <ul class="company-right">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
+        </ul>
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
         <p class="subtitle">ブース協賛</p>
       </div>
       <div class="company">
-        <div class="company-left">
+        <ul class="company-left">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
-        <div class="company-right">
+        </ul>
+        <ul class="company-right">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
+        </ul>
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
         <p class="subtitle">寄付</p>
       </div>
       <div class="company">
-        <div class="company-left">
+        <ul class="company-left">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
-        <div class="company-right">
+        </ul>
+        <ul class="company-right">
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
-        </div>
+        </ul>
       </div>
   </div>
 </template>
@@ -136,8 +134,9 @@ useHead({
     @include xl{
       width: 7vw
     }
-    @include lg{
+    @include lg {
       width: 9vw;
+    }
   }
 }
 
@@ -167,7 +166,7 @@ useHead({
   color: #fff;
   margin-left: 12%;
   font-family: Zen Old Mincho;
- }
+}
 
 .company-right{
   color: #fff;

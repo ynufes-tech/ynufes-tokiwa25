@@ -80,6 +80,7 @@ useHead({
           <li>まるまる</li>
           <li>まるまる</li>
           <li>まるまる</li>
+          <li>まるまる</li>
         </div>
         <div class="company-right">
           <li>まるまる</li>

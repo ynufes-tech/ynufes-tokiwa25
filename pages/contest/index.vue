@@ -161,6 +161,22 @@ useHead({
   }
 }
 
+.LinkButton {
+  max-width: 250px;
+  margin: 80px 0;
+  @include sm{
+    font-size: 5px;
+    width: 100%;
+    margin: 50px 0;
+  }
+}
+
+.button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .under-box {
   justify-items: center;
   color: #ffffff;
@@ -221,18 +237,4 @@ useHead({
   }
 }
 
-.LinkButton {
-  max-width: 250px;
-  margin: 80px 0;
-  @include sm{
-    font-size: 5px;
-    width: 100%;
-  }
-}
-
-.button{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 </style>

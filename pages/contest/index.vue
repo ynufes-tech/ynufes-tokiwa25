@@ -115,6 +115,7 @@ useHead({
 }
 
 .subtitle{
+  text-shadow: 0px 2px 4px #333333;
   margin: 40px 17% 20px 17%;
   color: #fff;
   font-size: 2rem;
@@ -189,6 +190,7 @@ useHead({
 .title{
   justify-content: flex-start;
   font-size: 40px;
+  text-shadow: 0px 2px 4px #333333;
   @include md{
     font-size: 30px;
   }
@@ -203,7 +205,7 @@ useHead({
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
-  @include md {
+  @media (max-width: 940px) {
     flex-direction: column;
     align-items: center;
   }
@@ -212,14 +214,17 @@ useHead({
   color: #000000;
   padding: 25px;
   margin: 10px;
+  min-width: 230px;
   max-width: 600px;
   text-align: left;
   align-content: baseline;
-
+  @media (max-width: 940px) {
+    margin-bottom: 30px;
+  }
   .name {
-    font-size: 40px;
+    font-size: 29px;
     @include md{
-      font-size: 30px;
+      font-size: 25px;
     }
     @include sm {
       font-size: 20px;
@@ -231,7 +236,7 @@ useHead({
     font-size: 20px;
     text-align: center;
     @include md {
-      font-size: 20px;
+      font-size: 16px;
       @include sm {
         font-size: 16px;
       }

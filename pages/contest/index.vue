@@ -58,7 +58,7 @@ useHead({
 
          <div class="cate1">
            <p>展示・販売・体験部門</p>
-          <div class="winner first">
+          <ContentBox class="winner">
             <div class="name">
               <p>WHYNUの<br>
                 謎解きゲーム！</p>
@@ -67,11 +67,11 @@ useHead({
             <div class="owner">
               <p>謎解きサークルWHYNU</p>
             </div>
-          </div>
+          </ContentBox >
          </div>
           <div class="cate2">
             <p>食べ物部門</p>
-          <div class="winner second">
+          <ContentBox class="winner">
             <div class="name">
               <p>鶏白湯トマト</p>
             </div>
@@ -80,11 +80,11 @@ useHead({
               <p>横国ラーメンサークル<br>
                   「ラメラメ」</p>
             </div>
-            </div>
+          </ContentBox>
           </div>
           <div class="cate3">
             <p>パフォーマンス部門</p>
-          <div class="winner third">
+          <ContentBox class="winner">
             <div class="name">
               <p>お笑いサークル<br>
                 わかばのライブ</p>
@@ -93,7 +93,7 @@ useHead({
             <div class="owner">
               <p>お笑いサークルわかば</p>
             </div>
-          </div>
+          </ContentBox>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@ useHead({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 10vw 10vh;
+  padding: 0 1vw 10vh;
 }
 
 .subtitle{
@@ -164,10 +164,13 @@ useHead({
 .LinkButton {
   max-width: 250px;
   margin: 80px 0;
+  @include md{
+    margin: 40px;
+  }
   @include sm{
     font-size: 5px;
     width: 100%;
-    margin: 50px 0;
+    margin: 40px 0;
   }
 }
 
@@ -187,15 +190,16 @@ useHead({
   justify-content: flex-start;
   font-size: 40px;
   @include md{
-    font-size: 35px;
+    font-size: 30px;
   }
   @include sm {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
 
 .past-winner {
+  font-family: "Zen Old Mincho", sans-serif;
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
@@ -205,10 +209,8 @@ useHead({
   }
 }
 .winner {
-  background: linear-gradient(180deg, #fbeade, #f8c8c8);
   color: #000000;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 25px;
   margin: 10px;
   max-width: 600px;
   text-align: left;
@@ -217,10 +219,10 @@ useHead({
   .name {
     font-size: 40px;
     @include md{
-      font-size: 35px;
+      font-size: 30px;
     }
     @include sm {
-      font-size: 30px;
+      font-size: 20px;
       margin-left: 0px;
     }
   }

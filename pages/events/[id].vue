@@ -120,10 +120,24 @@ function toggleFavo() {
   .bottom {
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
     .org-name {
-      margin: 0 auto;
       font-size: min(2.5vw, 2rem);
       padding: 15px 0;
+      @include md {
+        font-size: 3vw;
+        padding: 10px 0;
+      }
+      @include sm {
+        font-size: max(.7rem , 3.7vw);
+        padding: 10px 0;
+      }
+    }
+    .favo-wrap {
+      position: absolute;
+      top: 30%;
+      left: 90%;
     }
     .favo {
       position: relative;
@@ -131,10 +145,9 @@ function toggleFavo() {
       cursor: pointer;
       width: 30px;
       height: 30px;
-      margin-right: 10px;
       @include md {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
       }
     }
     .favorite {
@@ -152,22 +165,14 @@ function toggleFavo() {
   @include md {
     padding: 0 10px;
     .event-title {
-      font-size: 4vw;
+      font-size: 4.2vw;
       padding: 15px 0;
-    }
-    .org-name {
-      font-size: 3vw;
-      padding: 10px 0;
     }
   }
   @include sm {
     padding: 0 10px;
     .event-title {
-      font-size: 4.5vw;
-    }
-    .org-name {
-      font-size: 3.5vw;
-      padding: 10px 0;
+      font-size: 4.8vw;
     }
   }
 }

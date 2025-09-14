@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CountdownTimer from "~/components/CountdownTimer.vue";
+import PageTitle from "~/components/PageTitle.vue";
 useHead({
   title: "Top | 25常盤祭公式HP~紅陽~",
   meta: [
@@ -9,31 +11,28 @@ useHead({
     },
   ],
 });
-import CountdownTimer from '~/components/CountdownTimer.vue';
-import PageTitle from '~/components/PageTitle.vue';
 </script>
 
 <template>
   <div class="page-root">
     <div class="page-container">
       <img src="~/assets/images/top-title.svg" alt="title" class="title" />
-      <img
-        src="~/assets/images/top-garland.svg"
-        alt="garl"
-        class="top-garland"
-      />
-      <div class="date">
-        <img src="~/assets/images/day1-frame.svg" alt="day1" class="date-img" />
-        <img src="~/assets/images/day2-frame.svg" alt="day2" class="date-img" />
-        <img src="~/assets/images/day3-frame.svg" alt="day3" class="date-img" />
-      </div>
+      <img src="~/assets/images/dates.svg" class="dates" alt="dates">
       <div class="timer">
-        <img src="~/assets/images/timer-frame-lt.svg " class="timer-frame-lt" alt="countdownframe" />
-        <CountdownTimer
-        title="常盤祭開幕まであと…"
-        targetDate="2025-10-31T13:00:00"
+        <img
+          src="~/assets/images/timer-frame-lt.svg "
+          class="timer-frame-lt"
+          alt="countdownframe"
         />
-        <img src="~/assets/images/timer-frame-rt.svg " class="timer-frame-rt" alt="countdownframe" />
+        <CountdownTimer
+          title="常盤祭開幕まであと…"
+          targetDate="2025-10-31T13:00:00"
+        />
+        <img
+          src="~/assets/images/timer-frame-rt.svg "
+          class="timer-frame-rt"
+          alt="countdownframe"
+        />
       </div>
       <div class="sns">
         <SNS />
@@ -44,7 +43,7 @@ import PageTitle from '~/components/PageTitle.vue';
     </div>
   </div>
 </template>
-  
+
 <style scoped lang="scss">
 @use "@/assets/scss/_breakpoint.scss" as *;
 
@@ -52,7 +51,7 @@ import PageTitle from '~/components/PageTitle.vue';
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 15vh;
+  padding-bottom: 5vh;
 }
 
 .page-container {
@@ -63,39 +62,16 @@ import PageTitle from '~/components/PageTitle.vue';
   max-width: 100%;
   width: 1000px;
   height: auto;
-  margin-bottom: -16vh;
-}
-
-.top-garland {
-  width: 100%;
-  height: auto;
-  max-width: 1900px;
-  margin-bottom: -10vh;
-
-  @include md {
-    margin-top: 20vh;
+  margin-bottom: -20vh;
+  @include md{
+    margin-bottom: -5vh;
   }
 }
 
-.date-img {
-  height: auto;
-  width: 300px;
-  max-width: 25vw;
-  @include sm {
-    width: 110px;
-    max-width: none;
-  }
-}
-
-.date {
-  display: flex;
-  justify-content: center;
-  gap: 0 30px;
-  @include md {
-    margin: 10vh auto;
-  }
-  @include sm {
-    gap: 0 5px;
+.dates{
+  width: 80%;
+  @include md{
+    width: 100%;
   }
 }
 
@@ -106,46 +82,45 @@ import PageTitle from '~/components/PageTitle.vue';
 }
 
 .timer-frame-lt {
- position: absolute;
- left: 0;
- top: 35%;
- transform: translateY(-50%);
- width: 30%;
- height: auto;
+  position: absolute;
+  left: 0;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 30%;
+  height: auto;
 
- @include md {
-   top: 30%;
-   width: 40%;
- }
+  @include md {
+    top: 30%;
+    width: 40%;
+  }
 
- @include sm {
-   top: 20%;
-   width: 50%;
- }
+  @include sm {
+    top: 20%;
+    width: 50%;
+  }
 }
 
 .timer-frame-rt {
- position: absolute;
- top: 65%;
- right: 0;
- transform: translateY(-50%);
- width: 30%;
- height: auto;
+  position: absolute;
+  top: 65%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 30%;
+  height: auto;
 
- @include md {
-   top: 70%;
-   width: 40%;
- }
+  @include md {
+    top: 70%;
+    width: 40%;
+  }
 
- @include sm {
-   top: 80%;
-   width: 50%;
- }
+  @include sm {
+    top: 80%;
+    width: 50%;
+  }
 }
 
 .sns {
-  position: absolute;
-  bottom: 5vh;
+  margin-top: 20vh;
   width: 100%;
 }
 
@@ -154,5 +129,4 @@ import PageTitle from '~/components/PageTitle.vue';
 //   color: #333;
 //   margin-top: 20vh;
 // }
-
 </style>

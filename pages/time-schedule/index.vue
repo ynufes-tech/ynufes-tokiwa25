@@ -1,94 +1,29 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import PageTitle from "~/components/PageTitle.vue";
 import ScheduleEventsCard from "~/components/ScheduleEventsCard.vue";
 import SelectorButton from "~/components/SelectorButton.vue";
+import scheduleData from "~/public/schedule/scheduleData.json"; // JSON読み込み
 import { ref, computed } from "vue";
 
-// 日付タブ
-const dates = [
-  { label: "10/31(金)", value: "1031" },
-  { label: "11/1(土)", value: "1101" },
-  { label: "11/2(日)", value: "1102" },
-];
-const selectedDate = ref("1031");
-
-// 会場リスト
-const venues = [
-  "教育学部棟\n6・7号館の間",
-  "学生センター\nウッドデッキ",
-  "経済・経営\n学部棟の間",
-  "大学会館\n4Fホール",
-  "野外音楽堂",
-];
-
-// 選択中の会場（md以下で使用）
+const dates = scheduleData.dates;
+const selectedDate = ref(dates[0].value);
 const selectedVenue = ref(0);
 
-// 仮のイベントデータ
-const allEvents = [
-  {
-    date: "1031",
-    venue: 0,
-    title: "Liz2025",
-    subtitle: "ダンス",
-    start: "13:00",
-    end: "14:00",
-  },
-  {
-    date: "1031",
-    venue: 3,
-    title: "Liz2025",
-    subtitle: "漫才",
-    start: "13:00",
-    end: "14:00",
-  },
-  {
-    date: "1101",
-    venue: 2,
-    title: "Liz2025",
-    subtitle: "演劇",
-    start: "09:30",
-    end: "10:30",
-  },
-  {
-    date: "1101",
-    venue: 3,
-    title: "Liz2025",
-    subtitle: "ダンス",
-    start: "13:00",
-    end: "14:00",
-  },
-  {
-    date: "1102",
-    venue: 4,
-    title: "Liz2025",
-    subtitle: "合唱",
-    start: "09:00",
-    end: "10:00",
-  },
-];
-
-// 日ごとの時間範囲
-const dateTimeRanges: Record<string, { start: string; end: string }> = {
-  "1031": { start: "13:00", end: "20:30" },
-  "1101": { start: "09:00", end: "20:30" },
-  "1102": { start: "09:00", end: "15:00" },
-};
-
-// 定数
-const HOUR_PX = 200; // 1h = 200px
-
 // ユーティリティ
+const HOUR_PX = 200;
 const toMin = (hhmm: string) => {
   const [h, m] = hhmm.split(":").map(Number);
   return h * 60 + m;
 };
 
-// 選択日の開始/終了
-const startMin = computed(() =>
-  toMin(dateTimeRanges[selectedDate.value].start)
+// 選択中の日付オブジェクト
+const currentDate = computed(() =>
+  dates.find((d) => d.value === selectedDate.value)!
 );
-const endMin = computed(() => toMin(dateTimeRanges[selectedDate.value].end));
+
+// 開始/終了
+const startMin = computed(() => toMin(currentDate.value.timeRange.start));
+const endMin = computed(() => toMin(currentDate.value.timeRange.end));
 const totalMin = computed(() => endMin.value - startMin.value);
 const pxPerMin = computed(() => HOUR_PX / 60);
 
@@ -96,22 +31,18 @@ const pxPerMin = computed(() => HOUR_PX / 60);
 const hoursList = computed(() => {
   const list: string[] = [];
   for (let t = startMin.value; t <= endMin.value; t += 60) {
-    const h = Math.floor(t / 60)
-      .toString()
-      .padStart(2, "0");
+    const h = Math.floor(t / 60).toString().padStart(2, "0");
     list.push(`${h}:00`);
   }
   return list;
 });
 
-// イベント
-const dayEvents = computed(() =>
-  allEvents.filter((e) => e.date === selectedDate.value)
-);
+// 会場
+const venues = computed(() => currentDate.value.venues);
 
-// 会場ごとのイベント（位置計算付き）
+// イベント（位置計算付き）
 const columnEvents = (idx: number) =>
-  dayEvents.value
+  currentDate.value.events
     .filter((e) => e.venue === idx)
     .map((e) => {
       const top = (toMin(e.start) - startMin.value) * pxPerMin.value;

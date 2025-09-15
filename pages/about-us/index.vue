@@ -243,6 +243,7 @@ useHead({
               </ContentBox>
             </div>
           </div>
+        </div>
           <div class="department" :id="'editional'">
             <div class="about-nm">
               <div class="set">
@@ -277,7 +278,6 @@ useHead({
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>

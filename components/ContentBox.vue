@@ -31,7 +31,7 @@
   position: absolute;
   inset: 0;
   left: -0.1%;
-  top: -0.1%;
+  top: -3px;
   width: 100.2%;
   height: 100.2%;
   border: 1px solid #762626;
@@ -43,9 +43,9 @@
   position: absolute;
   inset: 0;
   left: -0.4%;
-  top: -0.8%;
+  top: -5px;
   width: 100.8%;
-  height: 100.8%;
+  height: calc(100% + 5px);
   border: 1px solid #762626;
   border-radius: 50px;
 }

@@ -19,20 +19,28 @@ useHead({
         </div>
       <ContentBox id="contentbox">
         <p>
-          ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-          ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-          ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-          ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-          ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-          ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-          ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキスト
+         タイトル
         </p>
-      </ContentBox>
-      </div>
-      <div class="update-wrapper">
-        <div class="update-card">
-          <p>8/19 20:00 更新</p>
+        <div class="date">
+          <h1>2025.09.02</h1>
         </div>
+      </ContentBox>
+        <ContentBox id="contentbox">
+          <p>
+            タイトル
+          </p>
+          <div class="date">
+            <h1>2025.09.03</h1>
+          </div>
+        </ContentBox>
+        <ContentBox id="contentbox">
+          <p>
+            タイトル
+          </p>
+          <div class="date">
+            <h1>2025.09.04</h1>
+          </div>
+        </ContentBox>
       </div>
     </div>
   </div>
@@ -45,11 +53,12 @@ useHead({
 #contentbox {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   padding: 50px;
   color: #000000;
-  @include  sm {
+  margin-bottom: 20px;
+  @include sm {
     padding: 30px;
   }
 }
@@ -65,17 +74,27 @@ useHead({
 .Latest-News {
   display: flex;
   flex-direction: column;
-  //align-items: center;
   margin-top: 20px;
 
-
-
-  p {
+  .date {
+    margin-top: 30px;
     font-size: 20px;
-    @include md {
-      font-size: 20px;
+    @include md{
+      margin-top: 20px;
+    }
     @include sm {
       font-size: 16px;
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+  }
+
+  p {
+    font-size: 50px;
+    @include md {
+      font-size: 30px;
+    @include sm {
+      font-size: 20px;
     }
     }
   }
@@ -93,29 +112,6 @@ useHead({
     @include sm {
       font-size: 25px;
     }
-  }
-}
-.update-wrapper {
-  display: flex;
-  justify-content: flex-end; /* 子要素を右寄せ */
-  margin-top: 20px;
-}
-
-.update-card {
-  font-size: 20px;
-  color: #000000;
-  background: #FBEFDE;
-  opacity: 80%;
-  border-radius: 30px;
-  padding: 20px 60px;
-  margin: 20px 110px 0 auto;
-  display: inline-block; /* サイズを内容に合わせる */
-  @include md {
-    margin: 20px 50px 0 auto;
-  }
-  @include sm {
-    margin: 20px 20px 0 auto;
-    font-size: 16px;
   }
 }
 </style>

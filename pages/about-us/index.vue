@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 
 useHead({
   title: "About-us | 25常盤祭公式HP~紅陽~",
   meta: [
-    {name: "description", content: "大学祭実行委員についての情報を掲載しています"},
+    {
+      name: "description",
+      content: "大学祭実行委員についての情報を掲載しています",
+    },
   ],
 });
 </script>
@@ -12,13 +16,18 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <PageTitle :title="'大学祭実行委員会について'" :sub-title="'大学祭実行委員会について'"/>
+      <PageTitle
+        :title="'大学祭実行委員会について'"
+        :sub-title="'大学祭実行委員会について'"
+      />
       <div class="explain">
-        <p>年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br/>
-          私たち大学祭実行委員会は、その一日を最高の思い出にするために、日々活動を重ねています。<br/>
+        <p>
+          年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br />
+          私たち大学祭実行委員会は、その一日を最高の思い出にするために、日々活動を重ねています。<br />
           そして、会場・企画・技術・経理・総務・物品・編集の7つの部局がそれぞれの専門性を発揮し、ひとつの祭を形作っています。
         </p>
       </div>
+
       <div class="box2">
 <!--        <div class="chairman" id="chairman">-->
 <!--          <div class="name_wrapper">-->
@@ -47,7 +56,6 @@ useHead({
           <div class="about-nm">
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
                       src="~/assets/images/momiji.svg"
@@ -76,7 +84,9 @@ useHead({
             </div>
           </div>
         </div>
-        <div class="department" :id="'planning'">
+
+        <!-- 企画部 -->
+        <div class="department" id="planning">
           <div class="about-re">
             <div class="picture">
               <img
@@ -90,7 +100,6 @@ useHead({
             </div>
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
                       src="~/assets/images/momiji.svg"
@@ -109,11 +118,12 @@ useHead({
             </div>
           </div>
         </div>
-        <div class="department" :id="'technology'">
+
+        <!-- 技術部 -->
+        <div class="department" id="technology">
           <div class="about-nm">
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
                       src="~/assets/images/momiji.svg"
@@ -143,7 +153,9 @@ useHead({
             </div>
           </div>
         </div>
-        <div class="department" :id="'accounting'">
+
+        <!-- 経理部 -->
+        <div class="department" id="accounting">
           <div class="about-re">
             <div class="picture">
               <img
@@ -157,7 +169,6 @@ useHead({
             </div>
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
                       src="~/assets/images/momiji.svg"
@@ -176,11 +187,12 @@ useHead({
             </div>
           </div>
         </div>
-        <div class="department" :id="'generalaffair'">
+
+        <!-- 総務部 -->
+        <div class="department" id="generalaffair">
           <div class="about-nm">
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
                       src="~/assets/images/momiji.svg"
@@ -210,7 +222,9 @@ useHead({
             </div>
           </div>
         </div>
-        <div class="department" :id="'equipment'">
+
+        <!-- 物品部 -->
+        <div class="department" id="equipment">
           <div class="about-re">
             <div class="picture">
               <img
@@ -224,7 +238,6 @@ useHead({
             </div>
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
                       src="~/assets/images/momiji.svg"
@@ -243,10 +256,7 @@ useHead({
               </ContentBox>
             </div>
           </div>
-          <div class="department" :id="'editional'">
-            <div class="about-nm">
-              <div class="set">
-                <div class="name_wrapper">
+        </div>
 
                   <div class="name">
                     <img
@@ -275,6 +285,31 @@ useHead({
                     src="/assets/images/about-us-picture/hensyu2.webp"
                 >
               </div>
+              <ContentBox id="contentbox">
+                <p>
+                  ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
+                  ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
+                  ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
+                  ここにテキストを
+                </p>
+              </ContentBox>
+            </div>
+            <div class="picture">
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
+              <img
+                class="member-img lt-img"
+                src="/assets/images/tmp-img.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -291,7 +326,7 @@ useHead({
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 50px;
+  padding: 40px;
   color: #000000;
   @include sm{
     padding: 30px;
@@ -303,7 +338,7 @@ useHead({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 10vw 10vh;
+  padding: 0 4vw 10vh;
 }
 
 .box1 {
@@ -330,6 +365,9 @@ useHead({
 
 .chairman {
   margin-bottom: 23vh;
+  @include sm {
+    margin-bottom: 10vh;
+  }
 }
 
 .department {
@@ -355,13 +393,12 @@ useHead({
   align-items: center;
 
   p {
-    font-size: 40px;
+    font-size: 38px;
     @include md {
-      font-size: 28px;
+      font-size: 25px;
     }
   }
 }
-
 
 .box2 {
   display: flex;
@@ -392,7 +429,6 @@ useHead({
   flex: 1;
   padding: 2rem;
 }
-
 
 .picture {
   flex: 1;
@@ -439,4 +475,12 @@ useHead({
   }
 }
 
+.bullet-leaf {
+  @include md {
+    width: 80px;
+  }
+  @include sm {
+    width: 60px;
+  }
+}
 </style>

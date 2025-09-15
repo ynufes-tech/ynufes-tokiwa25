@@ -14,7 +14,7 @@ useHead({
   <div class="page-root">
     <PageTitle title="大学までのアクセス" />
     <ContentBox id="contentbox">
-      <p>大学推奨ルートでのご来場をお願いします。</p>
+      <p class="please">大学推奨ルートでのご来場をお願いします。</p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.867783569219!2d139.58826227554297!3d35.47328494136941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601859679ea21c77%3A0x28d72ba15dae9e6c!2z5qiq5rWc5Zu956uL5aSn5a2m!5e1!3m2!1sja!2sjp!4v1755089078031!5m2!1sja!2sjp"
         width="600"
@@ -100,11 +100,12 @@ useHead({
   padding-bottom: 100px;
   p {
     margin: 50px 0;
-    margin-top: 150px;
+    margin-top: 100px;
     line-height: 1.3em;
     font-size: 1.6rem;
     @include md {
       font-size: 1rem;
+      margin-top: 50px;
     }
   }
   .google-map {

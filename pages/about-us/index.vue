@@ -20,29 +20,29 @@ useHead({
         </p>
       </div>
       <div class="box2">
-        <div class="chairman" id="chairman">
-          <div class="name_wrapper">
+<!--        <div class="chairman" id="chairman">-->
+<!--          <div class="name_wrapper">-->
 
-            <div class="name">
-              <img
-                  src="~/assets/images/momiji.svg"
-                  alt="momiji"
-              >
-              <p>実行委員長挨拶</p>
-            </div>
-          </div>
-          <ContentBox id="contentbox">
-            <p>
-              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力
-              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキスト
-            </p>
-          </ContentBox>
-        </div>
+<!--            <div class="name">-->
+<!--              <img-->
+<!--                  src="~/assets/images/momiji.svg"-->
+<!--                  alt="momiji"-->
+<!--              >-->
+<!--              <p>実行委員長挨拶</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <ContentBox id="contentbox">-->
+<!--            <p>-->
+<!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
+<!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
+<!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
+<!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
+<!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
+<!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
+<!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキスト-->
+<!--            </p>-->
+<!--          </ContentBox>-->
+<!--        </div>-->
         <div class="department" :id="'peacepreservation'">
           <div class="about-nm">
             <div class="set">
@@ -52,6 +52,7 @@ useHead({
                   <img
                       src="~/assets/images/momiji.svg"
                       alt="momiji"
+                      class="momiji"
                   >
                   <p>会場部</p>
                 </div>
@@ -94,6 +95,7 @@ useHead({
                   <img
                       src="~/assets/images/momiji.svg"
                       alt="momiji"
+                      class="momiji"
                   >
                   <p>企画部</p>
                 </div>
@@ -116,6 +118,7 @@ useHead({
                   <img
                       src="~/assets/images/momiji.svg"
                       alt="momiji"
+                      class="momiji"
                   >
                   <p>技術部</p>
                 </div>
@@ -159,6 +162,7 @@ useHead({
                   <img
                       src="~/assets/images/momiji.svg"
                       alt="momiji"
+                      class="momiji"
                   >
                   <p>経理部</p>
                 </div>
@@ -181,6 +185,7 @@ useHead({
                   <img
                       src="~/assets/images/momiji.svg"
                       alt="momiji"
+                      class="momiji"
                   >
                   <p>総務部</p>
                 </div>
@@ -224,6 +229,7 @@ useHead({
                   <img
                       src="~/assets/images/momiji.svg"
                       alt="momiji"
+                      class="momiji"
                   >
                   <p>物品部</p>
                 </div>
@@ -246,6 +252,7 @@ useHead({
                     <img
                         src="~/assets/images/momiji.svg"
                         alt="momiji"
+                        class="momiji"
                     >
                     <p>編集部</p>
                   </div>
@@ -286,6 +293,9 @@ useHead({
   text-align: center;
   padding: 50px;
   color: #000000;
+  @include sm{
+    padding: 30px;
+  }
 }
 
 .page-container {
@@ -324,10 +334,20 @@ useHead({
 
 .department {
   margin: 10vh 0;
+  @include sm{
+    margin: 5vh 0;
+  }
 }
 
 .name_wrapper {
   display: flex;
+}
+
+.momiji {
+  @include sm{
+    width: 70px ;
+    height: 70px;
+  }
 }
 
 .name {
@@ -346,7 +366,6 @@ useHead({
 .box2 {
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
 }
 
 .about-nm {
@@ -381,6 +400,9 @@ useHead({
   flex-direction: column;
   gap: 2rem;
   margin-top: 10vh;
+  @include sm{
+    margin-top: 6vh;
+  }
 }
 
 .member-img {
@@ -390,7 +412,7 @@ useHead({
     width: 180px;
   }
   @include sm {
-    width: 180px;
+    width: 150px;
   }
 }
 
@@ -405,11 +427,16 @@ useHead({
 
 .middle-img {
   margin-left: 200px; // about-nm の場合
+  @include sm{
+    margin-left: 100px;
+  }
 }
 
 .about-re .middle-img {
   margin-left: 200px;
-  margin-right: 0px; // about-re の場合
+  @include sm{
+    margin-left: 100px;
+  }
 }
 
 </style>

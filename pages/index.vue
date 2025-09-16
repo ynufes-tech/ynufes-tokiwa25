@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CountdownTimer from "~/components/CountdownTimer.vue";
-import PageTitle from "~/components/PageTitle.vue";
+import TopPageLinkR from "~/components/TopPageLinkR.vue"
 useHead({
   title: "Top | 25常盤祭公式HP~紅陽~",
   meta: [
@@ -33,6 +33,9 @@ useHead({
           class="timer-frame-rt"
           alt="countdownframe"
         />
+      </div>
+      <div class="links">
+        <TopPageLinkR title="event" jaTitle="本部企画紹介" />
       </div>
       <div class="sns">
         <SNS />
@@ -118,7 +121,9 @@ useHead({
     width: 50%;
   }
 }
-
+.links {
+  margin-top: 200px;
+}
 .sns {
   margin-top: 20vh;
   width: 100%;

@@ -40,11 +40,32 @@ useHead({
 .pamphlet-image{
   width: 25%;
   max-width: 600px;
+  height: auto;
 }
 .contents-wrapper {
   display: flex;
   justify-content: center;
   gap: 10%;
+  @include md{
+    flex-direction: column;
+    align-items: center;
+    .pamphlet-image{
+      width: 50%;
+      margin-bottom: 2rem;
+    }
+    .download-text p{
+      font-size: 1.7rem;
+    }
+    .download{
+      width: 90%;
+    }
+    button{
+      font-size: 1.5rem;
+    }
+    .download-button{
+      font-size: 1.5rem;
+    }
+  }
 }
 .download{
   display: flex;
@@ -65,10 +86,7 @@ useHead({
   width: 100%;
   max-width: 280px;
   align-items: center;
-
-
-
-
+  line-height: 2
 }
 
 </style>

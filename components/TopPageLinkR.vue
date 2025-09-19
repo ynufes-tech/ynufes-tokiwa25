@@ -35,7 +35,6 @@ function getImagePath(title: string) {
     overflow: hidden;
     position: relative;
     img {
-      width: 100%;
       filter: blur(7px) grayscale(20%);
       transition: all .3s ease;
       @include md {

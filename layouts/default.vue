@@ -166,7 +166,7 @@ body {
 #canvas{
   inset:0;
   position: absolute;
-  z-index: -1;
+  z-index: -80;
   height: 100%;
   width: 100%;
   filter: blur(2px);

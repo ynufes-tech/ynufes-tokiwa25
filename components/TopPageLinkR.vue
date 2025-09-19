@@ -11,23 +11,25 @@ function getImagePath(title: string) {
 </script>
 <template>
   <div class="component-root">
-    <div class="wrapper">
-      <img :src="getImagePath(title)" alt="" />
-      <div class="texts">
-        <p class="text-tp">{{ title.toUpperCase() }}</p>
-        <p class="text-bt">{{ jaTitle }}</p>
+    <NuxtLink :to="`/${title}`">
+      <div class="wrapper">
+        <img :src="`/images/TopPageLink/${title}.webp`" alt="" />
+        <div class="texts">
+          <p class="text-tp">{{ title.toUpperCase() }}</p>
+          <p class="text-bt">{{ jaTitle }}</p>
+        </div>
       </div>
-    </div>
-    <div class="top-outline"></div>
+      <div class="top-outline"></div>
+    </NuxtLink>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
 .component-root {
-  width: 99vw;
+  width: 98.5vw;
   position: relative;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   .wrapper {
     width: 100%;
     aspect-ratio: 6 / 1;
@@ -35,8 +37,9 @@ function getImagePath(title: string) {
     overflow: hidden;
     position: relative;
     img {
+      width: 100%;
       filter: blur(7px) grayscale(20%);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       @include md {
         filter: blur(4px);
       }
@@ -54,7 +57,7 @@ function getImagePath(title: string) {
       letter-spacing: 10px;
       font-size: 40px;
       text-shadow: 4px 4px 4px #000000b3;
-      transition: all .3s;
+      transition: all 0.3s;
       .text-tp {
         padding-bottom: 3px;
         border-bottom: 1px white solid;
@@ -86,15 +89,15 @@ function getImagePath(title: string) {
     transform: skewY(-3deg);
   }
 }
-.component-root:hover{
+.component-root:hover {
   cursor: pointer;
-  .wrapper{
-    img{
+  .wrapper {
+    img {
       filter: blur(4px) grayscale(0%);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
-    .texts{
-      transition: all .3s;
+    .texts {
+      transition: all 0.3s;
       transform: translateX(-10%);
     }
   }

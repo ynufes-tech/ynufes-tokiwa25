@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CountdownTimer from "~/components/CountdownTimer.vue";
-import TopPageLinkR from "~/components/TopPageLinkR.vue"
+import TopPageLinkR from "~/components/TopPageLinkR.vue";
+import TopPageLinkL from "~/components/TopPageLinkL.vue";
 useHead({
   title: "Top | 25常盤祭公式HP~紅陽~",
   meta: [
@@ -17,7 +18,7 @@ useHead({
   <div class="page-root">
     <div class="page-container">
       <img src="~/assets/images/top-title.svg" alt="title" class="title" />
-      <img src="~/assets/images/dates.svg" class="dates" alt="dates">
+      <img src="~/assets/images/dates.svg" class="dates" alt="dates" />
       <div class="timer">
         <img
           src="~/assets/images/timer-frame-lt.svg "
@@ -35,7 +36,15 @@ useHead({
         />
       </div>
       <div class="links">
-        <TopPageLinkR title="event" jaTitle="本部企画紹介" />
+        <TopPageLinkR class="link" title="event" jaTitle="本部企画紹介" />
+        <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
+        <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" />
+        <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" />
+        <TopPageLinkR class="link" title="map" jaTitle="大学の地図" />
+        <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
+        <TopPageLinkR class="link" title="access" jaTitle="大学までのアクセス" />
+        <TopPageLinkL class="link" title="contact" jaTitle="お問い合わせ" />
+        <TopPageLinkR class="link" title="sponsor" jaTitle="ご協賛" />
       </div>
       <div class="sns">
         <SNS />
@@ -66,14 +75,14 @@ useHead({
   width: 1000px;
   height: auto;
   margin-bottom: -20vh;
-  @include md{
+  @include md {
     margin-bottom: -5vh;
   }
 }
 
-.dates{
+.dates {
   width: 80%;
-  @include md{
+  @include md {
     width: 100%;
   }
 }
@@ -123,6 +132,21 @@ useHead({
 }
 .links {
   margin-top: 200px;
+  .link {
+    margin-top: 80px;
+    @include xl {
+      margin-top: 60px;
+    }
+    @include lg {
+      margin-top: 40px;
+    }
+    @include md {
+      margin-top: 20px;
+    }
+    @include sm {
+      margin-top: 10px;
+    }
+  }
 }
 .sns {
   margin-top: 20vh;

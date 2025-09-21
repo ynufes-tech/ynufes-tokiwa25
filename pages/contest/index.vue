@@ -30,25 +30,25 @@ useHead({
           </div>
         </ContentBox>
         <div class="howto">
-          <img class="howto-img" src="/assets/images/contest.svg"
+          <img class="howto-img" src="~/assets/images/contest.webp"
                alt="Howto"/>
         </div>
       <div class="button">
-      <LinkButton
-          class="LinkButton"
-          text="投票へ"
-          link="https://docs.google.com/forms/d/e/1FAIpQLSdaR8Wr03HOHveZ1GwduTvwoSw4FGN8KfyFI_2JM92teS9Y0w/viewform?usp=header"
-      />
+<!--      <LinkButton-->
+<!--          class="LinkButton"-->
+<!--          text="投票へ"-->
+<!--          link="https://docs.google.com/forms/d/e/1FAIpQLSdaR8Wr03HOHveZ1GwduTvwoSw4FGN8KfyFI_2JM92teS9Y0w/viewform?usp=header"-->
+<!--      />-->
       <LinkButton
           class="LinkButton"
           text="企画一覧を見る"
           link="/events"
       />
-      <LinkButton
-          class="LinkButton"
-          text="ランキングを見る"
-          link=""
-      />
+<!--      <LinkButton-->
+<!--          class="LinkButton"-->
+<!--          text="ランキングを見る"-->
+<!--          link=""-->
+<!--      />-->
       </div>
       <div class="under-box">
         <div class="title">
@@ -163,14 +163,12 @@ useHead({
 }
 
 .LinkButton {
-  max-width: 250px;
+  max-width: 100%;
   margin: 80px 0;
   @include md{
     margin: 40px;
   }
   @include sm{
-    font-size: 5px;
-    width: 100%;
     margin: 40px 0;
   }
 }
@@ -195,7 +193,7 @@ useHead({
     font-size: 30px;
   }
   @include sm {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 

@@ -41,6 +41,7 @@ useHead({
   font-family: ZenOldMincho, serif;
   color: #ffffff;
   display: flex;
+  align-items: center;
   flex-direction: column;
   box-sizing: border-box;
   padding: 0 10vw 10vh;
@@ -50,7 +51,7 @@ useHead({
   background: linear-gradient(180deg, #fbeade, #f8c8c8);
   color: #000000;
   border-radius: 20px;
-  margin: 20px auto;
+  margin: 20px 0;
   max-width: 600px;
   text-align: left;
 
@@ -75,7 +76,7 @@ useHead({
   border: 3px solid #42C478;
   padding: 30px 110px;
   @include md {
-    padding: 30px 110px;
+    padding: 30px 102px;
   }
   @include sm {
     font-size: 20px;
@@ -93,7 +94,6 @@ useHead({
 }
 
 .LinkButton {
-  max-width: 250px;
   margin: 30px 0 0 18rem;
   justify-content: flex-start;
   @include md {
@@ -102,7 +102,6 @@ useHead({
   @include sm {
     margin: 30px 0 0 1rem;
     font-size: 5px;
-    width: 100%;
   }
 }
 </style>

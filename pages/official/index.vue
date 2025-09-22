@@ -4,23 +4,72 @@ useHead({
   title: "Official | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "本部企画一覧" }],
 });
+const officialEvents = [
+  // {
+  //   id: 企画ID(Eventページと共通),
+  //   title: events.jsonから持ってくるようにしたい！,
+  //   description: 同上
+  // },
+  {
+    id: 101,
+    title: "テストタイトル",
+    description:
+      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
+  },
+  {
+    id: 102,
+    title: "テストタイトル",
+    description:
+      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
+  },
+  {
+    id: 103,
+    title: "テストタイトル",
+    description:
+      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
+  },
+  {
+    id: 104,
+    title: "テストタイトル",
+    description:
+      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
+  },
+  {
+    id: 105,
+    title: "テストタイトル",
+    description:
+      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
+  },
+  {
+    id: 106,
+    title: "テストタイトル",
+    description:
+      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
+  },
+  {
+    id: 107,
+    title: "テストタイトル",
+    description:
+      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
+  },
+];
 </script>
 
 <template>
   <div class="page-root">
     <PageTitle title="本部企画一覧" />
-    <div>
+    <div class="content-wrapper">
       <p class="message">
         このページでは、本部である大学祭実行委員会が主催する企画だけをpick
         upして紹介します！
       </p>
-      <div class="cards card-grid">
-        <div class="card" v-for="i in 8" :key="i">
-          <h3 class="card-title">ゲスト企画 {{ i }}</h3>
+      <div class="cards">
+        <div class="card" v-for="Event in officialEvents" :key="Event.id">
+          <h3 class="card-title">{{ `${Event.title} : ${Event.id}` }}</h3>
           <div class="card-content">
             <div class="card-image"></div>
             <p class="card-text">
-              企画の内容がここに入ります。企画の説明文を追加できます。企画の内容がここに入ります。企画の説明文を追加できます。企画の内容がここに入ります。企画の説明文を追加できます。企画の内容がここに入ります。企画の説明文を追加できます。企画の内容がここに入ります。企画の説明文を追加できます。
+              {{ Event.description }}
             </p>
           </div>
         </div>
@@ -32,19 +81,40 @@ useHead({
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
 .page-root {
-  font-family: "Kaisei Decol", sans-serif;
+  font-family: "Zen Old Mincho", sans-serif;
+}
+.content-wrapper {
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 1920px;
 }
 .message {
   color: white;
   text-align: center;
   margin-bottom: 2rem;
-  margin-right: 15px;
-  margin-left: 15px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px 70px;
+  justify-content: center;
+  padding: 0 5%;
+  @include xl {
+    padding: 0 3%;
+    gap: 40px 40px;
+  }
+  @include lg {
+    grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+  }
 }
 .card {
   background: rgba(251, 234, 222, 0.6);
-  border-radius: 15px;
-  padding: 1rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   transition: 0.1s;
@@ -55,68 +125,40 @@ useHead({
   cursor: pointer;
 }
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 30px;
 }
 .card-content {
   display: flex;
   gap: 1rem;
-  align-items: flex-start;
+  align-items: center;
+  @include md {
+    flex-direction: column;
+  }
 }
 .card-image {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background: #ddd;
   border-radius: 8px;
   flex-shrink: 0;
-  margin-top: 45px;
   @include sm {
-    width: 100px;
-    height: 100px;
-    margin-top: 60px;
+    width: 150px;
+    height: 150px;
   }
 }
 .card-text {
   flex: 1;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin-top: 40px;
+  font-size: 1.1rem;
+  line-height: 1.5;
   @include lg {
     margin-top: 20px;
   }
   @include sm {
     font-size: 14px;
     margin-top: 10px;
-  }
-}
-.card-grid {
-  display: grid;
-  grid-template-columns: 470px 470px;
-  grid-auto-rows: 380px;
-  gap: 4rem;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  background: none;
-  justify-content: center;
-  @include xl {
-    grid-template-columns: 430px 430px;
-    grid-auto-rows: 358px;
-  }
-  @include lg {
-    grid-template-columns: 360px 360px;
-    grid-auto-rows: 340px;
-    gap: 2rem;
-  }
-  @include md {
-    grid-template-columns: 360px;
-    grid-auto-rows: 340px;
-  }
-  @include sm {
-    grid-template-columns: 300px;
-    grid-auto-rows: 340px;
   }
 }
 </style>

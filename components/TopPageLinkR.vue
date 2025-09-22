@@ -51,12 +51,13 @@ function getImagePath(title: string) {
       position: absolute;
       inset: 0;
       top: 25%;
-      left: 60%;
+      left: 55%;
       color: white;
       width: 50%;
-      letter-spacing: 10px;
+      letter-spacing: 8px;
       font-size: 40px;
-      text-shadow: 4px 4px 4px #000000b3;
+      font-weight: 700;
+      text-shadow: 4px 4px 3px #000000de;
       transition: all 0.3s;
       .text-tp {
         padding-bottom: 3px;
@@ -72,9 +73,11 @@ function getImagePath(title: string) {
       }
       @include md {
         font-size: 20px;
+        letter-spacing: 5px;
       }
       @include sm {
         font-size: 13px;
+        letter-spacing: 3px;
       }
     }
   }

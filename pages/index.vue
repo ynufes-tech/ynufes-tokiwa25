@@ -36,7 +36,7 @@ useHead({
         />
       </div>
       <div class="links">
-        <TopPageLinkR class="link" title="event" jaTitle="本部企画紹介" />
+        <TopPageLinkR class="link" title="official" jaTitle="本部企画紹介" />
         <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
         <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" />
         <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" />

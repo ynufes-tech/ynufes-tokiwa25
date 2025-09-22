@@ -2,6 +2,7 @@
 import CountdownTimer from "~/components/CountdownTimer.vue";
 import TopPageLinkR from "~/components/TopPageLinkR.vue";
 import TopPageLinkL from "~/components/TopPageLinkL.vue";
+import Bunners from "~/components/Banners.vue";
 useHead({
   title: "Top | 25常盤祭公式HP~紅陽~",
   meta: [
@@ -19,6 +20,7 @@ useHead({
     <div class="page-container">
       <img src="~/assets/images/top-title.svg" alt="title" class="title" />
       <img src="~/assets/images/dates.svg" class="dates" alt="dates" />
+      <!-- <Bunners /> -->
       <div class="timer">
         <img
           src="~/assets/images/timer-frame-lt.svg "
@@ -39,10 +41,18 @@ useHead({
         <TopPageLinkR class="link" title="official" jaTitle="本部企画紹介" />
         <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
         <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" />
-        <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" />
+        <TopPageLinkL
+          class="link"
+          title="schedule"
+          jaTitle="タイムスケジュール"
+        />
         <TopPageLinkR class="link" title="map" jaTitle="大学の地図" />
         <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
-        <TopPageLinkR class="link" title="access" jaTitle="大学までのアクセス" />
+        <TopPageLinkR
+          class="link"
+          title="access"
+          jaTitle="大学までのアクセス"
+        />
         <TopPageLinkL class="link" title="contact" jaTitle="お問い合わせ" />
         <TopPageLinkR class="link" title="sponsor" jaTitle="ご協賛" />
       </div>
@@ -67,6 +77,9 @@ useHead({
 }
 
 .page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -74,7 +87,8 @@ useHead({
   max-width: 100%;
   width: 1000px;
   height: auto;
-  margin-bottom: -20vh;
+  margin: 0 auto;
+  margin-bottom: -100px;
   @include md {
     margin-bottom: -5vh;
   }
@@ -82,6 +96,7 @@ useHead({
 
 .dates {
   width: 80%;
+  max-width: 1000px;
   @include md {
     width: 100%;
   }
@@ -90,7 +105,7 @@ useHead({
 .timer {
   position: relative;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 8vh;
 }
 
 .timer-frame-lt {

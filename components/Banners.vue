@@ -12,6 +12,7 @@
 @use "@/assets/scss/_breakpoint.scss" as *;
 .component-root {
   margin: 100px auto;
+  margin-bottom: 0;
   width: 90%;
   display: flex;
   flex-wrap: wrap;

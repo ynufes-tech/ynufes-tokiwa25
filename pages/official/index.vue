@@ -92,6 +92,7 @@ const officialEvents = [
   color: white;
   text-align: center;
   margin-bottom: 2rem;
+  padding: 0 20px;
 }
 .cards {
   display: grid;

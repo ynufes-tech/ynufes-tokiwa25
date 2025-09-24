@@ -32,7 +32,10 @@ const venues = Object.entries(officialEvents);
               <div class="card-image">
                 <img :src="Event.image" :alt="Event.title" />
               </div>
-              <p class="card-text">{{ Event.description }}</p>
+              <div class="card-texts">
+                <p class="card-text">{{ Event.description }}</p>
+                <p class="card-text date" v-if="Event.date">{{ Event.date }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -105,6 +108,18 @@ const venues = Object.entries(officialEvents);
   text-align: center;
   margin-bottom: 30px;
 }
+.card-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  white-space: pre-line;
+  .date {
+    font-size: 14px;
+    @include sm {
+      font-size: 13px;
+    }
+  }
+}
 .card-content {
   display: flex;
   gap: 1rem;
@@ -114,8 +129,8 @@ const venues = Object.entries(officialEvents);
   }
 }
 .card-image {
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
   background: #ddd;
   border-radius: 8px;
   flex-shrink: 0;

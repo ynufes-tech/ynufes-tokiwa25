@@ -4,7 +4,7 @@ import EventCard from "~/components/EventCard.vue";
 import PageTitle from "~/components/PageTitle.vue";
 import FilterButton from "~/components/EventFilterButton.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
-import { reactive,ref } from "vue";
+import { reactive, ref } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "企画一覧" }],
@@ -73,8 +73,8 @@ const filter = reactive({
   Eblock: true,
   Fblock: true,
   Yblock: true,
-  yaon: true,
   TBKALL: true,
+  yaon: true,
   hall: true,
   eduMid: true,
   wooddeck: true,
@@ -108,7 +108,6 @@ const accordion = ref({
   official: false, //本部企画
 });
 
-
 const toggleAll = (keys: string[], value: boolean) => {
   keys.forEach((key) => {
     filter[key] = value;
@@ -125,7 +124,7 @@ const outdoorKeys = [
   "Fblock",
   "Yblock",
 ];
-const TBKKeys = ["hall", "eduMid", "wooddeck", "ground", "mediahall"];
+const TBKKeys = ["hall", "eduMid", "wooddeck", "ground", "mediahall", "yaon"];
 const foodsKeys = ["snack", "noodle", "rice", "sweets", "drink"];
 const performanceKeys = ["dance", "music", "show"];
 
@@ -266,32 +265,6 @@ const filteredEvents = computed(() => {
                 </transition>
               </div>
               <div
-                class="accordion stage-accordion"
-                :class="{ accordionOpen: accordion.stage }"
-                v-if="accordion.place"
-              >
-                <div
-                  class="accordion-title accordion-child"
-                  @click="accordion.stage = !accordion.stage"
-                >
-                  <p>ステージ</p>
-                  <img
-                    src="~/assets/images/accordion-arrow.svg"
-                    alt=""
-                    :class="{ accordionOpen: accordion.stage }"
-                  />
-                </div>
-                <transition name="openAccordion">
-                  <div
-                    class="accordion-elements"
-                    :key="accordion.stage"
-                    v-if="accordion.stage"
-                  >
-                    <FilterButton text="野外音楽堂" v-model="filter.yaon" />
-                  </div>
-                </transition>
-              </div>
-              <div
                 class="accordion TBK-accordion"
                 :class="{ accordionOpen: accordion.TBK }"
                 v-if="accordion.place"
@@ -318,6 +291,7 @@ const filteredEvents = computed(() => {
                       :model-value="TBKAll"
                       @click="toggleAll(TBKKeys, !TBKAll)"
                     />
+                    <FilterButton text="野外音楽堂" v-model="filter.yaon" />
                     <FilterButton
                       text="大学会館4Fホール"
                       v-model="filter.hall"

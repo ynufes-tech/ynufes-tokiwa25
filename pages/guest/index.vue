@@ -66,8 +66,10 @@ useHead({
         </div>
         <ContentBox id="contentbox">
           事前予約制<br />
-          <!-- 予約開始：10月1日(水) 12:00〜<br /> -->
-          <!-- 予約方法：予約フォームより<br /> -->
+          予約方法：チケット予約サイトe+より<br />
+          <a href="https://eplus.jp/sf/detail/4406450001-P0030001" target="_blank" rel="noopener noreferrer">
+            https://eplus.jp/sf/detail/4406450001-P0030001
+          </a><br />
           料金：1300円<br />
           座席：完全指定席<br />
         </ContentBox>
@@ -78,7 +80,7 @@ useHead({
           <p>注意事項</p>
         </div>
         <p>
-          ※1 企画内容について、予告なく変更・中止になる場合がございます。<br />
+          ※1 出演者・企画内容について、予告なく変更・中止になる場合がございます。予めご了承くださいませ。<br />
           ※2 中止の場合、チケットに関しまして返金対応いたします。<br />
           ※3
           参加の際、持ち物検査等安全に関わるお願いに従っていただけない場合、参加をお断りする場合がございます。内容につきましてはチケット購入ページをご覧ください。<br />
@@ -211,11 +213,11 @@ useHead({
   line-height: 1.8;
 
   @include md {
-    padding: 40px 60px;
+    padding: 30px 50px;
     font-size: 1em;
   }
   @include sm {
-    padding: 30px 25px;
+    padding: 20px 20px;
     font-size: 0.9em;
     line-height: 1.4;
   }

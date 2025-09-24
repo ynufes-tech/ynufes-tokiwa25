@@ -1,58 +1,14 @@
 <script lang="ts" setup>
 import PageTitle from "~/components/PageTitle.vue";
+import officialEvents from "~/public/officialEvents.json";
+
 useHead({
   title: "Official | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "本部企画一覧" }],
 });
-const officialEvents = [
-  // {
-  //   id: 企画ID(Eventページと共通),
-  //   title: events.jsonから持ってくるようにしたい！,
-  //   description: 同上
-  // },
-  {
-    id: 101,
-    title: "テストタイトル",
-    description:
-      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
-  },
-  {
-    id: 102,
-    title: "テストタイトル",
-    description:
-      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
-  },
-  {
-    id: 103,
-    title: "テストタイトル",
-    description:
-      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
-  },
-  {
-    id: 104,
-    title: "テストタイトル",
-    description:
-      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
-  },
-  {
-    id: 105,
-    title: "テストタイトル",
-    description:
-      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
-  },
-  {
-    id: 106,
-    title: "テストタイトル",
-    description:
-      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
-  },
-  {
-    id: 107,
-    title: "テストタイトル",
-    description:
-      "いいえ、乱心ではございませぬ。人を、信ずる事が出来ぬ、というのです。このごろは、臣下の心をも、お疑いになり、少しく派手な暮しをしている者には、人質ひとりずつ差し出すことを命じて居ります。御命令を拒めば十字架にかけられて、殺されます。きょうは、六人殺されました。",
-  },
-];
+
+// Object.entriesで会場ごとに展開する
+const venues = Object.entries(officialEvents);
 </script>
 
 <template>
@@ -63,14 +19,21 @@ const officialEvents = [
         このページでは、本部である大学祭実行委員会が主催する企画だけをpick
         upして紹介します！
       </p>
-      <div class="cards">
-        <div class="card" v-for="Event in officialEvents" :key="Event.id">
-          <h3 class="card-title">{{ `${Event.title} : ${Event.id}` }}</h3>
-          <div class="card-content">
-            <div class="card-image"></div>
-            <p class="card-text">
-              {{ Event.description }}
-            </p>
+      <div
+        v-for="[venueName, events] in venues"
+        :key="venueName"
+        class="venue-block"
+      >
+        <h2 class="venue-title">{{ venueName }}</h2>
+        <div class="cards">
+          <div class="card" v-for="Event in events">
+            <h3 class="card-title">{{ `${Event.title}` }}</h3>
+            <div class="card-content">
+              <div class="card-image">
+                <img :src="Event.image" :alt="Event.title" />
+              </div>
+              <p class="card-text">{{ Event.description }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -94,6 +57,17 @@ const officialEvents = [
   margin-bottom: 2rem;
   padding: 0 20px;
 }
+.venue-title {
+  font-family: "Kaisei Decol", sans-serif;
+  font-size: 2rem;
+  margin: 7rem 0 4rem;
+  text-align: center;
+  color: white;
+  @include sm {
+    font-size: 1.5rem;
+    margin: 5rem 0 1rem;
+  }
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -106,7 +80,7 @@ const officialEvents = [
   }
   @include lg {
     grid-template-columns: repeat(1, 1fr);
-      justify-items: center;
+    justify-items: center;
   }
 }
 .card {
@@ -145,6 +119,14 @@ const officialEvents = [
   background: #ddd;
   border-radius: 8px;
   flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   @include sm {
     width: 150px;
     height: 150px;

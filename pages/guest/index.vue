@@ -134,10 +134,10 @@ useHead({
   }
 
   @include md {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   @include sm {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 }
 
@@ -180,10 +180,7 @@ useHead({
         font-size: 1.3em;
 
         @include md {
-          font-size: 1.1em;
-        }
-        @include sm {
-          font-size: 1em;
+          font-size: 1.2em;
         }
       }
     }

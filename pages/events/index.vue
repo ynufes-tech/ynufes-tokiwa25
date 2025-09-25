@@ -60,7 +60,6 @@ const filter = reactive({
   day3: true,
   //場所
   indoorALL: true,
-  library: true,
   urban: true,
   bizEco: true,
   edu: true,
@@ -79,7 +78,12 @@ const filter = reactive({
   eduMid: true,
   wooddeck: true,
   ground: true,
-  mediahall: true,
+  library: true,
+  bizEcoMid: true,
+  urbanSide: true,
+  farm: true,
+  whole: true,
+  biz109: true,
   //カテゴリ
   foodsALL: true,
   snack: true,
@@ -114,7 +118,7 @@ const toggleAll = (keys: string[], value: boolean) => {
   });
 };
 
-const indoorKeys = ["library", "urban", "bizEco", "edu", "science"];
+const indoorKeys = ["urban", "bizEco", "edu", "science"];
 const outdoorKeys = [
   "Ablock",
   "Bblock",
@@ -124,7 +128,18 @@ const outdoorKeys = [
   "Fblock",
   "Yblock",
 ];
-const TBKKeys = ["hall", "eduMid", "wooddeck", "ground", "mediahall", "yaon"];
+const TBKKeys = [
+  "eduMid",
+  "yaon",
+  "wooddeck",
+  "bizEcoMid",
+  "hall",
+  "urbanSide",
+  "farm",
+  "library",
+  "whole",
+  "biz109",
+];
 const foodsKeys = ["snack", "noodle", "rice", "sweets", "drink"];
 const performanceKeys = ["dance", "music", "show"];
 
@@ -216,7 +231,6 @@ const filteredEvents = computed(() => {
                       :model-value="indoorAll"
                       @click="toggleAll(indoorKeys, !indoorAll)"
                     />
-                    <FilterButton text="図書館" v-model="filter.library" />
                     <FilterButton text="都市科学部棟" v-model="filter.urban" />
                     <FilterButton
                       text="経済・経営学部1号館"
@@ -291,27 +305,25 @@ const filteredEvents = computed(() => {
                       :model-value="TBKAll"
                       @click="toggleAll(TBKKeys, !TBKAll)"
                     />
-                    <FilterButton text="野外音楽堂" v-model="filter.yaon" />
-                    <FilterButton
-                      text="大学会館4Fホール"
-                      v-model="filter.hall"
-                    />
                     <FilterButton
                       text="教育学部6・7号館の間"
                       v-model="filter.eduMid"
                     />
+                    <FilterButton text="野外音楽堂" v-model="filter.yaon" />
                     <FilterButton
                       text="学生センター前ウッドデッキ"
                       v-model="filter.wooddeck"
                     />
+                    <FilterButton text="経済・経営学部棟1号館の間" v-model="filter.bizEcoMid" />
                     <FilterButton
-                      text="多目的グラウンド"
-                      v-model="filter.ground"
+                      text="大学会館4Fホール"
+                      v-model="filter.hall"
                     />
-                    <FilterButton
-                      text="図書館1Fメディアホール"
-                      v-model="filter.mediahall"
-                    />
+                    <FilterButton text="都市科学部棟裏" v-model="filter.urbanSide"/>
+                    <FilterButton text="西門放牧地" v-model="filter.farm"/>
+                    <FilterButton text="中央図書館1F" v-model="filter.library"/>
+                    <FilterButton text="キャンパス全域" v-model="filter.whole"/>
+                    <FilterButton text="経営学部棟109教室" v-model="filter.biz109"/>
                   </div>
                 </transition>
               </div>

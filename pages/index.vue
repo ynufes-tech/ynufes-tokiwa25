@@ -146,20 +146,20 @@ useHead({
   }
 }
 .links {
-  margin-top: 200px;
+  margin-top: 100px;
   .link {
-    margin-top: 80px;
+    margin-top: 200px;
     @include xl {
-      margin-top: 60px;
+      margin-top: 150px;
     }
     @include lg {
-      margin-top: 40px;
+      margin-top: 120px;
     }
     @include md {
-      margin-top: 20px;
+      margin-top: 80px;
     }
     @include sm {
-      margin-top: 10px;
+      margin-top: 50px;
     }
   }
 }

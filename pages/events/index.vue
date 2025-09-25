@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import events from "public/test-events.json";
 import EventCard from "~/components/EventCard.vue";
 import PageTitle from "~/components/PageTitle.vue";
 import FilterButton from "~/components/EventFilterButton.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
-import { reactive, ref } from "vue";
+import { ref, computed } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "企画一覧" }],
@@ -23,14 +22,28 @@ const modePageTitle = computed(() =>
   onlyFavo.value ? "お気に入り" : "企画一覧"
 );
 const favoriteEvents = ref<string[]>([]); //お気に入り配列用意
+const events = ref<any[]>([]);
 
-onMounted(() => {
-  const stored = localStorage.getItem("favoriteEvents"); //Favo読み取り
+onMounted(async () => {
+  // LocalStorage の読み取り
+  const stored = localStorage.getItem("favoriteEvents");
   if (stored) {
     const parsed = JSON.parse(stored);
     favoriteEvents.value = Array.isArray(parsed)
       ? parsed.map(String)
       : Object.values(parsed).map(String);
+  }
+
+  // fetch でデータ取得
+  try {
+    const res = await fetch(
+      "https://storage.googleapis.com/tokiwa25-assets/jsons/events.json"
+    );
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const data = await res.json();
+    events.value = data;
+  } catch (err) {
+    console.error("イベント取得失敗", err);
   }
 });
 
@@ -150,7 +163,7 @@ const foodsAll = computed(() => foodsKeys.every((k) => filter[k]));
 const performanceAll = computed(() => performanceKeys.every((k) => filter[k]));
 
 const filteredEvents = computed(() => {
-  return events.filter((event) => {
+  return events.value.filter((event) => {
     const placeMatch = filter[event.place];
     const categoryMatch = filter[event.genre];
     if (onlyFavo.value) {
@@ -314,16 +327,31 @@ const filteredEvents = computed(() => {
                       text="学生センター前ウッドデッキ"
                       v-model="filter.wooddeck"
                     />
-                    <FilterButton text="経済・経営学部棟1号館の間" v-model="filter.bizEcoMid" />
+                    <FilterButton
+                      text="経済・経営学部棟1号館の間"
+                      v-model="filter.bizEcoMid"
+                    />
                     <FilterButton
                       text="大学会館4Fホール"
                       v-model="filter.hall"
                     />
-                    <FilterButton text="都市科学部棟裏" v-model="filter.urbanSide"/>
-                    <FilterButton text="西門放牧地" v-model="filter.farm"/>
-                    <FilterButton text="中央図書館1F" v-model="filter.library"/>
-                    <FilterButton text="キャンパス全域" v-model="filter.whole"/>
-                    <FilterButton text="経営学部棟109教室" v-model="filter.biz109"/>
+                    <FilterButton
+                      text="都市科学部棟裏"
+                      v-model="filter.urbanSide"
+                    />
+                    <FilterButton text="西門放牧地" v-model="filter.farm" />
+                    <FilterButton
+                      text="中央図書館1F"
+                      v-model="filter.library"
+                    />
+                    <FilterButton
+                      text="キャンパス全域"
+                      v-model="filter.whole"
+                    />
+                    <FilterButton
+                      text="経営学部棟109教室"
+                      v-model="filter.biz109"
+                    />
                   </div>
                 </transition>
               </div>

@@ -6,7 +6,7 @@ const props = defineProps<{
 
 
 function getImagePath(title: string) {
-  return `/images/TopPageLink/${title}.webp`
+  return `images/TopPageLink/${title}.webp`
 }
 const imageUrl = computed(() => getImagePath(props.title))
 </script>

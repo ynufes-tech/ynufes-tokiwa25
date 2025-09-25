@@ -2,6 +2,7 @@
 const route = useRoute();
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
+import OrgLinks from "~/components/OrgLinks.vue";
 import { ref, computed } from "vue";
 
 const id = parseInt(route.params.id);
@@ -97,16 +98,17 @@ function toggleFavo() {
           alt=""
         /><!--中央寄せを効かせるためラップ-->
       </div>
-      <ContentBox class="event-description">
+      <ContentBox class="event-description" v-if='event?.e_description != " "'>
         <p>{{ event?.e_description }}</p>
       </ContentBox>
 
-      <div class="org-description">
+      <div class="org-description" v-if='event?.o_description != " "'>
         <p>団体説明</p>
         <ContentBox class="org-description-text">
           <p>{{ event?.o_description }}</p>
         </ContentBox>
       </div>
+      <OrgLinks class="links" :x_id="event?.x_id" :ins_id="event?.ins_id" :hp="event?.hp" />
       <div class="to-list"><LinkButton text="一覧に戻る" link="/events" /></div>
     </div>
   </div>
@@ -262,6 +264,12 @@ function toggleFavo() {
     color: #fff;
     margin-top: 130px;
   }
+  .links{
+      margin-top: 100px;
+      @include md{
+        margin-top: 70px;
+      }
+    }
   .org-description > p {
     font-size: 36px;
     margin-left: 15%;

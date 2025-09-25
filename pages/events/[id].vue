@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 const route = useRoute();
-import events from "public/test-events.json";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 const id = parseInt(route.params.id);
-const event = events.find((e) => parseInt(e.id) === id);
+const events = ref<any[]>([]);
+const event = computed(() =>
+  events.value.find((e) => parseInt(e.id) === id)
+);
 const showNoImage = (e: Event) => {
   //画像が見つからなかった時の処理
   const target = e.target as HTMLImageElement;
@@ -25,7 +27,18 @@ function getFavo() {
       : Object.values(parsed).map(String);
   }
 }
-onMounted(() => {
+onMounted(async () => {
+  // fetch でデータ取得
+  try {
+    const res = await fetch(
+      "https://storage.googleapis.com/tokiwa25-assets/jsons/events.json"
+    );
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const data = await res.json();
+    events.value = data;
+  } catch (err) {
+    console.error("イベント取得失敗", err);
+  }
   getFavo();
 });
 const isFavorite = computed(() => favoriteEvents.value.includes(id.toString()));
@@ -44,9 +57,9 @@ function toggleFavo() {
 <template>
   <div class="page-root">
     <ContentBox class="title-box">
-      <p class="event-title">{{ event.e_name }}</p>
+      <p class="event-title">{{ event?.e_name }}</p>
       <div class="bottom">
-        <p class="org-name">{{ event.o_name }}</p>
+        <p class="org-name">{{ event?.o_name }}</p>
         <div class="favo-wrap">
           <div class="favo" @click="toggleFavo">
             <transition name="favoAnime">
@@ -67,11 +80,11 @@ function toggleFavo() {
       </div>
     </ContentBox>
     <div class="content">
-      <div class="genre-tag">{{ event.displayGenre }}</div>
+      <div class="genre-tag">{{ event?.displayGenre }}</div>
       <div class="place">
         <div class="place-text">
           <img src="~/assets/images/eventcard-map-icon.svg" alt="" />{{
-            event.displayPlace
+            event?.displayPlace
           }}
         </div>
         <NuxtLink to="/map"
@@ -85,13 +98,13 @@ function toggleFavo() {
         /><!--中央寄せを効かせるためラップ-->
       </div>
       <ContentBox class="event-description">
-        <p>{{ event.e_description }}</p>
+        <p>{{ event?.e_description }}</p>
       </ContentBox>
 
       <div class="org-description">
         <p>団体説明</p>
         <ContentBox class="org-description-text">
-          <p>{{ event.o_description }}</p>
+          <p>{{ event?.o_description }}</p>
         </ContentBox>
       </div>
       <div class="to-list"><LinkButton text="一覧に戻る" link="/events" /></div>

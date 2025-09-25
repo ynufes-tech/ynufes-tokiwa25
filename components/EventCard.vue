@@ -5,7 +5,7 @@ const props = defineProps<{
     id: number;
     e_name: string;
     o_name: string;
-    place: string;
+    displayPlace: string;
     genre: string;
     block: string;
   };

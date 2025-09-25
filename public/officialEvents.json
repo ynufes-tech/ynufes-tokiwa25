@@ -58,7 +58,7 @@
 "野外音楽堂":[
   {
     "title": "☆サークル対抗格付けチェック☆",
-    "date": "10/31(金)13:30~15:00",
+    "date": "10月31日(金)13:30~15:00",
     "description": "サークル対抗格付けバトルで大盛り上がり！観客も参加者も景品がもらえる豪華企画。仲間を連れてくるほど有利に!?",
     "image": "/images/official/circlevs.webp"
   },
@@ -70,9 +70,15 @@
   },
   {
     "title": "グルメ争奪クイズ大会",
-    "date": "11/1(土)10:00~11:30",
+    "date": "11月1日(土)10:00~11:30",
     "description": "クイズに正解して、おいしい屋台メシを無料で食べよう!!横国学祭グルメを賭けた、仁義なき戦いが今始まる...！",
     "image": "/images/official/quizvs.webp"
+  },
+  {
+    "title": "YNU DANCE FES feat. BC ONE ALL STARS",
+    "date": "11月1日(土)12:30~16:00",
+    "description": "胸躍る多様なダンスパフォーマンスが常盤祭を盛り上げます！みなさんも一緒に楽しみましょう！特別ゲストも⁉",
+    "image": "/images/official/dancefes.webp"
   },
   {
     "title": "TOKIWA ROCK ANTHEM",
@@ -90,7 +96,7 @@
 "その他":[
   {
     "title": "饗宴",
-    "date": "11/1(土)19:45~19:55",
+    "date": "11月1日(土)19:45~19:55",
     "description": "常盤祭２日目の夜を綺麗な花火で彩ります！是非ご覧ください！当日は規制退場へのご協力をお願いいたします。",
     "image": "/images/official/kyoen.webp"
   }

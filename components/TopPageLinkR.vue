@@ -4,16 +4,17 @@ const props = defineProps<{
   jaTitle: string;
 }>();
 
+
 function getImagePath(title: string) {
-  return new URL(`../assets/images/TopPageLink/${title}.webp`, import.meta.url)
-    .href;
+  return `/images/TopPageLink/${title}.webp`
 }
+const imageUrl = computed(() => getImagePath(props.title))
 </script>
 <template>
   <div class="component-root">
     <NuxtLink :to="`/${title}`">
       <div class="wrapper">
-        <img :src="`/images/TopPageLink/${title}.webp`" alt="" />
+        <img :src="imageUrl" alt="" />
         <div class="texts">
           <p class="text-tp">{{ title.toUpperCase() }}</p>
           <p class="text-bt">{{ jaTitle }}</p>
@@ -32,7 +33,7 @@ function getImagePath(title: string) {
   transition: all 0.5s ease;
   .wrapper {
     width: 100%;
-    aspect-ratio: 6 / 1;
+    aspect-ratio: 5 / 1;
     transform: skewY(-4deg);
     overflow: hidden;
     position: relative;
@@ -87,7 +88,7 @@ function getImagePath(title: string) {
     top: -3%;
     background-color: white;
     width: 100%;
-    aspect-ratio: 600 / 105;
+    aspect-ratio: 500 / 105;
     z-index: -1;
     transform: skewY(-3deg);
   }

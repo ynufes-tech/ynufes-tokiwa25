@@ -1,3 +1,5 @@
+import Id from "./pages/news/[id].vue";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
@@ -23,13 +25,17 @@ export default defineNuxtConfig({
     '@/assets/css/reset.css'
   ],
   modules: [
-    '@nuxtjs/google-fonts'
-  ],
+    '@nuxtjs/google-fonts', 'nuxt-gtag'
+],
   googleFonts: {
     families: {
       'Kaisei Decol': true    
     },
     preconnect: true,
     display: 'swap'
+  },
+  gtag: {
+    id: 'G-9JJ0DXRDH4'
   }
+
 })

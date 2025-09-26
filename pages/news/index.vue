@@ -1,50 +1,34 @@
 <script setup lang="ts">
 import ContentBox from "~/components/ContentBox.vue";
+import newsData from "~/public/news/news.json";
+import PageTitle from "~/components/PageTitle.vue";
 
 useHead({
   title: "News | 25常盤祭公式HP~紅陽~",
-  meta: [
-    {name: "description", content: "最新情報を掲載しています"},
-  ],
+  meta: [{ name: "description", content: "最新情報を掲載しています" }],
 });
 </script>
 
 <template>
   <div class="page-root">
     <div class="page-container">
-      <PageTitle :title="'おしらせ'" :sub-title="'おしらせ'"/>
+      <PageTitle :title="'おしらせ'" :sub-title="'おしらせ'" />
       <div class="Latest-News">
         <div class="box">
-        <p>最新情報</p>
+          <p>最新情報</p>
         </div>
-      <ContentBox id="contentbox">
-        <p>
-         タイトル
-        </p>
-        <div class="date">
-          <h1>2025.09.02</h1>
-        </div>
-      </ContentBox>
-        <ContentBox id="contentbox">
-          <p>
-            タイトル
-          </p>
+
+        <ContentBox v-for="item in newsData" :key="item.id" id="contentbox">
+          <NuxtLink :to="`/news/${item.id}`" class="news-link">
+            <p>{{ item.title }}</p>
+          </NuxtLink>
           <div class="date">
-            <h1>2025.09.03</h1>
-          </div>
-        </ContentBox>
-        <ContentBox id="contentbox">
-          <p>
-            タイトル
-          </p>
-          <div class="date">
-            <h1>2025.09.04</h1>
+            <h1>{{ item.date }}</h1>
           </div>
         </ContentBox>
       </div>
     </div>
   </div>
-  
 </template>
 
 <style scoped lang="scss">
@@ -71,6 +55,13 @@ useHead({
   padding: 0 10vw 10vh;
 }
 
+.news-link {
+  color: #000000;
+  &:hover {
+    opacity: 0.6; 
+  }
+}
+
 .Latest-News {
   display: flex;
   flex-direction: column;
@@ -79,7 +70,7 @@ useHead({
   .date {
     margin-top: 30px;
     font-size: 20px;
-    @include md{
+    @include md {
       margin-top: 20px;
     }
     @include sm {
@@ -90,24 +81,25 @@ useHead({
   }
 
   p {
-    font-size: 50px;
+    font-size: 38px;
+
     @include md {
       font-size: 30px;
+    }
     @include sm {
       font-size: 20px;
-    }
     }
   }
 }
 
-.box{
-  p{
-    font-size: 50px;
+.box {
+  p {
+    font-size: 41px;
     margin-left: 115px;
-    margin-bottom: 20px;
-    @include md{
-      margin-left: 0px;
-      font-size: 40px;
+    margin-bottom: 30px;
+    @include md {
+      margin-left: 20px;
+      font-size: 36px;
     }
     @include sm {
       font-size: 25px;

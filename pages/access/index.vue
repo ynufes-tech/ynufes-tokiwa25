@@ -29,7 +29,7 @@ useHead({
         横浜市営地下鉄ブルーライン 「三ッ沢上町駅」より<br />徒歩約16分<br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="/images/maps/seimon.svg"
+        href="images/maps/seimon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -48,7 +48,7 @@ useHead({
         相鉄本線 「和田町駅」より<br />徒歩約20分<br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="/images/maps/minamimon.svg"
+        href="images/maps/minamimon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -68,7 +68,7 @@ useHead({
         <br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="/images/maps/kitamon.svg"
+        href="images/maps/kitamon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >

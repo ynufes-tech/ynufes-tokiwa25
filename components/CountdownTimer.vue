@@ -1,43 +1,43 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
 
 const props = defineProps<{
-  title: string
-  targetDate: string
-}>()
+  title: string;
+  targetDate: string;
+}>();
 
-const days = ref(0)
-const hours = ref(0)
-const minutes = ref(0)
-const seconds = ref(0)
+const days = ref(0);
+const hours = ref(0);
+const minutes = ref(0);
+const seconds = ref(0);
 
-let timer: number | undefined
+let timer: number | undefined;
 
 const updateCountdown = () => {
-  const now = new Date().getTime()
-  const target = new Date(props.targetDate).getTime()
-  const diff = target - now
+  const now = new Date().getTime();
+  const target = new Date(props.targetDate).getTime();
+  const diff = target - now;
 
   if (diff <= 0) {
-    days.value = hours.value = minutes.value = seconds.value = 0
-    clearInterval(timer)
-    return
+    days.value = hours.value = minutes.value = seconds.value = 0;
+    clearInterval(timer);
+    return;
   }
 
-  days.value = Math.floor(diff / (1000 * 60 * 60 * 24))
-  hours.value = Math.floor((diff / (1000 * 60 * 60)) % 24)
-  minutes.value = Math.floor((diff / (1000 * 60)) % 60)
-  seconds.value = Math.floor((diff / 1000) % 60)
-}
+  days.value = Math.floor(diff / (1000 * 60 * 60 * 24));
+  hours.value = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  minutes.value = Math.floor((diff / (1000 * 60)) % 60);
+  seconds.value = Math.floor((diff / 1000) % 60);
+};
 
 onMounted(() => {
-  updateCountdown()
-  timer = window.setInterval(updateCountdown, 1000)
-})
+  updateCountdown();
+  timer = window.setInterval(updateCountdown, 1000);
+});
 
 onUnmounted(() => {
-  clearInterval(timer)
-})
+  clearInterval(timer);
+});
 </script>
 
 <template>
@@ -71,6 +71,7 @@ onUnmounted(() => {
 
 .countdown-wrapper {
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -84,6 +85,7 @@ onUnmounted(() => {
 
   @include sm {
     margin-top: 0;
+    padding: 25px 10px;
   }
 
   h2 {
@@ -100,7 +102,7 @@ onUnmounted(() => {
     justify-content: center;
     gap: 20px;
     margin-top: 8vh;
-    
+
     @include sm {
       gap: 10px;
       margin-top: 0;
@@ -119,7 +121,7 @@ onUnmounted(() => {
     }
 
     @include sm {
-      gap: 13px;
+      gap: 10px;
     }
   }
 
@@ -136,12 +138,15 @@ onUnmounted(() => {
     @include md {
       width: 50px;
     }
+    @include sm {
+      width: 45px;
+    }
 
     .num {
       display: block;
       font-size: 4rem;
       font-weight: 500;
-      
+
       @include md {
         font-size: 2.5rem;
       }
@@ -157,7 +162,7 @@ onUnmounted(() => {
       margin-top: 2vh;
       display: inline-block;
       transform: translateX(30%); /* ラベルを右に少しずらす */
-      
+
       @include md {
         font-size: 0.7rem;
         letter-spacing: 5px;

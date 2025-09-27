@@ -26,7 +26,7 @@ useHead({
       <p><link-button link="#" text="ダウンロード"></link-button></p>
     </div>
   </div>
-      
+
     </div>
 
   </div>

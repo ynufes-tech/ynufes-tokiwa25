@@ -5,7 +5,10 @@ import LinkButton from "~/components/LinkButtonComponent.vue";
 useHead({
   title: "Idol | 25常盤祭公式HP~紅陽~",
   meta: [
-    { name: "description", content: "アイドルステージ詳細はこちらからチェック！" },
+    {
+      name: "description",
+      content: "アイドルステージ詳細はこちらからチェック！",
+    },
   ],
 });
 </script>
@@ -22,9 +25,22 @@ useHead({
           <img src="~/assets/images/momiji.svg" alt="momiji" class="momiji" />
           <p>出演</p>
         </div>
-        <img class="first-stage" src="/assets/images/iwamurahana.webp" />
-        <img class="first-stage" src="/assets/images/KOBerrieS.webp" />
-        <img class="second-stage" src="/assets/images/AVEST.webp" />
+        <div class="upper-stage">
+          <div class="id-idol">
+            <img class="stage" src="/assets/images/iwamurahana.webp" />
+            <p class="idol-name">岩村花奈</p>
+          </div>
+          <div class="id-idol">
+            <img class="stage" src="/assets/images/KOBerrieS.webp" />
+            <p class="idol-name">KOBerrieS♪</p>
+          </div>
+        </div>
+        <div class="under-stage">
+          <div class="id-idol">
+            <img class="stage" src="/assets/images/AVEST.webp" />
+            <p class="idol-name">AVEST</p>
+          </div>
+        </div>
       </div>
       <div class="when">
         <div class="name">
@@ -71,22 +87,55 @@ useHead({
 
 .yagaiongakudou {
   display: block;
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 
-.first-stage {
+.upper-stage {
   display: flex;
-  width: 15em;
-  align-items: center;
   justify-content: center;
+  gap: 15vw;
+  margin-top: 8vh;
+  @include sm {
+    flex-direction: column;
+    gap: 10vh;
+    align-items: center;
+  }
 }
 
-.second-stage {
-  width: 15em;
+.under-stage {
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin-top: 20px;
+  @include sm {
+    flex-direction: column;
+    margin-top: 10vh;
+    align-items: center;
+  }
+}
+
+.stage {
+  width: 300px;
+  @include md {
+    width: 200px;
+  }
+  @include sm {
+    width: 250px;
+  }
+}
+
+.idol-name {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  @include md {
+    font-size: 1.2em;
+  }
+  @include sm {
+    font-size: 1em;
+  }
 }
 
 .momiji {
@@ -101,6 +150,7 @@ useHead({
 
 .who {
   margin-top: 60px;
+  margin-bottom: 80px;
 }
 
 .when {

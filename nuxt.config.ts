@@ -23,13 +23,17 @@ export default defineNuxtConfig({
     '@/assets/css/reset.css'
   ],
   modules: [
-    '@nuxtjs/google-fonts'
-  ],
+    '@nuxtjs/google-fonts', 'nuxt-gtag'
+],
   googleFonts: {
     families: {
       'Kaisei Decol': true    
     },
     preconnect: true,
     display: 'swap'
+  },
+  gtag: {
+    id: 'G-9JJ0DXRDH4'
   }
+
 })

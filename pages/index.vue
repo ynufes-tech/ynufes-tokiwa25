@@ -38,23 +38,18 @@ useHead({
         />
       </div>
       <div class="links">
-        <TopPageLinkR class="link" title="official" jaTitle="本部企画紹介" />
-        <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
-        <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" />
-        <TopPageLinkL
-          class="link"
-          title="schedule"
-          jaTitle="タイムスケジュール"
-        />
-        <TopPageLinkR class="link" title="map" jaTitle="大学の地図" />
+        <TopPageLinkR class="link" title="official" jaTitle="本部企画一覧" />
+        <TopPageLinkL class="link" title="idol" jaTitle="アイドルステージ" />
+        <TopPageLinkR class="link" title="guest" jaTitle="ゲスト" />
+        <!-- <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" /> -->
+        <!-- <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" /> -->
+        <TopPageLinkL class="link" title="news" jaTitle="おしらせ" />
+        <!-- <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" /> -->
+        <TopPageLinkR class="link" title="map" jaTitle="キャンパスマップ" />
         <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
-        <TopPageLinkR
-          class="link"
-          title="access"
-          jaTitle="大学までのアクセス"
-        />
+        <TopPageLinkR class="link" title="access" jaTitle="大学までのアクセス" />
         <TopPageLinkL class="link" title="contact" jaTitle="お問い合わせ" />
-        <TopPageLinkR class="link" title="sponsor" jaTitle="ご協賛" />
+        <TopPageLinkR class="link" title="about-us" jaTitle="大学祭実行委員会について" />
       </div>
       <div class="sns">
         <SNS />

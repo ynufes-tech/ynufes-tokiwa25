@@ -50,8 +50,8 @@ useHead({
         <h1>
           2025年11月2日(日) <br />
           <br />
-          ステージ　11:00~12:00<br />
-          特典会　 12:30~14:00
+          ステージ 11:00~12:00<br />
+          特典会 12:30~14:00
         </h1>
       </div>
       <div class="where">
@@ -65,6 +65,13 @@ useHead({
           ※雨天時<br />
           中央図書館一階メディアホール
         </h1>
+      </div>
+      <div class="sponsored-by">
+        <p class="title">提供</p>
+        <p class="sponsor-name">カレッジフェスタ</p>
+        <a href="http://www.college-festa.com/" target="_blank" rel="noopener">
+          http://www.college-festa.com/
+        </a>
       </div>
     </div>
   </div>
@@ -154,6 +161,7 @@ useHead({
 }
 
 .when {
+  line-height: 1.6;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -164,6 +172,7 @@ useHead({
 }
 
 .where {
+  line-height: 1.6;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -195,6 +204,51 @@ useHead({
     }
     @include sm {
       font-size: 1em;
+    }
+  }
+}
+
+.sponsored-by {
+  font-family: 'Zen Old Mincho', serif;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  background-color: #FBEFDE;
+  padding: 80px;
+
+  p.title {
+    font-size: 22px;
+    margin: 0;
+    @include md {
+      font-size: 1.1em;
+    }
+    @include sm {
+      font-size: 1em;
+    }
+  }
+  p.sponsor-name {
+    font-size: 25px;
+    margin: 20px 0 10px 0;
+    @include md {
+      font-size: 20px;
+    }
+    @include sm {
+      font-size: 1.1em;
+    }
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+    font-size: 0.8em;
+    @include md {
+      font-size: 0.9em;
+    }
+    @include sm {
+      font-size: 0.8em;
     }
   }
 }

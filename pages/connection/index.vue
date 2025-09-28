@@ -1,0 +1,73 @@
+<script lang="ts" setup>
+import PageTitle from "~/components/PageTitle.vue";
+import ContentBox from "~/components/ContentBox.vue";
+import LinkButton from "~/components/LinkButtonComponent.vue";
+useHead({
+  title: "Contact | 25常盤祭公式HP~紅陽~",
+  meta: [{ name: "description", content: "他大学の学祭HPはこちら" }],
+});
+</script>
+
+<template>
+  <div class="page-root">
+    <PageTitle title="相互リンク" />
+    <ContentBox>
+      <div class="explanation">
+        <p>他大学の学祭を開催日程順にご紹介します。</p>
+      </div>
+      <div class="university">
+        <LinkButton
+            class="LinkButton"
+            text="○○大学 ○○祭"
+            link=""
+        />
+        <p>開催日程：2025年○月○日(○)～○月○日(○)</p>
+      </div>
+      <div class="university">
+        <LinkButton
+            class="LinkButton"
+            text="○○大学 ○○祭"
+            link=""
+        />
+        <p>開催日程：2025年○月○日(○)～○月○日(○)</p>
+      </div>
+      <div class="university-bottom">
+        <LinkButton
+            class="LinkButton"
+            text="○○大学 ○○祭"
+            link=""
+        />
+        <p>開催日程：2025年○月○日(○)～○月○日(○)</p>
+      </div>
+    </ContentBox>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@use "@/assets/scss/_breakpoint.scss" as *;
+.explanation {
+  margin: 70px 8%;
+  text-align: center;
+  font-size: 1.1em;
+  @include md {
+    margin: 70px 4%;
+    font-size: 1rem;
+  }
+}
+
+.university-bottom,
+.university{
+  margin: 50px 8%;
+  p {
+    line-height: 2rem;
+  }
+  @include md {
+    margin: 50px 4%;
+    font-size: 1rem;
+  }
+}
+
+.university-bottom{
+  margin-bottom: 100px;
+}
+</style>

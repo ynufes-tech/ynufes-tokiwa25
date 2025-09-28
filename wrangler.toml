@@ -9,5 +9,5 @@ command = "pnpm install --frozen-lockfile && pnpm run build"
 directory = ".output/public"
 binding = "ASSETS"
 
-[vars]
+[build.env]
 NUXT_PUBLIC_BASE_URL = "/25/tokiwa"

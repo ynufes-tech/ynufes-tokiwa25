@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     app: {
     baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     runtimeConfig: {
-      baseURL: '/25/tokiwa', // NUXT_PUBLIC_BASE_URL によって上書きされる 公式ドキュメント参照
+      baseURL: '/25/tokiwa/', // NUXT_PUBLIC_BASE_URL によって上書きされる 公式ドキュメント参照
     },
     head: {
       meta: [

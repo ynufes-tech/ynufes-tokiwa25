@@ -1,0 +1,13 @@
+name = "ynufes-tokiwa25"
+main = ".output/server/index.mjs"
+compatibility_date = "2025-09-28"
+
+[build]
+command = "pnpm install --frozen-lockfile && pnpm run build"
+
+[assets]
+directory = ".output/public"
+binding = "ASSETS"
+
+[vars]
+NUXT_PUBLIC_BASE_URL = "/25/tokiwa"

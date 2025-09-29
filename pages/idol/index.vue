@@ -28,7 +28,7 @@ useHead({
         <div class="upper-stage">
           <div class="id-idol">
             <img class="stage" src="/assets/images/iwamurahana.webp" />
-            <p class="idol-name">岩村花奈</p>
+            <p class="idol-name">岩村華</p>
           </div>
           <div class="id-idol">
             <img class="stage" src="/assets/images/KOBerrieS.webp" />

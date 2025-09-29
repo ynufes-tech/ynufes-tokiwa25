@@ -40,6 +40,9 @@ FROM node:22-slim AS runner
 COPY --from=prod-deps /app/node_modules ./node_modules
 # 本番依存をコピー
 
+COPY --from=build /app/.output/public ./public
+# 公開ディレクトリをコピー
+
 COPY --from=build /app/.output /app/
 # ビルド成果物をコピー
 

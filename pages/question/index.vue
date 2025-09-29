@@ -13,7 +13,7 @@ useHead({
   <div class="page-root">
     <PageTitle title="よくあるご質問" />
     <div class="all-questions">
-    <div class="box1">
+    <div class="box">
   <ContentBox id="contentbox">
     <div class="category">
       <div class="qa">
@@ -29,7 +29,7 @@ useHead({
     </div>
   </ContentBox>
     </div>
-    <div class="box2">
+    <div class="box">
       <ContentBox id="contentbox">
         <div class="category">
         <div class="qa">
@@ -46,7 +46,7 @@ useHead({
         </div>
       </ContentBox>
     </div>
-      <div class="box3">
+      <div class="box">
         <ContentBox id="contentbox">
           <div class="category">
           <div class="qa">
@@ -60,7 +60,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
-      <div class="box4">
+      <div class="box">
         <ContentBox id="contentbox">
           <div class="category">
           <div class="qa">
@@ -76,7 +76,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
-      <div class="box5">
+      <div class="box">
         <ContentBox id="contentbox">
           <div class="category">
           <div class="qa">
@@ -91,7 +91,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
-      <div class="box6">
+      <div class="box">
         <ContentBox id="contentbox">
           <div class="category">
           <div class="qa">
@@ -106,7 +106,7 @@ useHead({
           </div>
         </ContentBox>
         </div>
-      <div class="box7">
+      <div class="box">
         <ContentBox id="contentbox">
           <div class="category">
          <div class="qa">
@@ -122,7 +122,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
-      <div class="box8">
+      <div class="box">
         <ContentBox id="contentbox">
           <div class="category">
          <div class="qa">
@@ -172,28 +172,7 @@ useHead({
   flex-direction: column;
   margin-left: 1vw;
 }
-.box1{
-  margin-bottom:50px ;
-}
-.box2{
-  margin-bottom:50px ;
-}
-.box3{
-  margin-bottom:50px ;
-}
-.box4{
-  margin-bottom:50px ;
-}
-.box5{
-  margin-bottom:50px ;
-}
-.box6{
-  margin-bottom:50px ;
-}
-.box7{
-  margin-bottom:50px ;
-}
-.box8{
+.box{
   margin-bottom:50px ;
 }
 p{
@@ -201,7 +180,7 @@ p{
   font-family: "Kaisei Decol";
 }
 .other-thing{
-  font-size:  3vh;
+  font-size:  4vh;
 }
 .linkto{
   color: #FFFFFF ;

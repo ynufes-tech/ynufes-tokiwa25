@@ -57,7 +57,7 @@ useHead({
           <img src="/assets/images/momiji.svg" alt="紅葉" class="momiji" />
           <p>会場</p>
         </div>
-        <p>経営学部棟２号館109特設ステージ</p>
+        <p>経営学部棟２号館109教室特設ステージ</p>
       </div>
       <div class="box ticket-info">
         <div class="sub-title">

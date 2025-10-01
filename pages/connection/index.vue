@@ -3,7 +3,7 @@ import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
 useHead({
-  title: "Contact | 25常盤祭公式HP~紅陽~",
+  title: "Connection | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "他大学の学祭HPはこちら" }],
 });
 </script>

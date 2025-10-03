@@ -5,7 +5,7 @@ import LinkButton from "~/components/LinkButtonComponent.vue";
 useHead({
   title: "Access | 25常盤祭公式HP~紅陽~",
   meta: [
-    { name: "description", content: "横浜国立大学までのアクセスはこちらから" },
+    { name: "description", content: "アイドルステージの情報を掲載しています。" },
   ],
 });
 </script>
@@ -94,7 +94,7 @@ useHead({
 
 .yagaiongakudou{
   display: block;
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 
@@ -104,6 +104,7 @@ useHead({
   width: 15em;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 
 .second-stage{

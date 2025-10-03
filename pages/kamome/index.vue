@@ -1,0 +1,144 @@
+<script lang="ts" setup>
+import PageTitle from "~/components/PageTitle.vue";
+import ContentBox from "~/components/ContentBox.vue";
+import LinkButton from "~/components/LinkButtonComponent.vue";
+useHead({
+  title: "Momesen | 25常盤祭公式HP~紅陽~",
+  meta: [
+    { name: "description", content: "カモメ先輩の情報を掲載しています。" },
+  ],
+});
+</script>
+
+<template>
+  <div class="page-root">
+    <div class="page-container">
+      <PageTitle :title="'かもめ先輩について'" :sub-title="'かもめ先輩について'"/>
+      <div class="momesen">
+        <img
+            class="kamomesenpai"
+            src="/assets/images/momesen.svg">
+      </div>
+      <div class="profile">
+        <h1>プロフィール</h1>
+        <ContentBox id="contentbox">
+            性別：おそらくオス<br>
+            身長：およそ30センチ（ぼうしあり）<br>
+            体重：4.559キロ<br>
+            生年月日：2014年11月2日<br>
+            好きな食べ物：たこさんウインナー<br>
+        </ContentBox>
+      </div>
+      <div class="coment">
+        <h1>コメント</h1>
+        <ContentBox id="contentbox">
+            ぼくは、横浜国立大学大学祭の公式キャラクター、かもめ先輩もめ！<br>
+            実はかもめなのに空が飛べないもめ…<br>
+            XやInstagram、LINEスタンプなんかもチェックしてくれるとうれしいもめ！
+        </ContentBox>
+      </div>
+      <div class="button">
+        <LinkButton
+            class="Linkbutton"
+            link="https://x.com/kamome_senpai"
+            text="Xを見る">
+        </LinkButton>
+        <LinkButton
+            class="Linkbutton"
+            link="https://instagram.com/kamome.senpai/"
+            text="Instagramを見る">
+        </LinkButton>
+        <LinkButton
+            class="Linkbutton"
+            link=""
+            text="LINEスタンプを見る">
+        </LinkButton>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@use "@/assets/scss/_breakpoint.scss" as *;
+
+#contentbox {
+  font-family: "Zen Old Mincho", sans-serif;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 50px 80px;
+  color: #000000;
+  margin-top: 50px;
+  @include sm{
+    padding: 30px;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}
+
+
+.momesen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kamomesenpai{
+  width: 200px;
+}
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 40px 5rem;
+  @include sm{
+    padding: 40px ;
+  }
+  h1{
+    font-size: 40px;
+    margin-left: 100px;
+    @include md{
+      font-size: 35px;
+    }
+    @include sm{
+      margin-left: 20px;
+      font-size: 30px;
+    }
+  }
+}
+
+.coment{
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 40px 5rem;
+  @include sm{
+    padding: 40px;
+  }
+  h1{
+    font-size: 40px;
+    margin-left: 100px;
+    @include md{
+      font-size: 35px;
+    }
+    @include sm{
+      margin-left: 20px;
+      font-size: 30px;
+    }
+  }
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.Linkbutton{
+  margin: 70px;
+  max-width: 320px;
+}
+</style>

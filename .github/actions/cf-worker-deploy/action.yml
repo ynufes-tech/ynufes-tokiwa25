@@ -25,10 +25,6 @@ inputs:
     description: "Node version"
     required: false
     default: "22"
-  pnpm_version:
-    description: "pnpm version"
-    required: false
-    default: "10"
   wrangler_version:
     description: "wrangler version"
     required: false
@@ -63,7 +59,6 @@ runs:
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
       with:
-        version: ${{ inputs.pnpm_version }}
         run_install: false
     - name: Setup Node
       uses: actions/setup-node@v4

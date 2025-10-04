@@ -28,7 +28,7 @@ inputs:
   nitro_preset:
     description: "Nitro preset for Nuxt"
     required: false
-    default: "cloudflare"
+    default: "cloudflare-module"
   wrangler_extra_args:
     description: "Extra args for wrangler deploy (e.g., --no-bundle)"
     required: false

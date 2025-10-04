@@ -9,6 +9,9 @@ on:
         description: 'Release Tag'
         required: true
         default: 'v0.0.0'
+  pull_request:
+    branches:
+      - main
 concurrency:
   group: cloudflare-worker-prod
   cancel-in-progress: false

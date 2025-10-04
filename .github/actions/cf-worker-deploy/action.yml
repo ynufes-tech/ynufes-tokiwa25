@@ -28,7 +28,7 @@ inputs:
   wrangler_version:
     description: "wrangler version"
     required: false
-    default: "3"
+    default: "4"
   nitro_preset:
     description: "Nitro preset for Nuxt"
     required: false

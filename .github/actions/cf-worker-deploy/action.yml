@@ -53,10 +53,6 @@ inputs:
     description: "Print rendered wrangler.toml to logs"
     required: false
     default: "true"
-  checkout:
-    description: "Perform a checkout step"
-    required: false
-    default: "false"
   release_tag:
     description: "Optional: release tag to expose to build"
     required: false
@@ -64,9 +60,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout
-      if: ${{ inputs.checkout == 'true' }}
-      uses: actions/checkout@v4
     - name: Setup Node
       uses: actions/setup-node@v5
       with:
@@ -77,6 +70,15 @@ runs:
       with:
         version: ${{ inputs.pnpm_version }}
         run_install: false
+    - name: Ensure pnpm available (Corepack fallback)
+      shell: bash
+      run: |
+        if ! command -v pnpm >/dev/null 2>&1; then
+          echo "pnpm not found; enabling via Corepack..."
+          corepack enable
+          corepack prepare "pnpm@${{ inputs.pnpm_version }}" --activate
+        fi
+        echo "pnpm version: $(pnpm --version)"
     - name: Install deps
       shell: bash
       run: ${{ inputs.install_command }}

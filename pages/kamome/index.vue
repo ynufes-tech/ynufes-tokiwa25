@@ -50,8 +50,13 @@ useHead({
         </LinkButton>
         <LinkButton
             class="Linkbutton"
-            link=""
+            link="https://store.line.me/stickershop/product/5064088/ja"
             text="LINEスタンプを見る">
+        </LinkButton>
+        <LinkButton
+            class="Linkbutton"
+            link="https://store.line.me/emojishop/product/627239ae541f8a2a9a39da9c/ja?ref=Desktop"
+            text="LINE絵文字を見る">
         </LinkButton>
       </div>
     </div>
@@ -70,9 +75,9 @@ useHead({
   color: #000000;
   margin-top: 50px;
   @include sm{
-    padding: 30px;
+    padding: 40px;
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -140,5 +145,8 @@ useHead({
 .Linkbutton{
   margin: 70px;
   max-width: 320px;
+  @include sm{
+    margin: 50px;
+  }
 }
 </style>

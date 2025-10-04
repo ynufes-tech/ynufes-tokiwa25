@@ -1,6 +1,6 @@
 name: "Nuxt → Cloudflare Worker Deploy"
 description: "NuxtをCloudflare WorkerとしてデプロイするCustom Action"
-author: "you"
+author: "Shion1305"
 inputs:
   # Required
   worker_name:
@@ -25,10 +25,6 @@ inputs:
     description: "Node version"
     required: false
     default: "22"
-  wrangler_version:
-    description: "wrangler version"
-    required: false
-    default: "4"
   nitro_preset:
     description: "Nitro preset for Nuxt"
     required: false
@@ -91,8 +87,10 @@ runs:
         echo "----- wrangler.toml -----"
         cat wrangler.toml
         echo "-------------------------"
+    - name: Deploy
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ inputs.cloudflare_api_token }}
     - name: Deploy (wrangler)
       shell: bash
-      env:
-        CLOUDFLARE_API_TOKEN: ${{ inputs.cloudflare_api_token }}
-      run: pnpm dlx wrangler@${{ inputs.wrangler_version }} deploy --config wrangler.toml ${{ inputs.wrangler_extra_args }}
+      run: wrangler deploy --config wrangler.toml ${{ inputs.wrangler_extra_args }}

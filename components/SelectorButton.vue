@@ -125,7 +125,7 @@ const selectVenue = (i: number) => {
     margin-left: 5px;
   }
 
-  @include md {
+  @media screen and (max-width: 825px) {
     display: block;
     margin-bottom: 20px;
   }

@@ -94,7 +94,7 @@ const columnEvents = (idx: number) =>
         </div>
       </div>
 
-      <!-- md以下: 会場セレクター -->
+      <!-- 825px以下: 会場セレクター -->
       <SelectorButton :options="venues" v-model="selectedVenue" />
 
       <!-- 本体（時間＋イベント） -->
@@ -144,8 +144,6 @@ const columnEvents = (idx: number) =>
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/_breakpoint.scss" as *;
-
 .page-root {
   padding: 0 40px;
 }
@@ -157,7 +155,7 @@ const columnEvents = (idx: number) =>
   gap: 14px;
   margin-bottom: 18px;
 
-  @include sm {
+  @media (max-width: 825px) {
     gap: 5px;
     margin-bottom: 30px;
   }
@@ -185,7 +183,7 @@ const columnEvents = (idx: number) =>
         margin: 1px 5vw;
         font-size: 18px;
         font-family: "Zen Old Mincho", sans-serif;
-        @include md {
+        @media (max-width: 825px) {
           font-size: 15px;
           margin: 1px 3vw;
         }
@@ -218,7 +216,6 @@ const columnEvents = (idx: number) =>
 
 /* ===== 全体レイアウト ===== */
 .grid-wrap {
-  /* 上:ヘッダー, 下:本体 は縦方向のフレックス */
   display: flex;
   flex-direction: column;
   min-height: var(--board-h);
@@ -229,9 +226,10 @@ const columnEvents = (idx: number) =>
   display: grid;
   grid-template-columns: 60px 1fr;
   margin-bottom: 10px;
-  @include md {
-    display: none;
-  } /* md以下は非表示 */
+
+  @media (max-width: 825px) {
+    display: none; /* 825px以下は非表示 */
+  }
 }
 
 .time-rail-header {
@@ -239,12 +237,12 @@ const columnEvents = (idx: number) =>
 }
 
 .venue-row {
-  grid-column: 2 / -1; /* ← 右側全幅で受ける */
+  grid-column: 2 / -1;
   display: grid;
   grid-template-columns: repeat(var(--venue-count), 1fr);
   gap: 15px;
 
-  @include md {
+  @media (max-width: 825px) {
     grid-template-columns: repeat(var(--venue-count), minmax(120px, 1fr));
     gap: 5px;
   }
@@ -268,7 +266,8 @@ const columnEvents = (idx: number) =>
   display: grid;
   grid-template-columns: 60px 1fr;
   position: relative;
-  @include md {
+
+  @media (max-width: 825px) {
     font-size: 14px;
     right: 6px;
   }
@@ -277,7 +276,7 @@ const columnEvents = (idx: number) =>
 .time-rail {
   position: relative;
   width: 60px;
-  @include md {
+  @media (max-width: 825px) {
     width: 40px;
   }
 }
@@ -287,7 +286,7 @@ const columnEvents = (idx: number) =>
   font-size: 20px;
   color: #fff;
 
-  @include md {
+  @media (max-width: 825px) {
     font-size: 16px;
     right: 5px;
   }
@@ -318,8 +317,8 @@ const columnEvents = (idx: number) =>
   position: relative;
   z-index: 2;
 
-  @include md {
-    grid-template-columns: 1fr; /* md以下は1列だけ */
+  @media (max-width: 825px) {
+    grid-template-columns: 1fr; /* 825px以下は1列だけ */
     .col.hiddenOnMobile {
       display: none;
     }

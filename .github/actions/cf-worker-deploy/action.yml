@@ -91,6 +91,3 @@ runs:
       uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ inputs.cloudflare_api_token }}
-    - name: Deploy (wrangler)
-      shell: bash
-      run: wrangler deploy --config wrangler.toml ${{ inputs.wrangler_extra_args }}

@@ -1,0 +1,110 @@
+name: "Nuxt → Cloudflare Worker Deploy"
+description: "NuxtをCloudflare WorkerとしてデプロイするCustom Action"
+author: "you"
+inputs:
+  # Required
+  worker_name:
+    description: "Name of Cloudflare Worker"
+    required: true
+  wrangler_template:
+    description: "Path to wrangler.template.toml in the repo"
+    required: true
+  cloudflare_api_token:
+    description: "Cloudflare API token with Workers:Edit"
+    required: true
+  # Optional
+  account_id:
+    description: "Cloudflare Account ID"
+    required: false
+    default: "f037b96dfbf8186665c4cce1cb90ccc1"
+  compat_date:
+    description: "Cloudflare Workers compatibility_date"
+    required: false
+    default: "2025-09-28"
+  node_version:
+    description: "Node version"
+    required: false
+    default: "22"
+  pnpm_version:
+    description: "pnpm version"
+    required: false
+    default: "10"
+  wrangler_version:
+    description: "wrangler version"
+    required: false
+    default: "3"
+  nitro_preset:
+    description: "Nitro preset for Nuxt"
+    required: false
+    default: "cloudflare"
+  wrangler_extra_args:
+    description: "Extra args for wrangler deploy (e.g., --no-bundle)"
+    required: false
+    default: ""
+  install_command:
+    description: "Dependency install command"
+    required: false
+    default: "pnpm install --frozen-lockfile"
+  build_command:
+    description: "Build command"
+    required: false
+    default: "pnpm build"
+  print_toml:
+    description: "Print rendered wrangler.toml to logs"
+    required: false
+    default: "true"
+  checkout:
+    description: "Perform a checkout step"
+    required: false
+    default: "false"
+  release_tag:
+    description: "Optional: release tag to expose to build"
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      if: ${{ inputs.checkout == 'true' }}
+      uses: actions/checkout@v4
+    - name: Setup Node
+      uses: actions/setup-node@v5
+      with:
+        node-version: ${{ inputs.node_version }}
+        cache: pnpm
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: ${{ inputs.pnpm_version }}
+        run_install: false
+    - name: Install deps
+      shell: bash
+      run: ${{ inputs.install_command }}
+    - name: Build (Nuxt)
+      shell: bash
+      env:
+        NODE_ENV: production
+        NITRO_PRESET: ${{ inputs.nitro_preset }}
+        RELEASE_TAG: ${{ inputs.release_tag }}
+      run: ${{ inputs.build_command }}
+    - name: Render wrangler.toml from template
+      shell: bash
+      run: |
+        cp "${{ inputs.wrangler_template }}" wrangler.toml
+        sed -i \
+          -e "s|__WORKER_NAME__|${{ inputs.worker_name }}|g" \
+          -e "s|__ACCOUNT_ID__|${{ inputs.account_id }}|g" \
+          -e "s|__COMPAT_DATE__|${{ inputs.compat_date }}|g" \
+          wrangler.toml
+    - name: Show wrangler.toml
+      if: ${{ inputs.print_toml == 'true' }}
+      shell: bash
+      run: |
+        echo "----- wrangler.toml -----"
+        cat wrangler.toml
+        echo "-------------------------"
+    - name: Deploy (wrangler)
+      shell: bash
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ inputs.cloudflare_api_token }}
+      run: pnpm dlx wrangler@${{ inputs.wrangler_version }} deploy --config wrangler.toml ${{ inputs.wrangler_extra_args }}

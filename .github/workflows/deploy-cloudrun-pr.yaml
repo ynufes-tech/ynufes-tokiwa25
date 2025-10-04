@@ -7,6 +7,9 @@ on:
       - opened
       - synchronize
       - reopened
+concurrency:
+  group: cloudrun-deploy-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

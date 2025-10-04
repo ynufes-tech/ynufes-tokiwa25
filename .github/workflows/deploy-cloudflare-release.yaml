@@ -27,6 +27,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Cloudflare Worker Deploy (Nuxt)
         uses: ./.github/actions/cf-worker-deploy
+        env:
+          NUXT_PUBLIC_BASE_URL: /25/tokiwa/
         with:
           worker_name: tokiwa25-release
           wrangler_template: wrangler.template.toml

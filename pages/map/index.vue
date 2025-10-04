@@ -4,7 +4,7 @@ import ContentBox from "~/components/ContentBox.vue";
 import LinkButtonComponent from "~/components/LinkButtonComponent.vue";
 useHead({
   title: "Map | 25常盤祭公式HP~紅陽~",
-  meta: [{ name: "description", content: "キャンパスマップ" }],
+  meta: [{ name: "description", content: "キャンパスマップはこちら" }],
 });
 
 </script>

@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     app: {
     baseURL: process.env.NUXT_PUBLIC_BASE_URL,
     runtimeConfig: {
-      baseURL: '/', // NUXT_PUBLIC_BASE_URL によって上書きされる 公式ドキュメント参照
+      baseURL: '/25/tokiwa/', // NUXT_PUBLIC_BASE_URL によって上書きされる 公式ドキュメント参照
     },
     head: {
       meta: [
@@ -14,6 +14,7 @@ export default defineNuxtConfig({
         { hid: 'description', name: 'description', content: '2025常盤祭公式サイト - 横浜国立大学大学祭' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: '25常盤祭 - 横浜国立大学大学祭' },
+        { property: 'og:image' , content: 'https://ynu-fes.yokohama/25/tokiwa/images/OGP-thumbnail.webp'},
         { property: 'keywords', content: '常盤祭,横浜国立大学,大学祭,文化祭,横国,2025,秋,学祭,イベント,横浜' },
       ],
     },
@@ -22,13 +23,17 @@ export default defineNuxtConfig({
     '@/assets/css/reset.css'
   ],
   modules: [
-    '@nuxtjs/google-fonts'
-  ],
+    '@nuxtjs/google-fonts', 'nuxt-gtag'
+],
   googleFonts: {
     families: {
       'Kaisei Decol': true    
     },
     preconnect: true,
     display: 'swap'
+  },
+  gtag: {
+    id: 'G-9JJ0DXRDH4'
   }
+
 })

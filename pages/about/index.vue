@@ -111,6 +111,9 @@ onMounted(() => {
   margin: 40px 17% 20px 17%;
   color: #fff;
   font-size: 2rem;
+  @include md{
+    font-size: 1.5rem;
+  }
 }
 
 .about {

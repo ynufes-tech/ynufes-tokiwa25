@@ -60,25 +60,16 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ inputs.node_version }}
-        cache: pnpm
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
       with:
         version: ${{ inputs.pnpm_version }}
         run_install: false
-    - name: Ensure pnpm available (Corepack fallback)
-      shell: bash
-      run: |
-        if ! command -v pnpm >/dev/null 2>&1; then
-          echo "pnpm not found; enabling via Corepack..."
-          corepack enable
-          corepack prepare "pnpm@${{ inputs.pnpm_version }}" --activate
-        fi
-        echo "pnpm version: $(pnpm --version)"
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node_version }}
+        cache: pnpm
     - name: Install deps
       shell: bash
       run: ${{ inputs.install_command }}

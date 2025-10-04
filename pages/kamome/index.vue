@@ -69,13 +69,15 @@ useHead({
 #contentbox {
   font-family: "Zen Old Mincho", sans-serif;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   text-align: left;
   padding: 50px 80px;
   color: #000000;
   margin-top: 50px;
   @include sm{
-    padding: 40px;
+    padding: 20px;
     margin-top: 20px;
     font-size: 14px;
   }
@@ -145,8 +147,11 @@ useHead({
 .Linkbutton{
   margin: 70px;
   max-width: 320px;
-  @include sm{
+  @include md{
     margin: 50px;
+  }
+  @include sm{
+    margin: 30px;
   }
 }
 </style>

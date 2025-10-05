@@ -35,6 +35,7 @@ const venues = Object.entries(officialEvents);
               <div class="card-texts">
                 <p class="card-text">{{ Event.description }}</p>
                 <p class="card-text date" v-if="Event.date">{{ Event.date }}</p>
+                <p class="card-text rain" v-if="Event.rainyplan">{{Event.rainyplan}}</p>
               </div>
             </div>
           </div>

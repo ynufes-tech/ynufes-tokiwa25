@@ -162,6 +162,18 @@ const TBKAll = computed(() => TBKKeys.every((k) => filter[k]));
 const foodsAll = computed(() => foodsKeys.every((k) => filter[k]));
 const performanceAll = computed(() => performanceKeys.every((k) => filter[k]));
 
+const ALLOFF = () => {
+  Object.keys(filter).forEach((key) => {
+    filter[key] = false;
+  });
+};
+
+const ALLON = () => {
+  Object.keys(filter).forEach((key) => {
+    filter[key] = true;
+  });
+};
+
 const filteredEvents = computed(() => {
   return events.value.filter((event) => {
     const placeMatch = filter[event.place];
@@ -194,6 +206,10 @@ const filteredEvents = computed(() => {
         </transition>
       </div>
       <div class="menu-body" :class="{ show: open }">
+        <div class="ALL-toggle">
+          <div @click="ALLON">すべてON</div>
+          <div @click="ALLOFF">すべてOFF</div>
+        </div>
         <div
           class="place-accordion accordion"
           :class="{ accordionOpen: accordion.place }"
@@ -626,9 +642,28 @@ const filteredEvents = computed(() => {
     padding: 30px 10px;
     width: 100%;
   }
-  .days {
+  .ALL-toggle {
     display: flex;
     gap: 10px;
+    div {
+      margin: 0;
+      padding: 5px 7px;
+      font-family: "Zen Old Mincho", sans-serif;
+      font-size: 15px;
+      color: #333;
+      border: 1px solid #333;
+      border-radius: 9999999px;
+      background: #fbefde;
+      display: inline-block;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0.8;
+    }
+    div:nth-of-type(1) {
+      background: linear-gradient(to right, #ff7621, #e87c08, #e96759);
+      color: white;
+      opacity: 1;
+    }
   }
   .accordion {
     margin-top: 30px;

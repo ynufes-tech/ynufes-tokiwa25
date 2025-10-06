@@ -6,7 +6,7 @@ import LinkButton from "~/components/LinkButtonComponent.vue";
 import { ref, computed } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
-  meta: [{ name: "description", content: "企画一覧" }],
+  meta: [{ name: "description", content: "団体企画一覧を掲載しています！" }],
 });
 definePageMeta({
   hideHeader: true,
@@ -37,7 +37,7 @@ onMounted(async () => {
   // fetch でデータ取得
   try {
     const res = await fetch(
-      "https://storage.googleapis.com/tokiwa25-assets/jsons/events.json"
+      "https://storage.ynu-fes.yokohama/jsons/events.json"
     );
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     const data = await res.json();
@@ -68,9 +68,9 @@ function clearAllFavo() {
 //アコーディングメニューの状態管理
 const filter = reactive({
   //日付
-  day1: true,
-  day2: true,
-  day3: true,
+  //day1: true,
+  //day2: true,
+  //day3: true,
   //場所
   indoorALL: true,
   urban: true,
@@ -194,12 +194,6 @@ const filteredEvents = computed(() => {
         </transition>
       </div>
       <div class="menu-body" :class="{ show: open }">
-        <div class="days">
-          <FilterButton text="10/31(金)" v-model="filter.day1" />
-          <FilterButton text="11/1(土) " v-model="filter.day2" />
-          <FilterButton text="11/2(日) " v-model="filter.day3" />
-        </div>
-
         <div
           class="place-accordion accordion"
           :class="{ accordionOpen: accordion.place }"
@@ -637,7 +631,7 @@ const filteredEvents = computed(() => {
     gap: 10px;
   }
   .accordion {
-    margin-top: 40px;
+    margin-top: 30px;
     user-select: none;
     .accordion-elements {
       margin-top: 10px;

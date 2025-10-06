@@ -6,7 +6,7 @@ import LinkButton from "~/components/LinkButtonComponent.vue";
 import { ref, computed } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
-  meta: [{ name: "description", content: "企画一覧" }],
+  meta: [{ name: "description", content: "団体企画一覧を掲載しています！" }],
 });
 definePageMeta({
   hideHeader: true,
@@ -37,7 +37,7 @@ onMounted(async () => {
   // fetch でデータ取得
   try {
     const res = await fetch(
-      "https://storage.googleapis.com/tokiwa25-assets/jsons/events.json"
+      "https://storage.ynu-fes.yokohama/jsons/events.json"
     );
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     const data = await res.json();
@@ -68,9 +68,9 @@ function clearAllFavo() {
 //アコーディングメニューの状態管理
 const filter = reactive({
   //日付
-  day1: true,
-  day2: true,
-  day3: true,
+  //day1: true,
+  //day2: true,
+  //day3: true,
   //場所
   indoorALL: true,
   urban: true,
@@ -162,6 +162,18 @@ const TBKAll = computed(() => TBKKeys.every((k) => filter[k]));
 const foodsAll = computed(() => foodsKeys.every((k) => filter[k]));
 const performanceAll = computed(() => performanceKeys.every((k) => filter[k]));
 
+const ALLOFF = () => {
+  Object.keys(filter).forEach((key) => {
+    filter[key] = false;
+  });
+};
+
+const ALLON = () => {
+  Object.keys(filter).forEach((key) => {
+    filter[key] = true;
+  });
+};
+
 const filteredEvents = computed(() => {
   return events.value.filter((event) => {
     const placeMatch = filter[event.place];
@@ -194,12 +206,10 @@ const filteredEvents = computed(() => {
         </transition>
       </div>
       <div class="menu-body" :class="{ show: open }">
-        <div class="days">
-          <FilterButton text="10/31(金)" v-model="filter.day1" />
-          <FilterButton text="11/1(土) " v-model="filter.day2" />
-          <FilterButton text="11/2(日) " v-model="filter.day3" />
+        <div class="ALL-toggle">
+          <div @click="ALLON">すべてON</div>
+          <div @click="ALLOFF">すべてOFF</div>
         </div>
-
         <div
           class="place-accordion accordion"
           :class="{ accordionOpen: accordion.place }"
@@ -632,12 +642,31 @@ const filteredEvents = computed(() => {
     padding: 30px 10px;
     width: 100%;
   }
-  .days {
+  .ALL-toggle {
     display: flex;
     gap: 10px;
+    div {
+      margin: 0;
+      padding: 5px 7px;
+      font-family: "Zen Old Mincho", sans-serif;
+      font-size: 15px;
+      color: #333;
+      border: 1px solid #333;
+      border-radius: 9999999px;
+      background: #fbefde;
+      display: inline-block;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0.8;
+    }
+    div:nth-of-type(1) {
+      background: linear-gradient(to right, #ff7621, #e87c08, #e96759);
+      color: white;
+      opacity: 1;
+    }
   }
   .accordion {
-    margin-top: 40px;
+    margin-top: 30px;
     user-select: none;
     .accordion-elements {
       margin-top: 10px;

@@ -20,9 +20,9 @@
         { "venue": 0, "title": "popcorn", "subtitle": "ダンス", "start": "16:00", "end": "16:30" },
         { "venue": 0, "title": "Liz A", "subtitle": "ダンス", "start": "16:50", "end": "17:40" },
         { "venue": 0, "title": "R³ude", "subtitle": "ダンス", "start": "18:00", "end": "19:30" },
-        { "venue": 5, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "14:30", "end": "16:30" },
+        { "venue": 5, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "14:00", "end": "16:30" },
         { "venue": 6, "title": "森のマルシェ よここく", "subtitle": "販売", "start": "13:00", "end": "17:00" },
-        { "venue": 4, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "15:00", "end": "20:30" },
+        { "venue": 4, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "13:00", "end": "20:30" },
         { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示", "start": "17:00", "end": "20:30" }
       ]
     },
@@ -53,7 +53,7 @@
         { "venue": 0, "title": "R³ude", "subtitle": "ダンス", "start": "17:45", "end": "19:15" },
         { "venue": 5, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "9:00", "end": "16:00" },
         { "venue": 6, "title": "森のマルシェ よここく", "subtitle": "販売", "start": "9:00", "end": "17:00" },
-        { "venue": 4, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "13:00", "end": "20:30" },
+        { "venue": 4, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "9:00", "end": "20:30" },
         { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示", "start": "9:00", "end": "16:00" },
         { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示・公演", "start": "16:00", "end": "17:00" },
         { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示・公演", "start": "20:00", "end": "20:30" }

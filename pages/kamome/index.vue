@@ -13,7 +13,7 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <PageTitle :title="'かもめ先輩について'" :sub-title="'かもめ先輩について'"/>
+      <PageTitle :title="'かもめ先輩について'"/>
       <div class="momesen">
         <img
             class="kamomesenpai"
@@ -21,7 +21,7 @@ useHead({
       </div>
       <div class="profile">
         <h1>プロフィール</h1>
-        <ContentBox id="contentbox">
+        <ContentBox class="contentbox">
             性別：おそらくオス<br>
             身長：およそ0.3m<br class="kaigyo">（ぼうしあり）　<br>
             体重：4.559キロ<br>
@@ -31,7 +31,7 @@ useHead({
       </div>
       <div class="coment">
         <h1>コメント</h1>
-        <ContentBox id="contentbox">
+        <ContentBox class="contentbox">
             ぼくは、横浜国立大学大学祭の公式キャラクター、かもめ先輩もめ！<br>
             実はかもめなのに空が飛べないもめ…
             <br class="kaigyo2">XやInstagram、LINEスタンプ、絵文字なんかもチェックしてくれるとうれしいもめ！
@@ -66,14 +66,14 @@ useHead({
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
 
-#contentbox {
+.contentbox {
   font-family: "Zen Old Mincho", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: left;
-  padding: 50px 80px;
+  padding: 50px;
   color: #000000;
   margin-top: 50px;
   @include sm{
@@ -98,7 +98,7 @@ useHead({
   display: flex;
   flex-direction: column;
   color: #ffffff;
-  padding: 40px 5rem;
+  padding: 40px 0;
   @include sm{
     padding: 40px ;
   }
@@ -131,7 +131,7 @@ useHead({
   display: flex;
   flex-direction: column;
   color: #ffffff;
-  padding: 40px 5rem;
+  padding: 40px;
   @include sm{
     padding: 40px;
   }
@@ -166,4 +166,5 @@ useHead({
     margin: 30px;
   }
 }
+
 </style>

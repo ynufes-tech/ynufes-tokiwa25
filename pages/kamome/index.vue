@@ -91,7 +91,10 @@ useHead({
 }
 
 .kamomesenpai{
-  width: 200px;
+  width: 300px;
+  @include sm{
+    width: 200px;
+  }
 }
 
 .profile{

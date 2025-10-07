@@ -22,7 +22,7 @@ useHead({
           <div class="about">
             最も来場者の皆さんを満足させるのはどの企画なのか…？<br>
             <br>
-            企画ONEプロジェクトでは、全ての企画を「(部門名)」、「(部門名)」、「(部門名)」の３部門に分けてそれぞれの部門でのNo.1を決定します！順位を決めるのは皆さんの1票！<br>
+            企画ONEプロジェクトでは、全ての企画を「食べ物部門」、「パフォーマンス部門」、「展示・販売・体験部門」の３部門に分けてそれぞれの部門でのNo.1を決定します！順位を決めるのは皆さんの1票！<br>
             <br>
             このプロジェクトに参加する皆さんには、立ち寄ったそれぞれの企画を満喫し、5段階で評価していただきます。<br>
             <br>
@@ -49,6 +49,33 @@ useHead({
 <!--          text="ランキングを見る"-->
 <!--          link=""-->
 <!--      />-->
+      </div>
+      <div class="introduce">
+        <div class="category-name">
+          <p>食べ物部門</p>
+        </div>
+        <ContentBox class="script">
+          各団体が持ち寄った最高の料理が大集合！<br class="kaigyo">
+          味はもちろん、見た目にまでこだわった料理をご堪能あれ！
+        </ContentBox>
+      </div>
+      <div class="introduce">
+        <div class="category-name">
+          <p>パフォーマンス部門</p>
+        </div>
+        <ContentBox class="script">
+          歌やダンス、演奏など様々なパフォーマンスが皆さんを待っています。<br class="kaigyo">
+          あふれ出るエネルギーをぜひ全身で体感してください！
+        </ContentBox>
+      </div>
+      <div class="introduce">
+        <div class="category-name">
+          <p>展示・販売・体験部門</p>
+        </div>
+        <ContentBox class="script">
+          個性の光る企画が構内の様々な場所で展開されます。<br class="kaigyo">
+          どれもここでしかできないものばかり！
+        </ContentBox>
       </div>
       <div class="under-box">
         <div class="title">
@@ -120,7 +147,7 @@ useHead({
   color: #fff;
   font-size: 2rem;
   @include sm{
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -157,8 +184,8 @@ useHead({
     height: 500px;
   }
   @include md {
-    width: 300px;
-    height: 400px;
+    width: 270px;
+    height: auto;
   }
 }
 
@@ -169,7 +196,7 @@ useHead({
     margin: 40px;
   }
   @include sm{
-    margin: 40px 0;
+    margin: 80px 0;
   }
 }
 
@@ -178,6 +205,42 @@ useHead({
   flex-direction: column;
   align-items: center;
 }
+
+
+.introduce{
+  justify-items: center;
+  font-size: 20px;
+  text-align: center;
+  @include md{
+    font-size: 18px;
+  }
+  @include sm{
+    font-size: 16px;
+    .kaigyo{
+      display: none;
+    }
+  }
+  .category-name{
+    margin:40px;
+    p{
+      font-size: 30px;
+      @include sm{
+        font-size: 20px;
+      }
+    }
+    @include sm{
+      margin: 25px;
+    }
+  }
+  .script{
+    padding:30px 5px;
+    max-width: 700px;
+    @include sm{
+      padding: 30px 15px;
+    }
+  }
+}
+
 
 .under-box {
   justify-items: center;
@@ -218,6 +281,10 @@ useHead({
   align-content: baseline;
   @media (max-width: 940px) {
     margin-bottom: 30px;
+  }
+  @include sm{
+    padding: 30px 10px;
+    justify-items: center;
   }
   .name {
     font-size: 29px;

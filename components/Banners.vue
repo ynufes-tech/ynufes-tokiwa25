@@ -2,11 +2,18 @@
 <template>
   <div class="component-root">
     <a
-      href="https://www.hazawa-kubotaganka.com/"
+      href="https://www.iwakipumps-recruit.jp/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src="../assets/images/sponsors/eye-clinic.webp" alt="羽沢くぼた眼科" />
+      <img src="../assets/images/sponsors/iwaki.webp" alt="IWAKI" />
+    </a>
+    <a
+      href="https://www.next-gears.net/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/images/sponsors/nextgear.webp" alt="ネクストギア" />
     </a>
     <a
       href="https://www.netsuretsu-karubi.jp/"
@@ -16,11 +23,11 @@
       <img src="../assets/images/sponsors/yakiniku-karubi.webp" alt="熱烈カルビ" />
     </a>
     <a
-      href="https://www.iwakipumps-recruit.jp/"
+      href="https://www.hazawa-kubotaganka.com/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src="../assets/images/sponsors/iwaki.webp" alt="IWAKI" />
+      <img src="../assets/images/sponsors/eye-clinic.webp" alt="羽沢くぼた眼科" />
     </a>
   </div>
 </template>

@@ -23,7 +23,7 @@ useHead({
         <h1>プロフィール</h1>
         <ContentBox id="contentbox">
             性別：おそらくオス<br>
-            身長：およそ0.3m（ぼうしあり）<br>
+            身長：およそ0.3m<br class="kaigyo">（ぼうしあり）　<br>
             体重：4.559キロ<br>
             生年月日：2014年11月2日<br>
             好きな食べ物：たこさんウインナー<br>
@@ -33,8 +33,8 @@ useHead({
         <h1>コメント</h1>
         <ContentBox id="contentbox">
             ぼくは、横浜国立大学大学祭の公式キャラクター、かもめ先輩もめ！<br>
-            実はかもめなのに空が飛べないもめ<br>
-            XやInstagram、LINEスタンプ、LINE絵文字なんかもチェックしてくれるとうれしいもめ！
+            実はかもめなのに空が飛べないもめ…
+            <br class="kaigyo2">XやInstagram、LINEスタンプ、絵文字なんかもチェックしてくれるとうれしいもめ！
         </ContentBox>
       </div>
       <div class="button">
@@ -112,6 +112,18 @@ useHead({
       margin-left: 20px;
       font-size: 30px;
     }
+  }
+}
+
+.kaigyo{
+  display: none;
+}
+@include sm{
+  .kaigyo{
+   display: block;
+  }
+  .kaigyo2{
+    display: none;
   }
 }
 

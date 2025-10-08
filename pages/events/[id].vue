@@ -32,7 +32,7 @@ onMounted(async () => {
   // fetch でデータ取得
   try {
     const res = await fetch(
-      "https://storage.googleapis.com/tokiwa25-assets/jsons/events.json"
+      "https://storage.ynu-fes.yokohama/jsons/events.json"
     );
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     const data = await res.json();

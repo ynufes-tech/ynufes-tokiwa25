@@ -1,23 +1,28 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-const isDropdownOpen = ref(false)
+const openDropdown = ref<string | null>(null)
 
-const toggleDropdown = () => {
-  isDropdownOpen.value = !isDropdownOpen.value
+const toggleDropdown = (menu: string) => {
+  openDropdown.value = openDropdown.value === menu ? null : menu
 }
+
 onMounted(() => {
-
-  const dropdownMenu = document.getElementById("dropdownMenu");
-
   document.addEventListener("click", (event) => {
-    if (!dropdownMenu.contains(event.target)) {
-      isDropdownOpen.value = false;//dropdownMenu以外がクリックされたら閉じる
+    const dropdowns = document.querySelectorAll(".dropdown")
+    let clickedInside = false
+
+    dropdowns.forEach((dropdown) => {
+      if (dropdown.contains(event.target as Node)) {
+        clickedInside = true
+      }
+    })
+
+    if (!clickedInside) {
+      openDropdown.value = null
     }
-  });
-
+  })
 })
-
 </script>
 
 <template>
@@ -35,22 +40,38 @@ onMounted(() => {
         </div>
         <div class="right">
           <span class="divider"></span>
-          <div
-            class="dropdown"
-            @click="toggleDropdown"
-            id="dropdownMenu"
-          >
+
+          <!-- ご案内 -->
+          <div class="dropdown" @click="toggleDropdown('guide')">
             <span class="nav-label">ご案内</span>
             <div
               class="dropdown-menu"
-              :class="{ open: isDropdownOpen }"
+              :class="{ open: openDropdown === 'guide' }"
             >
+              <NuxtLink to="/news" class="dropdown-item">おしらせ</NuxtLink>
+              <NuxtLink to="/map" class="dropdown-item">キャンパスマップ</NuxtLink>
               <NuxtLink to="/access" class="dropdown-item">大学までのアクセス</NuxtLink>
               <NuxtLink to="/contact" class="dropdown-item">お問い合わせ</NuxtLink>
+              <NuxtLink to="/about" class="dropdown-item">大学祭実行委員会について</NuxtLink>
             </div>
           </div>
+
           <span class="divider"></span>
-          <NuxtLink to="/events" class="nav-link">企画一覧</NuxtLink>
+
+          <!-- 企画一覧 -->
+          <div class="dropdown" @click="toggleDropdown('events')">
+            <span class="nav-label">企画一覧</span>
+            <div
+              class="dropdown-menu"
+              :class="{ open: openDropdown === 'events' }"
+            >
+              <NuxtLink to="/official" class="dropdown-item">本部企画一覧</NuxtLink>
+              <NuxtLink to="/idol" class="dropdown-item">アイドルステージ</NuxtLink>
+              <NuxtLink to="/guest" class="dropdown-item">ゲスト</NuxtLink>
+              <NuxtLink to="/events" class="dropdown-item">企画一覧</NuxtLink>
+            </div>
+          </div>
+
           <span class="divider"></span>
           <NuxtLink to="/about" class="nav-link">常盤祭について</NuxtLink>
           <span class="divider"></span>

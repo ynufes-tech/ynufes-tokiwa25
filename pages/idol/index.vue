@@ -3,9 +3,12 @@ import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
 useHead({
-  title: "Access | 25常盤祭公式HP~紅陽~",
+  title: "Idol | 25常盤祭公式HP~紅陽~",
   meta: [
-    { name: "description", content: "アイドルステージの情報を掲載しています。" },
+    {
+      name: "description",
+      content: "アイドルステージ詳細はこちらからチェック！",
+    },
   ],
 });
 </script>
@@ -13,63 +16,62 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <PageTitle :title="'アイドルステージ'" :sub-title="'アイドルステージ'"/>
+      <PageTitle :title="'アイドルステージ'" :sub-title="'アイドルステージ'" />
       <div class="picture">
-        <img
-            class="yagaiongakudou"
-            src="/assets/images/idol-yaon.webp"
-        >
+        <img class="yagaiongakudou" src="/assets/images/idol-yaon.webp" />
       </div>
       <div class="who">
         <div class="name">
-          <img
-              src="~/assets/images/momiji.svg"
-              alt="momiji"
-              class="momiji"
-          >
+          <img src="~/assets/images/momiji.svg" alt="momiji" class="momiji" />
           <p>出演</p>
-        </div>　　
-        <img
-            class="first-stage"
-            src="/assets/images/iwamurahana.webp"
-        >
-        <img
-            class="first-stage"
-            src="/assets/images/KOBerrieS.webp"
-        >
-        <img
-            class="second-stage"
-            src="/assets/images/AVEST.webp"
-        >
+        </div>
+        <div class="upper-stage">
+          <div class="id-idol">
+            <img class="stage" src="/assets/images/iwamurahana.webp" />
+            <p class="idol-name">岩村華</p>
+          </div>
+          <div class="id-idol">
+            <img class="stage" src="/assets/images/KOBerrieS.webp" />
+            <p class="idol-name">KOBerrieS♪</p>
+          </div>
+        </div>
+        <div class="under-stage">
+          <div class="id-idol">
+            <img class="stage" src="/assets/images/AVEST.webp" />
+            <p class="idol-name">AVEST</p>
+          </div>
+        </div>
       </div>
       <div class="when">
         <div class="name">
-          <img
-              src="~/assets/images/momiji.svg"
-              alt="momiji"
-              class="momiji"
-          >
+          <img src="~/assets/images/momiji.svg" alt="momiji" class="momiji" />
           <p>日時</p>
-        </div>　　
-        <h1>2025年11月2日(日) <br>
-          <br>
-        ステージ　11:00~12:00<br>
-         特典会　 12:30~14:00</h1>
-      </div>　
-      <div class="where">　　
+        </div>
+        <h1>
+          2025年11月2日(日) <br />
+          <br />
+          ステージ 11:00~12:00<br />
+          特典会 12:30~14:00
+        </h1>
+      </div>
+      <div class="where">
         <div class="name">
-          <img
-              src="~/assets/images/momiji.svg"
-              alt="momiji"
-              class="momiji"
-          >
+          <img src="~/assets/images/momiji.svg" alt="momiji" class="momiji" />
           <p>会場</p>
-        </div>　
-        <h1>野外音楽堂特設ステージ<br>
-          <br>
-          ※雨天時<br>
+        </div>
+        <h1>
+          野外音楽堂特設ステージ<br />
+          <br />
+          ※雨天時<br />
           中央図書館一階メディアホール
         </h1>
+      </div>
+      <div class="sponsored-by">
+        <p class="title">提供</p>
+        <p class="sponsor-name">カレッジフェスタ</p>
+        <a href="http://www.college-festa.com/" target="_blank" rel="noopener">
+          http://www.college-festa.com/
+        </a>
       </div>
     </div>
   </div>
@@ -85,51 +87,81 @@ useHead({
   text-align: center;
   padding: 50px;
   color: #000000;
-  @include sm{
+  @include sm {
     padding: 30px;
   }
 }
 
-
-
-.yagaiongakudou{
+.yagaiongakudou {
   display: block;
   width: 100%;
   height: auto;
 }
 
-
-.first-stage {
+.upper-stage {
   display: flex;
-  width: 15em;
-  align-items: center;
   justify-content: center;
-  flex-direction: row;
+  gap: 15vw;
+  margin-top: 8vh;
+  @include sm {
+    flex-direction: column;
+    gap: 10vh;
+    align-items: center;
+  }
 }
 
-.second-stage{
-  width: 15em;
+.under-stage {
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin-top: 20px;
+  @include sm {
+    flex-direction: column;
+    margin-top: 10vh;
+    align-items: center;
+  }
 }
 
+.stage {
+  width: 300px;
+  @include md {
+    width: 200px;
+  }
+  @include sm {
+    width: 250px;
+  }
+}
 
-.momiji{
+.idol-name {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  @include md {
+    font-size: 1.2em;
+  }
+  @include sm {
+    font-size: 1em;
+  }
+}
+
+.momiji {
   width: 80px;
-  @include md{
+  @include md {
     width: 50px;
   }
-  @include sm{
+  @include sm {
     width: 30px;
   }
 }
 
-.who{
+.who {
   margin-top: 60px;
+  margin-bottom: 80px;
 }
 
-.when{
+.when {
+  line-height: 1.6;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -139,7 +171,8 @@ useHead({
   text-align: center;
 }
 
-.where{
+.where {
+  line-height: 1.6;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -160,17 +193,62 @@ useHead({
     @include md {
       font-size: 1.5em;
     }
-    @include sm{
+    @include sm {
       font-size: 1.4em;
     }
   }
-  h1{
+  h1 {
     font-size: 1.3em;
-    @include md{
+    @include md {
       font-size: 1.2em;
     }
-    @include sm{
+    @include sm {
       font-size: 1em;
+    }
+  }
+}
+
+.sponsored-by {
+  font-family: 'Zen Old Mincho', serif;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  background-color: #FBEFDE;
+  padding: 80px;
+
+  p.title {
+    font-size: 22px;
+    margin: 0;
+    @include md {
+      font-size: 1.1em;
+    }
+    @include sm {
+      font-size: 1em;
+    }
+  }
+  p.sponsor-name {
+    font-size: 25px;
+    margin: 20px 0 10px 0;
+    @include md {
+      font-size: 20px;
+    }
+    @include sm {
+      font-size: 1.1em;
+    }
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+    font-size: 0.8em;
+    @include md {
+      font-size: 0.9em;
+    }
+    @include sm {
+      font-size: 0.8em;
     }
   }
 }

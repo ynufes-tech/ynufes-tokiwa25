@@ -68,7 +68,7 @@ onMounted(() => {
               <!-- <NuxtLink to="/official" class="dropdown-item">本部企画一覧</NuxtLink> -->
               <NuxtLink to="/idol" class="dropdown-item">アイドルステージ</NuxtLink>
               <NuxtLink to="/guest" class="dropdown-item">ゲスト</NuxtLink>
-              <NuxtLink to="/events" class="dropdown-item">企画一覧</NuxtLink>
+              <!-- <NuxtLink to="/events" class="dropdown-item">企画一覧</NuxtLink> -->
             </div>
           </div>
 

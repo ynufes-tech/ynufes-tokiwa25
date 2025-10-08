@@ -152,6 +152,7 @@ useHead({
 }
 
 .about {
+  color: #000000;
   font-size: 20px;
   padding: 30px 60px;
   display: flex;
@@ -235,6 +236,7 @@ useHead({
   .script{
     padding:30px 5px;
     max-width: 700px;
+    color: #000000;
     @include sm{
       padding: 30px 15px;
     }

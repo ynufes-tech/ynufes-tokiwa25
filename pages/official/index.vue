@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import PageTitle from "~/components/PageTitle.vue";
 import officialEvents from "~/public/officialEvents.json";
+const appConfig = useAppConfig();
+
+const baseURL = appConfig.baseURL;
 
 useHead({
   title: "Official | 25常盤祭公式HP~紅陽~",
@@ -30,7 +33,7 @@ const venues = Object.entries(officialEvents);
             <h3 class="card-title">{{ `${Event.title}` }}</h3>
             <div class="card-content">
               <div class="card-image">
-                <img :src="Event.image" :alt="Event.title" />
+                <img :src="`${baseURL}${Event.image}`" :alt="Event.title" />
               </div>
               <div class="card-texts">
                 <p class="card-text">{{ Event.description }}</p>

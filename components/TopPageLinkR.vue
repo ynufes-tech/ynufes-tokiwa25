@@ -1,12 +1,12 @@
 <script lang="ts" setup>
+const appConfig = useAppConfig();
 const props = defineProps<{
   title: string;
   jaTitle: string;
 }>();
 
-
 function getImagePath(title: string) {
-  return `images/TopPageLink/${title}.webp`
+  return `${appConfig.baseURL}images/TopPageLink/${title}.webp`
 }
 const imageUrl = computed(() => getImagePath(props.title))
 </script>

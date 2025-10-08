@@ -84,43 +84,43 @@ useHead({
         <div class="past-winner">
 
          <div class="cate1">
-           <p>展示・販売・体験部門</p>
-          <ContentBox class="winner">
-            <div class="name">
-              <p>WHYNUの<br>
-                謎解きゲーム！</p>
-            </div>
-            <br>
-            <div class="owner">
-              <p>謎解きサークルWHYNU</p>
-            </div>
-          </ContentBox >
+           <p>食べ物部門</p>
+           <ContentBox class="winner">
+             <div class="name">
+               <p>鶏白湯トマト</p>
+             </div>
+             <br>
+             <div class="owner">
+               <p>横国ラーメンサークル<br>
+                 「ラメラメ」</p>
+             </div>
+           </ContentBox>
          </div>
           <div class="cate2">
-            <p>食べ物部門</p>
-          <ContentBox class="winner">
-            <div class="name">
-              <p>鶏白湯トマト</p>
-            </div>
-            <br>
-            <div class="owner">
-              <p>横国ラーメンサークル<br>
-                  「ラメラメ」</p>
-            </div>
-          </ContentBox>
+            <p>パフォーマンス部門</p>
+            <ContentBox class="winner">
+              <div class="name">
+                <p>お笑いサークル<br>
+                  わかばのライブ</p>
+              </div>
+              <br>
+              <div class="owner">
+                <p>お笑いサークルわかば</p>
+              </div>
+            </ContentBox>
           </div>
           <div class="cate3">
-            <p>パフォーマンス部門</p>
-          <ContentBox class="winner">
-            <div class="name">
-              <p>お笑いサークル<br>
-                わかばのライブ</p>
-            </div>
-            <br>
-            <div class="owner">
-              <p>お笑いサークルわかば</p>
-            </div>
-          </ContentBox>
+            <p>展示・販売・体験部門</p>
+            <ContentBox class="winner">
+              <div class="name">
+                <p>WHYNUの<br>
+                  謎解きゲーム！</p>
+              </div>
+              <br>
+              <div class="owner">
+                <p>謎解きサークルWHYNU</p>
+              </div>
+            </ContentBox >
           </div>
         </div>
       </div>

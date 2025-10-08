@@ -50,6 +50,33 @@ useHead({
 <!--          link=""-->
 <!--      />-->
       </div>
+      <div class="introduce">
+        <div class="category-name">
+          <p>食べ物部門</p>
+        </div>
+        <ContentBox class="script">
+          各団体が持ち寄った最高の料理が大集合！<br class="kaigyo">
+          味はもちろん、見た目にまでこだわった料理をご堪能あれ！
+        </ContentBox>
+      </div>
+      <div class="introduce">
+        <div class="category-name">
+          <p>パフォーマンス部門</p>
+        </div>
+        <ContentBox class="script">
+          歌やダンス、演奏など様々なパフォーマンスが皆さんを待っています。<br class="kaigyo">
+          あふれ出るエネルギーをぜひ全身で体感してください！
+        </ContentBox>
+      </div>
+      <div class="introduce">
+        <div class="category-name">
+          <p>展示・販売・体験部門</p>
+        </div>
+        <ContentBox class="script">
+          個性の光る企画が構内の様々な場所で展開されます。<br class="kaigyo">
+          どれもここでしかできないものばかり！
+        </ContentBox>
+      </div>
       <div class="under-box">
         <div class="title">
           <p>2025清陵祭の優勝団体 </p>
@@ -57,43 +84,43 @@ useHead({
         <div class="past-winner">
 
          <div class="cate1">
-           <p>展示・販売・体験部門</p>
-          <ContentBox class="winner">
-            <div class="name">
-              <p>WHYNUの<br>
-                謎解きゲーム！</p>
-            </div>
-            <br>
-            <div class="owner">
-              <p>謎解きサークルWHYNU</p>
-            </div>
-          </ContentBox >
+           <p>食べ物部門</p>
+           <ContentBox class="winner">
+             <div class="name">
+               <p>鶏白湯トマト</p>
+             </div>
+             <br>
+             <div class="owner">
+               <p>横国ラーメンサークル<br>
+                 「ラメラメ」</p>
+             </div>
+           </ContentBox>
          </div>
           <div class="cate2">
-            <p>食べ物部門</p>
-          <ContentBox class="winner">
-            <div class="name">
-              <p>鶏白湯トマト</p>
-            </div>
-            <br>
-            <div class="owner">
-              <p>横国ラーメンサークル<br>
-                  「ラメラメ」</p>
-            </div>
-          </ContentBox>
+            <p>パフォーマンス部門</p>
+            <ContentBox class="winner">
+              <div class="name">
+                <p>お笑いサークル<br>
+                  わかばのライブ</p>
+              </div>
+              <br>
+              <div class="owner">
+                <p>お笑いサークルわかば</p>
+              </div>
+            </ContentBox>
           </div>
           <div class="cate3">
-            <p>パフォーマンス部門</p>
-          <ContentBox class="winner">
-            <div class="name">
-              <p>お笑いサークル<br>
-                わかばのライブ</p>
-            </div>
-            <br>
-            <div class="owner">
-              <p>お笑いサークルわかば</p>
-            </div>
-          </ContentBox>
+            <p>展示・販売・体験部門</p>
+            <ContentBox class="winner">
+              <div class="name">
+                <p>WHYNUの<br>
+                  謎解きゲーム！</p>
+              </div>
+              <br>
+              <div class="owner">
+                <p>謎解きサークルWHYNU</p>
+              </div>
+            </ContentBox >
           </div>
         </div>
       </div>
@@ -120,11 +147,12 @@ useHead({
   color: #fff;
   font-size: 2rem;
   @include sm{
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
 .about {
+  color: #000000;
   font-size: 20px;
   padding: 30px 60px;
   display: flex;
@@ -157,8 +185,8 @@ useHead({
     height: 500px;
   }
   @include md {
-    width: 300px;
-    height: 400px;
+    width: 270px;
+    height: auto;
   }
 }
 
@@ -169,7 +197,7 @@ useHead({
     margin: 40px;
   }
   @include sm{
-    margin: 40px 0;
+    margin: 80px 0;
   }
 }
 
@@ -178,6 +206,43 @@ useHead({
   flex-direction: column;
   align-items: center;
 }
+
+
+.introduce{
+  justify-items: center;
+  font-size: 20px;
+  text-align: center;
+  @include md{
+    font-size: 18px;
+  }
+  @include sm{
+    font-size: 16px;
+    .kaigyo{
+      display: none;
+    }
+  }
+  .category-name{
+    margin:40px;
+    p{
+      font-size: 30px;
+      @include sm{
+        font-size: 20px;
+      }
+    }
+    @include sm{
+      margin: 25px;
+    }
+  }
+  .script{
+    padding:30px 5px;
+    max-width: 700px;
+    color: #000000;
+    @include sm{
+      padding: 30px 15px;
+    }
+  }
+}
+
 
 .under-box {
   justify-items: center;
@@ -218,6 +283,10 @@ useHead({
   align-content: baseline;
   @media (max-width: 940px) {
     margin-bottom: 30px;
+  }
+  @include sm{
+    padding: 30px 10px;
+    justify-items: center;
   }
   .name {
     font-size: 29px;

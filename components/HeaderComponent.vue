@@ -52,7 +52,7 @@ onMounted(() => {
               <NuxtLink to="/map" class="dropdown-item">キャンパスマップ</NuxtLink>
               <NuxtLink to="/access" class="dropdown-item">大学までのアクセス</NuxtLink>
               <NuxtLink to="/contact" class="dropdown-item">お問い合わせ</NuxtLink>
-              <NuxtLink to="/about" class="dropdown-item">大学祭実行委員会について</NuxtLink>
+              <NuxtLink to="/about-us" class="dropdown-item">大学祭実行委員会について</NuxtLink>
             </div>
           </div>
 

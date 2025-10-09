@@ -456,7 +456,7 @@ const filteredEvents = computed(() => {
                   class="accordion-title accordion-child"
                   @click="accordion.performance = !accordion.performance"
                 >
-                  <p>パンフォーマンス</p>
+                  <p>パフォーマンス</p>
                   <img
                     src="~/assets/images/accordion-arrow.svg"
                     alt=""

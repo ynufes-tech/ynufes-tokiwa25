@@ -21,7 +21,17 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
 <template>
   <div class="event-card">
     <NuxtLink :to="`/events/${eventData.id}`">
-      <img src="~/assets/images/test-icon.webp" alt="" class="icon-img" />
+      <img
+        :src="`https://storage.ynu-fes.yokohama/images/icons/${eventData.id}.webp`"
+        alt="event-img"
+        class="icon-img"
+        @error="
+          if (!$event.target.dataset.fallbackApplied) {
+            $event.target.dataset.fallbackApplied = '1';
+            $event.target.src = 'https://storage.ynu-fes.yokohama/images/icons/NO_IMG.svg';
+          }
+        "
+      />
     </NuxtLink>
     <div class="details">
       <p

@@ -32,7 +32,7 @@ onMounted(async () => {
   // fetch でデータ取得
   try {
     const res = await fetch(
-      "https://storage.googleapis.com/tokiwa25-assets/jsons/events.json"
+      "https://storage.ynu-fes.yokohama/jsons/events.json"
     );
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     const data = await res.json();
@@ -94,9 +94,16 @@ function toggleFavo() {
       </div>
       <div class="icon-img">
         <img
-          src="~/public/images/NO_IMG.svg"
-          alt=""
-        /><!--中央寄せを効かせるためラップ-->
+        :src="`https://storage.ynu-fes.yokohama/images/icons/${event?.id}.webp`"
+        alt="event-img"
+        class="icon-img"
+        @error="
+          if (!$event.target.dataset.fallbackApplied) {
+            $event.target.dataset.fallbackApplied = '1';
+            $event.target.src = 'https://storage.ynu-fes.yokohama/images/icons/NO_IMG.svg';
+          }
+        "
+      /><!--中央寄せを効かせるためラップ-->
       </div>
       <ContentBox class="event-description" v-if='event?.e_description != " "'>
         <p>{{ event?.e_description }}</p>

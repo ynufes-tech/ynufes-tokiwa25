@@ -116,7 +116,7 @@ function toggleFavo() {
         </ContentBox>
       </div>
       <OrgLinks class="links" :x_id="event?.x_id" :ins_id="event?.ins_id" :hp="event?.hp" />
-      <div class="to-list"><LinkButton text="一覧に戻る" link="/events" /></div>
+      <div class="to-list"><LinkButton text="一覧に戻る" link="/25/tokiwa/events" /></div>
     </div>
   </div>
 </template>

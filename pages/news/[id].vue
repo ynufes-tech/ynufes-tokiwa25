@@ -29,7 +29,7 @@ useHead({
           <p>{{ news.headline }}</p>
         </div>
       </div>
-      <LinkButton class="LinkButton" text="ニュース一覧へ" link="/news" />
+      <LinkButton class="LinkButton" text="ニュース一覧へ" link="/25/tokiwa/news" />
     </div>
   </div>
 </template>

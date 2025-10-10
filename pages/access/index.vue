@@ -131,7 +131,7 @@ useHead({
 
 .attention{
   font-size: 1.2rem;
-  @include sm {
+  @include md {
     font-size: 0.8rem;
   }
 }

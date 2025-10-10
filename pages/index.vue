@@ -47,9 +47,35 @@ useHead({
         <!-- <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" /> -->
         <TopPageLinkR class="link" title="map" jaTitle="キャンパスマップ" />
         <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
-        <TopPageLinkR class="link" title="access" jaTitle="大学までのアクセス" />
+        <TopPageLinkR
+          class="link"
+          title="access"
+          jaTitle="大学までのアクセス"
+        />
         <TopPageLinkL class="link" title="contact" jaTitle="お問い合わせ" />
-        <TopPageLinkR class="link" title="about-us" jaTitle="大学祭実行委員会について" />
+        <TopPageLinkR
+          class="link"
+          title="about-us"
+          jaTitle="大学祭実行委員会について"
+        />
+      </div>
+      <div class="caution">
+        <p class="caution-title">注意事項</p>
+        <p>
+          ・大学構内での飲酒及び酒類の持ち込みは全面禁止です。<br />
+          ・野外音楽堂へのビンの持ち込みはご遠慮ください。<br />
+          ・喫煙はお近くの特定屋外喫煙場所にてお願いいたします。<br />
+          ・屋内飲食は第1食堂、理工学部講義棟A1階ホールのみ可能です。<br />
+          ・ベット同伴でのご来場はご遠慮ください。<br />
+          ・ゴミは分別してお近くのエコステーションでお捨てください。<br />
+          ・大学祭に関係のない客引き、宗教勧誘はご遠慮ください。<br />
+          ・装飾物にはお手を触れないようお願いいたします。<br />
+          ・雨天の場合、企画内容が変更または中止となる可能性がございます。<br />
+          ・メインストリートへの自転車やバイク等の乗り入れはご遠慮ください。<br />
+          ・お困りの際はSTAFFジャンバーを着ている大学祭実行委員にお声がけください。<br />
+          ・R3ude、Liz、KPOPカバーダンスステージの公演に関して、盗撮対策のため許可証をお持ち
+          の方を除き、公演前及び公演中の撮影は禁止となっております。ご協力をお願いいたします。
+        </p>
       </div>
       <div class="sns">
         <SNS />
@@ -158,6 +184,33 @@ useHead({
     }
   }
 }
+
+.caution {
+  color: white;
+  background-color: #ffffff30;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  filter: drop-shadow(5px 8px 6px rgba(43, 14, 0, 0.75));
+  font-size: 20px;
+  font-family: "Zen Old Mincho", serif;
+  margin: 0 10px;
+  margin-top: 200px;
+  padding: 10px;
+  border: solid 0.5px white;
+  text-align: start;
+  line-height: 1.5;
+  .caution-title {
+    font-size: 30px;
+  }
+  @include md {
+    margin-top: 100px;
+    font-size: 12px;
+    .caution-title {
+      font-size: 20px;
+    }
+  }
+}
+
 .sns {
   margin-top: 20vh;
   width: 100%;

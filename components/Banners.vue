@@ -29,6 +29,13 @@
     >
       <img src="../assets/images/sponsors/eye-clinic.webp" alt="羽沢くぼた眼科" />
     </a>
+    <a
+      href="https://www.miraizu-suisen.com/campaigns/yokofesbanner"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/images/sponsors/miraizu.webp" alt="未来図" />
+    </a>
   </div>
 </template>
 <style lang="scss" scoped>

@@ -25,6 +25,7 @@ useHead({
         target="_blank"
     />
     </div>
+
   </div>
 </template>
 

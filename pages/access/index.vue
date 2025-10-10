@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup xmlns="http://www.w3.org/1999/html" >
 import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
@@ -64,7 +64,8 @@ useHead({
         link="https://www.ynu.ac.jp/access/train_south.html"
       />
       <p>
-        相鉄新横浜線 「羽沢横浜国大駅」より<br />徒歩約15分<br/>*近隣住民の皆様のご迷惑とならないよう、ご来場に際しては大学推奨ルートでの来場にご協力ください。
+        相鉄新横浜線 「羽沢横浜国大駅」より<br />徒歩約15分<br/>
+        <span class="attention">*近隣住民の皆様のご迷惑とならないよう、ご来場に際しては大学推奨ルートでの来場にご協力ください。</span>
         <br />↓クリックで別タブで開きます。
       </p>
       <a
@@ -126,4 +127,13 @@ useHead({
     max-width: 100%;
   }
 }
+
+
+.attention{
+  font-size: 1.2rem;
+  @include md {
+    font-size: 0.8rem;
+  }
+}
+
 </style>

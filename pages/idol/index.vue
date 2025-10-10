@@ -29,16 +29,70 @@ useHead({
           <div class="id-idol">
             <img class="stage" src="/assets/images/iwamurahana.webp" />
             <p class="idol-name">岩村華</p>
+            <div class="sns-field-iwamura">
+              <a
+                  id="sns-x"
+                  href="https://x.com/hana_iwm39"
+                  rel="noopener noreferrer"
+                  target="_blank"
+              >
+                <img alt="x" src="~/assets/images/X_logo.svg" />
+              </a>
+              <a
+                  id="sns-ins"
+                  href="https://www.instagram.com/iwamura_hana/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+              >
+                <img alt="instagram" src="~/assets/images/Ins_logo.svg" />
+              </a>
+            </div>
           </div>
           <div class="id-idol">
-            <img class="stage" src="/assets/images/KOBerrieS.webp" />
+            <img class="stage" src="/assets/images/KOBereeis.webp" />
             <p class="idol-name">KOBerrieS♪</p>
+            <div class="sns-field">
+              <a
+                  id="sns-x"
+                  href="https://x.com/kob_s2014"
+                  rel="noopener noreferrer"
+                  target="_blank"
+              >
+                <img alt="x" src="~/assets/images/X_logo.svg" />
+              </a>
+              <a
+                  id="sns-ins"
+                  href="https://www.instagram.com/koberries_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+              >
+                <img alt="instagram" src="~/assets/images/Ins_logo.svg" />
+              </a>
+            </div>
           </div>
         </div>
         <div class="under-stage">
           <div class="id-idol">
             <img class="stage" src="/assets/images/AVEST.webp" />
             <p class="idol-name">AVEST</p>
+            <div class="sns-field">
+              <a
+                  id="sns-x"
+                  href="https://x.com/AVEST_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+              >
+                <img alt="x" src="~/assets/images/X_logo.svg" />
+              </a>
+              <a
+                  id="sns-ins"
+                  href="https://www.instagram.com/avest_info/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+              >
+                <img alt="instagram" src="~/assets/images/Ins_logo.svg" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -103,10 +157,72 @@ useHead({
   justify-content: center;
   gap: 15vw;
   margin-top: 8vh;
-  @include sm {
+  @media screen and (max-width: 700px) {
     flex-direction: column;
     gap: 10vh;
     align-items: center;
+  }
+}
+
+.sns-field{
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 125px;
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 900px){
+    margin: 10px 70px;
+  }
+  @include sm{
+    margin: 10px 80px;
+  }
+  #sns-x {
+    img {
+      width: 30px;
+      @include md {
+        width: 25px;
+      }
+    }
+  }
+
+  #sns-ins {
+    img {
+      width: 30px;
+      @include md {
+        width: 25px;
+      }
+    }
+  }
+}
+
+.sns-field-iwamura{
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 80px;
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 900px){
+    margin: 10px 50px;
+  }
+  @include sm{
+    margin: 10px 80px;
+  }
+  #sns-x {
+    img {
+      width: 30px;
+      @include md {
+        width: 25px;
+      }
+    }
+  }
+
+  #sns-ins {
+    img {
+      width: 30px;
+      @include md {
+        width: 25px;
+      }
+    }
   }
 }
 
@@ -114,20 +230,20 @@ useHead({
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  @include sm {
+  @media screen and (max-width: 700px) {
     flex-direction: column;
-    margin-top: 10vh;
     align-items: center;
   }
 }
 
 .stage {
-  width: 300px;
-  @include md {
-    width: 200px;
+  height: 280px;
+  @media screen and (max-width: 900px) {
+    height: 200px;
   }
-  @include sm {
+  @media screen and (max-width: 650px){
     width: 250px;
+    height: auto;
   }
 }
 

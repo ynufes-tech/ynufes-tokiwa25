@@ -199,7 +199,7 @@ useHead({
 
 
 .company-left li::marker {
-  font-size: 0.8em; /* ← 点を小さくする */
+  font-size: 0.8em; / ← 点を小さくする /
 }
 
 

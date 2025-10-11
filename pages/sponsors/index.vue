@@ -20,7 +20,7 @@ useHead({
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
-        <p class="subtitle">広告協賛</p>
+        <p class="subtitle">広告協賛　</p>
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
@@ -54,7 +54,7 @@ useHead({
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
-        <p class="subtitle">物品協賛</p>
+        <p class="subtitle">物品協賛　</p>
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
@@ -79,7 +79,7 @@ useHead({
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
-        <p class="subtitle">ブース協賛</p>
+        <p class="subtitle">ブース協賛　</p>
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
@@ -95,7 +95,7 @@ useHead({
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
-        <p class="subtitle">寄付</p>
+        <p class="subtitle">寄付　</p>
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
@@ -142,10 +142,9 @@ useHead({
   display: flex;
   align-items: center;
   justify-content: center;
-  @include sm {
-    margin-top: 75px;
-  }
   img {
+    width: 70px;
+    margin-top: 10%;
     @include xl{
       width: 6vw;
     }
@@ -158,8 +157,8 @@ useHead({
 .subtitle{
   color: #fff;
   font-size: 48px;
+  margin-top: 10%;
   @include md {
-    font-size: 7vw;
     font-size: 40px;
   }
   @include sm {
@@ -178,21 +177,32 @@ useHead({
   color: #fff;
   font-family: Zen Old Mincho;
   display: flex;
-  white-space: nowrap;
-  gap: 20%;
   @include md {
     font-size: 1rem;
   }
 }
 
+.company-right{
+  position: absolute;
+  left: 50%;
+}
+
+.company-left,.company-right{
+  padding-left: 7%;
+  padding-right: 7%;
+  width: 40%;
+  @include md {
+    width: 100%;
+    position: revert;
+  }
+}
+
+
 .company-left li::marker {
   font-size: 0.8em; /* ← 点を小さくする */
 }
 
-.company-right{
-  position: absolute;
-  left: 50%; /* ページ中央から配置スタート */
-}
+
 
 .company-right li::marker {
   font-size: 0.8em; /* ← 点を小さくする */

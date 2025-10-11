@@ -189,7 +189,6 @@ useHead({
 
 .company-left,.company-right{
   padding-left: 7%;
-  padding-right: 7%;
   width: 40%;
   @include md {
     width: 100%;
@@ -199,13 +198,13 @@ useHead({
 
 
 .company-left li::marker {
-  font-size: 0.8em; / ← 点を小さくする /
+  font-size: 0.8em;
 }
 
 
 
 .company-right li::marker {
-  font-size: 0.8em; /* ← 点を小さくする */
+  font-size: 0.8em;
 }
 
 </style>

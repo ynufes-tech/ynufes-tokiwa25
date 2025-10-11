@@ -183,6 +183,14 @@ onMounted(() => {
         opacity: 0;
         transition: opacity 0.2s ease;
         z-index: 10001;
+        @include sm{
+          min-width: 180px;
+        }
+        .idol{
+          @include sm {
+            min-width: 10px;
+          }
+        }
 
         .dropdown-item {
           display: block;
@@ -191,6 +199,10 @@ onMounted(() => {
           text-decoration: none;
           font-size: 1.2rem;
           font-weight: normal;
+          @include sm{
+            font-size: 0.9rem;
+            padding: 8px 16px;
+          }
 
           &:hover {
             background: linear-gradient(

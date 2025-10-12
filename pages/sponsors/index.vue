@@ -24,31 +24,38 @@ useHead({
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
+          <li>Alsokらいふケア株式会社</li>
           <li>JOINUS</li>
-          <li>医療法人社団FDC</li>
-          <li>医療法人社団TCJ</li>
           <li>オーラルプラン歯科クリニック</li>
           <li>株式会社イワキ</li>
           <li>株式会社カレッジヤード</li>
+          <li>株式会社ジールコミュニケーションズ</li>
           <li>株式会社せんざん</li>
+          <li>株式会社ソフィアアカデミー</li>
           <li>株式会社テックオーシャン</li>
           <li>株式会社東都反町店</li>
+          <li>株式会社ポケモン</li>
           <li>株式会社ホリプロ</li>
           <li>株式会社毎日コムネット</li>
+          <li>株式会社ミライズ</li>
           <li>輝苑</li>
+          <li>小林内科･循環器クリニック</li>
         </ul>
         <ul class="company-right" style="list-style-type: disc;  line-height: 2;">
-          <li>小林内科･循環器クリニック</li>
           <li>相模鉄道株式会社</li>
+          <li>自家製面250</li>
           <li>食品館あおば常盤台店</li>
           <li>ときた内科クリニック</li>
+          <li>トラベルクリニック新横浜</li>
+          <li>どんとこい家</li>
           <li>ネクストギアーズ株式会社</li>
           <li>羽沢くぼた眼科</li>
+          <li>ファミーユデンタルクリニック</li>
+          <li>山下寝具株式会社</li>
           <li>横浜国立大学校友会</li>
           <li>横浜国立大学生活協同組合</li>
           <li>横浜そごう写真館</li>
-          <li>山下寝具株式会社</li>
-          <li>ラーメン光家</li>
+          <li>リザプロ株式会社</li>
           <li>わくわくカラオケGroupアメリカンドリーム和田町店</li>
         </ul>
       </div>
@@ -58,23 +65,34 @@ useHead({
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
+          <li>KISSME(伊勢半)</li>
           <li>TAC株式会社</li>
           <li>YOLU</li>
-          <li>アットヨコハマ</li>
+          <li>アース製薬株式会社</li>
+          <li>アンカージャパン株式会社</li>
+          <li>伊豆アニマルキングダム</li>
+          <li>大塚製薬</li>
           <li>株式会社KINUJO</li>
+          <li>株式会社KISS JAPAN</li>
+          <li>株式会社アットヨコハマ</li>
           <li>株式会社サンデーペイント</li>
           <li>株式会社サンナホル</li>
           <li>株式会社デルタインターナショナル</li>
-          <li>株式会社ハングリータイガー</li>
         </ul>
         <ul class="company-right" style="list-style-type: disc;  line-height: 2;">
+          <li>株式会社ハングリータイガー</li>
+          <li>株式会社マンナンライフ</li>
           <li>株式会社ミツヱ</li>
           <li>株式会社柳屋本店</li>
+          <li>牛乳石鹸共進社 株式会社</li>
           <li>ぜリア新薬工業株式会社</li>
+          <li>テーブルマーク株式会社</li>
+          <li>ブルドックソース株式会社</li>
+          <li>まいばすけっと株式会社</li>
           <li>山崎実業株式会社</li>
+          <li>ヤマト実業株式会社</li>
           <li>郵政博物館</li>
           <li>横浜人形の家</li>
-          <li>横浜美術館</li>
         </ul>
       </div>
       <div class="subtitle-rapper">
@@ -83,27 +101,28 @@ useHead({
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
-          <li>Red Bull Japan</li>
           <li>株式会社AOKI</li>
-          <li>株式会社ミニミニ神奈川　横浜西口店</li>
+          <li>株式会社ミニミニ神奈川 横浜西口店</li>
+          <li>東洋水産株式会社</li>
         </ul>
         <ul class="company-right" style="list-style-type: disc;  line-height: 2;">
-          <li>東洋水産株式会社</li>
           <li>ブティックス株式会社</li>
-          <li>保土ヶ谷区福祉保健課</li>
+          <li>保土ケ谷区福祉保健課</li>
+          <li>レッドブル・ジャパン株式会社</li>
         </ul>
       </div>
       <div class="subtitle-rapper">
         <img src="~/assets/images/title_leaf.svg" id="leftside" alt="" />
-        <p class="subtitle">寄付　</p>
+        <p class="subtitle">個人協賛・地域協賛　</p>
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
-          <li>経済･経営学部、社会科学系大学院同窓会　富丘会</li>
+          <li>経済･経営学部、社会科学系大学院同窓会 富丘会</li>
           <li>常盤台地区連合町内会</li>
         </ul>
         <ul class="company-right" style="list-style-type: disc;  line-height: 2;">
           <li>有限会社現代不動産</li>
+          <li>横浜銀行 和田町支店</li>
         </ul>
       </div>
   </div>
@@ -170,6 +189,8 @@ useHead({
 @media screen and (max-width: 600px) {
   .company {
     flex-direction: column;  /* 横→縦に切り替え */
+    padding-right: 5%;
+    padding-left: 5%;
   }
 }
 

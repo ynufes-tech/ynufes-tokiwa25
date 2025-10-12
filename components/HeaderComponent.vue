@@ -48,11 +48,41 @@ onMounted(() => {
               class="dropdown-menu"
               :class="{ open: openDropdown === 'guide' }"
             >
-              <NuxtLink to="/news" class="dropdown-item">おしらせ</NuxtLink>
-              <NuxtLink to="/map" class="dropdown-item">キャンパスマップ</NuxtLink>
-              <NuxtLink to="/access" class="dropdown-item">大学までのアクセス</NuxtLink>
-              <NuxtLink to="/contact" class="dropdown-item">お問い合わせ</NuxtLink>
-              <NuxtLink to="/about-us" class="dropdown-item">大学祭実行委員会について</NuxtLink>
+              <NuxtLink to="/news" class="dropdown-item">
+                <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                >
+                おしらせ</NuxtLink>
+              <NuxtLink to="/map" class="dropdown-item">
+                <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                >
+                キャンパスマップ</NuxtLink>
+              <NuxtLink to="/access" class="dropdown-item">
+                <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                >
+                大学までのアクセス</NuxtLink>
+              <NuxtLink to="/contact" class="dropdown-item">
+                <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                >
+                お問い合わせ</NuxtLink>
+              <NuxtLink to="/about-us" class="dropdown-item">
+                <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                >
+                大学祭実行委員会<br class="kaigyo">について</NuxtLink>
             </div>
           </div>
 
@@ -66,8 +96,20 @@ onMounted(() => {
               :class="{ open: openDropdown === 'events' }"
             >
               <!-- <NuxtLink to="/official" class="dropdown-item">本部企画一覧</NuxtLink> -->
-              <NuxtLink to="/idol" class="dropdown-item">アイドルステージ</NuxtLink>
-              <NuxtLink to="/guest" class="dropdown-item">ゲスト</NuxtLink>
+
+              <NuxtLink to="/idol" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji">
+                アイドルステージ</NuxtLink>
+              <NuxtLink to="/guest" class="dropdown-item">
+                <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                >
+                ゲスト</NuxtLink>
               <!-- <NuxtLink to="/events" class="dropdown-item">企画一覧</NuxtLink> -->
             </div>
           </div>
@@ -163,6 +205,22 @@ onMounted(() => {
       }
     }
 
+    .momiji{
+      width: 35px;
+      @include sm{
+        width: 25px;
+      }
+    }
+
+
+      .kaigyo{
+        display: none;
+        @include sm {
+          display: block;
+        }
+      }
+
+
     .dropdown {
       position: relative;
 
@@ -175,7 +233,7 @@ onMounted(() => {
         top: calc(100% + 12px);
         left: -1vw;
         background: rgba(255, 236, 184, 0.7);
-        min-width: 220px;
+        min-width:280px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         border-radius: 6px;
         padding: 8px 0;
@@ -183,8 +241,13 @@ onMounted(() => {
         opacity: 0;
         transition: opacity 0.2s ease;
         z-index: 10001;
+        @include md{
+          min-width: 240px;
+        }
         @include sm{
-          min-width: 180px;
+          min-width: 190px;
+          //right: -100px;
+          left: -10vw;
         }
         .idol{
           @include sm {
@@ -194,14 +257,14 @@ onMounted(() => {
 
         .dropdown-item {
           display: block;
-          padding: 12px 16px;
+          padding: 12px 2px;
           color: #333;
           text-decoration: none;
           font-size: 1.2rem;
           font-weight: normal;
           @include sm{
             font-size: 0.9rem;
-            padding: 8px 16px;
+            padding: 8px 0px;
           }
 
           &:hover {

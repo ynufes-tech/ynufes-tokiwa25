@@ -183,7 +183,6 @@ useHead({
   @include sm {
     font-size: 28px;
   }
-
 }
 
 @media screen and (max-width: 600px) {

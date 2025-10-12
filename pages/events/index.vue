@@ -161,6 +161,7 @@ const TBKKeys = [
 ];
 const foodsKeys = ["snack", "noodle", "rice", "sweets", "drink"];
 const performanceKeys = ["dance", "music", "show"];
+const officialKeys = ["events", "libraryEvents"];
 
 const indoorAll = computed(() => indoorKeys.every((k) => filter[k]));
 const outdoorAll = computed(() => outdoorKeys.every((k) => filter[k]));
@@ -168,16 +169,51 @@ const TBKAll = computed(() => TBKKeys.every((k) => filter[k]));
 const foodsAll = computed(() => foodsKeys.every((k) => filter[k]));
 const performanceAll = computed(() => performanceKeys.every((k) => filter[k]));
 
-const ALLOFF = () => {
-  Object.keys(filter).forEach((key) => {
-    filter[key] = false;
+const placeALLOFF = () => {
+  indoorKeys.forEach((indoorKey) => {
+    filter[indoorKey] = false;
+  });
+  outdoorKeys.forEach((outdoorKey) => {
+    filter[outdoorKey] = false;
+  });
+  TBKKeys.forEach((TBKKey) => {
+    filter[TBKKey] = false;
   });
 };
-
-const ALLON = () => {
-  Object.keys(filter).forEach((key) => {
-    filter[key] = true;
+const placeALLON = () => {
+  indoorKeys.forEach((indoorKey) => {
+    filter[indoorKey] = true;
   });
+  outdoorKeys.forEach((outdoorKey) => {
+    filter[outdoorKey] = true;
+  });
+  TBKKeys.forEach((TBKKey) => {
+    filter[TBKKey] = true;
+  });
+};
+const categoryALLOFF = () => {
+  foodsKeys.forEach((foodsKey) => {
+    filter[foodsKey] = false;
+  });
+  performanceKeys.forEach((performanceKey) => {
+    filter[performanceKey] = false;
+  });
+  officialKeys.forEach((officialKey) => {
+    filter[officialKey] = false;
+  });
+  filter.displayALL = false;
+};
+const categoryALLON = () => {
+  foodsKeys.forEach((foodsKey) => {
+    filter[foodsKey] = true;
+  });
+  performanceKeys.forEach((performanceKey) => {
+    filter[performanceKey] = true;
+  });
+  officialKeys.forEach((officialKey) => {
+    filter[officialKey] = true;
+  });
+  filter.displayALL = true;
 };
 
 const filteredEvents = computed(() => {
@@ -194,13 +230,12 @@ const filteredEvents = computed(() => {
 });
 
 watch(
-    filter,
-    (newVal) => {
-      localStorage.setItem("filter", JSON.stringify(newVal));
-    },
-    { deep: true }
-  );
-
+  filter,
+  (newVal) => {
+    localStorage.setItem("filter", JSON.stringify(newVal));
+  },
+  { deep: true }
+);
 </script>
 
 <template>
@@ -221,10 +256,6 @@ watch(
         </transition>
       </div>
       <div class="menu-body" :class="{ show: open }">
-        <div class="ALL-toggle">
-          <div @click="ALLON">すべてON</div>
-          <div @click="ALLOFF">すべてOFF</div>
-        </div>
         <div
           class="place-accordion accordion"
           :class="{ accordionOpen: accordion.place }"
@@ -242,6 +273,10 @@ watch(
           </div>
           <transition name="openAccordion">
             <div :key="accordion.place">
+              <div class="ALL-toggle" v-if="accordion.place">
+                <div @click="placeALLON">全条件ON</div>
+                <div @click="placeALLOFF">全条件OFF</div>
+              </div>
               <div
                 class="accordion indoor-accordion"
                 :class="{ accordionOpen: accordion.indoor }"
@@ -401,6 +436,10 @@ watch(
           </div>
           <transition name="openAccordion">
             <div :key="accordion.category">
+              <div class="ALL-toggle" v-if="accordion.category">
+                <div @click="categoryALLON">全条件ON</div>
+                <div @click="categoryALLOFF">全条件OFF</div>
+              </div>
               <div
                 class="accordion foods-accordion"
                 :class="{ accordionOpen: accordion.foods }"
@@ -660,6 +699,8 @@ watch(
   .ALL-toggle {
     display: flex;
     gap: 10px;
+    margin-left: 8%;
+    margin-top: 10px;
     div {
       margin: 0;
       padding: 5px 7px;

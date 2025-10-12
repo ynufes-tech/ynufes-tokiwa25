@@ -3,7 +3,7 @@ import EventCard from "~/components/EventCard.vue";
 import PageTitle from "~/components/PageTitle.vue";
 import FilterButton from "~/components/EventFilterButton.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
-import { ref, computed } from "vue";
+import { ref, computed, reactive, watch } from "vue";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "団体企画一覧を掲載しています！" }],
@@ -25,13 +25,19 @@ const favoriteEvents = ref<string[]>([]); //お気に入り配列用意
 const events = ref<any[]>([]);
 
 onMounted(async () => {
-  // LocalStorage の読み取り
+  // LocalStorage いいねの読み取り
   const stored = localStorage.getItem("favoriteEvents");
   if (stored) {
     const parsed = JSON.parse(stored);
     favoriteEvents.value = Array.isArray(parsed)
       ? parsed.map(String)
       : Object.values(parsed).map(String);
+  }
+  // LocalStorage フィルタの読み取り
+  const storedFilter = localStorage.getItem("filter");
+  if (storedFilter) {
+    const parsed = JSON.parse(storedFilter);
+    Object.assign(filter, parsed);
   }
 
   // fetch でデータ取得
@@ -186,6 +192,15 @@ const filteredEvents = computed(() => {
     }
   });
 });
+
+watch(
+    filter,
+    (newVal) => {
+      localStorage.setItem("filter", JSON.stringify(newVal));
+    },
+    { deep: true }
+  );
+
 </script>
 
 <template>

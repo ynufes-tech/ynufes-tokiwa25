@@ -23,8 +23,11 @@ const modePageTitle = computed(() =>
 );
 const favoriteEvents = ref<string[]>([]); //お気に入り配列用意
 const events = ref<any[]>([]);
+const scrollY = ref(0); //スクロール量変数
 
 onMounted(async () => {
+  window.addEventListener("scroll", handleScroll, { passive: true }); //スクロールされたときscrollYを更新
+
   // LocalStorage いいねの読み取り
   const stored = localStorage.getItem("favoriteEvents");
   if (stored) {
@@ -39,6 +42,14 @@ onMounted(async () => {
     const parsed = JSON.parse(storedFilter);
     Object.assign(filter, parsed);
   }
+  //スクロール量の読み取り
+  const storedScroll = localStorage.getItem("scroll");
+  let lastScroll = 0;
+  console.log("読み取ったよ");
+  if (storedScroll) {
+    const parsed = parseInt(storedScroll);
+    lastScroll = parsed; //スクロール量変数
+  }
 
   // fetch でデータ取得
   try {
@@ -51,6 +62,16 @@ onMounted(async () => {
   } catch (err) {
     console.error("イベント取得失敗", err);
   }
+
+  setTimeout(() => {
+    window.scrollTo({ top: lastScroll, behavior: "instant" });
+  }, 10);
+  console.log(lastScroll);
+});
+
+onUnmounted(() => {
+  localStorage.setItem("scroll", scrollY.value.toString());
+  window.removeEventListener("scroll", handleScroll);
 });
 
 function handleToggleFavorite(id: string | number) {
@@ -229,6 +250,9 @@ const filteredEvents = computed(() => {
   });
 });
 
+const handleScroll = () => {
+  scrollY.value = window.scrollY;
+};
 watch(
   filter,
   (newVal) => {

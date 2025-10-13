@@ -64,7 +64,7 @@ h2 {
 }
 
 .ranking-page {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 

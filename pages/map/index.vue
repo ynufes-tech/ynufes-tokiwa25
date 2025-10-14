@@ -15,16 +15,17 @@ useHead({
     <div>
       <ContentBox>
         <div class="image">
-          <img src="~/assets/images/campusmap.webp">
-        </div>
+          <img src="/public/images/tokiwafes-map.png" alt="常盤祭マップ"> </div>
       </ContentBox>
     </div>
     <div class="button">
     <LinkButtonComponent
         text="ダウンロード"
-        link="https://www.ynu.ac.jp/access/pdf/YNU_MAP_J.pdf"
+        link="/pdf/tokiwafes-map.pdf"
+        target="_blank"
     />
     </div>
+
   </div>
 </template>
 

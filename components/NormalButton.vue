@@ -1,0 +1,77 @@
+<script lang="ts" setup>
+const props = defineProps({
+  text: {
+    type: String,
+    required: true,
+  },
+  link: {
+    type: String,
+    required: true,
+  },
+});
+</script>
+
+<template>
+  <div class="component-root">
+    <a :href="link" class="link-hover">
+      <p class="text">{{ text }}</p>
+    </a>
+    <a :href="link" class="link">
+      <p class="text">{{ text }}</p>
+    </a>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@use "@/assets/scss/_breakpoint.scss" as *;
+.component-root {
+  margin: 0;
+  position: relative;
+}
+.link,
+.link-hover {
+  padding: 8px 8px;
+  opacity: 1;
+  inset: 0;
+  border: 4px solid transparent;
+  border-radius: 999999px;
+  transition: 0.25s;
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0px 2px 3px rgba(255, 255, 255, 0.5));
+  p {
+    font-size: 23px;
+    @include md {
+      font-size: 15px;
+    }
+    font-family: "Zen Old Mincho", sans-serif;
+  }
+}
+
+.link {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #fff050, #ffd633) border-box;//枠
+  background-clip: padding-box, border-box;
+  p {
+    color: #f97d47;
+  }
+}
+
+.link-hover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #ff7621, #e87c08, #e96759) padding-box,
+    linear-gradient(to right, #fff050, #ffd633) border-box;//枠
+  background-clip: padding-box, border-box;
+  p {
+    color: white;
+  }
+}
+
+.link:hover {
+  opacity: 0;
+}
+</style>

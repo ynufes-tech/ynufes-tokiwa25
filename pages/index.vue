@@ -41,10 +41,10 @@ useHead({
         <TopPageLinkR class="link" title="official" jaTitle="本部企画一覧" />
         <TopPageLinkL class="link" title="idol" jaTitle="アイドルステージ" />
         <TopPageLinkR class="link" title="guest" jaTitle="ゲスト" />
-        <!-- <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" /> -->
+        <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
         <!-- <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" /> -->
-        <TopPageLinkL class="link" title="news" jaTitle="おしらせ" />
-        <!-- <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" /> -->
+        <TopPageLinkR class="link" title="news" jaTitle="おしらせ" />
+        <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" />
         <TopPageLinkR class="link" title="map" jaTitle="キャンパスマップ" />
         <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
         <TopPageLinkR

@@ -33,6 +33,11 @@ useHead({
 
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
+.page-root{
+  @include sm{
+    font-size: 14px;
+  }
+}
 .explanation {
   margin: 120px 8%;
   text-align: center;
@@ -41,7 +46,11 @@ useHead({
     margin: 70px 0;
   }
   @include md {
-    margin: 100px 4%;
+    margin: 80px 4%;
+    margin-top:40px;
+    p{
+      margin: 30px 0;
+    }
   }
 }
 
@@ -58,5 +67,8 @@ useHead({
 
 .message {
   margin-bottom: 70px;
+  @include sm{
+    margin-bottom: 35px;
+  }
 }
 </style>

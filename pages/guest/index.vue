@@ -3,16 +3,21 @@ import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 useHead({
   title: "Guest | 25常盤祭公式HP~紅陽~",
-  meta: [{ name: "description", content: "ゲスト企画ダンビラムーチョ×やさしいズはこちらから！" }],
+  meta: [
+    {
+      name: "description",
+      content: "ゲスト企画ダンビラムーチョ×やさしいズはこちらから！",
+    },
+  ],
 });
 </script>
 
 <template>
   <div class="page-root">
-    <PageTitle 
-    class="title-overwrite"
-    title="笑いの紅葉、大高揚！
-    ダンビラムーチョ×やさしいズ" 
+    <PageTitle
+      class="title-overwrite"
+      title="笑いの紅葉、大高揚！
+    ダンビラムーチョ×やさしいズ"
     />
     <div class="page-container">
       <div class="guest-info">
@@ -37,9 +42,12 @@ useHead({
           <div class="explanation sub-title">
             <p>企画説明</p>
           </div>
-          <ContentBox id="contentbox">
-            今年はダンビラムーチョとやさしいズが横国に！<br />
-            爆笑ネタと白熱コーナーで最高の1時間を楽しもう！
+          <ContentBox id="contentbox" class="brief">
+            今年はダンビラムーチョと<span class="br">やさしいズが横国に！</span
+            ><br />
+            爆笑ネタと白熱コーナーで<span class="br"
+              >最高の1時間を楽しもう！</span
+            >
           </ContentBox>
         </div>
       </div>
@@ -67,9 +75,13 @@ useHead({
         <ContentBox id="contentbox">
           事前予約制<br />
           予約方法：チケット予約サイトe+より<br />
-          <a href="https://eplus.jp/sf/detail/4406450001-P0030001" target="_blank" rel="noopener noreferrer">
-            https://eplus.jp/sf/detail/4406450001-P0030001
-          </a><br />
+          <a
+            href="https://eplus.jp/sf/detail/4406450001-P0030001"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://eplus.jp/sf/detail/4406450001-P0030001 </a
+          ><br />
           料金：1300円<br />
           座席：完全指定席<br />
         </ContentBox>
@@ -80,7 +92,8 @@ useHead({
           <p>注意事項</p>
         </div>
         <p>
-          ※1 出演者・企画内容について、予告なく変更・中止になる場合がございます。予めご了承くださいませ。<br />
+          ※1
+          出演者・企画内容について、予告なく変更・中止になる場合がございます。予めご了承くださいませ。<br />
           ※2 中止の場合、チケットに関しまして、返金対応いたします。<br />
           ※3
           参加の際、持ち物検査等安全に関わるお願いに従っていただけない場合、参加をお断りする場合がございます。内容につきましてはチケット購入ページをご覧ください。<br />
@@ -105,14 +118,6 @@ useHead({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 10vw;
-
-  @include md {
-    padding: 0 6vw;
-  }
-  @include sm {
-    padding: 0 4vw;
-  }
 }
 
 .sub-title {
@@ -205,21 +210,30 @@ useHead({
 }
 
 #contentbox {
-  width: fit-content;
+  width: 1000px;
+  max-width: 90vw;
+  box-sizing: border-box;
   margin-top: 20px;
-  padding: 70px 100px;
+  padding: 70px 30px;
   color: #333;
   font-size: 1.1em;
   line-height: 1.8;
-
+  a {
+    font-size: 0.8em;
+  }
   @include md {
-    padding: 30px 50px;
+    padding: 30px 30px;
     font-size: 1em;
   }
   @include sm {
     padding: 20px 20px;
     font-size: 0.9em;
-    line-height: 1.4;
+  }
+}
+
+#contentbox.brief {
+  .br {
+    display: inline-block;
   }
 }
 
@@ -239,9 +253,10 @@ useHead({
     margin-top: 20px;
     line-height: 1.4;
     text-align: left;
-
+    padding: 10px 30px;
     @include sm {
       font-size: 0.85em;
+      padding: 10px 10px;
     }
   }
 }
@@ -266,5 +281,4 @@ useHead({
     }
   }
 }
-
 </style>

@@ -45,7 +45,7 @@ onMounted(() => {
           <div class="dropdown" @click="toggleDropdown('guide')">
             <span class="nav-label">ご案内</span>
             <div
-              class="dropdown-menu"
+              class="dropdown-menu-1"
               :class="{ open: openDropdown === 'guide' }"
             >
               <NuxtLink to="/news" class="dropdown-item">
@@ -82,7 +82,7 @@ onMounted(() => {
                     alt="momiji"
                     class="momiji"
                 >
-                大学祭実行委員会<br class="kaigyo">について</NuxtLink>
+                大学祭実行委員会について</NuxtLink>
             </div>
           </div>
 
@@ -191,6 +191,9 @@ onMounted(() => {
       text-decoration: none;
       color: inherit;
       transition: color 0.2s ease;
+      @media screen and (width <= 340px){
+        font-size: 10px;
+      }
     }
 
     .divider {
@@ -212,13 +215,6 @@ onMounted(() => {
       }
     }
 
-
-      .kaigyo{
-        display: none;
-        @include sm {
-          display: block;
-        }
-      }
 
 
     .dropdown {
@@ -281,6 +277,55 @@ onMounted(() => {
           }
         }
       }
+      .dropdown-menu-1 {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: -1vw;
+        background: rgba(255, 236, 184, 0.7);
+        min-width:280px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        padding: 8px 0;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 10001;
+        @include md{
+          min-width: 240px;
+        }
+        @include sm{
+          min-width: 230px;
+          //right: -100px;
+          left: -10vw;
+        }
+        }
+
+        .dropdown-item {
+          display: block;
+          padding: 12px 2px;
+          color: #333;
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: normal;
+          @include sm{
+            font-size: 0.9rem;
+            padding: 8px 0px;
+          }
+
+          &:hover {
+            background: linear-gradient(
+                    90deg,
+                    rgba(255, 118, 33, 0.5) 0%,
+                    rgba(232, 124, 8, 0.5) 47%,
+                    rgba(233, 103, 89, 0.5) 90%
+            );
+          }
+
+          @include md {
+            font-size: 1rem;
+          }
+        }
+      }
 
       /* PC hoverで開く */
       // &:hover .dropdown-menu {
@@ -298,7 +343,11 @@ onMounted(() => {
         opacity: 1;
         padding: 0;
       }
+      .dropdown-menu-1.open {
+        display: block;
+        opacity: 1;
+        padding: 0;
+      }
     }
   }
-}
 </style>

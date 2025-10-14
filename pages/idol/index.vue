@@ -238,6 +238,7 @@ useHead({
 
 .stage {
   height: 280px;
+  box-shadow: 10px 10px 0px #fbefdea1;
   @media screen and (max-width: 900px) {
     height: 200px;
   }

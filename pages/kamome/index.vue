@@ -17,7 +17,7 @@ useHead({
       <div class="momesen">
         <img
             class="kamomesenpai"
-            src="/assets/images/momesen.svg">
+            src="/assets/images/momesen.webp">
       </div>
       <div class="profile">
         <h1>プロフィール</h1>

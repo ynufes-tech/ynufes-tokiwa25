@@ -15,12 +15,12 @@ useHead({
     <div>
       <ContentBox>
         <div class="image">
-          <img src="/public/images/tokiwafes-map.png" alt="常盤祭マップ"> </div>
+          <img src="~/assets/images/tokiwafes-map.webp" alt="常盤祭マップ"> </div>
       </ContentBox>
     </div>
     <div class="button">
     <LinkButtonComponent
-        text="ダウンロード"
+        text="マップを見る"
         link="/pdf/tokiwafes-map.pdf"
         target="_blank"
     />

@@ -169,6 +169,7 @@ useHead({
     @include lg {
       width: 9vw;
     }
+
   }
 }
 

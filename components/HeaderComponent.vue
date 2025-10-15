@@ -88,7 +88,7 @@ onMounted(() => {
                 />
                 大学祭実行委員会について</NuxtLink
               >
-              <NuxtLink to="/official" class="dropdown-item">
+              <NuxtLink to="/sponsors" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
                   alt="momiji"
@@ -140,7 +140,7 @@ onMounted(() => {
                 />
                 本部企画一覧</NuxtLink
               >
-              <NuxtLink to="/stage" class="dropdown-item">
+              <NuxtLink to="/schedule" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
                   alt="momiji"

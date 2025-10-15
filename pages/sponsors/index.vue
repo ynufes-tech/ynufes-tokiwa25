@@ -24,7 +24,7 @@ useHead({
       </div>
       <div class="company">
         <ul class="company-left" style="list-style-type: disc;  line-height: 2;">
-          <li>Alsokらいふケア株式会社</li>
+          <li>ALSOKらいふケア株式会社</li>
           <li>JOINUS</li>
           <li>オーラルプラン歯科クリニック</li>
           <li>株式会社イワキ</li>
@@ -43,7 +43,7 @@ useHead({
         </ul>
         <ul class="company-right" style="list-style-type: disc;  line-height: 2;">
           <li>相模鉄道株式会社</li>
-          <li>自家製面250</li>
+          <li>自家製麺250</li>
           <li>食品館あおば常盤台店</li>
           <li>ときた内科クリニック</li>
           <li>トラベルクリニック新横浜</li>
@@ -84,14 +84,13 @@ useHead({
           <li>株式会社マンナンライフ</li>
           <li>株式会社ミツヱ</li>
           <li>株式会社柳屋本店</li>
-          <li>牛乳石鹸共進社 株式会社</li>
+          <li>牛乳石鹸共進社株式会社</li>
           <li>ぜリア新薬工業株式会社</li>
           <li>テーブルマーク株式会社</li>
           <li>ブルドックソース株式会社</li>
           <li>まいばすけっと株式会社</li>
           <li>山崎実業株式会社</li>
           <li>ヤマト実業株式会社</li>
-          <li>郵政博物館</li>
           <li>横浜人形の家</li>
         </ul>
       </div>
@@ -136,7 +135,7 @@ useHead({
 }
 
 .text{
- font-family: Zen Old Mincho;
+ font-family: "Zen Old Mincho", sans-serif;
 }
 
 .thanks{
@@ -185,7 +184,7 @@ useHead({
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .company {
     flex-direction: column;  /* 横→縦に切り替え */
     padding-right: 5%;
@@ -195,9 +194,9 @@ useHead({
 
 .company{
   color: #fff;
-  font-family: Zen Old Mincho;
+  font-family: "Zen Old Mincho", sans-serif;
   display: flex;
-  @include md {
+  @include lg {
     font-size: 1rem;
   }
 }
@@ -217,13 +216,7 @@ useHead({
 }
 
 
-.company-left li::marker {
-  font-size: 0.8em;
-}
-
-
-
-.company-right li::marker {
+.company-left li::marker, .company-right li::marker{
   font-size: 0.8em;
 }
 

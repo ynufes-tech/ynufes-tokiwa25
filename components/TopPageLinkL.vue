@@ -39,11 +39,8 @@ const imageUrl = computed(() => getImagePath(props.title))
     position: relative;
     img {
       width: 100%;
-      filter: blur(7px) grayscale(20%);
+      filter: blur(4px) grayscale(20%);
       transition: all 0.3s ease;
-      @include md {
-        filter: blur(4px);
-      }
       @include md {
         filter: blur(3px);
       }

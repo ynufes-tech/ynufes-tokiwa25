@@ -334,6 +334,7 @@ useHead({
 
 .chairman {
   margin-bottom: 23vh;
+  margin-top: 10vh;
 }
 
 .sentence{
@@ -367,11 +368,18 @@ useHead({
 .name {
   display: flex;
   align-items: center;
-
   p {
     font-size: 40px;
     @include md {
       font-size: 28px;
+    }
+  }
+  img{
+    @include xl{
+      width: 6vw;
+    }
+    @include lg {
+      width: 9vw;
     }
   }
 }

@@ -75,7 +75,7 @@
       "events": [
         { "venue": 0, "title": "スタヨコプロジェクト", "subtitle": "販売", "start": "9:00", "end": "14:00" },
         { "venue": 2, "title": "放送研究会 A", "subtitle": "放送", "start": "9:00", "end": "15:00" },
-        { "venue": 3, "title": "Baysound Jazz Orchestra A", "subtitle": "ジャズ演奏", "start": "10:15", "end": "11:45" },
+        { "venue": 1, "title": "Baysound Jazz Orchestra A", "subtitle": "ジャズ演奏", "start": "10:15", "end": "11:45" },
         { "venue": 1, "title": "Stairways A", "subtitle": "アカペラ", "start": "13:30", "end": "14:30" },
         { "venue": 3, "title": "横浜国立大学管弦楽団 A", "subtitle": "オーケストラ", "start": "11:30", "end": "12:30" },
         { "venue": 3, "title": "横浜国立大学管弦楽団 A", "subtitle": "オーケストラ", "start": "14:00", "end": "15:00" },

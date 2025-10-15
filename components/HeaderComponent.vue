@@ -1,28 +1,28 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
-const openDropdown = ref<string | null>(null)
+const openDropdown = ref<string | null>(null);
 
 const toggleDropdown = (menu: string) => {
-  openDropdown.value = openDropdown.value === menu ? null : menu
-}
+  openDropdown.value = openDropdown.value === menu ? null : menu;
+};
 
 onMounted(() => {
   document.addEventListener("click", (event) => {
-    const dropdowns = document.querySelectorAll(".dropdown")
-    let clickedInside = false
+    const dropdowns = document.querySelectorAll(".dropdown");
+    let clickedInside = false;
 
     dropdowns.forEach((dropdown) => {
       if (dropdown.contains(event.target as Node)) {
-        clickedInside = true
+        clickedInside = true;
       }
-    })
+    });
 
     if (!clickedInside) {
-      openDropdown.value = null
+      openDropdown.value = null;
     }
-  })
-})
+  });
+});
 </script>
 
 <template>
@@ -45,14 +45,57 @@ onMounted(() => {
           <div class="dropdown" @click="toggleDropdown('guide')">
             <span class="nav-label">ご案内</span>
             <div
-              class="dropdown-menu"
+              class="dropdown-menu-1"
               :class="{ open: openDropdown === 'guide' }"
             >
-              <NuxtLink to="/news" class="dropdown-item">おしらせ</NuxtLink>
-              <NuxtLink to="/map" class="dropdown-item">キャンパスマップ</NuxtLink>
-              <NuxtLink to="/access" class="dropdown-item">大学までのアクセス</NuxtLink>
-              <NuxtLink to="/contact" class="dropdown-item">お問い合わせ</NuxtLink>
-              <NuxtLink to="/about-us" class="dropdown-item">大学祭実行委員会について</NuxtLink>
+              <NuxtLink to="/news" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                おしらせ</NuxtLink
+              >
+              <NuxtLink to="/map" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                キャンパスマップ</NuxtLink
+              >
+              <NuxtLink to="/access" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                大学までのアクセス</NuxtLink
+              >
+              <NuxtLink to="/contact" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                お問い合わせ</NuxtLink
+              >
+              <NuxtLink to="/about-us" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                大学祭実行委員会について</NuxtLink
+              >
+              <NuxtLink to="/sponsors" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                ご協賛企業一覧</NuxtLink
+              >
             </div>
           </div>
 
@@ -65,10 +108,46 @@ onMounted(() => {
               class="dropdown-menu"
               :class="{ open: openDropdown === 'events' }"
             >
-              <NuxtLink to="/official" class="dropdown-item">本部企画一覧</NuxtLink>
-              <NuxtLink to="/idol" class="dropdown-item">アイドルステージ</NuxtLink>
-              <NuxtLink to="/guest" class="dropdown-item">ゲスト</NuxtLink>
-              <!-- <NuxtLink to="/events" class="dropdown-item">企画一覧</NuxtLink> -->
+              <NuxtLink to="/idol" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                アイドルステージ</NuxtLink
+              >
+              <NuxtLink to="/guest" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                ゲスト</NuxtLink
+              >
+              <NuxtLink to="/events" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                企画一覧</NuxtLink
+              >
+              <NuxtLink to="/official" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                本部企画一覧</NuxtLink
+              >
+              <NuxtLink to="/schedule" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                タイムスケジュール</NuxtLink
+              >
             </div>
           </div>
 
@@ -149,6 +228,9 @@ onMounted(() => {
       text-decoration: none;
       color: inherit;
       transition: color 0.2s ease;
+      @media screen and (width <= 340px) {
+        font-size: 10px;
+      }
     }
 
     .divider {
@@ -160,6 +242,13 @@ onMounted(() => {
 
       @include sm {
         margin: 0 4px;
+      }
+    }
+
+    .momiji {
+      width: 35px;
+      @include sm {
+        width: 25px;
       }
     }
 
@@ -175,7 +264,7 @@ onMounted(() => {
         top: calc(100% + 12px);
         left: -1vw;
         background: rgba(255, 236, 184, 0.7);
-        min-width: 220px;
+        min-width: 280px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         border-radius: 6px;
         padding: 8px 0;
@@ -183,14 +272,31 @@ onMounted(() => {
         opacity: 0;
         transition: opacity 0.2s ease;
         z-index: 10001;
+        @include md {
+          min-width: 240px;
+        }
+        @include sm {
+          min-width: 190px;
+          //right: -100px;
+          left: -10vw;
+        }
+        .idol {
+          @include sm {
+            min-width: 10px;
+          }
+        }
 
         .dropdown-item {
           display: block;
-          padding: 12px 16px;
+          padding: 12px 2px;
           color: #333;
           text-decoration: none;
           font-size: 1.2rem;
           font-weight: normal;
+          @include sm {
+            font-size: 0.9rem;
+            padding: 8px 0px;
+          }
 
           &:hover {
             background: linear-gradient(
@@ -206,23 +312,76 @@ onMounted(() => {
           }
         }
       }
-
-      /* PC hoverで開く */
-      // &:hover .dropdown-menu {
-      //   display: block;
-      //   opacity: 1;
-
-      //   @include sm {
-      //     display: none;
-      //   }
-      // }
-
-      /* SPでクリックした時 */
-      .dropdown-menu.open {
-        display: block;
-        opacity: 1;
-        padding: 0;
+      .dropdown-menu-1 {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: -1vw;
+        background: rgba(255, 236, 184, 0.7);
+        min-width: 280px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        padding: 8px 0;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 10001;
+        @include md {
+          min-width: 240px;
+        }
+        @include sm {
+          min-width: 230px;
+          //right: -100px;
+          left: -10vw;
+        }
       }
+
+      .dropdown-item {
+        display: block;
+        padding: 12px 2px;
+        color: #333;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: normal;
+        @include sm {
+          font-size: 0.9rem;
+          padding: 8px 0px;
+        }
+
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 118, 33, 0.5) 0%,
+            rgba(232, 124, 8, 0.5) 47%,
+            rgba(233, 103, 89, 0.5) 90%
+          );
+        }
+
+        @include md {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    /* PC hoverで開く */
+    // &:hover .dropdown-menu {
+    //   display: block;
+    //   opacity: 1;
+
+    //   @include sm {
+    //     display: none;
+    //   }
+    // }
+
+    /* SPでクリックした時 */
+    .dropdown-menu.open {
+      display: block;
+      opacity: 1;
+      padding: 0;
+    }
+    .dropdown-menu-1.open {
+      display: block;
+      opacity: 1;
+      padding: 0;
     }
   }
 }

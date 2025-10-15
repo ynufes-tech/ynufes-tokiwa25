@@ -196,7 +196,7 @@ useHead({
   color: #fff;
   font-family: "Zen Old Mincho", sans-serif;
   display: flex;
-  @include md {
+  @include lg {
     font-size: 1rem;
   }
 }
@@ -216,13 +216,7 @@ useHead({
 }
 
 
-.company-left li::marker {
-  font-size: 0.8em;
-}
-
-
-
-.company-right li::marker {
+.company-left li::marker, .company-right li::marker{
   font-size: 0.8em;
 }
 

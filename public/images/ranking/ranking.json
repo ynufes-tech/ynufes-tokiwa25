@@ -1,0 +1,80 @@
+{
+  "中間発表 10/31(金)": [
+    {
+      "sectionTitle": "販売・展示・体験部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    },
+    {
+      "sectionTitle": "食べ物部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    },
+    {
+      "sectionTitle": "パフォーマンス部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    }
+  ],
+  "中間発表 11/1(土)": [
+    { 
+      "sectionTitle": "販売・展示・体験部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    },
+    {
+      "sectionTitle": "食べ物部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    },
+    {
+      "sectionTitle": "パフォーマンス部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    }
+  ],
+  "最終発表 11/2(日)": [
+    {
+      "sectionTitle": "販売・展示・体験部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    },
+    {
+      "sectionTitle": "食べ物部門",
+      "rankings": [
+      { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    },
+    {
+      "sectionTitle": "パフォーマンス部門",
+      "rankings": [
+        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "/images/b.png" },
+        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "/images/a.png" },
+        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "/images/c.png" }
+      ]
+    }
+  ]
+}

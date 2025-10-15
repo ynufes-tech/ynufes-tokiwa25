@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import leafImageSrc from '../assets/images/leaf.png'  // ← 一個上のassets/imagesからインポート
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+const route = useRoute()
+// リーフONOFF
+const showLeaf = computed(() => route.meta.hideHeader !== true)
 
 onMounted(() => {
   const canvas = document.getElementById('canvas') as HTMLCanvasElement
@@ -92,6 +97,14 @@ onMounted(() => {
   canvas.height = canvas.scrollHeight
   })
 })
+
+// クリック時にトップへ戻る関数
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
 </script>
 
 <template>
@@ -100,7 +113,11 @@ onMounted(() => {
     <slot />
     <div class="background-container">
       <div class="background-img" />
-      <canvas id="canvas"></canvas>
+      <canvas id="canvas" v-if="showLeaf"></canvas>
+    </div>
+    <!-- フローティングボタン -->
+    <div class="floating-button" @click="scrollToTop">
+      <img src="~/assets/images/floating-button.svg" alt="Floating Button" />
     </div>
   </div>
 </template>
@@ -170,5 +187,51 @@ body {
   height: 100%;
   width: 100%;
   filter: blur(2px);
+}
+.floating-button {
+  position: fixed;
+  bottom: 2rem; // 下に余裕（余白）を持たせる
+  right: 2rem;  // 右に余裕を持たせる
+  width: 80px;  // 元画像が例えば160pxなら半分
+  height: 80px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+.floating-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 80px;
+  height: 80px;
+  z-index: 1000; // 他の要素より上に
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: auto; // 念のためクリックできるように
+  }
+  &:hover {
+    transform: scale(1.1) translateY(-2px); // 拡大 + ちょっと上に
+    cursor: pointer;
+  }
+}
+.floating-button {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1); // 少し拡大
+    cursor: pointer;       // マウスカーソルをポインターに
+  }
+  @include sm {
+    width: 60px;
+    height: 60px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
 }
 </style>

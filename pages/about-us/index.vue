@@ -4,7 +4,10 @@ import ContentBox from "~/components/ContentBox.vue";
 useHead({
   title: "About-us | 25常盤祭公式HP~紅陽~",
   meta: [
-    {name: "description", content: "大学祭実行委員についての情報を掲載しています"},
+    {
+      name: "description",
+      content: "大学祭実行委員についての情報を掲載しています",
+    },
   ],
 });
 </script>
@@ -12,10 +15,14 @@ useHead({
 <template>
   <div class="page-root">
     <div class="page-container">
-      <PageTitle :title="'大学祭実行委員会について'" :sub-title="'大学祭実行委員会について'"/>
+      <PageTitle
+        :title="'大学祭実行委員会について'"
+        :sub-title="'大学祭実行委員会について'"
+      />
       <div class="explain">
-        <p>年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br/>
-          私たち大学祭実行委員会は、その一日を最高の思い出にするために、日々活動を重ねています。<br/>
+        <p>
+          年に二度、キャンパス全体が特別な高揚感に包まれる大学祭。<br />
+          私たち大学祭実行委員会は、その一日を最高の思い出にするために、日々活動を重ねています。<br />
           そして、会場・企画・技術・経理・総務・物品・編集の7つの部局がそれぞれの専門性を発揮し、ひとつの祭を形作っています。
         </p>
       </div>
@@ -51,13 +58,12 @@ useHead({
           <div class="about-nm">
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
-                      src="~/assets/images/momiji.svg"
-                      alt="momiji"
-                      class="momiji"
-                  >
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                  />
                   <p>会場部</p>
                 </div>
               </div>
@@ -70,13 +76,13 @@ useHead({
             </div>
             <div class="picture">
               <img
-                  class="member-img lt-img"
-                  src="/assets/images/about-us-picture/kaijo1.webp"
-              >
+                class="member-img lt-img"
+                src="/assets/images/about-us-picture/kaijo1.webp"
+              />
               <img
-                  class="member-img middle-img rt-img"
-                  src="/assets/images/about-us-picture/kaijo2.webp"
-              >
+                class="member-img middle-img rt-img"
+                src="/assets/images/about-us-picture/kaijo2.webp"
+              />
             </div>
           </div>
         </div>
@@ -84,23 +90,22 @@ useHead({
           <div class="about-re">
             <div class="picture">
               <img
-                  class="member-img lt-img"
-                  src="/assets/images/about-us-picture/kikaku1.webp"
-              >
+                class="member-img lt-img"
+                src="/assets/images/about-us-picture/kikaku1.webp"
+              />
               <img
-                  class="member-img middle-img rt-img"
-                  src="/assets/images/about-us-picture/kikaku2.webp"
-              >
+                class="member-img middle-img rt-img"
+                src="/assets/images/about-us-picture/kikaku2.webp"
+              />
             </div>
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
-                      src="~/assets/images/momiji.svg"
-                      alt="momiji"
-                      class="momiji"
-                  >
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                  />
                   <p>企画部</p>
                 </div>
               </div>
@@ -117,13 +122,12 @@ useHead({
           <div class="about-nm">
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
-                      src="~/assets/images/momiji.svg"
-                      alt="momiji"
-                      class="momiji"
-                  >
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                  />
                   <p>技術部</p>
                 </div>
               </div>
@@ -137,13 +141,13 @@ useHead({
             </div>
             <div class="picture">
               <img
-                  class="member-img lt-img"
-                  src="/assets/images/about-us-picture/gijutu1.webp"
-              >
+                class="member-img lt-img"
+                src="/assets/images/about-us-picture/gijutu1.webp"
+              />
               <img
-                  class="member-img middle-img rt-img"
-                  src="/assets/images/about-us-picture/gijutu2.webp"
-              >
+                class="member-img middle-img rt-img"
+                src="/assets/images/about-us-picture/gijutu2.webp"
+              />
             </div>
           </div>
         </div>
@@ -151,23 +155,22 @@ useHead({
           <div class="about-re">
             <div class="picture">
               <img
-                  class="member-img lt-img"
-                  src="/assets/images/about-us-picture/keiri1.webp"
-              >
+                class="member-img lt-img"
+                src="/assets/images/about-us-picture/keiri1.webp"
+              />
               <img
-                  class="member-img middle-img rt-img"
-                  src="/assets/images/about-us-picture/keiri2.webp"
-              >
+                class="member-img middle-img rt-img"
+                src="/assets/images/about-us-picture/keiri2.webp"
+              />
             </div>
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
-                      src="~/assets/images/momiji.svg"
-                      alt="momiji"
-                      class="momiji"
-                  >
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                  />
                   <p>経理部</p>
                 </div>
               </div>
@@ -184,13 +187,12 @@ useHead({
           <div class="about-nm">
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
-                      src="~/assets/images/momiji.svg"
-                      alt="momiji"
-                      class="momiji"
-                  >
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                  />
                   <p>総務部</p>
                 </div>
               </div>
@@ -204,13 +206,13 @@ useHead({
             </div>
             <div class="picture">
               <img
-                  class="member-img lt-img"
-                  src="/assets/images/about-us-picture/soumu1.webp"
-              >
+                class="member-img lt-img"
+                src="/assets/images/about-us-picture/soumu1.webp"
+              />
               <img
-                  class="member-img middle-img rt-img"
-                  src="/assets/images/about-us-picture/soumu2.webp"
-              >
+                class="member-img middle-img rt-img"
+                src="/assets/images/about-us-picture/soumu2.webp"
+              />
             </div>
           </div>
         </div>
@@ -218,23 +220,22 @@ useHead({
           <div class="about-re">
             <div class="picture">
               <img
-                  class="member-img lt-img"
-                  src="/assets/images/about-us-picture/buppin1.webp"
-              >
+                class="member-img lt-img"
+                src="/assets/images/about-us-picture/buppin1.webp"
+              />
               <img
-                  class="member-img middle-img rt-img"
-                  src="/assets/images/about-us-picture/buppin2.webp"
-              >
+                class="member-img middle-img rt-img"
+                src="/assets/images/about-us-picture/buppin2.webp"
+              />
             </div>
             <div class="set">
               <div class="name_wrapper">
-
                 <div class="name">
                   <img
-                      src="~/assets/images/momiji.svg"
-                      alt="momiji"
-                      class="momiji"
-                  >
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                  />
                   <p>物品部</p>
                 </div>
               </div>
@@ -248,40 +249,39 @@ useHead({
             </div>
           </div>
         </div>
-          <div class="department" :id="'editional'">
-            <div class="about-nm">
-              <div class="set">
-                <div class="name_wrapper">
-
-                  <div class="name">
-                    <img
-                        src="~/assets/images/momiji.svg"
-                        alt="momiji"
-                        class="momiji"
-                    >
-                    <p>編集部</p>
-                  </div>
+        <div class="department" :id="'editional'">
+          <div class="about-nm">
+            <div class="set">
+              <div class="name_wrapper">
+                <div class="name">
+                  <img
+                    src="~/assets/images/momiji.svg"
+                    alt="momiji"
+                    class="momiji"
+                  />
+                  <p>編集部</p>
                 </div>
-                <ContentBox id="contentbox">
-                  <p>
-                    編集部は、大学祭期間中に構内を彩る装飾や、大学祭をわかりやすくまとめたパンフレット・リーフレットなどを制作している部局です🎨
-                    大学祭当日は案内所でパンフレットなどを配布し、来場者の皆さまをご案内します🙌
-                    パンフレットや装飾などと共に記憶に残る大学祭をお楽しみください！
-                  </p>
-                </ContentBox>
               </div>
-              <div class="picture">
-                <img
-                    class="member-img lt-img"
-                    src="/assets/images/about-us-picture/hensyu1.webp"
-                >
-                <img
-                    class="member-img middle-img rt-img"
-                    src="/assets/images/about-us-picture/hensyu2.webp"
-                >
-              </div>
+              <ContentBox id="contentbox">
+                <p>
+                  編集部は、大学祭期間中に構内を彩る装飾や、大学祭をわかりやすくまとめたパンフレット・リーフレットなどを制作している部局です🎨
+                  大学祭当日は案内所でパンフレットなどを配布し、来場者の皆さまをご案内します🙌
+                  パンフレットや装飾などと共に記憶に残る大学祭をお楽しみください！
+                </p>
+              </ContentBox>
+            </div>
+            <div class="picture">
+              <img
+                class="member-img lt-img"
+                src="/assets/images/about-us-picture/hensyu1.webp"
+              />
+              <img
+                class="member-img middle-img rt-img"
+                src="/assets/images/about-us-picture/hensyu2.webp"
+              />
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
@@ -297,8 +297,10 @@ useHead({
   text-align: center;
   padding: 50px;
   color: #000000;
-  @include sm{
-    padding: 30px;
+  line-height: 1.3;
+  @include sm {
+    padding: 20px 15px;
+    font-size: 0.9rem;
   }
 }
 
@@ -308,6 +310,9 @@ useHead({
   flex-direction: column;
   box-sizing: border-box;
   padding: 0 10vw 10vh;
+  @include md {
+    padding: 0 0 10vh;
+  }
 }
 
 .box1 {
@@ -326,6 +331,7 @@ useHead({
   font-size: 21px;
   @include md {
     font-size: 15px;
+    padding: 0 20px;
   }
   @include sm {
     font-size: 13px;
@@ -348,7 +354,7 @@ useHead({
 
 .department {
   margin: 10vh 0;
-  @include sm{
+  @include sm {
     margin: 5vh 0;
   }
 }
@@ -358,8 +364,8 @@ useHead({
 }
 
 .momiji {
-  @include sm{
-    width: 70px ;
+  @include sm {
+    width: 70px;
     height: 70px;
   }
 }
@@ -375,7 +381,6 @@ useHead({
     }
   }
 }
-
 
 .box2 {
   display: flex;
@@ -395,7 +400,7 @@ useHead({
 .about-re {
   display: flex;
   justify-content: flex-end;
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
@@ -404,9 +409,11 @@ useHead({
 
 .set {
   flex: 1;
-  padding: 2rem;
+  padding: 2rem 1rem;
+  @include md {
+    padding: 1.5rem 0;
+  }
 }
-
 
 .picture {
   flex: 1;
@@ -414,7 +421,7 @@ useHead({
   flex-direction: column;
   gap: 2rem;
   margin-top: 10vh;
-  @include sm{
+  @include sm {
     margin-top: 6vh;
   }
 }
@@ -422,6 +429,8 @@ useHead({
 .member-img {
   width: 200px;
   height: auto;
+  box-shadow: 4px 6px 3px #0000004f;
+  border-radius: 3px;
   @include md {
     width: 180px;
   }
@@ -441,14 +450,14 @@ useHead({
 
 .middle-img {
   margin-left: 200px; // about-nm の場合
-  @include sm{
+  @include sm {
     margin-left: 100px;
   }
 }
 
 .about-re .middle-img {
   margin-left: 200px;
-  @include sm{
+  @include sm {
     margin-left: 100px;
   }
 }

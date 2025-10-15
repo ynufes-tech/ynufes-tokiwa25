@@ -3,9 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
     app: {
-    baseURL: process.env.NUXT_PUBLIC_BASE_URL,
+    baseURL: process.env.NUXT_PUBLIC_BASE_URL ?? "/25/tokiwa/",
     runtimeConfig: {
-      baseURL: '/', // NUXT_PUBLIC_BASE_URL によって上書きされる 公式ドキュメント参照
+      baseURL: '/25/tokiwa/', // NUXT_PUBLIC_BASE_URL によって上書きされる 公式ドキュメント参照
     },
     head: {
       meta: [
@@ -23,13 +23,17 @@ export default defineNuxtConfig({
     '@/assets/css/reset.css'
   ],
   modules: [
-    '@nuxtjs/google-fonts'
-  ],
+    '@nuxtjs/google-fonts', 'nuxt-gtag'
+],
   googleFonts: {
     families: {
       'Kaisei Decol': true    
     },
     preconnect: true,
     display: 'swap'
+  },
+  gtag: {
+    id: 'G-9JJ0DXRDH4'
   }
+
 })

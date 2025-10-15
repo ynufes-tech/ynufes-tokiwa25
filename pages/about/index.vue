@@ -35,18 +35,20 @@ onMounted(() => {
       <ContentBox>
         <div class="about">
           <p>常盤祭とは、横浜国立大学で毎年秋に開催される大学祭です。</p>
-          <p>多数のサークルによる模擬店やステージ企画、ゲスト企画などがあります。</p>
+          <p>
+            多数のサークルによる模擬店やステージ企画、ゲスト企画などがあります。
+          </p>
         </div>
       </ContentBox>
     </div>
     <div class="image">
-      <img src="~/assets/images/theme-logo.svg">
+      <img src="~/assets/images/theme-logo.svg" />
     </div>
     <div class="fade-in">
       <p class="no-wrap">雨天での大学祭の実施が続いているため、</p>
       <p>今度こそは晴れてほしい。</p>
       <p>そんな願いが込められた</p>
-      <p> 秋らしさを感じるテーマです。</p>
+      <p>秋らしさを感じるテーマです。</p>
     </div>
     <div class="subtitle">
       <p>日時</p>
@@ -59,19 +61,37 @@ onMounted(() => {
               <tr>
                 <td>2025</td>
                 <td>10/31</td>
-                <td><img src="~/assets/images/fri.svg" alt="金" class="day-icon"></td>
+                <td>
+                  <img
+                    src="~/assets/images/fri.svg"
+                    alt="金"
+                    class="day-icon"
+                  />
+                </td>
                 <td>13:00~20:30</td>
               </tr>
               <tr>
                 <td></td>
                 <td>11/1</td>
-                <td><img src="~/assets/images/sat.svg" alt="土" class="day-icon"></td>
+                <td>
+                  <img
+                    src="~/assets/images/sat.svg"
+                    alt="土"
+                    class="day-icon"
+                  />
+                </td>
                 <td>9:00~20:30</td>
               </tr>
               <tr>
                 <td></td>
                 <td>11/2</td>
-                <td><img src="~/assets/images/sun.svg" alt="日" class="day-icon"></td>
+                <td>
+                  <img
+                    src="~/assets/images/sun.svg"
+                    alt="日"
+                    class="day-icon"
+                  />
+                </td>
                 <td>9:00~15:00</td>
               </tr>
             </table>
@@ -104,31 +124,35 @@ onMounted(() => {
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
 .page-root {
-  font-family: 'Kaisei Decol', sans-serif;
+  font-family: "Kaisei Decol", sans-serif;
 }
 
-.subtitle{
+.subtitle {
   margin: 40px 17% 20px 17%;
   color: #fff;
   font-size: 2rem;
-  @include md{
+  @include md {
     font-size: 1.5rem;
   }
 }
 
 .about {
-  margin: 80px 10%;
-  font-size: 1em;
+  margin: 40px 10%;
+  font-size: 0.9em;
+  line-height: 1.3;
   p {
-    margin: 70px 0;
+    margin: 60px 0;
+    @include md {
+      margin: 30px 0;
+    }
   }
   @include md {
-    margin: 30px 4%;
+    margin: 40px 6%;
   }
 }
-.image{
+.image {
   text-align: center;
-  img{
+  img {
     max-width: 100%;
   }
 }
@@ -137,7 +161,7 @@ onMounted(() => {
   margin: 10px 16%;
   text-align: left;
   color: #fff;
-  p{
+  p {
     font-size: 1.2em;
     line-height: 2.5em;
     @include md {
@@ -179,7 +203,7 @@ onMounted(() => {
 
 .container {
   margin: 1.5em 5%;
-  @include md{
+  @include md {
     margin: 0.5em 1%;
   }
 }
@@ -189,7 +213,7 @@ table {
   position: relative;
   left: 10%;
   text-align: center;
-  @include lg{
+  @include lg {
     left: 5%;
   }
   @include md {
@@ -197,19 +221,19 @@ table {
     left: 1%;
   }
 }
-tr{
-  font-size: clamp(16px,5vw,20px);
+tr {
+  font-size: clamp(16px, 5vw, 20px);
 }
 td {
   padding: 5px 2em;
   font-size: 1em;
   text-align: center;
-  @include lg{
+  @include lg {
     padding: 5px 1.4em;
   }
-  @include md{
-    padding:5px 0.4em;
-    font-size:0.8em;
+  @include md {
+    padding: 5px 0.4em;
+    font-size: 0.8em;
   }
 }
 

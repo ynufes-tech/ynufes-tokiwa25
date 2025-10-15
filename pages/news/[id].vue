@@ -29,7 +29,11 @@ useHead({
           <p>{{ news.headline }}</p>
         </div>
       </div>
-      <LinkButton class="LinkButton" text="ニュース一覧へ" link="/news" />
+      <LinkButton
+        class="LinkButton"
+        text="ニュース一覧へ"
+        link="/25/tokiwa/news"
+      />
     </div>
   </div>
 </template>
@@ -44,7 +48,7 @@ useHead({
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 10vw 10vh;
+  padding-bottom: 10vh;
 }
 
 .news-card {
@@ -52,14 +56,13 @@ useHead({
   color: #000000;
   border-radius: 20px;
   margin: 20px 0;
-  max-width: 600px;
+  max-width: min(900px, 90%);
   text-align: left;
-
+  box-sizing: border-box;
+  position: relative;
   .date {
     font-size: 20px;
-    margin-bottom: 10px;
-    margin-left: -100px;
-    margin-top: -20px;
+    position: absolute;
     @include sm {
       font-size: 16px;
       margin-left: 0px;
@@ -69,27 +72,44 @@ useHead({
   .headline {
     text-align: center;
   }
+  @include md {
+    max-width: 85%;
+  }
+  @include sm {
+    width: 85%;
+  }
 }
 
 .news-card.first {
   font-size: 35px;
-  border: 3px solid #42C478;
-  padding: 30px 110px;
+  border: 3px solid #42c478;
+  padding: 10px 10px 0;
+
+  .headline {
+    margin: 20px 80px;
+    @include md {
+      margin: 20px 20px;
+    }
+    @include sm {
+      margin: 20px 10px;
+    }
+  }
+
   @include md {
-    padding: 30px 102px;
+    font-size: 25px;
   }
   @include sm {
     font-size: 20px;
-    padding: 30px 20px;
   }
 }
 .news-card.second {
   font-size: 24px;
-  border: 3px solid #42C478;
+  border: 3px solid #42c478;
   padding: 30px 30px;
-  @include sm {
+  white-space: pre-wrap;
+  @include md {
     font-size: 16px;
-    padding: 30px 20px;
+    padding: 20px 10px;
   }
 }
 

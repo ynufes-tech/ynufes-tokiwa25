@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup xmlns="http://www.w3.org/1999/html" >
 import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
@@ -29,7 +29,7 @@ useHead({
         横浜市営地下鉄ブルーライン 「三ッ沢上町駅」より<br />徒歩約16分<br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="/images/maps/seimon.svg"
+        href="images/maps/seimon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -48,7 +48,7 @@ useHead({
         相鉄本線 「和田町駅」より<br />徒歩約20分<br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="/images/maps/minamimon.svg"
+        href="images/maps/minamimon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -64,11 +64,12 @@ useHead({
         link="https://www.ynu.ac.jp/access/train_south.html"
       />
       <p>
-        相鉄新横浜線 「羽沢横浜国大駅」より<br />徒歩約15分
+        相鉄新横浜線 「羽沢横浜国大駅」より<br />徒歩約15分<br/>
+        <span class="attention">*近隣住民の皆様のご迷惑とならないよう、ご来場に際しては大学推奨ルートでの来場にご協力ください。</span>
         <br />↓クリックで別タブで開きます。
       </p>
       <a
-        href="/images/maps/kitamon.svg"
+        href="images/maps/kitamon.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -126,4 +127,13 @@ useHead({
     max-width: 100%;
   }
 }
+
+
+.attention{
+  font-size: 1.2rem;
+  @include md {
+    font-size: 0.8rem;
+  }
+}
+
 </style>

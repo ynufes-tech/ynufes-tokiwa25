@@ -1,11 +1,41 @@
 <script lang="ts" setup></script>
 <template>
   <div class="component-root">
-    <img src="../assets/images/sponsors/sample_banner.webp" alt="" />
-    <img src="../assets/images/sponsors/sample_banner.webp" alt="" />
-    <img src="../assets/images/sponsors/sample_banner.webp" alt="" />
-    <img src="../assets/images/sponsors/sample_banner.webp" alt="" />
-    <img src="../assets/images/sponsors/sample_banner.webp" alt="" />
+    <a
+      href="https://www.iwakipumps-recruit.jp/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/images/sponsors/iwaki.webp" alt="IWAKI" />
+    </a>
+    <a
+      href="https://www.next-gears.net/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/images/sponsors/nextgear.webp" alt="ネクストギア" />
+    </a>
+    <a
+      href="https://www.netsuretsu-karubi.jp/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/images/sponsors/yakiniku-karubi.webp" alt="熱烈カルビ" />
+    </a>
+    <a
+      href="https://www.hazawa-kubotaganka.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/images/sponsors/eye-clinic.webp" alt="羽沢くぼた眼科" />
+    </a>
+    <a
+      href="https://www.miraizu-suisen.com/campaigns/yokofesbanner"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="../assets/images/sponsors/miraizu.webp" alt="未来図" />
+    </a>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -18,6 +48,31 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px 3%;
+  a {
+    display: block; // ← これでリンク枠をブロック要素に
+    width: 30%;     // ← 画像と同じ幅にしておく
+    max-width: 600px;
+
+    img {
+      width: 100%;   // ← 親（aタグ）の幅に合わせる
+      height: auto;  // ← 縦横比を維持
+      display: block;
+    }
+  }
+
+  @include md {
+    a {
+      width: 40%;
+    }
+  }
+
+  @include sm {
+    a {
+      width: 70%;
+      max-width: 600px;
+    }
+  }
+
   img {
     max-width: 600px;
     width: 30%;

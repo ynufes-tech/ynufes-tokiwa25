@@ -360,6 +360,11 @@ onMounted(() => {
           font-size: 1rem;
         }
       }
+      .dropdown-menu-1.open {
+        display: block;
+        opacity: 1;
+        padding: 0;
+      }
     }
 
     /* PC hoverで開く */
@@ -384,5 +389,4 @@ onMounted(() => {
       padding: 0;
     }
   }
-}
 </style>

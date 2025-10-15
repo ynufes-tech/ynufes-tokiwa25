@@ -20,7 +20,7 @@ useHead({
               <p>A1</p>
             </div>
             <div class="content">
-              <p>大学への生き方は？</p>
+              <p>大学への行き方は？</p>
               <p>
                 電車やバスで来場いただけます。<br />
                 詳しくは、<NuxtLink to="/access" class="linkto">こちら</NuxtLink
@@ -57,11 +57,14 @@ useHead({
             </div>
             <div class="content">
               <p>天候が悪いときは？</p>
-              <p>企画場所が変更または中止になる場合があります。</p>
+              <p>企画場所が変更または中止になる場合があります。<br/>
+                大学祭公式SNSやホームページ、本部放送をこまめに確認するようにしてください。
+              </p>
             </div>
           </div>
         </ContentBox>
       </div>
+
       <div class="box">
         <ContentBox class="contentbox">
           <div class="category">
@@ -79,6 +82,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
+
       <div class="box">
         <ContentBox class="contentbox">
           <div class="category">
@@ -95,6 +99,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
+
       <div class="box">
         <ContentBox class="contentbox">
           <div class="category">
@@ -111,6 +116,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
+
       <div class="box">
         <ContentBox class="contentbox">
           <div class="category">
@@ -128,6 +134,7 @@ useHead({
           </div>
         </ContentBox>
       </div>
+
       <div class="box">
         <ContentBox class="contentbox">
           <div class="category">
@@ -142,14 +149,50 @@ useHead({
           </div>
         </ContentBox>
       </div>
+
+      <div class="box">
+      <ContentBox class="contentbox">
+        <div class="category">
+          <div class="qa">
+            <p>Q9</p>
+            <p>A9</p>
+          </div>
+          <div class="content">
+            <p>講義棟内で飲食は可能なの？</p>
+            <p>講義棟内では理工学部A棟１Fのホールでのみ可能です。<br/>
+              他の講義棟については飲食は一切禁止です。<br/>
+              他にも屋外または第一食堂で飲食が可能です。
+            </p>
+            </div>
+          </div>
+      </ContentBox>
+      </div>
+
+     <div class="box">
+    <ContentBox class="contentbox">
+      <div class="category">
+        <div class="qa">
+          <p>Q10</p>
+          <p>A10</p>
+        </div>
+        <div class="content">
+          <p>来場者から迷惑行為を受けて困ったらどうすればいい？</p>
+          <p>本部(経営108教室)または近くの実行委員にお知らせてください。<br/>
+            実行委員が早急に対処します。
+          </p>
+        </div>
+      </div>
+    </ContentBox>
+</div>
       <div class="other-thing">
         <p>
           その他お困りの際は、近くにいるSTAFFと書かれたジャンパー・Tシャツを着ている大学祭実行委員にお聞きいただくか、本部にお越しください。
         </p>
       </div>
-    </div>
+  </div>
   </div>
 </template>
+
 
 <style lang="scss" scoped>
 @use "@/assets/scss/_breakpoint.scss" as *;
@@ -200,8 +243,9 @@ p {
   color: white;
   font-size: 30px;
   padding: 0 10vw;
+  margin-top: 10vh;
   @include md {
-    font-size: 17px;
+    font-size: 20px;
   }
 }
 .linkto {

@@ -184,11 +184,10 @@ const currentImage = ref(image1)
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .header-frame {
-  position: relative;
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -203,7 +202,7 @@ const currentImage = ref(image1)
   }
 
   @include sm {
-    padding: 5px 15px 1px;
+    padding: 5px 0 1px 10px;
   }
 
   .header-content {
@@ -238,7 +237,7 @@ const currentImage = ref(image1)
       width: 70px;
       height: auto;
       @include sm{
-        width: 40px;
+        width: 35px;
         height: auto;
       }
     }
@@ -256,7 +255,7 @@ const currentImage = ref(image1)
 
     @include sm {
       font-size: 0.8rem;
-      gap: 4px;
+      gap:1.5px;
     }
 
     .nav-link {
@@ -276,7 +275,7 @@ const currentImage = ref(image1)
       display: inline-block;
 
       @include sm {
-        margin: 0 4px;
+        margin: 0 2px;
       }
     }
 
@@ -289,30 +288,27 @@ const currentImage = ref(image1)
 
     .dropdown {
       position: relative;
-
+      
       .nav-label {
         cursor: pointer;
       }
 
-      .dropdown-menu {
+      .dropdown-menu,.dropdown-menu-1 {
         position: absolute;
         top: calc(100% + 12px);
         left: -1vw;
-        background: rgba(255, 236, 184, 0.7);
+        background-color: rgba(255, 236, 184, 0.7);
         min-width: 280px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        border-radius: 6px;
         padding: 8px 0;
         display: none;
         opacity: 0;
         transition: opacity 0.2s ease;
-        z-index: 10001;
         @include md {
           min-width: 240px;
         }
         @include sm {
           min-width: 190px;
-          //right: -100px;
           left: -10vw;
         }
         .idol {
@@ -322,12 +318,16 @@ const currentImage = ref(image1)
         }
 
         .dropdown-item {
+          
           display: block;
           padding: 12px 2px;
           color: #333;
           text-decoration: none;
           font-size: 1.2rem;
           font-weight: normal;
+          @include md {
+            font-size: 1rem;
+          }
           @include sm {
             font-size: 0.9rem;
             padding: 8px 0px;
@@ -341,25 +341,9 @@ const currentImage = ref(image1)
               rgba(233, 103, 89, 0.5) 90%
             );
           }
-
-          @include md {
-            font-size: 1rem;
-          }
         }
       }
       .dropdown-menu-1 {
-        position: absolute;
-        top: calc(100% + 12px);
-        left: -1vw;
-        background: rgba(255, 236, 184, 0.7);
-        min-width: 280px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        border-radius: 6px;
-        padding: 8px 0;
-        display: none;
-        opacity: 0;
-        transition: opacity 0.2s ease;
-        z-index: 10001;
         @include md {
           min-width: 240px;
         }
@@ -370,36 +354,7 @@ const currentImage = ref(image1)
         }
       }
 
-      .dropdown-item {
-        display: block;
-        padding: 12px 2px;
-        color: #333;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: normal;
-        @include sm {
-          font-size: 0.9rem;
-          padding: 8px 0px;
-        }
-
-        &:hover {
-          background: linear-gradient(
-            90deg,
-            rgba(255, 118, 33, 0.5) 0%,
-            rgba(232, 124, 8, 0.5) 47%,
-            rgba(233, 103, 89, 0.5) 90%
-          );
-        }
-
-        @include md {
-          font-size: 1rem;
-        }
-      }
-      .dropdown-menu-1.open {
-        display: block;
-        opacity: 1;
-        padding: 0;
-      }
+      
     }
 
     /* PC hoverで開く */

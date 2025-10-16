@@ -44,7 +44,7 @@ useHead({
         <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
         <!-- <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" /> -->
         <TopPageLinkR class="link" title="news" jaTitle="おしらせ" />
-        <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" />
+        <!-- <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" /> -->
         <TopPageLinkR class="link" title="map" jaTitle="キャンパスマップ" />
         <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
         <TopPageLinkR

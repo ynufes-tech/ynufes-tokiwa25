@@ -80,6 +80,13 @@ const currentImage = ref(image1)
                 />
                 キャンパスマップ</NuxtLink
               >
+              <NuxtLink to="/pamphlet" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                パンフレット</NuxtLink>
               <NuxtLink to="/access" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
@@ -96,6 +103,13 @@ const currentImage = ref(image1)
                 />
                 お問い合わせ</NuxtLink
               >
+              <NuxtLink to="/faq" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                よくあるご質問</NuxtLink>
               <NuxtLink to="/about-us" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
@@ -104,14 +118,14 @@ const currentImage = ref(image1)
                 />
                 大学祭実行委員会について</NuxtLink
               >
-              <!-- <NuxtLink to="/sponsors" class="dropdown-item">
+              <NuxtLink to="/sponsors" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
                   alt="momiji"
                   class="momiji"
                 />
                 ご協賛企業一覧</NuxtLink
-              > -->
+              >
             </div>
           </div>
 
@@ -156,14 +170,14 @@ const currentImage = ref(image1)
                 />
                 本部企画一覧</NuxtLink
               >
-              <!-- <NuxtLink to="/schedule" class="dropdown-item">
+              <NuxtLink to="/schedule" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
                   alt="momiji"
                   class="momiji"
                 />
                 タイムスケジュール</NuxtLink
-              > -->
+              >
             </div>
           </div>
 

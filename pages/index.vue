@@ -44,7 +44,7 @@ useHead({
         <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
         <!-- <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" /> -->
         <TopPageLinkR class="link" title="news" jaTitle="おしらせ" />
-        <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" />
+        <!-- <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" /> -->
         <TopPageLinkR class="link" title="map" jaTitle="キャンパスマップ" />
         <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
         <TopPageLinkR
@@ -99,20 +99,20 @@ useHead({
 .page-container {
   display: flex;
   flex-direction: column;
+  .title {
+    max-width: 100%;
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: -100px;
+    @include md {
+      margin-bottom: -5vh;
+    }
+  }
   align-items: center;
   text-align: center;
 }
 
-.title {
-  max-width: 100%;
-  width: 1000px;
-  height: auto;
-  margin: 0 auto;
-  margin-bottom: -100px;
-  @include md {
-    margin-bottom: -5vh;
-  }
-}
 
 .dates {
   width: 80%;

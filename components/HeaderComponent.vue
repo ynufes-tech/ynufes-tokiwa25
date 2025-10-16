@@ -23,14 +23,14 @@ onMounted(() => {
     }
   });
 });
-import { ref } from 'vue'
+import { ref } from "vue";
 
 // ✅ 画像を確実にimport（これが一番安全！）
-import image1 from 'assets/images/kamome-button1.PNG'
-import image2 from 'assets/images/kamome-button2.PNG'
+import image1 from "assets/images/kamome-button1.PNG";
+import image2 from "assets/images/kamome-button2.PNG";
 
 // 初期状態（表示される画像）
-const currentImage = ref(image1)
+const currentImage = ref(image1);
 </script>
 
 <template>
@@ -47,11 +47,12 @@ const currentImage = ref(image1)
           </NuxtLink>
           <NuxtLink class="kamome-button" to="/kamome">
             <img
-                :src="currentImage"
-                alt="かもめ"
-                @mouseover="currentImage = image2"
-                @mouseout="currentImage = image1"
-                class="kamome-button-image"/>
+              :src="currentImage"
+              alt="かもめ"
+              @mouseover="currentImage = image2"
+              @mouseout="currentImage = image1"
+              class="kamome-button-image"
+            />
           </NuxtLink>
         </div>
         <div class="right">
@@ -86,7 +87,8 @@ const currentImage = ref(image1)
                   alt="momiji"
                   class="momiji"
                 />
-                パンフレット</NuxtLink>
+                パンフレット</NuxtLink
+              >
               <NuxtLink to="/access" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
@@ -109,7 +111,8 @@ const currentImage = ref(image1)
                   alt="momiji"
                   class="momiji"
                 />
-                よくあるご質問</NuxtLink>
+                よくあるご質問</NuxtLink
+              >
               <NuxtLink to="/about-us" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
@@ -178,6 +181,14 @@ const currentImage = ref(image1)
                 />
                 タイムスケジュール</NuxtLink
               >
+              <NuxtLink to="/contest" class="dropdown-item idol">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                企画コンテスト</NuxtLink
+              >
             </div>
           </div>
 
@@ -238,20 +249,20 @@ const currentImage = ref(image1)
     }
   }
 
-  .left{
+  .left {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .kamome-button{
-     margin-left: 50px;
-      @include sm{
+    .kamome-button {
+      margin-left: 50px;
+      @include sm {
         margin-left: 0px;
       }
     }
     .kamome-button-image {
       width: 70px;
       height: auto;
-      @include sm{
+      @include sm {
         width: 40px;
         height: auto;
       }

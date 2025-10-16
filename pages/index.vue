@@ -99,20 +99,20 @@ useHead({
 .page-container {
   display: flex;
   flex-direction: column;
+  .title {
+    max-width: 100%;
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: -100px;
+    @include md {
+      margin-bottom: -5vh;
+    }
+  }
   align-items: center;
   text-align: center;
 }
 
-.title {
-  max-width: 100%;
-  width: 1000px;
-  height: auto;
-  margin: 0 auto;
-  margin-bottom: -100px;
-  @include md {
-    margin-bottom: -5vh;
-  }
-}
 
 .dates {
   width: 80%;

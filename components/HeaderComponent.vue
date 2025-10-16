@@ -23,6 +23,14 @@ onMounted(() => {
     }
   });
 });
+import { ref } from 'vue'
+
+// ✅ 画像を確実にimport（これが一番安全！）
+import image1 from 'assets/images/kamome-button1.PNG'
+import image2 from 'assets/images/kamome-button2.PNG'
+
+// 初期状態（表示される画像）
+const currentImage = ref(image1)
 </script>
 
 <template>
@@ -36,6 +44,14 @@ onMounted(() => {
               class="header-img"
               alt="ロゴ"
             />
+          </NuxtLink>
+          <NuxtLink class="kamome-button" to="/kamome">
+            <img
+                :src="currentImage"
+                alt="かもめ"
+                @mouseover="currentImage = image2"
+                @mouseout="currentImage = image1"
+                class="kamome-button-image"/>
           </NuxtLink>
         </div>
         <div class="right">
@@ -208,6 +224,25 @@ onMounted(() => {
     }
   }
 
+  .left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .kamome-button{
+     margin-left: 50px;
+      @include sm{
+        margin-left: 0px;
+      }
+    }
+    .kamome-button-image {
+      width: 70px;
+      height: auto;
+      @include sm{
+        width: 40px;
+        height: auto;
+      }
+    }
+  }
   .right {
     display: flex;
     align-items: center;

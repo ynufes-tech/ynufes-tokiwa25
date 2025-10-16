@@ -198,7 +198,7 @@ const currentImage = ref(image1)
   backdrop-filter: blur(8px);
 
   @include md {
-    padding: 6px 22px 1px;
+    padding: 6px 5px 1px 10px;
   }
 
   @include sm {
@@ -229,6 +229,9 @@ const currentImage = ref(image1)
     justify-content: space-between;
     .kamome-button{
      margin-left: 50px;
+     @include lg{
+      margin-left: 10px;
+     }
       @include sm{
         margin-left: 0px;
       }
@@ -236,9 +239,11 @@ const currentImage = ref(image1)
     .kamome-button-image {
       width: 70px;
       height: auto;
+      @include lg{
+        width: 50px;
+      }
       @include sm{
         width: 35px;
-        height: auto;
       }
     }
   }
@@ -273,7 +278,9 @@ const currentImage = ref(image1)
       background-color: #333;
       margin: 0 12px;
       display: inline-block;
-
+      @include md{
+        margin:0 4px;
+      }
       @include sm {
         margin: 0 2px;
       }

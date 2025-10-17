@@ -12,7 +12,7 @@ useHead({
     <PageTitle title="パンフレット紹介" />
     <div class="contents-wrapper">
       <img
-        src="~/assets/images/poster.webp"
+        src="~/assets/images/pamphlet-tokiwa25.webp"
         alt="パンフレット画像"
         class="pamphlet-image"
       />
@@ -21,12 +21,11 @@ useHead({
           <p>下のボタンから電子版パンフレットをダウンロードいただけます。</p>
         </div>
         <div class="download-button normal">
-          <p>通常版(00.0MB)</p>
-          <link-button link="#" text="ダウンロード"></link-button>
-        </div>
-        <div class="download-button light">
-          <p>軽量版(00.0MB)</p>
-          <link-button link="#" text="ダウンロード"></link-button>
+          <p>(36.4MB)</p>
+          <link-button
+            link="https://storage.googleapis.com/tokiwa25-assets/pamphlet/tokiwa25-pamphlet.pdf"
+            text="ダウンロード"
+          ></link-button>
         </div>
       </div>
     </div>

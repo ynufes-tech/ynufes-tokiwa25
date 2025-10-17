@@ -26,7 +26,7 @@ onMounted(() => {
 import { ref } from 'vue'
 
 // ✅ 画像を確実にimport（これが一番安全！）
-import image1 from 'assets/images/kamome-button1.PNG'
+import image1 from 'assets/images/kamome-button3.PNG'
 import image2 from 'assets/images/kamome-button2.PNG'
 
 // 初期状態（表示される画像）

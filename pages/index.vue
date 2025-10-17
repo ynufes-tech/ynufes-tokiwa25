@@ -19,7 +19,7 @@ useHead({
   <div class="page-root">
     <div class="page-container">
       <img src="~/assets/images/top-title.svg" alt="title" class="title" />
-      <img src="~/assets/images/dates.svg" class="dates" alt="dates" />
+      <img src="../assets/images/dates.svg" class="dates" alt="dates" />
       <Bunners />
       <div class="timer">
         <img

@@ -20,7 +20,7 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
 
 <template>
   <div class="event-card">
-    <NuxtLink :to="`/events/${eventData.id}`">
+    <NuxtLink :to="`/events/${eventData.id}`" class="card-link">
       <img
         :src="`https://storage.ynu-fes.yokohama/images/icons/${eventData.id}.webp`"
         alt="event-img"
@@ -32,7 +32,7 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
           }
         "
       />
-    </NuxtLink>
+    
     <div class="details">
       <p
         class="event-title"
@@ -71,6 +71,7 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
         </div>
       </div>
     </div>
+    </NuxtLink>
   </div>
 </template>
 
@@ -84,6 +85,10 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
   color: black;
   background-color: #fbefdea8;
   border-radius: 0 0 30px 30px;
+  .card-link{
+    text-decoration: none;
+    color:black;
+  }
   .icon-img {
     width: 100%;
     margin: 0;

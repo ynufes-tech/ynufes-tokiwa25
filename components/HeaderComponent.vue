@@ -23,14 +23,14 @@ onMounted(() => {
     }
   });
 });
-import { ref } from 'vue'
+import { ref } from "vue";
 
 // ✅ 画像を確実にimport（これが一番安全！）
-import image1 from 'assets/images/kamome-button1.PNG'
-import image2 from 'assets/images/kamome-button2.PNG'
+import image1 from "assets/images/kamome-button1.PNG";
+import image2 from "assets/images/kamome-button2.PNG";
 
 // 初期状態（表示される画像）
-const currentImage = ref(image1)
+const currentImage = ref(image1);
 </script>
 
 <template>
@@ -47,11 +47,12 @@ const currentImage = ref(image1)
           </NuxtLink>
           <NuxtLink class="kamome-button" to="/kamome">
             <img
-                :src="currentImage"
-                alt="かもめ"
-                @mouseover="currentImage = image2"
-                @mouseout="currentImage = image1"
-                class="kamome-button-image"/>
+              :src="currentImage"
+              alt="かもめ"
+              @mouseover="currentImage = image2"
+              @mouseout="currentImage = image1"
+              class="kamome-button-image"
+            />
           </NuxtLink>
         </div>
         <div class="right">
@@ -80,6 +81,14 @@ const currentImage = ref(image1)
                 />
                 キャンパスマップ</NuxtLink
               >
+              <NuxtLink to="/pamphlet" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                パンフレット</NuxtLink
+              >
               <NuxtLink to="/access" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
@@ -96,6 +105,14 @@ const currentImage = ref(image1)
                 />
                 お問い合わせ</NuxtLink
               >
+              <NuxtLink to="/faq" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                よくあるご質問</NuxtLink
+              >
               <NuxtLink to="/about-us" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
@@ -104,14 +121,14 @@ const currentImage = ref(image1)
                 />
                 大学祭実行委員会について</NuxtLink
               >
-              <!-- <NuxtLink to="/sponsors" class="dropdown-item">
+              <NuxtLink to="/sponsors" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
                   alt="momiji"
                   class="momiji"
                 />
                 ご協賛企業一覧</NuxtLink
-              > -->
+              >
             </div>
           </div>
 
@@ -156,14 +173,22 @@ const currentImage = ref(image1)
                 />
                 本部企画一覧</NuxtLink
               >
-              <!-- <NuxtLink to="/schedule" class="dropdown-item">
+              <NuxtLink to="/schedule" class="dropdown-item">
                 <img
                   src="~/assets/images/momiji.svg"
                   alt="momiji"
                   class="momiji"
                 />
                 タイムスケジュール</NuxtLink
-              > -->
+              >
+              <NuxtLink to="/contest" class="dropdown-item idol">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                企画コンテスト</NuxtLink
+              >
             </div>
           </div>
 
@@ -223,7 +248,7 @@ const currentImage = ref(image1)
     }
   }
 
-  .left{
+  .left {
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -42,22 +42,28 @@ useHead({
         <TopPageLinkL class="link" title="idol" jaTitle="アイドルステージ" />
         <TopPageLinkR class="link" title="guest" jaTitle="ゲスト" />
         <TopPageLinkL class="link" title="events" jaTitle="企画団体一覧" />
-        <!-- <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" /> -->
-        <TopPageLinkR class="link" title="news" jaTitle="おしらせ" />
-        <!-- <TopPageLinkL class="link" title="schedule" jaTitle="タイムスケジュール" /> -->
-        <TopPageLinkR class="link" title="map" jaTitle="キャンパスマップ" />
-        <TopPageLinkL class="link" title="about" jaTitle="常盤祭について" />
+        <TopPageLinkR class="link" title="pamphlet" jaTitle="パンフレット" />
+        <TopPageLinkL class="link" title="news" jaTitle="おしらせ" />
         <TopPageLinkR
+          class="link"
+          title="schedule"
+          jaTitle="タイムスケジュール"
+        />
+        <TopPageLinkL class="link" title="map" jaTitle="キャンパスマップ" />
+        <TopPageLinkR class="link" title="about" jaTitle="常盤祭について" />
+        <TopPageLinkL
           class="link"
           title="access"
           jaTitle="大学までのアクセス"
         />
-        <TopPageLinkL class="link" title="contact" jaTitle="お問い合わせ" />
+        <TopPageLinkR class="link" title="contact" jaTitle="お問い合わせ" />
+        <TopPageLinkL class="link" title="faq" jaTitle="よくあるご質問" />
         <TopPageLinkR
           class="link"
           title="about-us"
           jaTitle="大学祭実行委員会について"
         />
+        <TopPageLinkL class="link" title="sponsors" jaTitle="ご協賛企業一覧" />
       </div>
       <div class="caution">
         <p class="caution-title">注意事項</p>
@@ -112,7 +118,6 @@ useHead({
   align-items: center;
   text-align: center;
 }
-
 
 .dates {
   width: 80%;

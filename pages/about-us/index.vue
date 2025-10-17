@@ -27,29 +27,30 @@ useHead({
         </p>
       </div>
       <div class="box2">
-        <!--        <div class="chairman" id="chairman">-->
-        <!--          <div class="name_wrapper">-->
+        <div class="chairman" id="chairman">
+          <div class="name_wrapper">
+            <div class="name">
+              <img src="~/assets/images/momiji.svg" class="momiji" alt="momiji" />
+              <p>実行委員長挨拶</p>
+            </div>
+          </div>
+          <ContentBox id="contentbox">
+            <p class="sentence">
+              この度は、2025年度常盤祭公式ウェブサイトをご覧いただき誠にありがとうございます。<br /><br />
 
-        <!--            <div class="name">-->
-        <!--              <img-->
-        <!--                  src="~/assets/images/momiji.svg"-->
-        <!--                  alt="momiji"-->
-        <!--              >-->
-        <!--              <p>実行委員長挨拶</p>-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--          <ContentBox id="contentbox">-->
-        <!--            <p>-->
-        <!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
-        <!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
-        <!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
-        <!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
-        <!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
-        <!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力-->
-        <!--              ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキストを入力ここにテキスト-->
-        <!--            </p>-->
-        <!--          </ContentBox>-->
-        <!--        </div>-->
+              はじめに、25常盤祭の開催にあたり、企画団体の皆様、地域並びに大学関係者の皆様、そしてご協賛賜りました企業の皆様のお力添えにより、無事に開催することができました。ここに厚く御礼申し上げます。<br /><br />
+
+              さて、今年度の常盤祭のテーマは『紅陽』です。秋が深まるこの時節、晴れ渡る空の下、皆様の活気に満ち溢れる常盤祭が開催できるように思いを込めたテーマになっています。横浜国立大学ならではの彩りを、"全身で感じていただける"ような内容としてご用意いたしますので、お楽しみください。<br /><br />
+
+              常盤祭は、清陵祭に比べてより規模の大きな大学祭となります。対面大学祭が再開されてから４年目となり、より充実した個性的な大学祭を目標に、私たちなりのこだわりを随所に施しました。
+              キャンパスにお越しいただく皆様が、笑顔に満ちた時間を過ごせるような場を提供いたします。実行委員会一同、皆様のご来場をお待ちしております。<br />
+            </p>
+            <img
+              class="sign"
+              src="assets/images/about-us-picture/sign-yoko.png"
+            />
+          </ContentBox>
+        </div>
         <div class="department" :id="'peacepreservation'">
           <div class="about-nm">
             <div class="set">
@@ -64,7 +65,7 @@ useHead({
                 </div>
               </div>
               <ContentBox id="contentbox">
-                <p>
+                <p class="department-explain">
                   会場部は、来場者の皆さまに安心して大学祭を楽しんでいただけるよう、会場の設営や、当日の巡回・パトロールなどを行っています。
                   当日、何かお困りのことがありましたら、どうぞお気軽にお声がけください！！
                 </p>
@@ -106,7 +107,7 @@ useHead({
                 </div>
               </div>
               <ContentBox id="contentbox">
-                <p>
+                <p class="department-explain">
                   企画部は、学祭で何をするかをゼロから考え、実施する部局です。毎週の会議で来場者が楽しめる企画を練り、
                   花火の打ち上げや外部ゲストの招待など、本部企画全体に関わる業務を担っています。
                 </p>
@@ -128,7 +129,7 @@ useHead({
                 </div>
               </div>
               <ContentBox id="contentbox">
-                <p>
+                <p class="department-explain">
                   技術部は、今皆さんが見ているこのホームページを作成している部局です！
                   見やすく使いやすいホームページを作成するために、各大学祭ごとに１からデザインを考え、
                   プログラミングで実装をしています。様々なコンテンツを載せておりますので、ぜひご覧ください！
@@ -171,7 +172,7 @@ useHead({
                 </div>
               </div>
               <ContentBox id="contentbox">
-                <p>
+                <p class="department-explain">
                   経理部は、大学祭運営の根幹である予算の管理や決算といったお金に関する重要な役割を担っています！
                   大学祭当日に大きな活動を行う部局ではありませんが、準備の段階から終了後の振り返りまで深く関わり、全体を支え続けています！！
                 </p>
@@ -193,7 +194,7 @@ useHead({
                 </div>
               </div>
               <ContentBox id="contentbox">
-                <p>
+                <p class="department-explain">
                   総務部は、参加団体の皆様との窓口となる部局です。具体的には、説明会や企画受付、企画団体総会などの運営等を行います。
                   また、大学や区との連携、当日の見回りや落し物の管理など、事務から現場まで幅広く執り行っております。
                   本年度も安全な大学祭の運営を目指して活動しております。
@@ -236,7 +237,7 @@ useHead({
                 </div>
               </div>
               <ContentBox id="contentbox">
-                <p>
+                <p class="department-explain">
                   物品部は、団体さんが当日使用するテントや電子機器、プロパン等のレンタルを担当する部局です！
                   当日スムーズに企画を行えるようにサポートするべく、レンタル企業さんとの話し合いや仲介を行っています！
                   裏方的な仕事が多いですが、学祭の縁の下の力持ちです！
@@ -310,7 +311,10 @@ useHead({
     padding: 0 0 10vh;
   }
 }
-
+.sign {
+  width: 100%;
+  margin: 20px 0;
+}
 .box1 {
   margin-top: 10vh;
   @include md {
@@ -336,6 +340,17 @@ useHead({
 
 .chairman {
   margin-bottom: 23vh;
+  margin-top: 10vh;
+}
+
+.sentence {
+  text-align: left;
+  @include md {
+    font-size: 15px;
+  }
+  @include sm {
+    font-size: 13px;
+  }
 }
 
 .department {
@@ -347,23 +362,36 @@ useHead({
 
 .name_wrapper {
   display: flex;
+  @include lg{
+    margin-bottom: 15px;
+  }
 }
 
 .momiji {
+  @include md{
+    margin-left: 20px;
+  }
   @include sm {
     width: 70px;
-    height: 70px;
+    height: auto;
   }
 }
 
 .name {
   display: flex;
   align-items: center;
-
   p {
     font-size: 40px;
     @include md {
       font-size: 28px;
+    }
+  }
+  img {
+    @include xl {
+      width: 6vw;
+    }
+    @include lg {
+      width: 9vw;
     }
   }
 }
@@ -445,6 +473,15 @@ useHead({
   margin-left: 200px;
   @include sm {
     margin-left: 100px;
+  }
+}
+
+.department-explain {
+  @include md {
+    font-size: 15px;
+  }
+  @include sm {
+    font-size: 13px;
   }
 }
 </style>

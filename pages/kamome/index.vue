@@ -43,20 +43,37 @@ useHead({
             link="https://x.com/kamome_senpai"
             text="Xを見る">
         </LinkButton>
+        <img
+            class="under-kamome"
+            src="~/assets/images/kamome1.PNG">
         <LinkButton
             class="Linkbutton"
             link="https://instagram.com/kamome.senpai/"
             text="Instagramを見る">
         </LinkButton>
+        <img
+            class="under-kamome"
+            src="~/assets/images/kamome2.PNG">
         <LinkButton
             class="Linkbutton"
             link="https://store.line.me/stickershop/product/5064088/ja"
             text="LINEスタンプを見る">
         </LinkButton>
+        <img
+            class="under-kamome"
+            src="~/assets/images/kamome3.PNG">
         <LinkButton
             class="Linkbutton"
             link="https://store.line.me/emojishop/product/627239ae541f8a2a9a39da9c/ja?ref=Desktop"
             text="LINE絵文字を見る">
+        </LinkButton>
+        <img
+            class="under-kamome"
+            src="~/assets/images/kamome4.PNG">
+        <LinkButton
+            class="Linkbutton"
+            link="https://gakumado.mynavi.jp/contests/mascot"
+            text="投票しろもめ！！">https://store.
         </LinkButton>
       </div>
     </div>
@@ -160,7 +177,7 @@ useHead({
 }
 
 .Linkbutton{
-  margin: 70px;
+  margin: 50px;
   max-width: 320px;
   @include md{
     margin: 50px;
@@ -170,4 +187,16 @@ useHead({
   }
 }
 
+.under-kamome{
+  width: 140px;
+  height: auto;
+  @include md{
+    width: 100px;
+    height: auto;
+  }
+  @include sm{
+    width: 80px;
+    height: auto;
+  }
+}
 </style>

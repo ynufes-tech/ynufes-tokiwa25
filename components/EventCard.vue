@@ -32,8 +32,9 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
           }
         "
       />
-    
+    </NuxtLink>
     <div class="details">
+    <NuxtLink :to="`/events/${eventData.id}`" class="card-link">
       <p
         class="event-title"
         :class="{
@@ -45,6 +46,7 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
       </p>
       <p class="circle-name">{{ eventData.o_name }}</p>
       <p class="genre">{{ eventData.displayGenre }}</p>
+    </NuxtLink>
       <div class="bottom">
         <div class="place">
           <img
@@ -71,7 +73,6 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
         </div>
       </div>
     </div>
-    </NuxtLink>
   </div>
 </template>
 
@@ -88,6 +89,8 @@ const isFavorite = computed(() => props.favoriteEvents.includes(eventData.id));
   .card-link{
     text-decoration: none;
     color:black;
+    width: 100%;
+    height: 100%;
   }
   .icon-img {
     width: 100%;

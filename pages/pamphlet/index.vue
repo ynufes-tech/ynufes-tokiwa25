@@ -55,6 +55,9 @@ useHead({
     }
     .download-text p {
       font-size: 1.7rem;
+      @include sm {
+        font-size:1.2rem;
+      }
     }
     .download {
       width: 90%;
@@ -79,13 +82,16 @@ useHead({
 .download-text {
   text-align: center;
 }
-.download-button {
+.download-button p{
   text-align: center;
-  padding: 30px 0;
-  margin-bottom: 20px;
+  padding: 20px 0;
   width: 100%;
   max-width: 280px;
   align-items: center;
-  line-height: 2;
+  line-height: 1.5;
+  @include sm{
+    font-size:1.2rem;
+    padding-bottom: 5px;
+  }
 }
 </style>

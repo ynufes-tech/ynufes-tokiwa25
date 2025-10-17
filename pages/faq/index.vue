@@ -220,18 +220,24 @@ useHead({
   flex-direction: column;
   color: #eee;
   font-size: 24px;
+
 }
 .qa > p:nth-of-type(2) {
   color: #e00;
-  font-size:20px;
+  font-size:24px;
+
 }
 .content {
   display: flex;
   flex-direction: column;
   margin-left: 1vw;
+  @include sm{
+    font-size:20px;
 }
 .content > p:nth-of-type(1) {
   font-size: 24px;
+
+  }
 }
 .box {
   margin-bottom: 50px;

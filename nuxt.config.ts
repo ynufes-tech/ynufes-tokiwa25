@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         { property: 'keywords', content: '常盤祭,横浜国立大学,大学祭,文化祭,横国,2025,秋,学祭,イベント,横浜' },
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', href: '/favicon.svg' },
       ],
     },
   },

@@ -30,7 +30,7 @@ useHead({
         <div class="chairman" id="chairman">
           <div class="name_wrapper">
             <div class="name">
-              <img src="~/assets/images/momiji.svg" alt="momiji" />
+              <img src="~/assets/images/momiji.svg" class="momiji" alt="momiji" />
               <p>実行委員長挨拶</p>
             </div>
           </div>
@@ -362,12 +362,18 @@ useHead({
 
 .name_wrapper {
   display: flex;
+  @include lg{
+    margin-bottom: 15px;
+  }
 }
 
 .momiji {
+  @include md{
+    margin-left: 20px;
+  }
   @include sm {
     width: 70px;
-    height: 70px;
+    height: auto;
   }
 }
 

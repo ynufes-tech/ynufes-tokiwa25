@@ -73,8 +73,12 @@ useHead({
         <LinkButton
             class="Linkbutton"
             link="https://gakumado.mynavi.jp/contests/mascot"
-            text="投票しろもめ！！">https://store.
+            text="投票するもめ！！">
         </LinkButton>
+        <div class="vote-attention">
+          <p>※学園祭のキャラクター総選挙もめ！！<br>
+          投票してほしいもめ！！</p>
+        </div>
       </div>
     </div>
   </div>
@@ -197,6 +201,13 @@ useHead({
   @include sm{
     width: 80px;
     height: auto;
+  }
+}
+
+.vote-attention{
+  text-align: center;
+  @include sm{
+    font-size: 16px;
   }
 }
 </style>

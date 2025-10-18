@@ -1,58 +1,59 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import leafImageSrc from "~/assets/images/leaf.png"; // ← 一個上のassets/imagesからインポート
+import kamomeImageSrc from "~/assets/images/fallKamome.webp";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
-import type { Container } from '@tsparticles/engine'
+import type { Container } from "@tsparticles/engine";
 const route = useRoute();
 // リーフONOFF
 const showLeaf = computed(() => route.meta.hideHeader !== true);
+const ImageSrc = computed(() =>
+  route.meta.isKamome ? kamomeImageSrc : leafImageSrc
+);
 
-const options = {
+const options = computed(() => ({
   fullScreen: {
-    enable: false, // ← これで固定Canvasをやめる
+    enable: false,
   },
   background: {
-    color: "transparent", // 背景を透明にする
+    color: "transparent",
   },
   particles: {
-    number: { value: 20 }, // 粒子の数
+    number: { value: 20 },
     shape: {
       type: "image",
       options: {
-        image: { src: leafImageSrc }, // 透過PNGを指定
+        image: { src: ImageSrc.value }, // ← ここがリアクティブに変わる
       },
     },
-    size: { value: { min: 18, max: 28 } }, // 雪の粒の大きさ
+    size: { value: { min: 18, max: 28 } },
     opacity: { value: 0.7 },
     move: {
       enable: true,
-      speed: 3.0, // 落ちる速さ
+      speed: 3.0,
       direction: "bottom",
       random: true,
       straight: false,
-      outModes: { default: "out" }, // 下に行ったら消える
+      outModes: { default: "out" },
     },
     rotate: {
       value: { min: 0, max: 180 },
       direction: "random",
-      animation: { enable: true, speed: 2 }, // 回転速度
+      animation: { enable: true, speed: 2 },
     },
   },
   interactivity: {
     events: {
-      onClick: {
-        enable: true,
-        mode: "push", // ← これでクリックで粒子追加
-      },
+      onClick: { enable: true, mode: "push" },
       onHover: { enable: false },
     },
     modes: {
-      push: { quantity: 3 }, // クリックで5粒子追加
+      push: { quantity: 3 },
     },
   },
   detectRetina: true,
-};
+}));
 
 const onLoad = (container: Container) => {
   container.pause();
@@ -72,9 +73,15 @@ const scrollToTop = () => {
   <div class="layout-root">
     <HeaderComponent />
     <slot />
-      <div class="background-img" />
-      <NuxtParticles id="tsparticles" v-if="showLeaf" :options="options" @load="onLoad">
-      </NuxtParticles>
+    <div class="background-img" />
+    <NuxtParticles
+      id="tsparticles"
+      v-if="showLeaf"
+      :options="options"
+      @load="onLoad"
+      :key="route.fullPath"
+    >
+    </NuxtParticles>
     <!-- フローティングボタン -->
     <div class="page-top" @click="scrollToTop">
       <div class="arrow"></div>
@@ -144,7 +151,7 @@ body {
 #tsparticles {
   inset: 0;
   position: absolute;
-  z-index: -1;
+  z-index: -80;
   height: 100%;
   width: 100%;
   filter: blur(1.5px);

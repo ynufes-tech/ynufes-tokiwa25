@@ -15,7 +15,7 @@
   margin: 0 auto;
   width: 71.2%;
   background-color: #fbefde80;
-  border-radius: 50px;
+  border-radius: 25px;
   border: 1px solid #762626;
 }
 
@@ -35,7 +35,7 @@
   width: 100.2%;
   height: 100.2%;
   border: 1px solid #762626;
-  border-radius: 50px;
+  border-radius: 25px;
 }
 .component-root:after {
   z-index: -1;
@@ -47,6 +47,6 @@
   width: 100.8%;
   height: calc(100% + 5px);
   border: 1px solid #762626;
-  border-radius: 50px;
+  border-radius: 25px;
 }
 </style>

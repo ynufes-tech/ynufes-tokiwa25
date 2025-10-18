@@ -8,6 +8,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  target: {
+    type:String,
+    required: false,
+  }
 });
 </script>
 
@@ -18,7 +22,7 @@ const props = defineProps({
       <img src="@/assets/images/linkbutton_arrow_hover.svg" />
     </a>
 
-    <a :href="link" class="link">
+    <a :href="link" class="link" :target="target ?? '_self'">
       <p class="text">{{ text }}</p>
       <img src="@/assets/images/linkbutton_arrow.svg" />
     </a>

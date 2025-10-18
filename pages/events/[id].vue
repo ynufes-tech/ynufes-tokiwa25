@@ -131,6 +131,7 @@ function toggleFavo() {
   }
 }
 .title-box {
+  font-family: "Zen Old Mincho", sans-serif;
   text-align: center;
   padding: 0 20px;
   position: relative;
@@ -258,6 +259,7 @@ function toggleFavo() {
     }
   }
   .event-description {
+    font-family: "Zen Old Mincho", sans-serif;
     margin-top: 80px;
     text-align: center;
     padding: 20px 40px;
@@ -267,7 +269,7 @@ function toggleFavo() {
     }
   }
   .org-description {
-    font-family: "Kaisei Decol", serif;
+    font-family: "Zen Old Mincho", sans-serif;
     color: #fff;
     margin-top: 130px;
   }

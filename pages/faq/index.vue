@@ -207,7 +207,7 @@ useHead({
   align-items: start;
   padding: 10px;
   padding-left: 30px;
-  font-family: "Zen Old Mincho", serif;
+  font-family: "Zen Old Mincho", sans-serif;
 }
 .category {
   display: flex;

@@ -135,6 +135,7 @@ useHead({
 @use "@/assets/scss/_breakpoint.scss" as *;
 
 #contentbox {
+  font-family: "Zen Old Mincho", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;

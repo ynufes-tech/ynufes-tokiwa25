@@ -153,6 +153,7 @@ useHead({
 
 .about {
   color: #000000;
+  font-family: "Zen Old Mincho", sans-serif;
   font-size: 20px;
   padding: 30px 60px;
   display: flex;
@@ -235,6 +236,7 @@ useHead({
   }
   .script{
     padding:30px 5px;
+    font-family: "Zen Old Mincho", sans-serif;
     max-width: 700px;
     color: #000000;
     @include sm{
@@ -275,6 +277,7 @@ useHead({
 }
 .winner {
   color: #000000;
+  font-family: "Zen Old Mincho", sans-serif;
   padding: 25px;
   margin: 10px;
   min-width: 230px;

@@ -290,6 +290,7 @@ useHead({
 #contentbox {
   display: flex;
   flex-direction: column;
+  font-family: "Zen Old Mincho", sans-serif;
   align-items: center;
   text-align: center;
   padding: 50px;

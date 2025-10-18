@@ -210,6 +210,7 @@ useHead({
 }
 
 #contentbox {
+  font-family: "Zen Old Mincho", sans-serif;
   width: 1000px;
   max-width: 90vw;
   box-sizing: border-box;

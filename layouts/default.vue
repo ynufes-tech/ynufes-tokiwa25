@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import leafImageSrc from "~/assets/images/leaf.png"; // ← 一個上のassets/imagesからインポート
+import leafImageSrc from "~/assets/images/leaf.webp"; // ← 一個上のassets/imagesからインポート
 import kamomeImageSrc from "~/assets/images/fallKamome.webp";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
@@ -52,12 +52,15 @@ const options = computed(() => ({
       push: { quantity: 3 },
     },
   },
-  detectRetina: true,
+  detectRetina: false,
+  fpsLimit: 60,
+  pauseOnOutsideViewport: true,
+  pauseOnBlur:true,
 }));
 
 const onLoad = (container: Container) => {
   container.pause();
-  setTimeout(() => container.play(), 2000);
+  setTimeout(() => container.play(), 20);
 };
 
 // クリック時にトップへ戻る関数
@@ -155,6 +158,8 @@ body {
   height: 100%;
   width: 100%;
   filter: blur(1.5px);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .page-top {

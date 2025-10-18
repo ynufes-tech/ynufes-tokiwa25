@@ -39,5 +39,8 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-9JJ0DXRDH4'
-  }
+  },
+  particles: {
+    mode:'slim',
+  },
 })

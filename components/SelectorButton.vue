@@ -69,7 +69,7 @@ const selectVenue = (i: number) => {
       linear-gradient(to right, #fff050, #ffd633) border-box;
     color: #fff;
     cursor: pointer;
-    width: 250px;
+    width: 265px;
     text-align: left;
     position: relative;
     &::after {

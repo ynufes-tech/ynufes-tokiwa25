@@ -116,8 +116,9 @@ const scrollToTop = () => {
       <canvas id="canvas" v-if="showLeaf"></canvas>
     </div>
     <!-- フローティングボタン -->
-    <div class="floating-button" @click="scrollToTop">
-      <img src="~/assets/images/floating-button.svg" alt="Floating Button" />
+    <div class="page-top" @click="scrollToTop">
+      <div class="arrow"></div>
+      <p>Page Top</p>
     </div>
   </div>
 </template>
@@ -188,50 +189,105 @@ body {
   width: 100%;
   filter: blur(2px);
 }
-.floating-button {
-  position: fixed;
-  bottom: 2rem; // 下に余裕（余白）を持たせる
-  right: 2rem;  // 右に余裕を持たせる
-  width: 80px;  // 元画像が例えば160pxなら半分
-  height: 80px;
+//.floating-button {
+//  position: fixed;
+//  bottom: 2rem; // 下に余裕（余白）を持たせる
+//  right: 2rem;  // 右に余裕を持たせる
+//  width: 80px;  // 元画像が例えば160pxなら半分
+//  height: 80px;
+//
+//  img {
+//    width: 100%;
+//    height: 100%;
+//    object-fit: contain;
+//  }
+//}
+//.floating-button {
+//  position: fixed;
+//  bottom: 2rem;
+//  right: 2rem;
+//  width: 80px;
+//  height: 80px;
+//  z-index: 1000; // 他の要素より上に
+//
+//  img {
+//    width: 100%;
+//    height: 100%;
+//    object-fit: contain;
+//    pointer-events: auto; // 念のためクリックできるように
+//  }
+//  &:hover {
+//    transform: scale(1.1) translateY(-2px); // 拡大 + ちょっと上に
+//    cursor: pointer;
+//  }
+//}
+//.floating-button {
+//  transition: transform 0.2s ease;
+//
+//  &:hover {
+//    transform: scale(1.1); // 少し拡大
+//    cursor: pointer;       // マウスカーソルをポインターに
+//  }
+//  @include sm {
+//    width: 60px;
+//    height: 60px;
+//    bottom: 1.5rem;
+//    right: 1.5rem;
+//  }
+//}
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
-.floating-button {
+.page-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 80px;
-  height: 80px;
-  z-index: 1000; // 他の要素より上に
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: auto; // 念のためクリックできるように
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #f46b45, #fbc16a);
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Zen Old Mincho", sans-serif;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  @include md{
+    width: 80px;
+    height: 80px;
+    font-size: 15px;
   }
-  &:hover {
-    transform: scale(1.1) translateY(-2px); // 拡大 + ちょっと上に
-    cursor: pointer;
+  @include sm{
+    width: 70px;
+    height: 70px;
+    font-size: 13px;
   }
 }
-.floating-button {
-  transition: transform 0.2s ease;
 
-  &:hover {
-    transform: scale(1.1); // 少し拡大
-    cursor: pointer;       // マウスカーソルをポインターに
-  }
-  @include sm {
-    width: 60px;
-    height: 60px;
-    bottom: 1.5rem;
-    right: 1.5rem;
+/* ホバーで少し浮く効果 */
+.page-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 上矢印部分 */
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid white;
+  margin-bottom: 8px;
+  @include sm{
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    margin-bottom: 8px;
   }
 }
 </style>

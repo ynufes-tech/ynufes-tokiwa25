@@ -19,6 +19,7 @@
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
     "nuxt-gtag": "^4.0.0",
+    "nuxt-particles": "^0.3.0",
     "sass": "^1.89.2"
   }
 }

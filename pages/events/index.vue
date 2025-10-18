@@ -4,6 +4,7 @@ import PageTitle from "~/components/PageTitle.vue";
 import FilterButton from "~/components/EventFilterButton.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
 import { ref, computed, reactive, watch } from "vue";
+import Fuse from "fuse.js";
 useHead({
   title: "Events | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "団体企画一覧を掲載しています！" }],
@@ -24,6 +25,12 @@ const modePageTitle = computed(() =>
 const favoriteEvents = ref<string[]>([]); //お気に入り配列用意
 const events = ref<any[]>([]);
 const scrollY = ref(0); //スクロール量変数
+const search = ref("");
+const options = {
+  keys: ['e_name','o_name','e_description','o_description','displayGenre', 'place', 'displayPlace'],
+  threshold: 0.35,
+}
+let fuse = new Fuse([], options)
 
 onMounted(async () => {
   window.addEventListener("scroll", handleScroll, { passive: true }); //スクロールされたときscrollYを更新
@@ -237,8 +244,13 @@ const categoryALLON = () => {
   filter.displayALL = true;
 };
 
+const searchResults = computed(() => {
+  if (!search.value) return events.value
+  return fuse.search(search.value).map(r => r.item)
+})
+
 const filteredEvents = computed(() => {
-  return events.value.filter((event) => {
+  return searchResults.value.filter((event) => {
     const placeMatch = filter[event.place];
     const categoryMatch = filter[event.genre];
     if (onlyFavo.value) {
@@ -250,6 +262,8 @@ const filteredEvents = computed(() => {
   });
 });
 
+
+
 const handleScroll = () => {
   scrollY.value = window.scrollY;
 };
@@ -260,6 +274,9 @@ watch(
   },
   { deep: true }
 );
+watch(events, (newEvents) => {
+  fuse = new Fuse(newEvents, options)
+})
 </script>
 
 <template>
@@ -280,6 +297,7 @@ watch(
         </transition>
       </div>
       <div class="menu-body" :class="{ show: open }">
+        <input type="search" v-model="search" class="search-box" placeholder="検索"/>
         <div
           class="place-accordion accordion"
           :class="{ accordionOpen: accordion.place }"
@@ -719,6 +737,18 @@ watch(
     min-height: 301px;
     padding: 30px 10px;
     width: 100%;
+  }
+  .search-box {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    width: 70%;
+    height: 40px;
+    border-radius: 999999px;
+    padding: 0 30px;
+    border:none;
+    filter: drop-shadow(0 0 5px #00000050);
+    outline: none;
   }
   .ALL-toggle {
     display: flex;

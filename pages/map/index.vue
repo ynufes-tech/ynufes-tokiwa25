@@ -2,6 +2,8 @@
 import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButtonComponent from "~/components/LinkButtonComponent.vue";
+const appConfig = useAppConfig();
+const URL = appConfig.baseURL + "pdf/tokiwafes-map.pdf"
 useHead({
   title: "Map | 25常盤祭公式HP~紅陽~",
   meta: [{ name: "description", content: "キャンパスマップはこちら" }],
@@ -21,7 +23,7 @@ useHead({
     <div class="button">
     <LinkButtonComponent
         text="マップを見る"
-        link="/pdf/tokiwafes-map.pdf"
+        :link="URL"
         target="_blank"
     />
     </div>

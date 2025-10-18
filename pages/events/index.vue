@@ -136,6 +136,7 @@ const filter = reactive({
   dance: true,
   music: true,
   show: true,
+  officialALL: true,
   events: true,
   libraryEvents: true,
 });
@@ -189,6 +190,7 @@ const outdoorAll = computed(() => outdoorKeys.every((k) => filter[k]));
 const TBKAll = computed(() => TBKKeys.every((k) => filter[k]));
 const foodsAll = computed(() => foodsKeys.every((k) => filter[k]));
 const performanceAll = computed(() => performanceKeys.every((k) => filter[k]));
+const officialAll = computed(() => officialKeys.every((k) => filter[k]));
 
 const placeALLOFF = () => {
   indoorKeys.forEach((indoorKey) => {
@@ -580,6 +582,11 @@ watch(
                     :key="accordion.official"
                     v-if="accordion.official"
                   >
+                    <FilterButton
+                      text="すべて"
+                      :model-value="officialAll"
+                      @click="toggleAll(officialKeys, !officialAll)"
+                    />
                     <FilterButton text="イベント" v-model="filter.events" />
                     <FilterButton
                       text="図書館企画"

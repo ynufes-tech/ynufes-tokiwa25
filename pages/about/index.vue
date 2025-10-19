@@ -209,10 +209,10 @@ onMounted(() => {
 }
 table {
   border-collapse: collapse;
-  margin: 0 5%;
   position: relative;
   left: 10%;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   @include lg {
     left: 5%;
   }
@@ -228,6 +228,7 @@ td {
   padding: 5px 2em;
   font-size: 1em;
   text-align: center;
+  vertical-align: middle;
   @include lg {
     padding: 5px 1.4em;
   }
@@ -247,22 +248,31 @@ td {
   margin: 1.5em 5%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
 
   .campus {
     display: flex;
-    @include md {
+    margin-left:20%;
+    @media (max-width: 1200px) {
+      margin-left:10%;
+    }
+    @media (max-width: 900px) {
+      margin-left:5%;
+    }
+    @media (max-width: 830px) {
       display: block;
+      margin-left:20%;
+    }
+    @media (max-width: 650px) {
+      margin-left:10%;
+    }
+    @media (max-width: 500px) {
+      margin-left:1%;
     }
   }
 
   .button {
     margin-left: auto;
-    min-width: 120px;
-    @include md {
-      margin: 10px auto 0;
-    }
   }
 }
 

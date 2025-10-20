@@ -262,6 +262,7 @@ function toggleFavo() {
     text-align: center;
     padding: 20px 40px;
     line-height: 1.8rem;
+    white-space: pre-wrap;
     @include md {
       padding: 20px 15px;
     }
@@ -291,6 +292,7 @@ function toggleFavo() {
     padding: 20px 40px;
     margin-top: 10px;
     line-height: 1.8rem;
+    white-space: pre-wrap;
     @include md {
       padding: 20px 15px;
     }

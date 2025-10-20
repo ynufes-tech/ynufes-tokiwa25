@@ -56,46 +56,32 @@ onMounted(() => {
     <div>
       <ContentBox>
         <div class="container">
-          <div class="box">
-            <table>
-              <tr>
-                <td>2025</td>
-                <td>10/31</td>
-                <td>
-                  <img
-                    src="~/assets/images/fri.svg"
-                    alt="金"
-                    class="day-icon"
-                  />
-                </td>
-                <td>13:00~20:30</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>11/1</td>
-                <td>
-                  <img
-                    src="~/assets/images/sat.svg"
-                    alt="土"
-                    class="day-icon"
-                  />
-                </td>
-                <td>9:00~20:30</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>11/2</td>
-                <td>
-                  <img
-                    src="~/assets/images/sun.svg"
-                    alt="日"
-                    class="day-icon"
-                  />
-                </td>
-                <td>9:00~15:00</td>
-              </tr>
-            </table>
-          </div>
+          <table>
+            <tr>
+              <td>2025</td>
+              <td>10/31</td>
+              <td>
+                <img src="~/assets/images/fri.svg" alt="金" class="day-icon" />
+              </td>
+              <td>13:00~20:30</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>11/1</td>
+              <td>
+                <img src="~/assets/images/sat.svg" alt="土" class="day-icon" />
+              </td>
+              <td>9:00~20:30</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>11/2</td>
+              <td>
+                <img src="~/assets/images/sun.svg" alt="日" class="day-icon" />
+              </td>
+              <td>9:00~15:00</td>
+            </tr>
+          </table>
         </div>
       </ContentBox>
     </div>
@@ -202,24 +188,14 @@ onMounted(() => {
 }
 
 .container {
-  margin: 1.5em 5%;
-  @include md {
-    margin: 0.5em 1%;
-  }
+  width: fit-content;
+  padding: 20px 0;
+  width: 100%;
 }
 table {
   border-collapse: collapse;
-  margin: 0 5%;
   position: relative;
-  left: 10%;
-  text-align: center;
-  @include lg {
-    left: 5%;
-  }
-  @include md {
-    margin: 30px 4%;
-    left: 1%;
-  }
+  margin:0 auto;
 }
 tr {
   font-size: clamp(16px, 5vw, 20px);
@@ -228,6 +204,7 @@ td {
   padding: 5px 2em;
   font-size: 1em;
   text-align: center;
+  vertical-align: middle;
   @include lg {
     padding: 5px 1.4em;
   }
@@ -247,22 +224,31 @@ td {
   margin: 1.5em 5%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
 
   .campus {
     display: flex;
-    @include md {
+    margin-left: 20%;
+    @media (max-width: 1200px) {
+      margin-left: 10%;
+    }
+    @media (max-width: 900px) {
+      margin-left: 5%;
+    }
+    @media (max-width: 830px) {
       display: block;
+      margin-left: 20%;
+    }
+    @media (max-width: 650px) {
+      margin-left: 10%;
+    }
+    @media (max-width: 500px) {
+      margin-left: 1%;
     }
   }
 
   .button {
     margin-left: auto;
-    min-width: 120px;
-    @include md {
-      margin: 10px auto 0;
-    }
   }
 }
 

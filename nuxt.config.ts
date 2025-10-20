@@ -26,7 +26,9 @@ export default defineNuxtConfig({
     '@/assets/css/reset.css'
   ],
   modules: [
-    '@nuxtjs/google-fonts', 'nuxt-gtag'
+    '@nuxtjs/google-fonts',
+    'nuxt-gtag',
+    'nuxt-particles',
   ],
   googleFonts: {
     families: {
@@ -37,5 +39,8 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-9JJ0DXRDH4'
-  }
+  },
+  particles: {
+    mode:'slim',
+  },
 })

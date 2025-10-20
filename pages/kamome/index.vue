@@ -8,6 +8,9 @@ useHead({
     { name: "description", content: "カモメ先輩の情報を掲載しています。" },
   ],
 });
+definePageMeta({
+  isKamome:true,
+});
 </script>
 
 <template>

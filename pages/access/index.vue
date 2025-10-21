@@ -26,7 +26,9 @@ useHead({
         class="google-map"
       ></iframe>
       <p>
-        横浜市営地下鉄ブルーライン 「三ッ沢上町駅」より<br />徒歩約16分<br />↓クリックで別タブで開きます。
+        横浜市営地下鉄ブルーライン 「三ッ沢上町駅」より<br />徒歩約16分
+        <span class="click">↓クリックで別タブで開きます。</span>
+        <span class="tap">↓タップで別タブで開きます。</span>
       </p>
       <a
         href="images/maps/seimon.svg"
@@ -45,7 +47,9 @@ useHead({
         link="https://www.ynu.ac.jp/access/train_front.html"
       />
       <p>
-        相鉄本線 「和田町駅」より<br />徒歩約20分<br />↓クリックで別タブで開きます。
+        相鉄本線 「和田町駅」より<br />徒歩約20分
+        <span class="click">↓クリックで別タブで開きます。</span>
+        <span class="tap">↓タップで別タブで開きます。</span>
       </p>
       <a
         href="images/maps/minamimon.svg"
@@ -66,7 +70,8 @@ useHead({
       <p>
         相鉄新横浜線 「羽沢横浜国大駅」より<br />徒歩約15分<br/>
         <span class="attention">*近隣住民の皆様のご迷惑とならないよう、ご来場に際しては大学推奨ルートでの来場にご協力ください。</span>
-        <br />↓クリックで別タブで開きます。
+        <span class="click">↓クリックで別タブで開きます。</span>
+        <span class="tap">↓タップで別タブで開きます。</span>
       </p>
       <a
         href="images/maps/kitamon.svg"
@@ -145,4 +150,17 @@ useHead({
   }
 }
 
+.click{
+  display: block;
+  @include md{
+    display: none;
+  }
+}
+
+.tap{
+  display: none;
+  @include md{
+    display: block;
+  }
+}
 </style>

@@ -99,6 +99,9 @@ useHead({
   text-align: center;
   padding: 0 5px;
   padding-bottom: 100px;
+  @include sm{
+    padding-bottom: 40px;
+  }
   p {
     margin: 50px 0;
     margin-top: 100px;
@@ -110,9 +113,6 @@ useHead({
     }
     @include sm{
       margin: 40px 0px 0px;
-    }
-    @include sm{
-      padding-bottom: 40px;
     }
   }
   .google-map {

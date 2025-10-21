@@ -5,6 +5,16 @@ import SelectorButton from "~/components/SelectorButton.vue";
 import scheduleData from "~/public/schedule/scheduleData.json"; // JSON読み込み
 import { ref, computed } from "vue";
 
+useHead({
+  title: "Schedule | 25常盤祭公式HP~紅陽~",
+  meta: [
+    {
+      name: "description",
+      content: "ダンスや演奏などのスケジュールはこちらから！",
+    },
+  ],
+});
+
 const dates = scheduleData.dates;
 const selectedDate = ref(dates[0].value);
 const selectedVenue = ref(0);

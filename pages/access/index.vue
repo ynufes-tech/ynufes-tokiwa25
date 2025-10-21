@@ -99,6 +99,9 @@ useHead({
   text-align: center;
   padding: 0 5px;
   padding-bottom: 100px;
+  @include sm{
+    padding-bottom: 40px;
+  }
   p {
     margin: 50px 0;
     margin-top: 100px;
@@ -107,6 +110,9 @@ useHead({
     @include md {
       font-size: 1rem;
       margin-top: 50px;
+    }
+    @include sm{
+      margin: 40px 0px 0px;
     }
   }
   .google-map {
@@ -117,6 +123,9 @@ useHead({
   .LinkButton {
     max-width: 90%;
     margin: 30px 0;
+    @include sm{
+      margin: 10px 0;
+    }
   }
   img {
     width: 1000px;

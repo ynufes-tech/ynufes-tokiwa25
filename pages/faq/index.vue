@@ -122,7 +122,7 @@ useHead({
           <div class="category">
             <div class="qa">
               <p>Q7</p>
-              <p>A7</p>
+              <p class="A7">A7</p>
             </div>
             <div class="content">
               <p>常盤祭期間中、生協や食堂は使える？</p>
@@ -173,7 +173,7 @@ useHead({
       <div class="category">
         <div class="qa">
           <p>Q10</p>
-          <p>A10</p>
+          <p class="A10">A10</p>
         </div>
         <div class="content">
           <p>来場者から迷惑行為を受けて困ったらどうすればいい？</p>
@@ -220,12 +220,23 @@ useHead({
   flex-direction: column;
   color: #eee;
   font-size: 24px;
-
 }
 .qa > p:nth-of-type(2) {
   color: #e00;
   font-size:24px;
-
+}
+.A10{
+  @media (max-width: 780px) and (min-width: 391px) {
+    margin-top: 15px;
+  }
+  @media (max-width: 390px) {
+    margin-top: 30px;
+  }
+}
+.A7{
+  @media (max-width: 465px) {
+    margin-top: 10px;
+  }
 }
 .content {
   display: flex;

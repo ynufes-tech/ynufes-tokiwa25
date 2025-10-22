@@ -86,7 +86,7 @@ useHead({
          <div class="cate1">
            <p>食べ物部門</p>
            <ContentBox class="winner">
-             <div class="name">
+             <div class="name2">
                <p>鶏白湯トマト</p>
              </div>
              <br>
@@ -104,7 +104,7 @@ useHead({
                   わかばのライブ</p>
               </div>
               <br>
-              <div class="owner">
+              <div class="owner2">
                 <p>お笑いサークルわかば</p>
               </div>
             </ContentBox>
@@ -117,7 +117,7 @@ useHead({
                   謎解きゲーム！</p>
               </div>
               <br>
-              <div class="owner">
+              <div class="owner2">
                 <p>謎解きサークルWHYNU</p>
               </div>
             </ContentBox >
@@ -299,9 +299,35 @@ useHead({
     }
   }
 
+  .name2{
+    font-size: 29px;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    @include md{
+      font-size: 25px;
+    }
+    @include sm {
+      font-size: 20px;
+      margin-left: 0px;
+    }
+  }
+
   .owner {
     font-size: 20px;
     text-align: center;
+    @include md {
+      font-size: 16px;
+      @include sm {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .owner2 {
+    font-size: 20px;
+    text-align: center;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
     @include md {
       font-size: 16px;
       @include sm {

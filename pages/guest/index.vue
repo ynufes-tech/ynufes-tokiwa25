@@ -39,7 +39,8 @@ useHead({
           </div>
         </div>
         <div class="about">
-          <div class="explanation sub-title">
+          <div class="sub-title">
+            <img src="/assets/images/momiji.svg" alt="紅葉" class="momiji" />
             <p>企画説明</p>
           </div>
           <ContentBox id="contentbox" class="brief">
@@ -91,7 +92,7 @@ useHead({
           <img src="/assets/images/momiji.svg" alt="紅葉" class="momiji" />
           <p>注意事項</p>
         </div>
-        <p>
+        <p class="explanation">
           ※1
           出演者・企画内容について、予告なく変更・中止になる場合がございます。予めご了承くださいませ。<br />
           ※2 中止の場合、チケットに関しまして、返金対応いたします。<br />
@@ -248,7 +249,7 @@ useHead({
 .caution {
   margin-bottom: 80px;
 
-  p {
+  .explanation {
     font-size: 0.9em;
     margin-top: 20px;
     line-height: 1.4;

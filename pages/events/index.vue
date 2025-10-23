@@ -15,6 +15,7 @@ definePageMeta({
 const open = ref(false);
 const onlyFavo = ref(false);
 const popUpClear = ref(false);
+const popUpHtU = ref(false);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
 const filterFavo = computed(() =>
   onlyFavo.value ? "　全て表示　" : "お気に入り♡"
@@ -638,6 +639,7 @@ watch(events, (newEvents) => {
         @click="popUpClear = true"
       />
     </div>
+    
     <transition name="popUpClearAnime">
       <div class="favo-clear" v-show="popUpClear" @click="popUpClear = false">
         <!--Favo全削除用のポップアップ-->
@@ -653,6 +655,16 @@ watch(events, (newEvents) => {
         </div>
       </div>
     </transition>
+
+    <transition name="popUpClearAnime">
+      <div class="htu" v-show="popUpClear" @click="popUpHtU = false">
+        <!--使い方のポップアップ-->
+        <div class="htu-window">
+          <img src="~/assets/images/HtU.webp" alt="">
+        </div>
+      </div>
+    </transition>
+
   </div>
 </template>
 

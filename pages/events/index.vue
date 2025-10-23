@@ -636,10 +636,10 @@ watch(events, (newEvents) => {
       <LinkButton
         text="お気に入りを削除する"
         v-if="favoriteEvents.length > 0"
-        @click="popUpClear = true"
+        @click="popUpHtU = true"
       />
     </div>
-    
+
     <transition name="popUpClearAnime">
       <div class="favo-clear" v-show="popUpClear" @click="popUpClear = false">
         <!--Favo全削除用のポップアップ-->
@@ -656,8 +656,8 @@ watch(events, (newEvents) => {
       </div>
     </transition>
 
-    <transition name="popUpClearAnime">
-      <div class="htu" v-show="popUpClear" @click="popUpHtU = false">
+    <transition name="popUpHtUAnime">
+      <div class="htu" v-show="popUpHtU" @click="popUpHtU = false">
         <!--使い方のポップアップ-->
         <div class="htu-window">
           <img src="~/assets/images/HtU.webp" alt="">
@@ -973,6 +973,19 @@ watch(events, (newEvents) => {
   opacity: 0;
   overflow: hidden;
   transform: translateX(-10px);
+}
+
+.popUpHtUAnime-enter-active,
+.popUpHtUAnime-leave-active {
+  transition: 0.3s ease;
+}
+.popUpHtUAnime-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.popUpHtUAnime-enter-from {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 .popUpClearAnime-enter-active,

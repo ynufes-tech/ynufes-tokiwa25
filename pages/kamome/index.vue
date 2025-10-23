@@ -20,7 +20,7 @@ definePageMeta({
       <div class="momesen">
         <img
             class="kamomesenpai"
-            src="/assets/images/momesen.webp">
+            src="/assets/images/momesen.svg">
       </div>
       <div class="profile">
         <h1>プロフィール</h1>

@@ -37,6 +37,27 @@ useHead({
           alt="countdownframe"
         />
       </div>
+      <div class="vote-buttons">
+        <NuxtLink class="to-contest-page" to="/contest">
+          <img
+            src="~/assets/images/eventonepj.webp"
+            alt="vote-button"
+            class="eventone-icon"
+          />
+        </NuxtLink>
+        <a
+          href="https://miscolle.com/ynu2025?fbclid=PAZXh0bgNhZW0CMTEAAae4nTJ1Z04B2Hwt-Wc8U5ttkd4eM5TzaNg3aOj6imgvTP34R2RNUfEa51Xlzw_aem_UlF5jJwxYTOJ6TZCnW_tCg"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="to-campus-contest-page"
+        >
+          <img
+            src="~/assets/images/campuscontest.webp"
+            alt="vote-button"
+            class="campuscon-icon"
+          />
+        </a>
+      </div>
       <div class="links">
         <TopPageLinkR class="link" title="official" jaTitle="本部企画一覧" />
         <TopPageLinkL class="link" title="idol" jaTitle="アイドルステージ" />
@@ -149,6 +170,46 @@ useHead({
   @include sm {
     top: 20%;
     width: 50%;
+  }
+}
+
+.vote-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10vw;
+  margin-top: 15vh;
+}
+
+.to-contest-page,
+.to-campus-contest-page {
+  box-shadow: 10px 4px 8px #d01a0a; // ボタンの影
+  &:hover {
+    transform: translateY(5px);
+    box-shadow: none;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+.eventone-icon {
+  width: 250px;
+  height: auto;
+  @include md {
+    width: 150px;
+  }
+  @include sm {
+    width: 110px;
+  }
+}
+
+.campuscon-icon {
+  width: 225px;
+  height: auto;
+  @include md {
+    width: 140px;
+  }
+  @include sm {
+    width: 100px;
   }
 }
 

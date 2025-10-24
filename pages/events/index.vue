@@ -649,14 +649,15 @@ watch(events, (newEvents) => {
         v-if="favoriteEvents.length > 0"
         @click="popUpClear = true"
       />
-      <LinkButton
-        text="使い方"
-        @click="popUpHtU = true"
-      />
+      <LinkButton text="使い方" @click="popUpHtU = true" />
     </div>
 
     <transition name="popUpClearAnime">
-      <div class="favo-clear" v-show="popUpClear" @click.self="popUpClear = false">
+      <div
+        class="favo-clear"
+        v-show="popUpClear"
+        @click.self="popUpClear = false"
+      >
         <!--Favo全削除用のポップアップ-->
         <div class="clear-window">
           <div class="clear-text">
@@ -677,6 +678,17 @@ watch(events, (newEvents) => {
         <div class="htu-window">
           <p class="htu-title">使い方</p>
           <img src="~/assets/images/HtU.webp" class="htu-img" alt="" />
+          <div class="htu-buttons">
+            <div class="prev htu-button">
+              <p>&lt;前へ</p>
+            </div>
+            <div class="next htu-button">
+              <p>次へ&gt;</p>
+            </div>
+          </div>
+          <div class="htu-close-btn" @click="popUpHtU = false">
+            <p>閉じる</p>
+          </div>
         </div>
       </div>
     </transition>
@@ -879,25 +891,64 @@ watch(events, (newEvents) => {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color:#FBEFDE;
+    background-color: #fbefde;
     border-radius: 10px;
     padding: 20px 5% 20px 5%;
     filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.3));
-    @include sm{
-      padding:10px 3%;
+    @include sm {
+      padding: 10px 3%;
     }
-    .htu-title{
-      font-family: 'Kaisei Decol',sans-serif;
-      font-size:35px;
+    .htu-title {
+      font-family: "Kaisei Decol", sans-serif;
+      font-size: 35px;
       margin-bottom: 20px;
-      @include sm{
-        font-size:30px;
-        margin-bottom:10px;
+      @include sm {
+        font-size: 30px;
+        margin-bottom: 10px;
       }
     }
     .htu-img {
       width: 325px;
       max-width: 80%;
+    }
+    .htu-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+      .htu-button {
+        border-radius: 9999px;
+        border: solid 1px #333;
+        background-color: white;
+        padding: 5px 15px;
+        user-select: none;
+        transition: 0.2s;
+        &:hover {
+          background-color: #333;
+          cursor: pointer;
+          color: white;
+          transition: 0.2s;
+        }
+      }
+    }
+    .htu-close-btn {
+      margin-top: 20px;
+      padding: 10px 0;
+      width: 50%;
+      text-align: center;
+      border-radius: 9999px;
+      background-color: white;
+      border: solid 1px #ff5050;
+      color: #ff5050;
+      transition: 0.2s;
+      &:hover {
+        color: white;
+        background-color: #ff5050;
+        transition: 0.2s;
+        cursor: pointer;
+        user-select: none;
+      }
     }
   }
 }

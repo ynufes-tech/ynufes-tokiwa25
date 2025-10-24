@@ -28,10 +28,18 @@ const events = ref<any[]>([]);
 const scrollY = ref(0); //スクロール量変数
 const search = ref("");
 const options = {
-  keys: ['e_name','o_name','e_description','o_description','displayGenre', 'place', 'displayPlace'],
+  keys: [
+    "e_name",
+    "o_name",
+    "e_description",
+    "o_description",
+    "displayGenre",
+    "place",
+    "displayPlace",
+  ],
   threshold: 0.35,
-}
-let fuse = new Fuse([], options)
+};
+let fuse = new Fuse([], options);
 
 onMounted(async () => {
   window.addEventListener("scroll", handleScroll, { passive: true }); //スクロールされたときscrollYを更新
@@ -248,9 +256,9 @@ const categoryALLON = () => {
 };
 
 const searchResults = computed(() => {
-  if (!search.value) return events.value
-  return fuse.search(search.value).map(r => r.item)
-})
+  if (!search.value) return events.value;
+  return fuse.search(search.value).map((r) => r.item);
+});
 
 const filteredEvents = computed(() => {
   return searchResults.value.filter((event) => {
@@ -265,8 +273,6 @@ const filteredEvents = computed(() => {
   });
 });
 
-
-
 const handleScroll = () => {
   scrollY.value = window.scrollY;
 };
@@ -278,8 +284,8 @@ watch(
   { deep: true }
 );
 watch(events, (newEvents) => {
-  fuse = new Fuse(newEvents, options)
-})
+  fuse = new Fuse(newEvents, options);
+});
 </script>
 
 <template>
@@ -300,7 +306,12 @@ watch(events, (newEvents) => {
         </transition>
       </div>
       <div class="menu-body" :class="{ show: open }">
-        <input type="search" v-model="search" class="search-box" placeholder="検索"/>
+        <input
+          type="search"
+          v-model="search"
+          class="search-box"
+          placeholder="検索"
+        />
         <div
           class="place-accordion accordion"
           :class="{ accordionOpen: accordion.place }"
@@ -636,12 +647,16 @@ watch(events, (newEvents) => {
       <LinkButton
         text="お気に入りを削除する"
         v-if="favoriteEvents.length > 0"
+        @click="popUpClear = true"
+      />
+      <LinkButton
+        text="使い方"
         @click="popUpHtU = true"
       />
     </div>
 
     <transition name="popUpClearAnime">
-      <div class="favo-clear" v-show="popUpClear" @click="popUpClear = false">
+      <div class="favo-clear" v-show="popUpClear" @click.self="popUpClear = false">
         <!--Favo全削除用のポップアップ-->
         <div class="clear-window">
           <div class="clear-text">
@@ -657,14 +672,14 @@ watch(events, (newEvents) => {
     </transition>
 
     <transition name="popUpHtUAnime">
-      <div class="htu" v-show="popUpHtU" @click="popUpHtU = false">
+      <div class="htu" v-show="popUpHtU" @click.self="popUpHtU = false">
         <!--使い方のポップアップ-->
         <div class="htu-window">
-          <img src="~/assets/images/HtU.webp" alt="">
+          <p class="htu-title">使い方</p>
+          <img src="~/assets/images/HtU.webp" class="htu-img" alt="" />
         </div>
       </div>
     </transition>
-
   </div>
 </template>
 
@@ -765,7 +780,7 @@ watch(events, (newEvents) => {
     height: 40px;
     border-radius: 999999px;
     padding: 0 30px;
-    border:none;
+    border: none;
     filter: drop-shadow(0 0 5px #00000050);
     outline: none;
   }
@@ -848,6 +863,43 @@ watch(events, (newEvents) => {
   margin-top: 50px;
   display: flex;
   justify-content: center;
+}
+
+.htu {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444444aa;
+  backdrop-filter: blur(15px);
+  .htu-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:#FBEFDE;
+    border-radius: 10px;
+    padding: 20px 5% 20px 5%;
+    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.3));
+    @include sm{
+      padding:10px 3%;
+    }
+    .htu-title{
+      font-family: 'Kaisei Decol',sans-serif;
+      font-size:35px;
+      margin-bottom: 20px;
+      @include sm{
+        font-size:30px;
+        margin-bottom:10px;
+      }
+    }
+    .htu-img {
+      width: 325px;
+      max-width: 80%;
+    }
+  }
 }
 
 .favo-clear {

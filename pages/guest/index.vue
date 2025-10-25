@@ -57,16 +57,16 @@ useHead({
           <img src="/assets/images/momiji.svg" alt="紅葉" class="momiji" />
           <p>日時</p>
         </div>
-        <p>2025年11月1日(土)</p>
-        <p>15:00~16:00</p>
-        <p>（開場 14:15 予定）</p>
+        <p class="detail">2025年11月1日(土)</p>
+        <p class="detail">15:00~16:00</p>
+        <p class="detail">（開場 14:15 予定）</p>
       </div>
       <div class="box">
         <div class="sub-title">
           <img src="/assets/images/momiji.svg" alt="紅葉" class="momiji" />
           <p>会場</p>
         </div>
-        <p>経営学部棟２号館109教室特設ステージ</p>
+        <p class="detail">経営学部棟２号館109教室特設ステージ</p>
       </div>
       <div class="box ticket-info">
         <div class="sub-title">
@@ -129,15 +129,14 @@ useHead({
   margin-right: 45px;
 
   .momiji {
-    width: 80px;
+    width: 60px;
     height: auto;
-    margin-right: 8px;
 
     @include md {
       width: 50px;
     }
     @include sm {
-      width: 30px;
+      width: 35px;
     }
   }
 
@@ -273,7 +272,7 @@ useHead({
     margin-top: 5rem;
   }
 
-  p {
+  .detail {
     margin-top: 8px;
     line-height: 1.6;
 

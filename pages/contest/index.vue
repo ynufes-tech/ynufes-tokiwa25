@@ -221,7 +221,7 @@ useHead({
       display: none;
     }
   }
-  .category-name{
+  .category-name {
     margin: 40px;
     p{
       font-size: 30px;
@@ -247,7 +247,7 @@ useHead({
 .under-box {
   justify-items: center;
   color: #ffffff;
-  margin-top: 15vh;
+  margin-top: 10vh;
 }
 
 .title{

@@ -223,7 +223,7 @@ useHead({
   }
   .category-name {
     margin: 40px;
-    p{
+    p {
       font-size: 30px;
       @include sm{
         font-size: 20px;

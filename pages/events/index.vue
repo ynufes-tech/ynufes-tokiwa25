@@ -16,6 +16,7 @@ const open = ref(false);
 const onlyFavo = ref(false);
 const popUpClear = ref(false);
 const popUpHtU = ref(false);
+const htuState = ref(1);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
 const filterFavo = computed(() =>
   onlyFavo.value ? "　全て表示　" : "お気に入り♡"
@@ -677,12 +678,42 @@ watch(events, (newEvents) => {
         <!--使い方のポップアップ-->
         <div class="htu-window">
           <p class="htu-title">使い方</p>
-          <img src="~/assets/images/HtU.webp" class="htu-img" alt="" />
+          <div class="htu-img">
+            <img src="~/assets/images/HtU.webp" class="htu-card-img" alt="" />
+            <img
+              src="~/assets/images/htu-hand.webp"
+              v-show="htuState == 1"
+              class="htu-hand"
+              alt=""
+            />
+            <transition name="htu-favoAnime">
+              <img
+                src="~/assets/images/favorite.svg"
+                v-show="htuState == 2"
+                class="htu-favo"
+                alt=""
+              />
+            </transition>
+          </div>
+          <p class="htu-detail">
+            {{ htuState === 1 ? "企画の詳細や団体の" : "お気に入りに登録すれば"
+            }}<span style="display: inline-block">{{
+              htuState === 1 ? "説明が見られるよ！" : "もう一度見られるよ！"
+            }}</span>
+          </p>
           <div class="htu-buttons">
-            <div class="prev htu-button">
+            <div
+              class="prev htu-button"
+              :class="{ active: htuState == 2 }"
+              @click="htuState -= 1"
+            >
               <p>&lt;前へ</p>
             </div>
-            <div class="next htu-button">
+            <div
+              class="next htu-button"
+              :class="{ active: htuState == 1 }"
+              @click="htuState += 1"
+            >
               <p>次へ&gt;</p>
             </div>
           </div>
@@ -893,8 +924,10 @@ watch(events, (newEvents) => {
     flex-direction: column;
     background-color: #fbefde;
     border-radius: 10px;
-    padding: 20px 5% 20px 5%;
+    padding: 20px 5%;
     filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.3));
+    max-width: 98%;
+    box-sizing: border-box;
     @include sm {
       padding: 10px 3%;
     }
@@ -907,9 +940,37 @@ watch(events, (newEvents) => {
         margin-bottom: 10px;
       }
     }
+    .htu-detail {
+      font-size: 18px;
+      margin: 20px 0px;
+      text-align: center;
+    }
     .htu-img {
       width: 325px;
       max-width: 80%;
+      position: relative;
+      .htu-card-img {
+        width: 100%;
+      }
+      .htu-hand {
+        position: absolute;
+        width: 100px;
+        top: 250px;
+        left: 100px;
+        animation-name: fuwa;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      .htu-favo {
+        position: absolute;
+        width: 30px;
+        bottom: 22px;
+        right: 2%;
+        @include sm {
+          bottom: 4.5vw;
+          right: 2%;
+        }
+      }
     }
     .htu-buttons {
       display: flex;
@@ -921,20 +982,24 @@ watch(events, (newEvents) => {
         border-radius: 9999px;
         border: solid 1px #333;
         background-color: white;
-        padding: 5px 15px;
+        padding: 3px 15px;
         user-select: none;
-        transition: 0.2s;
+        transition: 0.15s;
+        opacity: 0;
         &:hover {
           background-color: #333;
           cursor: pointer;
           color: white;
-          transition: 0.2s;
+          transition: 0.15s;
         }
+      }
+      .active {
+        opacity: 1;
       }
     }
     .htu-close-btn {
       margin-top: 20px;
-      padding: 10px 0;
+      padding: 3px 0;
       width: 50%;
       text-align: center;
       border-radius: 9999px;
@@ -1102,5 +1167,44 @@ watch(events, (newEvents) => {
 .popUpClearAnime-enter-from {
   opacity: 0;
   transform: translateY(-20px);
+}
+.htu-favoAnime-enter-active {
+  animation: popIn 0.3s forwards;
+}
+.htu-favoAnime-leave-active {
+  animation: popOut 0.2s forwards;
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fuwa {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 </style>

@@ -20,7 +20,7 @@ useHead({
       </div>
         <ContentBox>
           <div class="about">
-            最も来場者の皆さんを満足させるのはどの企画なのか…？<br>
+            常盤祭No.１の企画はどれだ⁉<br>
             <br>
             企画ONEプロジェクトでは、全ての企画を「食べ物部門」、「パフォーマンス部門」、「展示・販売・体験部門」の３部門に分けてそれぞれの部門でのNo.1を決定します！順位を決めるのは皆さんの1票！<br>
             <br>
@@ -55,7 +55,7 @@ useHead({
           <p>食べ物部門</p>
         </div>
         <ContentBox class="script">
-          各団体が持ち寄った最高の料理が大集合！<br class="kaigyo">
+          各団体による最高の模擬店が大集合！<br class="kaigyo">
           味はもちろん、見た目にまでこだわった料理をご堪能あれ！
         </ContentBox>
       </div>
@@ -211,7 +211,6 @@ useHead({
 .introduce{
   justify-items: center;
   font-size: 20px;
-  text-align: center;
   @include md{
     font-size: 18px;
   }
@@ -222,7 +221,8 @@ useHead({
     }
   }
   .category-name{
-    margin:40px;
+    margin-top:60px;
+    margin-bottom:20px;
     p{
       font-size: 30px;
       @include sm{
@@ -237,6 +237,9 @@ useHead({
     padding:30px 5px;
     max-width: 700px;
     color: #000000;
+    display: flex;
+    justify-content: center;
+    text-align: left;
     @include sm{
       padding: 30px 15px;
     }
@@ -247,7 +250,7 @@ useHead({
 .under-box {
   justify-items: center;
   color: #ffffff;
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 .title{

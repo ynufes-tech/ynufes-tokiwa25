@@ -13,17 +13,20 @@ useHead({
     <PageTitle title="相互リンク" />
     <ContentBox>
       <div class="explanation">
-        <p>他大学の学祭を開催日程順にご紹介します。</p>
+        <p>他大学の大学祭をご紹介いたします。</p>
       </div>
       <div class="university">
+        <div class="uni-name">
+          <p>東京理科大学 葛飾キャンパス</p>
+        </div>
         <LinkButton
-            class="LinkButton"
-            text="○○大学 ○○祭"
-            link=""
+          class="LinkButton"
+          text="葛飾地区理大祭"
+          link="https://katsufes.com/2025/"
         />
-        <p>開催日程：2025年○月○日(○)～○月○日(○)</p>
+        <p>開催日程：<br class="date-br" />11月22日(土)~11月23日(日)</p>
       </div>
-      <div class="university">
+      <!-- <div class="university">
         <LinkButton
             class="LinkButton"
             text="○○大学 ○○祭"
@@ -38,7 +41,7 @@ useHead({
             link=""
         />
         <p>開催日程：2025年○月○日(○)～○月○日(○)</p>
-      </div>
+      </div> -->
     </ContentBox>
   </div>
 </template>
@@ -50,24 +53,37 @@ useHead({
   text-align: center;
   font-size: 1.1em;
   @include md {
-    margin: 70px 4%;
-    font-size: 1rem;
-  }
-}
-
-.university-bottom,
-.university{
-  margin: 50px 8%;
-  p {
-    line-height: 2rem;
-  }
-  @include md {
     margin: 50px 4%;
     font-size: 1rem;
   }
 }
 
-.university-bottom{
-  margin-bottom: 100px;
+.uni-name {
+  margin-bottom: 15px;
+}
+
+.LinkButton {
+  margin-bottom: 15px;
+}
+
+.university {
+  margin: 50px 8%;
+  p {
+    line-height: 2rem;
+  }
+  @include md {
+    margin: 50px 7%;
+    font-size: 1rem;
+  }
+}
+
+.date-br {
+  display: none; // PCでは非表示
+}
+
+@include sm {
+  .date-br {
+    display: inline; // スマホで改行を有効化
+  }
 }
 </style>

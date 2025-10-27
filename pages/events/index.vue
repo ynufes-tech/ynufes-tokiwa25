@@ -108,6 +108,12 @@ function clearAllFavo() {
   popUpClear.value = false;
   onlyFavo.value = false;
 }
+
+function openHtu() {
+  htuState.value = 1;
+  popUpHtU.value = true;
+}
+
 //FilterButtonの状態管理
 //アコーディングメニューの状態管理
 const filter = reactive({
@@ -305,6 +311,10 @@ watch(events, (newEvents) => {
             {{ filterFavo }}
           </p>
         </transition>
+        <span class="separate-line"></span>
+        <div class="htu-tab" @click="openHtu">
+          <img src="~/assets/images/htu-icon.svg" alt="" />
+        </div>
       </div>
       <div class="menu-body" :class="{ show: open }">
         <input
@@ -650,7 +660,6 @@ watch(events, (newEvents) => {
         v-if="favoriteEvents.length > 0"
         @click="popUpClear = true"
       />
-      <LinkButton text="使い方" @click="popUpHtU = true" />
     </div>
 
     <transition name="popUpClearAnime">
@@ -696,7 +705,10 @@ watch(events, (newEvents) => {
             </transition>
           </div>
           <p class="htu-detail">
-            {{ htuState === 1 ? "企画ごとの詳細や団体の" : "お気に入りに登録すれば"
+            {{
+              htuState === 1
+                ? "企画ごとの詳細や団体の"
+                : "お気に入りに登録すれば"
             }}<span style="display: inline-block">{{
               htuState === 1 ? "説明が見られるよ！！" : "もう一度見られるよ！"
             }}</span>
@@ -705,14 +717,14 @@ watch(events, (newEvents) => {
             <div
               class="prev htu-button"
               :class="{ active: htuState == 2 }"
-              @click="htuState -= 1"
+              @click="htuState = 1"
             >
               <p>&lt;前へ</p>
             </div>
             <div
               class="next htu-button"
               :class="{ active: htuState == 1 }"
-              @click="htuState += 1"
+              @click="htuState = 2"
             >
               <p>次へ&gt;</p>
             </div>
@@ -787,6 +799,13 @@ watch(events, (newEvents) => {
     p {
       font-size: 22px;
     }
+  }
+}
+.htu-tab{
+  padding:0 5px;
+  cursor: pointer;
+  img{
+    width: 100%;
   }
 }
 .menu-tab.bodyShow {

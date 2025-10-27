@@ -84,6 +84,11 @@ onMounted(async () => {
     window.scrollTo({ top: lastScroll, behavior: "instant" });
   }, 10);
   console.log(lastScroll);
+
+  const hasAccessed = localStorage.getItem("hasAccessed");
+  if (!hasAccessed || hasAccessed == "0") {
+    openHtu();
+  }
 });
 
 onUnmounted(() => {
@@ -112,6 +117,7 @@ function clearAllFavo() {
 function openHtu() {
   htuState.value = 1;
   popUpHtU.value = true;
+  localStorage.setItem("hasAccessed", "1");
 }
 
 //FilterButtonの状態管理
@@ -801,10 +807,10 @@ watch(events, (newEvents) => {
     }
   }
 }
-.htu-tab{
-  padding:0 5px;
+.htu-tab {
+  padding: 0 5px;
   cursor: pointer;
-  img{
+  img {
     width: 100%;
   }
 }

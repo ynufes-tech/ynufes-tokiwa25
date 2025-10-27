@@ -696,9 +696,9 @@ watch(events, (newEvents) => {
             </transition>
           </div>
           <p class="htu-detail">
-            {{ htuState === 1 ? "企画の詳細や団体の" : "お気に入りに登録すれば"
+            {{ htuState === 1 ? "企画ごとの詳細や団体の" : "お気に入りに登録すれば"
             }}<span style="display: inline-block">{{
-              htuState === 1 ? "説明が見られるよ！" : "もう一度見られるよ！"
+              htuState === 1 ? "説明が見られるよ！！" : "もう一度見られるよ！"
             }}</span>
           </p>
           <div class="htu-buttons">
@@ -910,7 +910,7 @@ watch(events, (newEvents) => {
 
 .htu {
   position: fixed;
-  z-index: 10;
+  z-index: 1001;
   inset: 0;
   display: flex;
   justify-content: center;
@@ -941,7 +941,7 @@ watch(events, (newEvents) => {
       }
     }
     .htu-detail {
-      font-size: 18px;
+      font-size: 15px;
       margin: 20px 0px;
       text-align: center;
     }

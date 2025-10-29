@@ -334,7 +334,7 @@ useHead({
     padding: 0 20px;
   }
   @include sm {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 

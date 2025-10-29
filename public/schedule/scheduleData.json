@@ -6,6 +6,7 @@
       "timeRange": { "start": "13:00", "end": "20:30" },
       "venues": [
         "教育学部棟\n6・7号館の間",
+        "教育学部棟\n6号館の横",
         "学生センター横\nウッドデッキ",
         "経済・経営\n学部棟の間",
         "大学会館\n4Fホール",
@@ -14,16 +15,16 @@
         "都市科学部棟裏"
       ],
       "events": [
-        { "venue": 0, "title": "スタヨコプロジェクト", "subtitle": "販売", "start": "14:00", "end": "18:00" },
-        { "venue": 2, "title": "放送研究会 A", "subtitle": "放送", "start": "13:00", "end": "20:00" },
-        { "venue": 3, "title": "みんけん A", "subtitle": "和太鼓・篠笛", "start": "14:15", "end": "14:55" },
-        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn", "subtitle": "ダンス", "start": "16:00", "end": "16:30" },
+        { "venue": 1, "title": "スタヨコプロジェクト", "subtitle": "販売", "start": "14:00", "end": "18:00" },
+        { "venue": 3, "title": "放送研究会 A", "subtitle": "放送", "start": "13:00", "end": "20:00" },
+        { "venue": 4, "title": "みんけん A", "subtitle": "和太鼓・篠笛", "start": "14:15", "end": "14:55" },
+        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn A", "subtitle": "ダンス", "start": "16:00", "end": "16:30" },
         { "venue": 0, "title": "Liz A", "subtitle": "ダンス", "start": "16:50", "end": "17:40" },
         { "venue": 0, "title": "R³ude A", "subtitle": "ダンス", "start": "18:00", "end": "19:30" },
-        { "venue": 5, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "14:00", "end": "16:30" },
-        { "venue": 6, "title": "森のマルシェよここく", "subtitle": "販売", "start": "13:00", "end": "17:00" },
-        { "venue": 4, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "13:00", "end": "20:30" },
-        { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示", "start": "17:00", "end": "20:30" }
+        { "venue": 6, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "14:00", "end": "16:30" },
+        { "venue": 7, "title": "森のマルシェよここく", "subtitle": "販売", "start": "13:00", "end": "17:00" },
+        { "venue": 5, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "13:00", "end": "20:30" },
+        { "venue": 5, "title": "建築学科 100 期", "subtitle": "展示", "start": "17:00", "end": "20:30" }
       ]
     },
     {
@@ -32,6 +33,7 @@
       "timeRange": { "start": "09:00", "end": "20:30" },
       "venues": [
         "教育学部棟\n6・7号館の間",
+        "教育学部棟\n6号館の横",
         "学生センター横\nウッドデッキ",
         "経済・経営\n学部棟の間",
         "大学会館\n4Fホール",
@@ -40,23 +42,23 @@
         "都市科学部棟裏"
       ],
       "events": [
-        { "venue": 0, "title": "スタヨコプロジェクト", "subtitle": "販売", "start": "9:00", "end": "18:00" },
-        { "venue": 2, "title": "放送研究会 A", "subtitle": "放送", "start": "9:00", "end": "20:00" },
-        { "venue": 1, "title": "Baysound Jazz Orchestra A", "subtitle": "ジャズ演奏", "start": "10:15", "end": "11:45" },
-        { "venue": 1, "title": "Stairways A", "subtitle": "アカペラ", "start": "13:30", "end": "16:00" },
-        { "venue": 3, "title": "横浜国立大学吹奏楽団 A", "subtitle": "吹奏楽演奏", "start": "14:00", "end": "15:00" },
-        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn", "subtitle": "ダンス", "start": "10:55", "end": "11:25" },
-        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn", "subtitle": "ダンス", "start": "15:45", "end": "16:15" },
+        { "venue": 1, "title": "スタヨコプロジェクト", "subtitle": "販売", "start": "9:00", "end": "18:00" },
+        { "venue": 3, "title": "放送研究会 A", "subtitle": "放送", "start": "9:00", "end": "20:00" },
+        { "venue": 2, "title": "Baysound Jazz Orchestra A", "subtitle": "ジャズ演奏", "start": "10:15", "end": "11:45" },
+        { "venue": 2, "title": "Stairways A", "subtitle": "アカペラ", "start": "13:30", "end": "16:00" },
+        { "venue": 4, "title": "横浜国立大学吹奏楽団 A", "subtitle": "吹奏楽演奏", "start": "14:00", "end": "15:00" },
+        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn A", "subtitle": "ダンス", "start": "10:55", "end": "11:25" },
+        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn A", "subtitle": "ダンス", "start": "15:45", "end": "16:15" },
         { "venue": 0, "title": "Liz A", "subtitle": "ダンス", "start": "11:45", "end": "12:35" },
         { "venue": 0, "title": "Liz A", "subtitle": "ダンス", "start": "16:35", "end": "17:25" },
         { "venue": 0, "title": "R³ude A", "subtitle": "ダンス", "start": "12:55", "end": "14:25" },
         { "venue": 0, "title": "R³ude A", "subtitle": "ダンス", "start": "17:45", "end": "19:15" },
-        { "venue": 5, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "9:00", "end": "16:00" },
-        { "venue": 6, "title": "森のマルシェよここく", "subtitle": "販売", "start": "9:00", "end": "17:00" },
-        { "venue": 4, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "9:00", "end": "20:30" },
-        { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示", "start": "9:00", "end": "16:00" },
-        { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示・公演", "start": "16:00", "end": "17:00" },
-        { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示・公演", "start": "20:00", "end": "20:30" }
+        { "venue": 6, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "9:00", "end": "16:00" },
+        { "venue": 7, "title": "森のマルシェよここく", "subtitle": "販売", "start": "9:00", "end": "17:00" },
+        { "venue": 5, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "9:00", "end": "20:30" },
+        { "venue": 5, "title": "建築学科 100 期", "subtitle": "展示", "start": "9:00", "end": "16:00" },
+        { "venue": 5, "title": "建築学科 100 期", "subtitle": "展示・公演", "start": "16:00", "end": "17:00" },
+        { "venue": 5, "title": "建築学科 100 期", "subtitle": "展示・公演", "start": "20:00", "end": "20:30" }
       ]
     },
     {
@@ -65,6 +67,7 @@
       "timeRange": { "start": "09:00", "end": "15:00" },
       "venues": [
         "教育学部棟\n6・7号館の間",
+        "教育学部棟\n6号館の横",
         "学生センター横\nウッドデッキ",
         "経済・経営\n学部棟の間",
         "大学会館\n4Fホール",
@@ -73,19 +76,19 @@
         "都市科学部棟裏"
       ],
       "events": [
-        { "venue": 0, "title": "スタヨコプロジェクト", "subtitle": "販売", "start": "9:00", "end": "14:00" },
-        { "venue": 2, "title": "放送研究会 A", "subtitle": "放送", "start": "9:00", "end": "15:00" },
-        { "venue": 1, "title": "Baysound Jazz Orchestra A", "subtitle": "ジャズ演奏", "start": "10:15", "end": "11:45" },
-        { "venue": 1, "title": "Stairways A", "subtitle": "アカペラ", "start": "13:30", "end": "14:30" },
-        { "venue": 3, "title": "横浜国立大学管弦楽団 A", "subtitle": "オーケストラ", "start": "11:30", "end": "12:30" },
-        { "venue": 3, "title": "横浜国立大学管弦楽団 A", "subtitle": "オーケストラ", "start": "14:00", "end": "15:00" },
-        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn", "subtitle": "ダンス", "start": "11:00", "end": "11:30" },
+        { "venue": 1, "title": "スタヨコプロジェクト", "subtitle": "販売", "start": "9:00", "end": "14:00" },
+        { "venue": 3, "title": "放送研究会 A", "subtitle": "放送", "start": "9:00", "end": "15:00" },
+        { "venue": 2, "title": "Baysound Jazz Orchestra A", "subtitle": "ジャズ演奏", "start": "10:15", "end": "11:45" },
+        { "venue": 2, "title": "Stairways A", "subtitle": "アカペラ", "start": "13:30", "end": "14:30" },
+        { "venue": 4, "title": "横浜国立大学管弦楽団 A", "subtitle": "オーケストラ", "start": "11:30", "end": "12:30" },
+        { "venue": 4, "title": "横浜国立大学管弦楽団 A", "subtitle": "オーケストラ", "start": "14:00", "end": "15:00" },
+        { "venue": 0, "title": "KPOPカバーダンスサークルpopcorn A", "subtitle": "ダンス", "start": "11:00", "end": "11:30" },
         { "venue": 0, "title": "Liz A", "subtitle": "ダンス", "start": "11:50", "end": "12:40" },
         { "venue": 0, "title": "R³ude A", "subtitle": "ダンス", "start": "13:00", "end": "14:30" },
-        { "venue": 5, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "9:00", "end": "14:00" },
-        { "venue": 6, "title": "森のマルシェよここく", "subtitle": "販売", "start": "9:00", "end": "15:00" },
-        { "venue": 4, "title": "建築学科 100 期", "subtitle": "展示", "start": "9:00", "end": "15:00" },
-        { "venue": 4, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "10:30", "end": "15:00" }
+        { "venue": 6, "title": "横国ヤギ部", "subtitle": "ヤギ", "start": "9:00", "end": "14:00" },
+        { "venue": 7, "title": "森のマルシェよここく", "subtitle": "販売", "start": "9:00", "end": "15:00" },
+        { "venue": 5, "title": "建築学科 100 期", "subtitle": "展示", "start": "9:00", "end": "15:00" },
+        { "venue": 5, "title": "Y-GSA キッチンPJ", "subtitle": "販売", "start": "10:30", "end": "15:00" }
       ]
     }
   ]

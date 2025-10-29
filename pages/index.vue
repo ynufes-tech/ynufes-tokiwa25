@@ -2,6 +2,7 @@
 import CountdownTimer from "~/components/CountdownTimer.vue";
 import TopPageLinkR from "~/components/TopPageLinkR.vue";
 import TopPageLinkL from "~/components/TopPageLinkL.vue";
+import Carousel from "~/components/Carousel.vue";
 import Bunners from "~/components/Banners.vue";
 useHead({
   title: "Top | 25常盤祭公式HP~紅陽~",
@@ -37,6 +38,7 @@ useHead({
           alt="countdownframe"
         />
       </div>
+      <Carousel class="carousel"/>
       <div class="links">
         <TopPageLinkR class="link" title="official" jaTitle="本部企画一覧" />
         <TopPageLinkL class="link" title="idol" jaTitle="アイドルステージ" />
@@ -169,6 +171,10 @@ useHead({
     top: 80%;
     width: 50%;
   }
+}
+.carousel {
+  margin-top:100px;
+  width: 80vw;
 }
 .links {
   margin-top: 100px;

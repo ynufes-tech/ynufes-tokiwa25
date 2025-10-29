@@ -15,6 +15,8 @@ definePageMeta({
 const open = ref(false);
 const onlyFavo = ref(false);
 const popUpClear = ref(false);
+const popUpHtU = ref(false);
+const htuState = ref(1);
 const eventSerch = computed(() => (open.value ? "　閉じる" : "企画検索"));
 const filterFavo = computed(() =>
   onlyFavo.value ? "　全て表示　" : "お気に入り♡"
@@ -27,10 +29,18 @@ const events = ref<any[]>([]);
 const scrollY = ref(0); //スクロール量変数
 const search = ref("");
 const options = {
-  keys: ['e_name','o_name','e_description','o_description','displayGenre', 'place', 'displayPlace'],
+  keys: [
+    "e_name",
+    "o_name",
+    "e_description",
+    "o_description",
+    "displayGenre",
+    "place",
+    "displayPlace",
+  ],
   threshold: 0.35,
-}
-let fuse = new Fuse([], options)
+};
+let fuse = new Fuse([], options);
 
 onMounted(async () => {
   window.addEventListener("scroll", handleScroll, { passive: true }); //スクロールされたときscrollYを更新
@@ -74,6 +84,11 @@ onMounted(async () => {
     window.scrollTo({ top: lastScroll, behavior: "instant" });
   }, 10);
   console.log(lastScroll);
+
+  const hasAccessed = localStorage.getItem("hasAccessed");
+  if (!hasAccessed || hasAccessed == "0") {
+    openHtu();
+  }
 });
 
 onUnmounted(() => {
@@ -98,6 +113,13 @@ function clearAllFavo() {
   popUpClear.value = false;
   onlyFavo.value = false;
 }
+
+function openHtu() {
+  htuState.value = 1;
+  popUpHtU.value = true;
+  localStorage.setItem("hasAccessed", "1");
+}
+
 //FilterButtonの状態管理
 //アコーディングメニューの状態管理
 const filter = reactive({
@@ -247,9 +269,9 @@ const categoryALLON = () => {
 };
 
 const searchResults = computed(() => {
-  if (!search.value) return events.value
-  return fuse.search(search.value).map(r => r.item)
-})
+  if (!search.value) return events.value;
+  return fuse.search(search.value).map((r) => r.item);
+});
 
 const filteredEvents = computed(() => {
   return searchResults.value.filter((event) => {
@@ -264,8 +286,6 @@ const filteredEvents = computed(() => {
   });
 });
 
-
-
 const handleScroll = () => {
   scrollY.value = window.scrollY;
 };
@@ -277,8 +297,8 @@ watch(
   { deep: true }
 );
 watch(events, (newEvents) => {
-  fuse = new Fuse(newEvents, options)
-})
+  fuse = new Fuse(newEvents, options);
+});
 </script>
 
 <template>
@@ -297,9 +317,18 @@ watch(events, (newEvents) => {
             {{ filterFavo }}
           </p>
         </transition>
+        <span class="separate-line"></span>
+        <div class="htu-tab" @click="openHtu">
+          <img src="~/assets/images/htu-icon.svg" alt="" />
+        </div>
       </div>
       <div class="menu-body" :class="{ show: open }">
-        <input type="search" v-model="search" class="search-box" placeholder="検索"/>
+        <input
+          type="search"
+          v-model="search"
+          class="search-box"
+          placeholder="検索"
+        />
         <div
           class="place-accordion accordion"
           :class="{ accordionOpen: accordion.place }"
@@ -638,8 +667,13 @@ watch(events, (newEvents) => {
         @click="popUpClear = true"
       />
     </div>
+
     <transition name="popUpClearAnime">
-      <div class="favo-clear" v-show="popUpClear" @click="popUpClear = false">
+      <div
+        class="favo-clear"
+        v-show="popUpClear"
+        @click.self="popUpClear = false"
+      >
         <!--Favo全削除用のポップアップ-->
         <div class="clear-window">
           <div class="clear-text">
@@ -649,6 +683,60 @@ watch(events, (newEvents) => {
           <div class="clear-buttons">
             <div id="cancel" @click="popUpClear = false">キャンセル</div>
             <div id="clear" @click="clearAllFavo">削除する</div>
+          </div>
+        </div>
+      </div>
+    </transition>
+
+    <transition name="popUpHtUAnime">
+      <div class="htu" v-show="popUpHtU" @click.self="popUpHtU = false">
+        <!--使い方のポップアップ-->
+        <div class="htu-window">
+          <p class="htu-title">使い方</p>
+          <div class="htu-img">
+            <img src="~/assets/images/HtU.webp" class="htu-card-img" alt="" />
+            <img
+              src="~/assets/images/htu-hand.webp"
+              v-show="htuState == 1"
+              class="htu-hand"
+              alt=""
+            />
+            <transition name="htu-favoAnime">
+              <img
+                src="~/assets/images/favorite.svg"
+                v-show="htuState == 2"
+                class="htu-favo"
+                alt=""
+              />
+            </transition>
+          </div>
+          <p class="htu-detail">
+            {{
+              htuState === 1
+                ? "企画ごとの詳細や団体の"
+                : "お気に入りに登録すれば"
+            }}<span style="display: inline-block">{{
+              htuState === 1 ? "説明が見られるよ！！" : "もう一度見られるよ！"
+            }}</span>
+          </p>
+          <div class="htu-buttons">
+            <div
+              class="prev htu-button"
+              :class="{ active: htuState == 2 }"
+              @click="htuState = 1"
+            >
+              <p>&lt;前へ</p>
+            </div>
+            <div
+              class="next htu-button"
+              :class="{ active: htuState == 1 }"
+              @click="htuState = 2"
+            >
+              <p>次へ&gt;</p>
+            </div>
+          </div>
+          <div class="htu-close-btn" @click="popUpHtU = false">
+            <p>閉じる</p>
           </div>
         </div>
       </div>
@@ -719,6 +807,13 @@ watch(events, (newEvents) => {
     }
   }
 }
+.htu-tab {
+  padding: 0 5px;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+}
 .menu-tab.bodyShow {
   box-sizing: border-box;
   border: 1px black solid;
@@ -753,7 +848,7 @@ watch(events, (newEvents) => {
     height: 40px;
     border-radius: 999999px;
     padding: 0 30px;
-    border:none;
+    border: none;
     filter: drop-shadow(0 0 5px #00000050);
     outline: none;
   }
@@ -836,6 +931,116 @@ watch(events, (newEvents) => {
   margin-top: 50px;
   display: flex;
   justify-content: center;
+}
+
+.htu {
+  position: fixed;
+  z-index: 1001;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444444aa;
+  backdrop-filter: blur(15px);
+  .htu-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fbefde;
+    border-radius: 10px;
+    padding: 20px 5%;
+    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.3));
+    max-width: 98%;
+    box-sizing: border-box;
+    @include sm {
+      padding: 10px 3%;
+    }
+    .htu-title {
+      font-family: "Kaisei Decol", sans-serif;
+      font-size: 35px;
+      margin-bottom: 20px;
+      @include sm {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+    }
+    .htu-detail {
+      font-size: 15px;
+      margin: 20px 0px;
+      text-align: center;
+    }
+    .htu-img {
+      width: 325px;
+      max-width: 80%;
+      position: relative;
+      .htu-card-img {
+        width: 100%;
+      }
+      .htu-hand {
+        position: absolute;
+        width: 100px;
+        top: 250px;
+        left: 100px;
+        animation-name: fuwa;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      .htu-favo {
+        position: absolute;
+        width: 30px;
+        bottom: 22px;
+        right: 2%;
+        @include sm {
+          bottom: 4.5vw;
+          right: 2%;
+        }
+      }
+    }
+    .htu-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+      .htu-button {
+        border-radius: 9999px;
+        border: solid 1px #333;
+        background-color: white;
+        padding: 3px 15px;
+        user-select: none;
+        transition: 0.15s;
+        opacity: 0;
+        &:hover {
+          background-color: #333;
+          cursor: pointer;
+          color: white;
+          transition: 0.15s;
+        }
+      }
+      .active {
+        opacity: 1;
+      }
+    }
+    .htu-close-btn {
+      margin-top: 20px;
+      padding: 3px 0;
+      width: 50%;
+      text-align: center;
+      border-radius: 9999px;
+      background-color: white;
+      border: solid 1px #ff5050;
+      color: #ff5050;
+      transition: 0.2s;
+      &:hover {
+        color: white;
+        background-color: #ff5050;
+        transition: 0.2s;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+  }
 }
 
 .favo-clear {
@@ -963,6 +1168,19 @@ watch(events, (newEvents) => {
   transform: translateX(-10px);
 }
 
+.popUpHtUAnime-enter-active,
+.popUpHtUAnime-leave-active {
+  transition: 0.3s ease;
+}
+.popUpHtUAnime-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.popUpHtUAnime-enter-from {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 .popUpClearAnime-enter-active,
 .popUpClearAnime-leave-active {
   transition: 0.3s ease;
@@ -974,5 +1192,44 @@ watch(events, (newEvents) => {
 .popUpClearAnime-enter-from {
   opacity: 0;
   transform: translateY(-20px);
+}
+.htu-favoAnime-enter-active {
+  animation: popIn 0.3s forwards;
+}
+.htu-favoAnime-leave-active {
+  animation: popOut 0.2s forwards;
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fuwa {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 </style>

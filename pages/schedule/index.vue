@@ -5,6 +5,16 @@ import SelectorButton from "~/components/SelectorButton.vue";
 import scheduleData from "~/public/schedule/scheduleData.json"; // JSON読み込み
 import { ref, computed } from "vue";
 
+useHead({
+  title: "Schedule | 25常盤祭公式HP~紅陽~",
+  meta: [
+    {
+      name: "description",
+      content: "ダンスや演奏などのスケジュールはこちらから！",
+    },
+  ],
+});
+
 const dates = scheduleData.dates;
 const selectedDate = ref(dates[0].value);
 const selectedVenue = ref(0);
@@ -144,9 +154,6 @@ const columnEvents = (idx: number) =>
 </template>
 
 <style lang="scss" scoped>
-.page-root {
-  padding: 0 40px;
-}
 
 /* 日付ボタン */
 .date-tabs {
@@ -154,6 +161,7 @@ const columnEvents = (idx: number) =>
   justify-content: center;
   gap: 14px;
   margin-bottom: 18px;
+  padding:40px;
 
   @media (max-width: 825px) {
     gap: 5px;
@@ -219,6 +227,7 @@ const columnEvents = (idx: number) =>
   display: flex;
   flex-direction: column;
   min-height: var(--board-h);
+  padding:40px;
 }
 
 /* PC: ヘッダー */

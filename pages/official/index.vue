@@ -101,11 +101,6 @@ const venues = Object.entries(officialEvents);
   flex-direction: column;
   transition: 0.1s;
 }
-.card:hover {
-  background: rgba(251, 234, 222, 0.7);
-  transition: 0.1s;
-  cursor: pointer;
-}
 .card-title {
   font-size: 1.6rem;
   font-weight: bold;

@@ -1,7 +1,20 @@
 <script setup lang="ts">
 import ContentBox from "~/components/ContentBox.vue";
-import newsData from "~/public/news/news.json";
 import PageTitle from "~/components/PageTitle.vue";
+import { onMounted } from "vue";
+const newsData = ref([]);
+onMounted(async() => {
+  try {
+    const res = await fetch(
+      "https://storage.ynu-fes.yokohama/jsons/news.json"
+    );
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const data = await res.json();
+    newsData.value = data;
+  } catch (err) {
+    console.error("イベント取得失敗", err);
+  }
+})
 
 useHead({
   title: "News | 25常盤祭公式HP~紅陽~",

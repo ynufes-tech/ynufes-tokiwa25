@@ -108,6 +108,10 @@ useHead({
   padding: 30px 30px;
   white-space: pre-wrap;
   line-height: 1.6;
+  p {
+    margin: 0;
+    text-align: left;
+  }
   @include md {
     font-size: 16px;
     padding: 20px 10px;

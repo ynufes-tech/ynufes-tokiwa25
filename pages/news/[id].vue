@@ -78,7 +78,7 @@ useHead({
   box-sizing: border-box;
   position: relative;
   .date {
-    font-size: 20px;
+    font-size: 18px;
     position: absolute;
     @include sm {
       font-size: 16px;
@@ -98,7 +98,7 @@ useHead({
 }
 
 .news-card.first {
-  font-size: 35px;
+  font-size: 30px;
   border: 3px solid #42c478;
   padding: 10px 10px 0;
 
@@ -113,20 +113,30 @@ useHead({
   }
 
   @include md {
-    font-size: 25px;
+    font-size: 23px;
   }
   @include sm {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .news-card.second {
-  font-size: 24px;
+  font-size: 22px;
   border: 3px solid #42c478;
   padding: 30px 30px;
   white-space: pre-wrap;
+  line-height: 1.6;
+  p {
+    margin: 0;
+    text-align: left;
+  }
   @include md {
     font-size: 16px;
     padding: 20px 10px;
+    line-height: 1.5;
+  }
+  @include sm {
+    font-size: 14px;
+    line-height: 1.4;
   }
 }
 

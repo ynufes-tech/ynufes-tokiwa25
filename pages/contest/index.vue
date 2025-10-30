@@ -40,7 +40,7 @@ useHead({
         <!--          text="投票へ"-->
         <!--          link="https://docs.google.com/forms/d/e/1FAIpQLSdaR8Wr03HOHveZ1GwduTvwoSw4FGN8KfyFI_2JM92teS9Y0w/viewform?usp=header"-->
         <!--      />-->
-        <LinkButton class="LinkButton" text="企画一覧を見る" link="/events" />
+        <LinkButton class="LinkButton" text="企画一覧を見る" link="/25/tokiwa/events" />
         <!--      <LinkButton-->
         <!--          class="LinkButton"-->
         <!--          text="ランキングを見る"-->

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const appConfig = useAppConfig();
 const props = defineProps<{
   rank: number;
   title: string;
@@ -25,7 +26,7 @@ const getRankClass = (rank: number) => {
   <div class="ranking-card">
     <p class="rank" :class="getRankClass(rank)">第{{ rank }}位</p>
     <div class="image">
-      <img :src="imageUrl ? imageUrl : '~/assets/images/no-image.png'" alt="企画画像" />
+      <img :src="imageUrl ? imageUrl : `${appConfig.baseURL}images/comingSoon.svg`" alt="企画画像" />
     </div>
     <p class="title">{{ title }}</p>
     <div class="votes">

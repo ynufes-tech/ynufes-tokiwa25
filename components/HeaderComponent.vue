@@ -129,6 +129,14 @@ const currentImage = ref(image1);
                 />
                 ご協賛企業一覧</NuxtLink
               >
+              <NuxtLink to="/connection" class="dropdown-item">
+                <img
+                  src="~/assets/images/momiji.svg"
+                  alt="momiji"
+                  class="momiji"
+                />
+                他大学相互リンク</NuxtLink
+              >
             </div>
           </div>
 

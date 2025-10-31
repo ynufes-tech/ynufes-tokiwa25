@@ -23,6 +23,7 @@ const third = props.rankings.find((r) => r.rank === 3);
         :rank="second.rank"
         :title="second.title"
         :votes="second.votes"
+        :imageUrl="second.imageUrl"
       />
       <!-- 中央：1位 -->
       <RankingCard
@@ -31,6 +32,7 @@ const third = props.rankings.find((r) => r.rank === 3);
         :rank="first.rank"
         :title="first.title"
         :votes="first.votes"
+        :imageUrl="first.imageUrl"
       />
       <!-- 右：3位 -->
       <RankingCard
@@ -39,6 +41,7 @@ const third = props.rankings.find((r) => r.rank === 3);
         :rank="third.rank"
         :title="third.title"
         :votes="third.votes"
+        :imageUrl="third.imageUrl"
       />
     </div>
   </div>

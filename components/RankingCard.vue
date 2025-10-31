@@ -1,11 +1,11 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   rank: number;
   title: string;
   votes: number;
   imageUrl?: string;
 }>();
-
+console.log(props.imageUrl);
 // 順位に応じたクラスを返す
 const getRankClass = (rank: number) => {
   switch (rank) {
@@ -25,7 +25,7 @@ const getRankClass = (rank: number) => {
   <div class="ranking-card">
     <p class="rank" :class="getRankClass(rank)">第{{ rank }}位</p>
     <div class="image">
-      <img src="/assets/images/no-image.png" alt="企画画像" />
+      <img :src="imageUrl ? imageUrl : '~/assets/images/no-image.png'" alt="企画画像" />
     </div>
     <p class="title">{{ title }}</p>
     <div class="votes">

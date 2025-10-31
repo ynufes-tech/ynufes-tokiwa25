@@ -37,6 +37,10 @@ useHead({
           alt="countdownframe"
         />
       </div>
+      <NuxtLink to="/news/7">
+        <img src="~/assets/images/rainy-info.svg" alt="" class="rainy-info" />
+      </NuxtLink>
+
       <div class="links">
         <TopPageLinkR class="link" title="official" jaTitle="本部企画一覧" />
         <TopPageLinkL class="link" title="idol" jaTitle="アイドルステージ" />
@@ -170,8 +174,15 @@ useHead({
     width: 50%;
   }
 }
-.links {
+.rainy-info {
+  width: 80vw;
+  max-width: 600px;
   margin-top: 100px;
+  filter: drop-shadow(6px 6px 4px #333333c6);
+}
+
+.links {
+  margin-top: 30px;
   .link {
     margin-top: 200px;
     @include xl {

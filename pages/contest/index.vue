@@ -35,17 +35,21 @@ useHead({
         <img class="howto-img" src="~/assets/images/contest.webp" alt="Howto" />
       </div>
       <div class="button">
-        <!--      <LinkButton-->
-        <!--          class="LinkButton"-->
-        <!--          text="投票へ"-->
-        <!--          link="https://docs.google.com/forms/d/e/1FAIpQLSdaR8Wr03HOHveZ1GwduTvwoSw4FGN8KfyFI_2JM92teS9Y0w/viewform?usp=header"-->
-        <!--      />-->
-        <LinkButton class="LinkButton" text="企画一覧を見る" link="/25/tokiwa/events" />
-        <!--      <LinkButton-->
-        <!--          class="LinkButton"-->
-        <!--          text="ランキングを見る"-->
-        <!--          link=""-->
-        <!--      />-->
+        <LinkButton
+          class="LinkButton"
+          text="投票へ"
+          link="https://docs.google.com/forms/d/e/1FAIpQLSdaR8Wr03HOHveZ1GwduTvwoSw4FGN8KfyFI_2JM92teS9Y0w/viewform?usp=header"
+        />
+        <LinkButton
+          class="LinkButton"
+          text="企画一覧を見る"
+          link="/25/tokiwa/events"
+        />
+        <LinkButton
+          class="LinkButton"
+          text="ランキングを見る"
+          link="/25/tokiwa/contest/ranking"
+        />
       </div>
       <div class="introduce">
         <div class="category-name">
@@ -195,12 +199,9 @@ useHead({
 
 .LinkButton {
   max-width: 100%;
-  margin: 80px 0;
+  margin: 40px 0;
   @include md {
-    margin: 40px;
-  }
-  @include sm {
-    margin: 80px 0;
+    margin: 30px;
   }
 }
 
@@ -214,6 +215,7 @@ useHead({
   justify-items: center;
   font-size: 20px;
   text-align: center;
+  margin-top: 10vh;
   @include md {
     font-size: 18px;
   }

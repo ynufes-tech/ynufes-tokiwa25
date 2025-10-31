@@ -1,10 +1,27 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import LinkButton from "~/components/LinkButtonComponent.vue";
-import newsData from "~/public/news/news.json";
+
+const newsData = ref([]);
+onMounted(async() => {
+  try {
+    const res = await fetch(
+      "https://storage.ynu-fes.yokohama/jsons/news.json"
+    );
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    const data = await res.json();
+    newsData.value = data;
+  } catch (err) {
+    console.error("イベント取得失敗", err);
+  }
+})
 
 const route = useRoute();
-const news = newsData.find((n) => n.id === route.params.id);
+const id = parseInt(route.params.id);
+const news = computed(() =>
+  newsData.value.find((e) => parseInt(e.id) === id)
+);
+
 
 useHead({
   title: "Latest-news | 25常盤祭公式HP~紅陽~",

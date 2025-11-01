@@ -37,7 +37,7 @@ useHead({
           alt="countdownframe"
         />
       </div>
-      <NuxtLink to="/news/7">
+      <NuxtLink to="/news/1">
         <img src="~/assets/images/rainy-info.svg" alt="" class="rainy-info" />
       </NuxtLink>
 

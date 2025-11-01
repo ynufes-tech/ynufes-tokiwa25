@@ -29,25 +29,25 @@
     { 
       "sectionTitle": "販売・展示・体験部門",
       "rankings": [
-        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "" }
+        { "rank": 2, "title": "Art shop Eyebrows", "votes": "230", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/54.webp" },
+        { "rank": 1, "title": "WHYNUの謎解きゲーム", "votes": "356", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/47.webp" },
+        { "rank": 3, "title": "謎解き脱出ゲーム", "votes": "60", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/31.webp" }
       ]
     },
     {
       "sectionTitle": "食べ物部門",
       "rankings": [
-        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "" }
+        { "rank": 2, "title": "ラメラメ", "votes": "1155", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/70.webp" },
+        { "rank": 1, "title": "LuckyDipのふわふわっふる", "votes": "1836", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/95.webp" },
+        { "rank": 3, "title": "M's Burger", "votes": "1377", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/82.webp" }
       ]
     },
     {
       "sectionTitle": "パフォーマンス部門",
       "rankings": [
-        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "" }
+        { "rank": 2, "title": "R³ude 常盤祭公演", "votes": "337", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/101.webp" },
+        { "rank": 1, "title": "お笑いサークルわかばのライブ", "votes": "507", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/8.webp" },
+        { "rank": 3, "title": "KPOPカバーダンスステージ", "votes": "95", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/16.webp" }
       ]
     }
   ],

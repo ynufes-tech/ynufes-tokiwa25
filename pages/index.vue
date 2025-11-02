@@ -37,9 +37,9 @@ useHead({
           alt="countdownframe"
         />
       </div>
-      <NuxtLink to="/news/1">
+      <!-- <NuxtLink to="/news/1">
         <img src="~/assets/images/rainy-info.svg" alt="" class="rainy-info" />
-      </NuxtLink>
+      </NuxtLink> -->
 
       <div class="links">
         <TopPageLinkR class="link" title="official" jaTitle="本部企画一覧" />

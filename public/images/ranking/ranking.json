@@ -55,25 +55,25 @@
     {
       "sectionTitle": "販売・展示・体験部門",
       "rankings": [
-        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "" }
+        { "rank": 2, "title": "WHYNUの謎解きゲーム", "votes": "500", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/47.webp" },
+        { "rank": 1, "title": "てっけん！", "votes": "808", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/41.webp" },
+        { "rank": 3, "title": "Art shop Eyebrows", "votes": "380", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/54.webp" }
       ]
     },
     {
       "sectionTitle": "食べ物部門",
       "rankings": [
-      { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "" }
+        { "rank": 2, "title": "LuckyDipのふわふわっふる", "votes": "1904", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/95.webp" },
+        { "rank": 1, "title": "ラメラメ", "votes": "2632", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/82.webp" },
+        { "rank": 3, "title": "M's Burger", "votes": "1679", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/70.webp" }
       ]
     },
     {
       "sectionTitle": "パフォーマンス部門",
       "rankings": [
-        { "rank": 2, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 1, "title": "coming soon...", "votes": "???", "imageUrl": "" },
-        { "rank": 3, "title": "coming soon...", "votes": "???", "imageUrl": "" }
+        { "rank": 2, "title": "お笑いサークルわかばのライブ", "votes": "732", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/8.webp" },
+        { "rank": 1, "title": "Liz2025", "votes": "1347", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/98.webp" },
+        { "rank": 3, "title": "R³ude 常盤祭公演", "votes": "581", "imageUrl": "https://storage.ynu-fes.yokohama/images/icons/101.webp" }
       ]
     }
   ]

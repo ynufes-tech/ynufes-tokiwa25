@@ -20,8 +20,13 @@ useHead({
     <div class="page-container">
       <img src="~/assets/images/top-title.svg" alt="title" class="title" />
       <img src="../assets/images/dates.svg" class="dates" alt="dates" />
+      <div class="finish-announcement">
+        <p>
+          25常盤祭は終了いたしました。<span>ご来場いただき誠にありがとうございました。</span>
+        </p>
+      </div>
       <Bunners />
-      <div class="timer">
+      <!-- <div class="timer">
         <img
           src="~/assets/images/timer-frame-lt.svg "
           class="timer-frame-lt"
@@ -36,7 +41,7 @@ useHead({
           class="timer-frame-rt"
           alt="countdownframe"
         />
-      </div>
+      </div> -->
       <!-- <NuxtLink to="/news/1">
         <img src="~/assets/images/rainy-info.svg" alt="" class="rainy-info" />
       </NuxtLink> -->
@@ -128,6 +133,23 @@ useHead({
   max-width: 1000px;
   @include md {
     width: 100%;
+  }
+}
+
+.finish-announcement {
+  margin-top: 20px;
+  font-size: 23px;
+  color: #fff;
+  font-weight: bold;
+  span {
+    display: block;
+    margin-top: 10px;
+  }
+  @include md {
+    font-size: 18px;
+  }
+  @include sm {
+    font-size: 16px;
   }
 }
 

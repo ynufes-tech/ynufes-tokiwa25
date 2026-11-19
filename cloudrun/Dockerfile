@@ -1,50 +1,22 @@
-FROM node:22-slim AS base
-# ベースイメージに Node.js 22-slim を使用
-
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-# pnpm のパスを設定
-
-RUN corepack enable
-# corepack を有効化して pnpm を利用可能に
-
+FROM node:24.22.3-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS builder
 WORKDIR /app
-# 作業ディレクトリを /app に設定
-
-FROM base AS prod-deps
-# 本番環境用依存パッケージをインストール
-
+ENV NUXT_TELEMETRY_DISABLED=1 HUSKY=0
+ENV BASE_URL=/25/tokiwa/ NUXT_PUBLIC_BASE_URL=/25/tokiwa/
+RUN npm install --global pnpm@10.13.1
 COPY package.json pnpm-lock.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --prod --frozen-lockfile
-# キャッシュを活用して本番依存だけを高速インストール
-
-FROM base AS build
-# ビルド用ステージ
-
-COPY package.json pnpm-lock.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile
-# キャッシュを活用して全依存をインストール
-
-ENV NUXT_PUBLIC_BASE_URL=/25/tokiwa/
-# 環境変数を設定
-
+RUN pnpm install --frozen-lockfile --ignore-scripts
 COPY . .
 RUN pnpm run build
-# ソースコードをビルド
 
-FROM node:22-slim AS runner
-# 実行環境ステージ
-
-COPY --from=prod-deps /app/node_modules ./node_modules
-# 本番依存をコピー
-
-COPY --from=build /app/.output /app/
-# ビルド成果物をコピー
-
-EXPOSE 8000
-# アプリケーションのリスニングポート
-
-CMD ["node", "/app/server/index.mjs"]
-# サーバーを起動
+FROM node:24.22.3-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS production
+# Apply OS security updates and omit build/package-management tools from the server.
+RUN apk upgrade --no-cache \
+    && rm -rf /usr/local/lib/node_modules /opt/yarn* \
+    && rm -f /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/yarn /usr/local/bin/yarnpkg /usr/local/bin/corepack
+WORKDIR /app
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=8080
+ENV BASE_URL=/25/tokiwa/ NUXT_PUBLIC_BASE_URL=/25/tokiwa/
+COPY --from=builder --chown=node:node /app/.output ./.output
+USER node
+EXPOSE 8080
+CMD ["node", ".output/server/index.mjs"]

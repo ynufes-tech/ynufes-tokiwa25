@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // Preserve the existing layout while using the patched Nuxt 4 runtime.
+  srcDir: ".",
+  dir: { app: "app" },
+  experimental: { defaults: { useAsyncData: { deep: true } } },
   compatibilityDate: '2025-05-15',
-  devtools: {enabled: true},
+  devtools: { enabled: false },
   runtimeConfig: {
     baseURL: '/25/tokiwa/', // NUXT_PUBLIC_BASE_URL によって上書きされる 公式ドキュメント参照
   },

@@ -2,6 +2,7 @@
 import PageTitle from "~/components/PageTitle.vue";
 import ContentBox from "~/components/ContentBox.vue";
 import LinkButton from "~/components/LinkButtonComponent.vue";
+const appBaseURL = useRuntimeConfig().app.baseURL;
 useHead({
   title: "Access | 25常盤祭公式HP~紅陽~",
   meta: [
@@ -36,7 +37,7 @@ useHead({
         rel="noopener noreferrer"
       >
         <img
-          src="~/public/images/maps/seimon.svg"
+          :src="`${appBaseURL}images/maps/seimon.svg`"
           alt="正門までの地図"
           class="seimon"
         />
@@ -57,7 +58,7 @@ useHead({
         rel="noopener noreferrer"
       >
         <img
-          src="~/public/images/maps/minamimon.svg"
+          :src="`${appBaseURL}images/maps/minamimon.svg`"
           alt="南通用門までの地図"
           class="kitamon"
         />
@@ -79,7 +80,7 @@ useHead({
         rel="noopener noreferrer"
       >
         <img
-          src="~/public/images/maps/kitamon.svg"
+          :src="`${appBaseURL}images/maps/kitamon.svg`"
           alt="北門・西門までの地図"
           class="kitamon"
         />

@@ -38,7 +38,7 @@ jobs:
           registry: asia-northeast1-docker.pkg.dev
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           push: true
           tags: asia-northeast1-docker.pkg.dev/ynufes-hp-cloudrun/dev/tokiwa25:latest

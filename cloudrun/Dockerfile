@@ -1,4 +1,4 @@
-FROM node:24.22.3-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS builder
+FROM node:26.13.1-alpine@sha256:6bd9ab43c0ec0190ca7b2d193906cb8b7edf6e7f4afa43ddeccd6452710bffb5 AS builder
 WORKDIR /app
 ENV NUXT_TELEMETRY_DISABLED=1 HUSKY=0
 ENV BASE_URL=/25/tokiwa/ NUXT_PUBLIC_BASE_URL=/25/tokiwa/
@@ -8,7 +8,7 @@ RUN pnpm install --frozen-lockfile --ignore-scripts
 COPY . .
 RUN pnpm run build
 
-FROM node:24.22.3-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS production
+FROM node:26.13.1-alpine@sha256:6bd9ab43c0ec0190ca7b2d193906cb8b7edf6e7f4afa43ddeccd6452710bffb5 AS production
 # Apply OS security updates and omit build/package-management tools from the server.
 RUN apk upgrade --no-cache \
     && rm -rf /usr/local/lib/node_modules /opt/yarn* \
